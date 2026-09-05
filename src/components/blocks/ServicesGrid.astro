@@ -17,6 +17,7 @@ export interface ServiceItem {
 interface Props extends BlockProps {
   items: ServiceItem[];
   columns?: 2 | 3 | 4;
+  id?: string;
 }
 
 const {
@@ -30,6 +31,7 @@ const {
   titleLevel = 2,
   items,
   columns = 3,
+  id,
 } = Astro.props;
 
 // Owns its own grid rather than asking Container to model it.
@@ -40,7 +42,7 @@ const columnClass = {
 }[columns];
 ---
 
-<Section background={background} spacing={spacing}>
+<Section id={id} background={background} spacing={spacing}>
   <Container width={width} align={align} gap="lg">
     <BlockHeader
       eyebrow={eyebrow}

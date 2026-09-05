@@ -7,6 +7,10 @@
     "heading": {
       "$value": "'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
       "$type": "fontFamily"
+    },
+    "script": {
+      "$value": "'Great Vibes', cursive",
+      "$type": "fontFamily"
     }
   },
   "text": {

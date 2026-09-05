@@ -12,6 +12,7 @@ import Testimonials from '../components/blocks/Testimonials.astro';
 import FAQ from '../components/blocks/FAQ.astro';
 import CTABanner from '../components/blocks/CTABanner.astro';
 import { site } from '../config/site';
+import heroOffice from '../assets/hero-office.jpg';
 
 const faqs = [
   {
@@ -29,23 +30,31 @@ const faqs = [
 ];
 ---
 
-<BaseLayout faqs={faqs}>
+<BaseLayout overlay faqs={faqs}>
   <Hero
-    eyebrow={`${site.business.address.locality}, ${site.business.address.region}`}
-    title={site.tagline}
-    body={site.description}
-    bullets={[
-      'Licensed and insured',
-      'Upfront pricing, no surprises',
-      'Work guaranteed for 12 months',
+    overlay
+    eyebrow={`Now open in ${site.business.address.locality}, ${site.business.address.region}`}
+    title="Crafting Smiles That"
+    titleAccent="Radiate Confidence"
+    body={[
+      "Welcome to Platte River Orthodontics. We've made Gretna our home and we could not be more excited to serve families in Gretna, Omaha, Papillion and the surrounding areas!",
+      'Dr. Chad B. Carter created this practice to deliver modern orthodontic care in a warm, friendly environment. Whether you are bringing in your child for their first visit or you are an adult looking to finally straighten your teeth, we treat every patient like family.',
     ]}
+    image={heroOffice}
+    imageAlt="A bright, modern orthodontic treatment room"
     actions={[
-      { label: 'Request a quote', href: '/contact/' },
-      { label: site.business.phone, href: `tel:${site.business.phoneHref}`, variant: 'secondary' },
+      { label: 'Book Your Free Consult', href: '/contact/' },
+      { label: 'Explore Services', href: '#services', variant: 'secondary' },
+    ]}
+    highlights={[
+      { icon: 'lucide:star', label: '5-Star Rated' },
+      { icon: 'lucide:shield', label: 'Veteran Owned' },
+      { icon: 'lucide:users', label: 'Free Consultations' },
     ]}
   />
 
   <ServicesGrid
+    id="services"
     eyebrow="Services"
     title="What we do"
     body="Straightforward work across residential and commercial properties."

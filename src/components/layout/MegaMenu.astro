@@ -23,7 +23,7 @@ const isCurrent = (href: string) =>
   href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 
 const triggerClass =
-  'inline-flex min-h-11 items-center gap-1 rounded-md px-3 text-base no-underline text-ink-base hover:bg-neutral-100 aria-[current=page]:text-ink-brand aria-[current=page]:font-medium';
+  'inline-flex min-h-11 items-center gap-1 rounded-md px-3 text-base font-medium no-underline transition-colors group-data-[appearance=solid]/header:text-ink-base group-data-[appearance=solid]/header:hover:bg-neutral-100 group-data-[appearance=solid]/header:aria-[current=page]:text-ink-brand group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:text-ink-inverse';
 ---
 
 <nav aria-label="Primary" class="mega hidden md:block">

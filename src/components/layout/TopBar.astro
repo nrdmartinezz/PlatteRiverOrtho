@@ -1,0 +1,44 @@
+---
+/**
+ * Utility strip above the sticky nav. Scrolls away with the page — it is never
+ * sticky. On overlay (hero) pages it is transparent so the image shows through.
+ */
+import Container from '../ui/Container.astro';
+import { site, formattedPhone, topBarMessage } from '../../config/site';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  overlay?: boolean;
+}
+
+const { overlay = false } = Astro.props;
+---
+
+<div
+  data-topbar
+  class:list={[
+    'relative z-40 w-full text-ink-inverse',
+    overlay ? 'bg-transparent' : 'bg-brand-200',
+  ]}
+>
+  <Container as="div" layout="bar" gap="none" class="justify-between gap-4 py-2.5">
+    <p class="min-w-0 truncate text-[12px] leading-none">{topBarMessage}</p>
+
+    <div class="hidden items-center gap-5 lg:flex">
+      <a
+        href={`mailto:${site.business.email}`}
+        class="inline-flex items-center gap-2 text-[12px] leading-none text-ink-inverse no-underline"
+      >
+        <Icon name="lucide:mail" class="size-3.5" aria-hidden="true" />
+        {site.business.email}
+      </a>
+      <a
+        href={`tel:${site.business.phoneHref}`}
+        class="inline-flex items-center gap-2 text-[12px] leading-none text-ink-inverse no-underline"
+      >
+        <Icon name="lucide:phone" class="size-3.5" aria-hidden="true" />
+        {formattedPhone}
+      </a>
+    </div>
+  </Container>
+</div>

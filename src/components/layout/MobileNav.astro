@@ -10,7 +10,7 @@
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import { navigation } from '../../config/navigation';
-import { site } from '../../config/site';
+import { site, formattedPhone } from '../../config/site';
 import { Icon } from 'astro-icon/components';
 
 interface Props {
@@ -31,7 +31,7 @@ const linkClass =
   id="nav-toggle"
   aria-expanded="false"
   aria-controls="mobile-nav"
-  class="inline-flex size-11 items-center justify-center rounded-md hover:bg-neutral-100 md:hidden"
+  class="inline-flex size-11 items-center justify-center rounded-md hover:bg-neutral-100 group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/10 md:hidden"
 >
   <span class="sr-only">Menu</span>
   <Icon name="lucide:menu" class="size-6" aria-hidden="true" />
@@ -134,9 +134,16 @@ const linkClass =
 
     <div class="mt-6 flex flex-col gap-3">
       {navigation.cta && <Button href={navigation.cta.href}>{navigation.cta.label}</Button>}
+      {
+        navigation.portal?.href && (
+          <Button href={navigation.portal.href} variant="secondary">
+            {navigation.portal.label}
+          </Button>
+        )
+      }
       <Button href={`tel:${site.business.phoneHref}`} variant="secondary">
         <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
-        {site.business.phone}
+        {formattedPhone}
       </Button>
     </div>
   </Container>
@@ -175,7 +182,10 @@ const linkClass =
       }
 
       if (open) {
-        drawer.style.setProperty('--header-h', `${header?.offsetHeight ?? 0}px`);
+        drawer.style.setProperty(
+          '--header-h',
+          `${header?.getBoundingClientRect().bottom ?? header?.offsetHeight ?? 0}px`,
+        );
         drawer.querySelector<HTMLAnchorElement>('a')?.focus();
       } else {
         toggle.focus();

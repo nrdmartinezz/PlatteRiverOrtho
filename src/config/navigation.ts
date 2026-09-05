@@ -44,6 +44,8 @@ export interface NavigationConfig {
   primary: NavItem[];
   /** Right-hand call to action in the header. */
   cta?: { label: string; href: string };
+  /** External patient login — leave href blank until the portal URL is set. */
+  portal?: { label: string; href: string };
   footer: { heading: string; links: NavLink[] }[];
   legal: NavLink[];
 }
@@ -51,6 +53,17 @@ export interface NavigationConfig {
 export const navigation: NavigationConfig = {
   primary: [
     { label: 'Home', href: '/' },
+    {
+      label: 'Our Practice',
+      panel: {
+        kind: 'links',
+        links: [
+          { label: 'Our Story', href: '/about/' },
+          { label: 'The Team', href: '/about/team/' },
+          { label: 'Service Area', href: '/about/service-area/' },
+        ],
+      },
+    },
     {
       label: 'Services',
       href: '/services/',
@@ -100,21 +113,12 @@ export const navigation: NavigationConfig = {
         },
       },
     },
-    {
-      label: 'About',
-      panel: {
-        kind: 'links',
-        links: [
-          { label: 'Our Story', href: '/about/' },
-          { label: 'The Team', href: '/about/team/' },
-          { label: 'Service Area', href: '/about/service-area/' },
-        ],
-      },
-    },
+    { label: 'Testimonials', href: '/testimonials/' },
     { label: 'Contact', href: '/contact/' },
   ],
 
-  cta: { label: 'Request a Quote', href: '/contact/' },
+  cta: { label: 'Book Your Free Consult', href: '/contact/' },
+  portal: { label: 'Patient Portal', href: '' },
 
   footer: [
     {

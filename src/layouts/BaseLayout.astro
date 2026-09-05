@@ -7,6 +7,7 @@ import Schema, { type BreadcrumbEntry, type FaqEntry } from '../components/seo/S
 import Analytics from '../components/analytics/Analytics.astro';
 import CookieConsent from '../components/analytics/CookieConsent.astro';
 import Header, { type HeaderSticky } from '../components/layout/Header.astro';
+import TopBar from '../components/layout/TopBar.astro';
 import Footer from '../components/layout/Footer.astro';
 import RecaptchaV3 from '../components/forms/RecaptchaV3.astro';
 import SiteFormHandler from '../components/forms/SiteFormHandler.astro';
@@ -26,9 +27,11 @@ interface Props {
   faqs?: FaqEntry[];
   service?: { name: string; description?: string };
   sticky?: HeaderSticky;
+  /** Pair with an overlay Hero so the nav sits on the image until it sticks. */
+  overlay?: boolean;
 }
 
-const { breadcrumbs, faqs, service, sticky = 'sticky', ...seo } = Astro.props;
+const { breadcrumbs, faqs, service, sticky = 'sticky', overlay = false, ...seo } = Astro.props;
 ---
 
 <!doctype html>
@@ -61,7 +64,8 @@ const { breadcrumbs, faqs, service, sticky = 'sticky', ...seo } = Astro.props;
       Skip to content
     </a>
 
-    <Header sticky={sticky} />
+    <TopBar overlay={overlay} />
+    <Header sticky={sticky} overlay={overlay} />
 
     <main id="main" class="flex-1">
       <slot />

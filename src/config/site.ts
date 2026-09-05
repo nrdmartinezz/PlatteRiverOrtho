@@ -88,35 +88,35 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  url: 'https://example.com',
-  name: 'Demo Business',
-  legalName: 'Demo Business LLC',
-  tagline: 'Straightforward work, done right the first time.',
+  url: 'https://platteriverorthodontics.com/',
+  name: 'Platter River Orthodontics',
+  legalName: 'Platter River Orthodontics',
+  tagline: 'Your Smile, Our Passion',
   description:
-    'Demo Business is a placeholder used by the starter template. Replace this copy during project setup.',
+    'Platter River Orthodontics is a leading orthodontic practice dedicated to providing exceptional care for patients of all ages. Our team of experienced orthodontists and staff are committed to helping you achieve a beautiful, healthy smile.',
   locale: 'en-US',
 
   business: {
     schemaType: 'LocalBusiness',
-    phone: '(555) 010-4477',
-    phoneHref: '+15550104477',
-    email: 'hello@example.com',
+    phone: '4023228838',
+    phoneHref: '+14023228838',
+    email: 'smile@platterriverortho.com',
     address: {
-      street: '1200 Market Street, Suite 400',
-      locality: 'Columbus',
-      region: 'OH',
-      postalCode: '43215',
+      street: '11844 Standing Stone Dr, Suite 100',
+      locality: 'Gretna',
+      region: 'NE',
+      postalCode: '68028',
       country: 'US',
     },
     geo: { latitude: 39.9612, longitude: -82.9988 },
-    hours: ['Mo-Fr 08:00-17:00', 'Sa 09:00-13:00'],
+    hours: ['Mo-Fr 07:00-19:00', 'Sa 09:00-15:00'],
     priceRange: '$$',
   },
 
   social: {
-    facebook: 'https://facebook.com/example',
-    instagram: 'https://instagram.com/example',
-    linkedin: 'https://linkedin.com/company/example',
+    facebook: 'https://www.facebook.com/profile.php?id=61578598942216',
+    instagram: 'https://www.instagram.com/platteriverorthodontics/',
+    youtube: 'https://www.youtube.com/@PlatteRiverOrthodonticsGretnaN',
   },
 
   defaultOgImage: '/og-default.png',
@@ -145,6 +145,10 @@ export const formattedAddress = [
   site.business.address.street,
   `${site.business.address.locality}, ${site.business.address.region} ${site.business.address.postalCode}`,
 ].join(', ');
+
+export const formattedPhone = site.business.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+
+export const topBarMessage = `Now Open in ${site.business.address.locality}, ${site.business.address.region} — ${site.business.address.street}`;
 
 /** No configured ID means the analytics bundle is never mounted at all. */
 export const hasAnalytics = Object.values(site.analytics).some(Boolean);

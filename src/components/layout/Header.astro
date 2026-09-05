@@ -3,11 +3,11 @@
  * Owns its outer element rather than wrapping in Section: sticky behaviour
  * needs its own positioning and stacking context. Container is used inside.
  *
- * The nav slots are filled by MegaMenu (md and up) and MobileNav (below md),
- * both reading src/config/navigation.ts — one tree, two renderings.
+ * On overlay pages the bar sits transparent over the hero, then switches to a
+ * white background once it sticks. MegaMenu (md+) and MobileNav (below md)
+ * both read src/config/navigation.ts.
  */
 import Container from '../ui/Container.astro';
-import Button from '../ui/Button.astro';
 import MegaMenu from './MegaMenu.astro';
 import MobileNav from './MobileNav.astro';
 import { navigation } from '../../config/navigation';
@@ -18,18 +18,23 @@ export type HeaderSticky = 'static' | 'sticky' | 'shrink' | 'hide-on-scroll';
 
 interface Props {
   sticky?: HeaderSticky;
+  /** Transparent over a hero until the bar sticks, then white. */
+  overlay?: boolean;
 }
 
-const { sticky = 'sticky' } = Astro.props;
+const { sticky = 'sticky', overlay = false } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const positioned = sticky !== 'static';
+const portal = navigation.portal?.href ? navigation.portal : undefined;
 ---
 
 <header
   data-sticky={sticky}
+  data-overlay={overlay ? 'true' : 'false'}
+  data-appearance={overlay ? 'overlay' : 'solid'}
   class:list={[
-    'group/header border-line-base bg-surface-base z-50 w-full border-b',
+    'group/header z-50 w-full transition-colors duration-200',
     // The mega panel is absolutely positioned against the header, so the header
     // must be a positioned ancestor even when it isn't sticky.
     positioned ? 'sticky top-0' : 'relative',
@@ -41,27 +46,40 @@ const positioned = sticky !== 'static';
     gap="none"
     class="justify-between gap-4 py-4 group-data-[scrolled=true]/header:py-2"
   >
-    <a href="/" class="text-ink-base flex items-center gap-2 font-semibold no-underline">
-      <Icon name="lucide:hexagon" class="text-brand-600 size-7" aria-hidden="true" />
-      <span>{site.name}</span>
+    <a
+      href="/"
+      class="flex items-center gap-2 font-semibold tracking-wide uppercase no-underline group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base"
+    >
+      <Icon name="lucide:hexagon" class="size-7" aria-hidden="true" />
+      <span class="max-lg:text-sm">{site.name}</span>
     </a>
 
-    <MegaMenu currentPath={currentPath} />
+    <div class="flex items-center gap-2 lg:gap-3">
+      <MegaMenu currentPath={currentPath} />
 
-    <div class="flex items-center gap-2">
-      <a
-        href={`tel:${site.business.phoneHref}`}
-        class="text-ink-base hidden min-h-11 items-center gap-2 px-2 font-medium no-underline lg:inline-flex"
-      >
-        <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
-        {site.business.phone}
-      </a>
+      {
+        portal && (
+          <a
+            href={portal.href}
+            class="hidden min-h-11 items-center px-2 text-sm no-underline xl:inline-flex group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base"
+          >
+            {portal.label}
+          </a>
+        )
+      }
 
       {
         navigation.cta && (
-          <Button href={navigation.cta.href} size="sm" class="max-md:hidden">
+          <a
+            href={navigation.cta.href}
+            class:list={[
+              'hidden min-h-11 items-center rounded-full border px-5 text-xs font-semibold tracking-wide uppercase no-underline md:inline-flex',
+              'group-data-[appearance=overlay]/header:border-white/70 group-data-[appearance=overlay]/header:bg-white/10 group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/20',
+              'group-data-[appearance=solid]/header:border-brand-600 group-data-[appearance=solid]/header:bg-brand-600 group-data-[appearance=solid]/header:text-neutral-0 group-data-[appearance=solid]/header:hover:bg-brand-700',
+            ]}
+          >
             {navigation.cta.label}
-          </Button>
+          </a>
         )
       }
 
@@ -74,15 +92,25 @@ const positioned = sticky !== 'static';
   header {
     transition:
       transform 200ms ease,
-      padding 150ms ease;
+      padding 150ms ease,
+      background-color 200ms ease,
+      color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  header[data-appearance='overlay'] {
+    background-color: transparent;
+    color: var(--color-ink-inverse);
+  }
+
+  header[data-appearance='solid'] {
+    background-color: var(--color-surface-base);
+    color: var(--color-ink-base);
+    box-shadow: var(--shadow-sm);
   }
 
   header[data-hidden='true'] {
     transform: translateY(-100%);
-  }
-
-  header[data-scrolled='true'] {
-    box-shadow: var(--shadow-sm);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -101,27 +129,41 @@ const positioned = sticky !== 'static';
 
   if (header) {
     const mode = header.dataset.sticky;
+    const overlay = header.dataset.overlay === 'true';
+    const topBar = document.querySelector<HTMLElement>('[data-topbar]');
+    let lastY = window.scrollY;
+    let ticking = false;
 
-    if (mode === 'shrink' || mode === 'hide-on-scroll') {
-      let lastY = window.scrollY;
-      let ticking = false;
+    const setVars = () => {
+      document.documentElement.style.setProperty('--nav-h', `${header.offsetHeight}px`);
+      if (topBar) {
+        document.documentElement.style.setProperty('--topbar-h', `${topBar.offsetHeight}px`);
+      }
+    };
 
-      const update = () => {
-        const y = window.scrollY;
-        header.dataset.scrolled = String(y > 8);
+    const update = () => {
+      const y = window.scrollY;
+      const topBarGone = !topBar || topBar.getBoundingClientRect().bottom <= 0;
 
-        if (mode === 'hide-on-scroll') {
-          // Never retract while the drawer or a mega panel is open.
-          const navOpen =
-            document.querySelector('#nav-toggle')?.getAttribute('aria-expanded') === 'true' ||
-            document.querySelector('.mega-item[data-open="true"]') !== null;
-          header.dataset.hidden = String(!navOpen && y > lastY && y > 120);
-        }
+      header.dataset.scrolled = String(y > 8 || topBarGone);
 
-        lastY = y;
-        ticking = false;
-      };
+      if (overlay && mode !== 'static') {
+        header.dataset.appearance = topBarGone ? 'solid' : 'overlay';
+      }
 
+      if (mode === 'hide-on-scroll') {
+        const navOpen =
+          document.querySelector('#nav-toggle')?.getAttribute('aria-expanded') === 'true' ||
+          document.querySelector('.mega-item[data-open="true"]') !== null;
+        header.dataset.hidden = String(!navOpen && y > lastY && y > 120);
+      }
+
+      lastY = y;
+      ticking = false;
+      setVars();
+    };
+
+    if (mode !== 'static') {
       window.addEventListener(
         'scroll',
         () => {
@@ -135,5 +177,8 @@ const positioned = sticky !== 'static';
 
       update();
     }
+
+    setVars();
+    window.addEventListener('resize', setVars, { passive: true });
   }
 </script>
