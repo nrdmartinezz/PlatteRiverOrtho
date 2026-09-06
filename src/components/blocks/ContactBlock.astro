@@ -7,68 +7,154 @@ import Container from '../ui/Container.astro';
 import Field from '../ui/Field.astro';
 import FormMessage from '../ui/FormMessage.astro';
 import Button from '../ui/Button.astro';
-import BlockHeader from './BlockHeader.astro';
+import Heading from '../ui/Heading.astro';
 import { Icon } from 'astro-icon/components';
 import { site, formattedAddress } from '../../config/site';
 import type { BlockProps } from './types';
 
 interface Props extends BlockProps {
+  formTitle?: string;
   services?: string[];
-  showDetails?: boolean;
 }
 
 const {
   background = 'base',
   spacing = 'md',
   width = 'page',
-  eyebrow,
-  title = 'Get in touch',
-  body,
+  eyebrow = 'Get In Touch',
+  title = 'Get an Appointment!',
+  body = 'Ready to start your smile journey? Fill out the form or reach us directly. We typically respond within one business day.',
   titleLevel = 2,
+  formTitle = 'Contact Us — Request Your Appointment!',
   services = [],
-  showDetails = true,
 } = Astro.props;
 
 const action = site.formEndpoint || '';
 const thankYou = new URL('/thank-you/', site.url).href;
+
+const socials = (
+  [
+    ['facebook', site.social.facebook],
+    ['instagram', site.social.instagram],
+    ['youtube', site.social.youtube],
+  ] as const
+).filter(([, href]) => Boolean(href)) as [string, string][];
+
+const socialIcons: Record<string, string> = {
+  facebook: 'lucide:facebook',
+  instagram: 'lucide:instagram',
+  youtube: 'lucide:youtube',
+};
 ---
 
-<Section background={background} spacing={spacing}>
-  <Container width={width} layout="row" gap="lg" class="md:items-start">
-    <div class="flex flex-col gap-6 md:w-3/5">
-      <BlockHeader eyebrow={eyebrow} title={title} body={body} level={titleLevel} />
+<Section background={background} spacing={spacing} id="contact">
+  <Container width={width}>
+    <div class="overflow-hidden rounded-2xl shadow-md md:grid md:grid-cols-2">
+      <div class="bg-brand-600 text-ink-inverse flex flex-col gap-6 p-8 md:p-10">
+        {
+          eyebrow && (
+            <p class="text-sm font-semibold tracking-wide uppercase text-white/70">{eyebrow}</p>
+          )
+        }
+        <Heading level={titleLevel} class="text-ink-inverse">
+          {title}
+        </Heading>
+        {body && <p class="text-white/80">{body}</p>}
 
-      {
-        !action && (
-          <p class="rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
-            No <code>formEndpoint</code> in <code>src/config/site.ts</code> — this form will not
-            submit until one is set.
-          </p>
-        )
-      }
+        <ul class="flex flex-col gap-4">
+          <li class="flex items-start gap-3">
+            <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <Icon name="lucide:map-pin" class="size-4" aria-hidden="true" />
+            </span>
+            <span>{formattedAddress}</span>
+          </li>
+          <li>
+            <a
+              href={`tel:${site.business.phoneHref}`}
+              data-source="contact-block"
+              class="inline-flex min-h-11 items-center gap-3 no-underline"
+            >
+              <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+                <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
+              </span>
+              402-322-8838
+            </a>
+          </li>
+          <li>
+            <a
+              href={`mailto:${site.business.email}`}
+              class="inline-flex min-h-11 items-center gap-3 break-all no-underline"
+            >
+              <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+                <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
+              </span>
+              {site.business.email}
+            </a>
+          </li>
+        </ul>
 
-      <form
-        id="contact-form"
-        action={action}
-        method="POST"
-        novalidate
-        class="flex w-full flex-col gap-4"
-        data-site-form
-        data-thank-you={thankYou}
-        data-track-source="contact-form"
-      >
-        {action && <input type="hidden" name="form_type" value="contact" />}
+        {
+          socials.length > 0 && (
+            <div class="mt-auto pt-4">
+              <p class="mb-3 text-sm tracking-wide uppercase text-white/70">Follow Us</p>
+              <ul class="flex gap-2">
+                {socials.map(([platform, href]) => (
+                  <li>
+                    <a
+                      href={href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="inline-flex size-9 items-center justify-center rounded-full bg-white/15 no-underline hover:bg-white/25"
+                    >
+                      <span class="sr-only">{platform}</span>
+                      <Icon name={socialIcons[platform]} class="size-4" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
 
-        {/* Honeypot: bots fill it, humans never see it. */}
-        <div class="absolute left-[-9999px]" aria-hidden="true">
-          <label for="_gotcha">Leave this field empty</label>
-          <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
-        </div>
+      <div class="bg-surface-muted flex flex-col gap-6 p-8 md:p-10">
+        <Heading level={3} size="md" class="text-ink-brand">
+          {formTitle}
+        </Heading>
 
-        <div class="grid gap-4 sm:grid-cols-2">
-          <Field name="name" label="Your name" autocomplete="name" required />
-          <Field name="email" label="Email" type="email" autocomplete="email" required />
-          <Field name="phone" label="Phone" type="tel" autocomplete="tel" />
+        {
+          !action && (
+            <p class="rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+              No <code>formEndpoint</code> in <code>src/config/site.ts</code> — this form will not
+              submit until one is set.
+            </p>
+          )
+        }
+
+        <form
+          id="contact-form"
+          action={action}
+          method="POST"
+          novalidate
+          class="flex w-full flex-col gap-4"
+          data-site-form
+          data-thank-you={thankYou}
+          data-track-source="contact-form"
+        >
+          {action && <input type="hidden" name="form_type" value="contact" />}
+
+          <div class="absolute left-[-9999px]" aria-hidden="true">
+            <label for="_gotcha">Leave this field empty</label>
+            <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <Field name="name" label="First & Last Name" autocomplete="name" required />
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <Field name="email" label="Email" type="email" autocomplete="email" required />
+            <Field name="phone" label="Phone" type="tel" autocomplete="tel" />
+          </div>
+
           {
             services.length > 0 && (
               <Field
@@ -82,62 +168,35 @@ const thankYou = new URL('/thank-you/', site.url).href;
               />
             )
           }
-        </div>
 
-        <Field
-          name="message"
-          label="How can we help?"
-          type="textarea"
-          help="A short description is plenty — we will follow up with questions."
-          required
-        />
+          <Field
+            name="message"
+            label="Tell us about your orthodontic concerns"
+            type="textarea"
+            rows={4}
+            required
+          />
 
-        <FormMessage />
-
-        <Button type="submit" size="lg" class="self-start">Send message</Button>
-      </form>
-    </div>
-
-    {
-      showDetails && (
-        <aside class="bg-surface-muted flex w-full flex-col gap-4 rounded-lg p-6 md:w-2/5">
-          <h3 class="font-semibold">Prefer to talk?</h3>
-
-          <a
-            href={`tel:${site.business.phoneHref}`}
-            data-source="contact-block"
-            class="text-ink-base inline-flex min-h-11 items-center gap-2 no-underline"
-          >
-            <Icon name="lucide:phone" class="text-brand-600 size-5" aria-hidden="true" />
-            {site.business.phone}
-          </a>
-
-          <a
-            href={`mailto:${site.business.email}`}
-            class="text-ink-base inline-flex min-h-11 items-center gap-2 break-all no-underline"
-          >
-            <Icon name="lucide:mail" class="text-brand-600 size-5" aria-hidden="true" />
-            {site.business.email}
-          </a>
-
-          <p class="flex items-start gap-2">
-            <Icon
-              name="lucide:map-pin"
-              class="text-brand-600 mt-1 size-5 shrink-0"
-              aria-hidden="true"
+          <label class="text-ink-muted flex items-start gap-3 text-sm">
+            <input
+              type="checkbox"
+              name="sms_consent"
+              value="yes"
+              class="border-line-base mt-1 size-4 rounded"
             />
-            <span>{formattedAddress}</span>
-          </p>
+            <span>
+              By sharing your phone number, you consent to receive communications from Platte River
+              Orthodontics, including notifications and appointment reminders. Message and data
+              rates may apply. Text STOP to unsubscribe.
+            </span>
+          </label>
 
-          <dl class="text-ink-muted flex flex-col gap-1 text-sm">
-            <dt class="font-medium">Hours</dt>
-            {site.business.hours.map((line) => (
-              <dd>{line}</dd>
-            ))}
-          </dl>
-        </aside>
-      )
-    }
+          <FormMessage />
+
+          <Button type="submit" size="lg" class="w-full">Submit Request</Button>
+        </form>
+      </div>
+    </div>
   </Container>
 </Section>
 

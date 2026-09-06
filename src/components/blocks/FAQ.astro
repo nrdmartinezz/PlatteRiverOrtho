@@ -6,8 +6,9 @@
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import BlockHeader from './BlockHeader.astro';
+import Button from '../ui/Button.astro';
 import { Icon } from 'astro-icon/components';
-import type { BlockProps } from './types';
+import type { BlockProps, BlockAction } from './types';
 
 export interface FaqItem {
   question: string;
@@ -19,13 +20,15 @@ interface Props extends BlockProps {
   schema?: boolean;
   /** Allows several answers open at once. */
   multiple?: boolean;
+  layout?: 'stack' | 'split';
+  action?: BlockAction;
 }
 
 const {
   background = 'base',
   spacing = 'md',
   align = 'start',
-  width = 'narrow',
+  width = 'page',
   eyebrow,
   title,
   body,
@@ -33,6 +36,8 @@ const {
   items,
   schema = true,
   multiple = false,
+  layout = 'stack',
+  action,
 } = Astro.props;
 
 const jsonLd = {
@@ -47,20 +52,35 @@ const jsonLd = {
 ---
 
 <Section background={background} spacing={spacing}>
-  <Container width={width} align={align} gap="lg">
-    <BlockHeader
-      eyebrow={eyebrow}
-      title={title}
-      body={body}
-      level={titleLevel}
-      centered={align === 'center'}
-    />
+  <Container
+    width={layout === 'split' ? width : 'narrow'}
+    layout={layout === 'split' ? 'row' : 'stack'}
+    align={align}
+    gap="lg"
+    class={layout === 'split' ? 'md:items-start' : undefined}
+  >
+    <div class:list={[layout === 'split' && 'flex flex-col items-start gap-5 md:w-2/5']}>
+      <BlockHeader
+        eyebrow={eyebrow}
+        title={title}
+        body={body}
+        level={titleLevel}
+        centered={layout === 'stack' && align === 'center'}
+      />
+      {
+        action && (
+          <Button href={action.href} variant={action.variant ?? 'primary'}>
+            {action.label}
+          </Button>
+        )
+      }
+    </div>
 
-    <div class="w-full">
+    <div class:list={['w-full', layout === 'split' && 'md:w-3/5']}>
       {
         items.map((item) => (
           <details name={multiple ? undefined : 'faq'} class="border-line-base group border-b">
-            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 py-2 font-medium">
+            <summary class="font-heading flex min-h-14 cursor-pointer items-center justify-between gap-4 py-3 font-medium">
               {item.question}
               <Icon
                 name="lucide:plus"

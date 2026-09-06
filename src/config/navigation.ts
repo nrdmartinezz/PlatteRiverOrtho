@@ -53,67 +53,52 @@ export interface NavigationConfig {
 export const navigation: NavigationConfig = {
   primary: [
     { label: 'Home', href: '/' },
-    {
-      label: 'Our Practice',
-      panel: {
-        kind: 'links',
-        links: [
-          { label: 'Our Story', href: '/about/' },
-          { label: 'The Team', href: '/about/team/' },
-          { label: 'Service Area', href: '/about/service-area/' },
-        ],
-      },
-    },
+    { label: 'About Dr. Carter', href: '/#meet-dr-carter' },
     {
       label: 'Services',
-      href: '/services/',
+      href: '/#services',
       panel: {
         kind: 'mega',
         columns: [
           {
-            heading: 'Residential',
+            heading: 'Treatments',
             links: [
               {
-                label: 'Repairs & Maintenance',
-                href: '/services/repairs/',
-                description: 'Fast turnaround on everyday problems.',
-                icon: 'lucide:wrench',
+                label: 'Invisalign® Clear Aligners',
+                href: '/contact/',
+                description: 'Nearly invisible trays, custom-planned for a discreet smile.',
+                icon: 'lucide:sparkles',
               },
               {
-                label: 'Installations',
-                href: '/services/installations/',
-                description: 'New systems, fitted and tested.',
-                icon: 'lucide:hammer',
-              },
-            ],
-          },
-          {
-            heading: 'Commercial',
-            links: [
-              {
-                label: 'Service Contracts',
-                href: '/services/contracts/',
-                description: 'Scheduled upkeep with priority response.',
-                icon: 'lucide:clipboard-check',
+                label: 'Fully Custom Braces',
+                href: '/contact/',
+                description: '3D-designed braces that are more efficient and comfortable.',
+                icon: 'lucide:smile',
               },
               {
-                label: 'Emergency Callout',
-                href: '/services/emergency/',
-                description: 'Around-the-clock cover.',
-                icon: 'lucide:siren',
+                label: 'Corrective Jaw Surgery',
+                href: '/contact/',
+                description: 'Surgical orthodontics for bite, airway, and facial balance.',
+                icon: 'lucide:scan',
+              },
+              {
+                label: 'MARPE Treatment',
+                href: '/services/marpe/',
+                description: 'Skeletal expansion for older teens and adults.',
+                icon: 'lucide:activity',
               },
             ],
           },
         ],
         featured: {
-          title: 'Not sure what you need?',
-          body: 'Tell us what is going on and we will point you at the right service.',
+          title: 'Not sure where to start?',
+          body: 'Your first visit is complimentary. We will walk through the right treatment together.',
           href: '/contact/',
-          cta: 'Talk to us',
+          cta: 'Book a free consult',
         },
       },
     },
-    { label: 'Testimonials', href: '/testimonials/' },
+    { label: 'Testimonials', href: '/#testimonials' },
     { label: 'Contact', href: '/contact/' },
   ],
 
@@ -122,18 +107,21 @@ export const navigation: NavigationConfig = {
 
   footer: [
     {
-      heading: 'Services',
+      heading: 'Quick Links',
       links: [
-        { label: 'Repairs & Maintenance', href: '/services/repairs/' },
-        { label: 'Installations', href: '/services/installations/' },
-        { label: 'Service Contracts', href: '/services/contracts/' },
+        { label: 'About Dr. Carter', href: '/#meet-dr-carter' },
+        { label: 'Services', href: '/#services' },
+        { label: 'Patient Testimonials', href: '/#testimonials' },
+        { label: 'Contact Us', href: '/contact/' },
+        { label: 'MARPE Treatment', href: '/services/marpe/' },
       ],
     },
     {
-      heading: 'Company',
+      heading: 'Contact & Hours',
       links: [
-        { label: 'About', href: '/about/' },
-        { label: 'Contact', href: '/contact/' },
+        { label: 'Book a Consult', href: '/contact/' },
+        { label: 'Call 402-322-8838', href: 'tel:+14023228838' },
+        { label: 'smile@platteriverortho.com', href: 'mailto:smile@platteriverortho.com' },
       ],
     },
   ],

@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Hero from '../../../components/blocks/Hero.astro';
+import FeatureSplit from '../../../components/blocks/FeatureSplit.astro';
+import BenefitsGrid from '../../../components/blocks/BenefitsGrid.astro';
+import ProcessSteps from '../../../components/blocks/ProcessSteps.astro';
+import WhySplit from '../../../components/blocks/WhySplit.astro';
+import Testimonials from '../../../components/blocks/Testimonials.astro';
+import FAQ from '../../../components/blocks/FAQ.astro';
+import VisitUs from '../../../components/blocks/VisitUs.astro';
+import ContactBlock from '../../../components/blocks/ContactBlock.astro';
+import heroMarpe from '../../../assets/hero-marpe.jpg';
+import drCarter from '../../../assets/dr-carter.png';
+import officeExterior from '../../../assets/office-exterior.jpg';
+
+const faqs = [
+  {
+    question: 'How much does orthodontic treatment cost?',
+    answer:
+      'Treatment costs vary depending on the type and complexity of your case. We offer flexible payment plans and financing options to make treatment accessible for every budget. Your free consultation includes a full cost breakdown with no surprises.',
+  },
+  {
+    question: 'Does orthodontic treatment hurt?',
+    answer:
+      'Most patients feel mild pressure for a few days after placement or activation. Discomfort is generally manageable with over-the-counter relief, and Dr. Carter will walk you through what to expect at each stage.',
+  },
+  {
+    question: 'How long does treatment take?',
+    answer:
+      'Active MARPE expansion typically lasts several weeks, followed by a retention period of several months so new bone can stabilize. Full orthodontic finishing with braces or Invisalign is customized to your case.',
+  },
+  {
+    question: 'Am I too old for braces or Invisalign?',
+    answer:
+      'No. Healthy teeth can be moved at any age. MARPE is specifically designed for older teens and adults whose palatal suture has matured, when traditional expanders are no longer enough.',
+  },
+  {
+    question: 'Do you offer virtual consultations?',
+    answer:
+      'Yes. You can start with a convenient virtual consult, then come in for 3D imaging when you are ready to move forward.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer:
+      'Patients visit us from Gretna, Omaha, Papillion, and throughout the greater Nebraska area.',
+  },
+];
+---
+
+<BaseLayout
+  overlay
+  title="MARPE Treatment in Gretna, NE"
+  description="Non-surgical MARPE (miniscrew-assisted rapid palatal expansion) with Dr. Chad B. Carter at Platte River Orthodontics in Gretna, Nebraska."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'MARPE Treatment', href: '/services/marpe/' },
+  ]}
+  service={{
+    name: 'MARPE Treatment',
+    description:
+      'Miniscrew-assisted rapid palatal expansion for older teens and adults with a narrow upper jaw.',
+  }}
+  faqs={faqs}
+>
+  <Hero
+    overlay
+    eyebrow="Platte River Orthodontics | Dr. Chad B. Carter"
+    title="MARPE Treatment"
+    titleAccent="in Gretna, NE"
+    body="Discover advanced non-surgical MARPE (Miniscrew-Assisted Rapid Palatal Expansion) treatment at Platte River Orthodontics in Gretna, Nebraska. Board-certified orthodontist Dr. Chad B. Carter offers this cutting-edge solution for older teens and adults seeking to correct a narrow upper jaw, improve their bite, create space for a beautiful smile, and enhance breathing and airway health without the need for invasive jaw surgery."
+    image={heroMarpe}
+    imageAlt="Treatment bays at Platte River Orthodontics"
+    actions={[
+      { label: 'Book Your Free Consult', href: '/contact/' },
+      { label: 'Refer a Patient', href: '/contact/', variant: 'secondary' },
+    ]}
+  />
+
+  <FeatureSplit
+    reverse
+    subtitle="We are the Best Choice For MARPE in Gretna"
+    title="MARPE Treatment at Platte River Orthodontics"
+    body="At Platte River Orthodontics, led by Dr. Chad B. Carter, we understand that a narrow upper jaw (maxilla) can impact far more than just your smile. It can contribute to crowded teeth, crossbites, breathing difficulties, mouth breathing habits, and even affect facial harmony and airway function. For older teens and adults whose midpalatal suture has matured or fused, traditional expanders often fall short because they primarily move teeth rather than the underlying bone. MARPE or Miniscrew-Assisted Rapid Palatal Expansion (also known as MSE or Maxillary Skeletal Expander), is a revolutionary, minimally invasive orthodontic technique that delivers true skeletal expansion. By using small, temporary miniscrews (TADs) anchored directly into the palate bone, Dr. Carter can apply precise forces to gently separate the midpalatal suture and widen the upper jaw at the skeletal level. This creates stable, predictable results with minimal dental side effects."
+    image={drCarter}
+    imageAlt="Dr. Chad Carter"
+    callout={{
+      title: "Dr. Carter's Experience",
+      body: 'As an Associate Professor and international lecturer on complex craniofacial growth and dentofacial orthopedics, combined with his U.S. Air Force background emphasizing precision and evidence-based care, Dr. Carter brings exceptional skill to every MARPE case. His physics research foundation and global volunteer experience further enhance his ability to deliver personalized, compassionate treatment for even the most challenging expansion needs.',
+    }}
+    actions={[
+      { label: 'Learn More About Dr. Carter', href: '/#meet-dr-carter' },
+      { label: 'Schedule a Consult', href: '/contact/', variant: 'secondary' },
+    ]}
+  />
+
+  <BenefitsGrid
+    layout="grid"
+    eyebrow="Why Choose MARPE For Treatment"
+    title="Benefits of MARPE Treatment"
+    body="Choosing MARPE at Platte River Orthodontics under Dr. Carter’s care offers transformative advantages for patients in Gretna, Omaha, Papillion, and throughout the greater Nebraska area:"
+    items={[
+      {
+        icon: 'lucide:scan',
+        title: 'True Skeletal Expansion',
+        body: 'Miniscrews anchor into the palate so we widen the jaw at the bone — not just tip the teeth — for stable, predictable change.',
+      },
+      {
+        icon: 'lucide:wind',
+        title: 'Better Breathing & Airway',
+        body: 'Widening a narrow maxilla can reduce mouth breathing, support nasal airflow, and improve overall airway function.',
+      },
+      {
+        icon: 'lucide:smile',
+        title: 'Space Without Extractions',
+        body: 'Skeletal expansion creates room for crowded or impacted teeth and a broader, more balanced smile.',
+      },
+      {
+        icon: 'lucide:shield',
+        title: 'A Non-Surgical Alternative',
+        body: 'For many older teens and adults, MARPE avoids the need for more invasive jaw surgery while still delivering skeletal results.',
+      },
+    ]}
+  />
+
+  <ProcessSteps
+    background="muted"
+    align="center"
+    eyebrow="Simple Process"
+    title="Your Path to a Confident Smile"
+    body="Getting started is easier than you think. Here's what to expect when you choose Platte River Orthodontics."
+    items={[
+      {
+        title: 'Complimentary Consultation & Advanced 3D Imaging',
+        body: 'Your experience begins with a no-obligation consultation in Gretna. Dr. Carter performs a comprehensive exam and uses advanced digital imaging, including 3D CBCT when indicated, to evaluate jaw structure, suture status, bone quality, airway, and facial proportions.',
+      },
+      {
+        title: 'Custom MARPE Device Fabrication',
+        body: 'Using digital planning software, Dr. Carter designs a custom expander for your palate and goals. Optimal miniscrew positions are planned for skeletal effect, safety, and comfort, then fabricated with precision.',
+      },
+      {
+        title: 'Comfortable Placement & Active Expansion Phase',
+        body: 'Placement is typically quick and well-tolerated under local anesthesia. You receive a simple activation protocol — usually a small daily turn — with close supervision. Discomfort is generally mild and manageable.',
+      },
+      {
+        title: 'Retention, Stabilization & Full Orthodontic Finishing',
+        body: 'After expansion, the device stays in place so new bone can mature. Dr. Carter then transitions you into braces or Invisalign to refine tooth positions, perfect your bite, and reveal your ideal smile.',
+      },
+    ]}
+  />
+
+  <WhySplit
+    eyebrow="MARPE Treatment in Gretna, NE"
+    title="Why Choose Dr. Chad B. Carter for MARPE Treatment?"
+    body="Patients and referring doctors throughout the Omaha metropolitan area choose Platte River Orthodontics for advanced MARPE care because of Dr. Carter’s exceptional qualifications and patient-centered approach:"
+    items={[
+      'Board-certified orthodontist and Associate Professor of Orthodontics',
+      'International lecturer on complex craniofacial growth and dentofacial orthopedics',
+      'U.S. Air Force veteran with a precision, evidence-based approach to care',
+      'Consultant experience with complex craniofacial and airway cases',
+      'Physics research foundation that informs biomechanics and treatment planning',
+      'Global volunteer service that shapes a compassionate, whole-patient mindset',
+      'Convenient Gretna location serving Omaha, Papillion, and greater Nebraska',
+    ]}
+    asideEyebrow="Why Choose MARPE For Treatment"
+    asideTitle="Is MARPE Right for You or Your Teen?"
+    asideBody="MARPE is typically recommended for older teens (after the growth spurt) and adults who have a narrow upper jaw and a posterior crossbite, significant crowding or impacted teeth, a narrow palate contributing to mouth breathing or airway concerns, a desire for non-surgical expansion with stable skeletal results, or facial asymmetry related to maxillary width. During your complimentary consultation, Dr. Carter will use advanced 3D imaging to determine if MARPE is the most appropriate option. Younger children usually benefit from traditional or Invisalign First expanders, which Dr. Carter also offers."
+    image={drCarter}
+    imageAlt="Dr. Chad Carter"
+  />
+
+  <Testimonials
+    eyebrow="Patient Stories"
+    title="Patient Testimonials"
+    columns={2}
+    ratingSummary={{ score: '5.0', label: 'Based on Google Reviews' }}
+    items={[
+      {
+        quote:
+          'After having my teeth shift many years post-braces, Dr. Carter was able to get me set up with Invisalign. The treatment has been so comfortable, easy, and has given me results that have boosted my confidence. Thank you, team, you’re the best!',
+        name: 'Lina',
+        role: 'Google Review',
+        rating: 5,
+      },
+      {
+        quote:
+          'Dr. Carter and his team were excellent! They are very easy to talk with, worked with us through any concerns we had, made sure we understood the treatment plan, and provided the best care. They ensured my daughter was comfortable at every appointment.',
+        name: 'Patient',
+        role: 'Google Review',
+        rating: 5,
+      },
+      {
+        quote:
+          'Dr Carter came into my life when I was dealing with the worst dental trauma I could have imagined. He and his team not only fixed my teeth and brought my smile back, but they also made me feel like family during the months-long treatment.',
+        name: 'Chris',
+        role: 'Google Review',
+        rating: 5,
+      },
+      {
+        quote:
+          'As an adult in braces, I was concerned about how it might affect my confidence, but with Dr. Carter, I left each appointment feeling more confident. It’s thanks to them that I wake up and smile more every day.',
+        name: 'Patient',
+        role: 'Google Review',
+        rating: 5,
+      },
+    ]}
+  />
+
+  <FAQ
+    layout="split"
+    background="muted"
+    eyebrow="Common Questions"
+    title="Frequently Asked Questions"
+    body="Have more questions? We're happy to help. Call us at 402-322-8838 or schedule your free consultation online."
+    action={{ label: 'Book Free Consult', href: '/contact/' }}
+    items={faqs}
+  />
+
+  <VisitUs
+    image={officeExterior}
+    paragraphs={[
+      'Our Gretna office is ready to welcome MARPE patients from across the Omaha metro. Advanced imaging, extended hours, and a complimentary consult make it easy to get started.',
+    ]}
+  />
+
+  <ContactBlock />
+</BaseLayout>

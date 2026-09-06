@@ -89,18 +89,18 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   url: 'https://platteriverorthodontics.com/',
-  name: 'Platter River Orthodontics',
-  legalName: 'Platter River Orthodontics',
+  name: 'Platte River Orthodontics',
+  legalName: 'Platte River Orthodontics',
   tagline: 'Your Smile, Our Passion',
   description:
-    'Platter River Orthodontics is a leading orthodontic practice dedicated to providing exceptional care for patients of all ages. Our team of experienced orthodontists and staff are committed to helping you achieve a beautiful, healthy smile.',
+    'With precision and care, we craft smiles that radiate confidence—supporting our patients’ success at every stage of life. Modern orthodontic care in Gretna, Nebraska for families across Omaha, Papillion, and the surrounding communities.',
   locale: 'en-US',
 
   business: {
-    schemaType: 'LocalBusiness',
+    schemaType: 'Dentist',
     phone: '4023228838',
     phoneHref: '+14023228838',
-    email: 'smile@platterriverortho.com',
+    email: 'smile@platteriverortho.com',
     address: {
       street: '11844 Standing Stone Dr, Suite 100',
       locality: 'Gretna',
@@ -108,7 +108,7 @@ export const site: SiteConfig = {
       postalCode: '68028',
       country: 'US',
     },
-    geo: { latitude: 39.9612, longitude: -82.9988 },
+    geo: { latitude: 41.1375, longitude: -96.2397 },
     hours: ['Mo-Fr 07:00-19:00', 'Sa 09:00-15:00'],
     priceRange: '$$',
   },

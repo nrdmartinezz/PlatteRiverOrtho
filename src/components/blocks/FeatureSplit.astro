@@ -8,20 +8,27 @@ import Button from '../ui/Button.astro';
 import { Icon } from 'astro-icon/components';
 import type { BlockProps, BlockAction } from './types';
 
-interface Props extends BlockProps {
+interface Props extends Omit<BlockProps, 'body'> {
+  id?: string;
+  subtitle?: string;
+  body?: string | string[];
   image?: ImageMetadata;
   imageAlt?: string;
   bullets?: string[];
   actions?: BlockAction[];
   /** Image right on desktop by default; small screens always stack image-first. */
   reverse?: boolean;
+  callout?: { title: string; body?: string; items?: string[] };
+  badge?: { value: string; label: string };
 }
 
 const {
+  id,
   background = 'base',
   spacing = 'md',
   width = 'page',
   eyebrow,
+  subtitle,
   title,
   body,
   titleLevel = 2,
@@ -30,31 +37,43 @@ const {
   bullets = [],
   actions = [],
   reverse = false,
+  callout,
+  badge,
 } = Astro.props;
+
+const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
 ---
 
-<Section background={background} spacing={spacing}>
-  <Container width={width} layout="row" gap="lg">
-    <div class:list={['w-full md:w-1/2', reverse ? 'md:order-2' : 'md:order-1']}>
+<Section background={background} spacing={spacing} id={id}>
+  <Container width={width} layout="row" gap="lg" class="md:items-center">
+    <div class:list={['relative w-full md:w-5/12', reverse ? 'md:order-2' : 'md:order-1']}>
       {
         image ? (
           <Image
             src={image}
             alt={imageAlt}
             widths={[480, 768, 1024]}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 40vw"
             loading="lazy"
-            class="w-full rounded-lg object-cover"
+            class="w-full rounded-2xl object-cover"
           />
         ) : (
-          <div class="bg-surface-muted aspect-4/3 w-full rounded-lg" aria-hidden="true" />
+          <div class="bg-surface-muted aspect-4/5 w-full rounded-2xl" aria-hidden="true" />
+        )
+      }
+      {
+        badge && (
+          <div class="bg-brand-600 text-ink-inverse absolute right-4 bottom-4 rounded-2xl px-4 py-3 shadow-md">
+            <p class="font-heading text-2xl font-bold">{badge.value}</p>
+            <p class="text-xs tracking-wide uppercase text-white/80">{badge.label}</p>
+          </div>
         )
       }
     </div>
 
     <div
       class:list={[
-        'flex flex-col items-start gap-5 md:w-1/2',
+        'flex flex-col items-start gap-4 md:w-7/12',
         reverse ? 'md:order-1' : 'md:order-2',
       ]}
     >
@@ -63,8 +82,17 @@ const {
           <p class="text-ink-brand text-sm font-semibold tracking-wide uppercase">{eyebrow}</p>
         )
       }
+      {
+        subtitle && (
+          <p class="text-ink-brand text-sm font-semibold tracking-wide uppercase">{subtitle}</p>
+        )
+      }
       {title && <Heading level={titleLevel}>{title}</Heading>}
-      {body && <p class="text-ink-muted max-w-reading">{body}</p>}
+      {
+        paragraphs.map((paragraph) => (
+          <p class="text-ink-muted max-w-reading">{paragraph}</p>
+        ))
+      }
 
       {
         bullets.length > 0 && (
@@ -84,11 +112,39 @@ const {
       }
 
       {
+        callout && (
+          <div class="bg-surface-muted w-full rounded-2xl p-6">
+            <Heading level={3} size="md" class="text-ink-brand">
+              {callout.title}
+            </Heading>
+            {callout.body && <p class="text-ink-muted mt-3">{callout.body}</p>}
+            {callout.items && callout.items.length > 0 && (
+              <ul class="mt-4 flex flex-col gap-2">
+                {callout.items.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <Icon
+                      name="lucide:circle-check"
+                      class="text-brand-600 mt-0.5 size-4 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span class="text-ink-muted text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )
+      }
+
+      {
         actions.length > 0 && (
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-3 pt-2">
             {actions.map((action) => (
               <Button href={action.href} variant={action.variant ?? 'primary'}>
                 {action.label}
+                {action.variant !== 'secondary' && (
+                  <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
+                )}
               </Button>
             ))}
           </div>

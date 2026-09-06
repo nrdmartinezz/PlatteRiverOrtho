@@ -1,0 +1,84 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import { Icon } from 'astro-icon/components';
+import type { BlockProps } from './types';
+
+export interface TreatmentCard {
+  image: ImageMetadata;
+  imageAlt: string;
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+}
+
+interface Props extends BlockProps {
+  items: TreatmentCard[];
+  intro?: string;
+}
+
+const {
+  background = 'base',
+  spacing = 'md',
+  width = 'page',
+  eyebrow,
+  title,
+  titleLevel = 2,
+  items,
+  intro,
+} = Astro.props;
+---
+
+<Section background={background} spacing={spacing} id="services">
+  <Container width={width} gap="lg">
+    <div class="flex w-full flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div class="flex flex-col gap-3">
+        {
+          eyebrow && (
+            <p class="text-ink-brand text-sm font-semibold tracking-wide uppercase">{eyebrow}</p>
+          )
+        }
+        {title && <Heading level={titleLevel}>{title}</Heading>}
+      </div>
+      {intro && <p class="text-ink-muted max-w-xs text-sm md:text-right">{intro}</p>}
+    </div>
+
+    <ul class="grid w-full gap-6 md:grid-cols-3">
+      {
+        items.map((item) => (
+          <li>
+            <article class="border-line-base bg-surface-base flex h-full flex-col overflow-hidden rounded-2xl border">
+              <div class="relative h-52 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  widths={[400, 640, 800]}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  class="size-full object-cover"
+                />
+                <div class="absolute inset-0 bg-linear-to-t from-brand-100/70 to-transparent" />
+              </div>
+              <div class="flex flex-1 flex-col gap-4 p-6">
+                <Heading level={3} size="md" class="text-ink-brand">
+                  {item.title}
+                </Heading>
+                <p class="text-ink-muted flex-1 text-sm">{item.body}</p>
+                <a
+                  href={item.href}
+                  class="bg-accent-500 text-neutral-0 hover:bg-accent-600 inline-flex min-h-11 items-center justify-center gap-2 self-start rounded-full px-5 text-xs font-semibold tracking-wide uppercase no-underline"
+                >
+                  {item.cta}
+                  <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</Section>

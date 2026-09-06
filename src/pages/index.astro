@@ -1,31 +1,54 @@
 ---
-/**
- * Demo home page, assembled entirely from blocks so it doubles as a working
- * example and a build smoke test. `npm run setup` clears this per project.
- */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/blocks/Hero.astro';
-import ServicesGrid from '../components/blocks/ServicesGrid.astro';
-import ProcessSteps from '../components/blocks/ProcessSteps.astro';
 import Stats from '../components/blocks/Stats.astro';
+import BenefitsGrid from '../components/blocks/BenefitsGrid.astro';
+import FeatureSplit from '../components/blocks/FeatureSplit.astro';
+import TreatmentCards from '../components/blocks/TreatmentCards.astro';
+import ProcessSteps from '../components/blocks/ProcessSteps.astro';
 import Testimonials from '../components/blocks/Testimonials.astro';
-import FAQ from '../components/blocks/FAQ.astro';
 import CTABanner from '../components/blocks/CTABanner.astro';
-import { site } from '../config/site';
+import FAQ from '../components/blocks/FAQ.astro';
+import VisitUs from '../components/blocks/VisitUs.astro';
+import ContactBlock from '../components/blocks/ContactBlock.astro';
 import heroOffice from '../assets/hero-office.jpg';
+import drCarter from '../assets/dr-carter.png';
+import invisalign from '../assets/invisalign.jpg';
+import braces from '../assets/braces.jpg';
+import jawSurgery from '../assets/jaw-surgery.jpg';
+import quoteBand from '../assets/quote-band.jpg';
+import officeExterior from '../assets/office-exterior.jpg';
 
 const faqs = [
   {
-    question: 'Do you offer emergency callouts?',
-    answer: 'Yes — we cover emergencies around the clock, including weekends and holidays.',
+    question: 'When should my child first visit the orthodontist?',
+    answer:
+      'The American Association of Orthodontists recommends that children have their first orthodontic checkup by age seven. Early visits help us catch and correct problems while they are still easy to fix.',
   },
   {
-    question: 'Are you licensed and insured?',
-    answer: 'Fully licensed and insured. We can supply certificates on request before work starts.',
+    question: 'How long does Invisalign treatment usually take?',
+    answer:
+      'Treatment time depends on your smile goals and how consistently trays are worn. Many patients finish in 12 to 18 months. Dr. Carter will give you a personalized timeline at your complimentary consult.',
   },
   {
-    question: 'How quickly can you get here?',
-    answer: 'Typically within two hours across the metro area, and same-day everywhere else.',
+    question: 'Do you treat adults too?',
+    answer:
+      'Yes. A large share of our patients are adults. We offer discreet options like Invisalign and fully custom braces so treatment can fit work, family, and social life.',
+  },
+  {
+    question: 'Is MARPE treatment only for adults?',
+    answer:
+      'MARPE is typically recommended for older teens and adults whose midpalatal suture has matured. Younger children usually benefit from traditional or Invisalign First expanders. Dr. Carter will confirm the right option with 3D imaging.',
+  },
+  {
+    question: 'Do you accept insurance and offer payment plans?',
+    answer:
+      'Yes. We work with most major insurance plans and offer flexible payment and financing options. Your free consultation includes a clear cost breakdown with no surprises.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer:
+      'Our office is in Gretna, Nebraska, and we welcome families from Omaha, Papillion, and the surrounding communities.',
   },
 ];
 ---
@@ -33,7 +56,7 @@ const faqs = [
 <BaseLayout overlay faqs={faqs}>
   <Hero
     overlay
-    eyebrow={`Now open in ${site.business.address.locality}, ${site.business.address.region}`}
+    eyebrow="Now Open in Gretna, Nebraska"
     title="Crafting Smiles That"
     titleAccent="Radiate Confidence"
     body={[
@@ -41,7 +64,7 @@ const faqs = [
       'Dr. Chad B. Carter created this practice to deliver modern orthodontic care in a warm, friendly environment. Whether you are bringing in your child for their first visit or you are an adult looking to finally straighten your teeth, we treat every patient like family.',
     ]}
     image={heroOffice}
-    imageAlt="A bright, modern orthodontic treatment room"
+    imageAlt="The treatment floor at Platte River Orthodontics in Gretna"
     actions={[
       { label: 'Book Your Free Consult', href: '/contact/' },
       { label: 'Explore Services', href: '#services', variant: 'secondary' },
@@ -53,84 +76,201 @@ const faqs = [
     ]}
   />
 
-  <ServicesGrid
-    id="services"
-    eyebrow="Services"
-    title="What we do"
-    body="Straightforward work across residential and commercial properties."
+  <Stats
+    compact
+    background="muted"
+    items={[
+      { value: '10+', label: 'Years of Experience' },
+      { value: 'Free', label: 'Consultations' },
+      { value: '5★', label: 'Patient Reviews' },
+      { value: '7am–7pm', label: 'Mon–Fri Hours' },
+    ]}
+  />
+
+  <BenefitsGrid
+    eyebrow="Why Choose Us"
+    title="Our Benefits"
+    body="Everything we do is designed around your experience — from the moment you walk in to the day you reveal your new smile."
     items={[
       {
-        icon: 'lucide:wrench',
-        title: 'Repairs & Maintenance',
-        body: 'Same-week appointments for the problems that cannot wait.',
-        href: '/services/repairs/',
+        featured: true,
+        icon: 'lucide:circle-dollar-sign',
+        title: 'Affordable Care',
+        body: "Flexible payment plans and financing options designed to fit your family's budget — because a great smile shouldn't be out of reach.",
+        href: '/contact/',
+        cta: 'Ask About Financing',
       },
       {
-        icon: 'lucide:hammer',
-        title: 'Installations',
-        body: 'New systems specified, fitted, and tested to code.',
-        href: '/services/installations/',
+        icon: 'lucide:monitor',
+        title: 'Virtual Consultations',
+        body: 'Start your smile journey from the comfort of home with our convenient virtual consult option.',
       },
       {
-        icon: 'lucide:clipboard-check',
-        title: 'Service Contracts',
-        body: 'Scheduled upkeep with priority response when something goes wrong.',
-        href: '/services/contracts/',
+        icon: 'lucide:heart',
+        title: 'Local Family & Veteran Owned',
+        body: 'Dr. Carter is a U.S. Air Force veteran and proud Gretna community member who treats every patient like family.',
+      },
+      {
+        icon: 'lucide:scan',
+        title: 'Advanced 3D Technology',
+        body: 'State-of-the-art digital imaging and custom treatment planning for more precise, faster results.',
+      },
+      {
+        icon: 'lucide:clock',
+        title: 'Extended Hours',
+        body: 'Open 7am–7pm Mon–Fri and Saturdays 9am–3pm to fit your busy schedule.',
+      },
+    ]}
+  />
+
+  <FeatureSplit
+    id="meet-dr-carter"
+    reverse
+    eyebrow="Meet Your Orthodontist"
+    subtitle="Father. Husband. Veteran. Orthodontist. Community Educator."
+    title="Meet Dr. Chad Carter"
+    body={[
+      'Dr. Carter—known by many as “SnaggleTooth”—brings heart, humor, and high-level expertise to every smile he helps shape. As an orthodontist and dentofacial orthopedist, he’s passionate about blending science with artistry to create confident, healthy outcomes for patients of all ages.',
+      'Whether teaching as an Associate Professor, consulting on craniofacial cases, or working one-on-one with families, Dr. Carter is driven by a love for lifelong learning and meaningful connection.',
+    ]}
+    image={drCarter}
+    imageAlt="Dr. Chad Carter"
+    callout={{
+      title: "Dr. Carter's Experience",
+      items: [
+        'Over a decade of service-focused experience in dentistry, orthodontics, and community care',
+        'Served 7 years as a volunteer in West Africa before pursuing dentistry',
+        'U.S. Air Force veteran with advanced training in orthodontics and dentofacial orthopedics',
+        'Associate Professor and international lecturer on complex craniofacial growth and orthodontics',
+      ],
+    }}
+    badge={{ value: '10+', label: 'Years Experience' }}
+    actions={[
+      { label: 'Learn More About Dr. Carter', href: '/contact/' },
+      { label: 'Schedule a Consult', href: '/contact/', variant: 'secondary' },
+    ]}
+  />
+
+  <TreatmentCards
+    eyebrow="What We Do"
+    title="Services We Offer"
+    intro="Every treatment is personalized using advanced 3D technology and Dr. Carter's clinical expertise."
+    items={[
+      {
+        image: invisalign,
+        imageAlt: 'Invisalign clear aligners and case',
+        title: 'Invisalign® Clear Aligners',
+        body: 'Invisalign® offers a discreet, comfortable way to straighten teeth using nearly invisible trays — no brackets, no wires, no lifestyle disruptions. Custom-tailored for efficient, predictable results.',
+        href: '/contact/',
+        cta: 'Learn More about Invisalign',
+      },
+      {
+        image: braces,
+        imageAlt: 'Custom ceramic braces on a dental model',
+        title: 'Fully Custom Braces',
+        body: "Dr. Carter uses fully custom braces designed just for you — using advanced 3D technology for a personalized treatment plan that's more efficient and comfortable than traditional braces.",
+        href: '/contact/',
+        cta: 'See Our Braces Options',
+      },
+      {
+        image: jawSurgery,
+        imageAlt: 'The Platte River Orthodontics clinical team',
+        title: 'Corrective Jaw Surgery',
+        body: 'This life-changing treatment improves your ability to chew, speak, and breathe while enhancing facial aesthetics. Ideal for underbites, overbites, open bites, facial asymmetry, or sleep apnea.',
+        href: '/contact/',
+        cta: 'Book a Consultation',
       },
     ]}
   />
 
   <ProcessSteps
     background="muted"
-    eyebrow="Process"
-    title="How it works"
+    align="center"
+    eyebrow="Simple Process"
+    title="Your Path to a Confident Smile"
+    body="Getting started is easier than you think. Here's what to expect when you choose Platte River Orthodontics."
     items={[
-      { title: 'Get in touch', body: 'Call or send a message describing the problem.' },
-      { title: 'We assess', body: 'A quick look in person, or from photos where that works.' },
-      { title: 'Fixed quote', body: 'Agreed before any work begins. No surprises later.' },
-      { title: 'Work completed', body: 'Guaranteed for twelve months from the day we finish.' },
-    ]}
-  />
-
-  <Stats
-    title="By the numbers"
-    items={[
-      { value: '18 yrs', label: 'Serving the region' },
-      { value: '4.9/5', label: 'Average review score' },
-      { value: '2 hrs', label: 'Typical callout response' },
+      {
+        title: 'Book Your Free Consult',
+        body: 'Schedule online or call us at 402-322-8838. Your first visit is completely free — no pressure, no commitment.',
+      },
+      {
+        title: 'Get Your Custom Plan',
+        body: "Dr. Carter uses advanced 3D imaging to create a personalized treatment plan tailored to your smile goals and lifestyle.",
+      },
+      {
+        title: 'Start Smiling with Confidence',
+        body: "Begin treatment and watch your smile transform. We'll support you every step with flexible scheduling and extended hours.",
+      },
     ]}
   />
 
   <Testimonials
-    eyebrow="Reviews"
-    title="What clients say"
+    eyebrow="Patient Stories"
+    title="Patient Testimonials"
+    columns={2}
+    ratingSummary={{ score: '5.0', label: 'Based on Google Reviews' }}
     items={[
       {
-        quote: 'Turned up when they said they would and fixed it on the first visit.',
-        name: 'Dana R.',
-        role: 'Homeowner',
+        quote:
+          'After having my teeth shift many years post-braces, Dr. Carter was able to get me set up with Invisalign. The treatment has been so comfortable, easy, and has given me results that have boosted my confidence. Thank you, team, you’re the best!',
+        name: 'Lina',
+        role: 'Google Review',
         rating: 5,
       },
       {
-        quote: 'Clear pricing, no upselling, and they cleaned up after themselves.',
-        name: 'Mark T.',
-        role: 'Office manager',
+        quote:
+          'Dr. Carter and his team were excellent! They are very easy to talk with, worked with us through any concerns we had, made sure we understood the treatment plan, and provided the best care. They ensured my daughter was comfortable at every appointment. I just can’t say enough good about the care we received.',
+        name: 'Patient',
+        role: 'Google Review',
         rating: 5,
       },
       {
-        quote: 'They handle all four of our sites now. Easiest contractor we work with.',
-        name: 'Priya S.',
-        role: 'Facilities lead',
+        quote:
+          'Dr Carter came into my life when I was dealing with the worst dental trauma I could have imagined. He and his team not only fixed my teeth and brought my smile back, but they also made me feel like family during the months-long treatment. You would be hard pressed to find a better orthodontist!',
+        name: 'Chris',
+        role: 'Google Review',
+        rating: 5,
+      },
+      {
+        quote:
+          'As an adult in braces, I was concerned about how it might affect my confidence, but with Dr. Carter, I left each appointment feeling more confident. They helped educate me on what was going on with each step of treatment. It’s thanks to them that I wake up and smile more every day.',
+        name: 'Patient',
+        role: 'Google Review',
         rating: 5,
       },
     ]}
   />
 
-  <FAQ eyebrow="FAQ" title="Common questions" items={faqs} schema={false} />
-
   <CTABanner
-    title="Ready to get started?"
-    body="Tell us what you need and we will come back to you the same day."
-    actions={[{ label: 'Request a quote', href: '/contact/' }]}
+    eyebrow="Limited New Patient Spots"
+    title="“With precision and care, we craft smiles that radiate confidence—supporting our patients’ success at every stage of life.”"
+    body="Rooted in years of experience, global service, and advanced training, this practice is more than a clinic — it's a place where patients of all ages are welcomed, educated, and empowered. Welcome, Gretna — your smile's new home is here!"
+    image={quoteBand}
+    imageAlt=""
+    actions={[
+      { label: 'Schedule Your Appointment', href: '/contact/' },
+      { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
+    ]}
   />
+
+  <FAQ
+    layout="split"
+    eyebrow="Common Questions"
+    title="Frequently Asked Questions"
+    body="Have more questions? We're happy to help. Call us at 402-322-8838 or schedule your free consultation online."
+    action={{ label: 'Book Free Consult', href: '/contact/' }}
+    items={faqs}
+    schema={false}
+  />
+
+  <VisitUs
+    image={officeExterior}
+    paragraphs={[
+      "Our brand-new orthodontic office in Gretna is now open and ready to welcome you! More than just a location, it's a space thoughtfully crafted around your experience.",
+      'From advanced digital imaging and modern treatment bays to flexible scheduling and a warm, welcoming atmosphere, everything about our office is built to make you feel at ease.',
+    ]}
+  />
+
+  <ContactBlock />
 </BaseLayout>
