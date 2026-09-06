@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/blocks/Hero.astro';
+import VisitUs from '../../components/blocks/VisitUs.astro';
+import ContactBlock from '../../components/blocks/ContactBlock.astro';
+import heroOffice from '../../assets/hero-office.jpg';
+import officeExterior from '../../assets/office-exterior.jpg';
+---
+
+<BaseLayout
+  overlay
+  title="Contact Us"
+  description="Request a complimentary consultation at Platte River Orthodontics in Gretna, Nebraska. Call 402-322-8838 or send us a message."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Contact Us', href: '/contact/' },
+  ]}
+>
+  <Hero
+    overlay
+    eyebrow="Platte River Orthodontics"
+    title="Contact Us"
+    titleAccent="Request Your Appointment"
+    body="Ready to start your smile journey? Fill out the form or reach us directly. We typically respond within one business day. Your first visit is complimentary — no pressure, no commitment."
+    image={heroOffice}
+    imageAlt="The Platte River Orthodontics office in Gretna"
+    actions={[
+      { label: 'Call 402-322-8838', href: 'tel:+14023228838' },
+      { label: 'Jump to Form', href: '#contact', variant: 'secondary' },
+    ]}
+  />
+
+  <VisitUs
+    image={officeExterior}
+    paragraphs={[
+      'Visit us at 11844 Standing Stone Dr, Suite 100 in Gretna, or send a message and we will follow up promptly.',
+      'We are open Monday through Friday 7:00 am – 7:00 pm and Saturdays 9:00 am – 3:00 pm.',
+    ]}
+  />
+
+  <ContactBlock />
+</BaseLayout>

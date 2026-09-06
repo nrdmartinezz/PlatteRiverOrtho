@@ -1,0 +1,117 @@
+---
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import BlockHeader from './BlockHeader.astro';
+import Button from '../ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+import type { BlockProps } from './types';
+
+export interface BenefitItem {
+  icon: string;
+  title: string;
+  body: string;
+  href?: string;
+  cta?: string;
+  featured?: boolean;
+}
+
+interface Props extends BlockProps {
+  items: BenefitItem[];
+  /** Asymmetric featured card + 2×2, or an even card grid. */
+  layout?: 'asymmetric' | 'grid';
+}
+
+const {
+  background = 'muted',
+  spacing = 'md',
+  align = 'start',
+  width = 'page',
+  eyebrow,
+  title,
+  body,
+  titleLevel = 2,
+  items,
+  layout = 'asymmetric',
+} = Astro.props;
+
+const featured = items.find((item) => item.featured);
+const rest = items.filter((item) => !item.featured);
+---
+
+<Section background={background} spacing={spacing}>
+  <Container width={width} align={align} gap="lg">
+    <BlockHeader
+      eyebrow={eyebrow}
+      title={title}
+      body={body}
+      level={titleLevel}
+      centered={align === 'center'}
+    />
+
+    {
+      layout === 'asymmetric' && featured ? (
+        <div class="grid w-full gap-5 lg:grid-cols-3">
+          <article class="bg-brand-600 text-ink-inverse flex flex-col gap-5 rounded-2xl p-8 lg:row-span-2">
+            <span class="flex size-14 items-center justify-center rounded-2xl bg-white/15">
+              <Icon name={featured.icon} class="size-7" aria-hidden="true" />
+            </span>
+            <Heading level={3} size="lg" class="text-ink-inverse">
+              {featured.title}
+            </Heading>
+            <p class="text-white/80">{featured.body}</p>
+            {featured.href && featured.cta && (
+              <Button href={featured.href} variant="inverse" class="mt-auto self-start">
+                {featured.cta}
+              </Button>
+            )}
+          </article>
+
+          {rest.map((item) => (
+            <article class="bg-surface-base border-line-base flex flex-col gap-3 rounded-2xl border p-6">
+              <span class="bg-accent-200/20 flex size-12 items-center justify-center rounded-2xl">
+                <Icon name={item.icon} class="text-accent-500 size-5" aria-hidden="true" />
+              </span>
+              <Heading level={3} size="md" class="text-ink-brand">
+                {item.title}
+              </Heading>
+              <p class="text-ink-muted text-sm">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <ul class:list={['grid w-full gap-5', items.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3']}>
+          {items.map((item) => (
+            <li>
+              <article
+                class:list={[
+                  'flex h-full flex-col gap-3 rounded-2xl p-6',
+                  item.featured
+                    ? 'bg-brand-600 text-ink-inverse'
+                    : 'bg-surface-base border-line-base border',
+                ]}
+              >
+                <span
+                  class:list={[
+                    'flex size-12 items-center justify-center rounded-2xl',
+                    item.featured ? 'bg-white/15' : 'bg-accent-200/20',
+                  ]}
+                >
+                  <Icon
+                    name={item.icon}
+                    class:list={['size-5', item.featured ? '' : 'text-accent-500']}
+                    aria-hidden="true"
+                  />
+                </span>
+                <Heading level={3} size="md" class={item.featured ? 'text-ink-inverse' : 'text-ink-brand'}>
+                  {item.title}
+                </Heading>
+                <p class:list={[item.featured ? 'text-white/80' : 'text-ink-muted']}>{item.body}</p>
+              </article>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </Container>
+</Section>

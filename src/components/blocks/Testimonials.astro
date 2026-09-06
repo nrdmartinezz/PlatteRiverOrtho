@@ -17,6 +17,7 @@ export interface Testimonial {
 interface Props extends BlockProps {
   items: Testimonial[];
   columns?: 2 | 3;
+  ratingSummary?: { score: string; label: string };
 }
 
 const {
@@ -29,26 +30,45 @@ const {
   body,
   titleLevel = 2,
   items,
-  columns = 3,
+  columns = 2,
+  ratingSummary,
 } = Astro.props;
 
 const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
 ---
 
-<Section background={background} spacing={spacing}>
+<Section background={background} spacing={spacing} id="testimonials">
   <Container width={width} align={align} gap="lg">
-    <BlockHeader
-      eyebrow={eyebrow}
-      title={title}
-      body={body}
-      level={titleLevel}
-      centered={align === 'center'}
-    />
+    <div class="flex w-full flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <BlockHeader
+        eyebrow={eyebrow}
+        title={title}
+        body={body}
+        level={titleLevel}
+        centered={false}
+      />
+      {
+        ratingSummary && (
+          <div class="border-line-base bg-surface-base shrink-0 rounded-2xl border px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <p class="font-heading text-ink-brand text-2xl font-bold">{ratingSummary.score}</p>
+              <div class="flex gap-0.5" role="img" aria-label={`${ratingSummary.score} out of 5 stars`}>
+                {Array.from({ length: 5 }).map(() => (
+                  <Icon name="lucide:star" class="size-3.5 text-accent-500" aria-hidden="true" />
+                ))}
+              </div>
+            </div>
+            <p class="text-ink-muted text-xs">{ratingSummary.label}</p>
+          </div>
+        )
+      }
+    </div>
 
     <ul class:list={['grid w-full gap-6', columnClass]}>
       {
         items.map((item) => (
-          <Card as="li" variant="elevated">
+          <Card as="li" variant="outlined" class="rounded-2xl">
+            <Icon name="lucide:quote" class="text-brand-600 size-6" aria-hidden="true" />
             {item.rating && (
               <div class="flex gap-0.5" role="img" aria-label={`${item.rating} out of 5 stars`}>
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -68,9 +88,17 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
               <p>&ldquo;{item.quote}&rdquo;</p>
             </blockquote>
 
-            <footer class="text-sm">
-              <p class="font-medium">{item.name}</p>
-              {item.role && <p class="text-ink-muted">{item.role}</p>}
+            <footer class="border-line-base flex items-center gap-3 border-t pt-4 text-sm">
+              <span
+                class="bg-brand-600 text-neutral-0 flex size-10 items-center justify-center rounded-full font-heading font-semibold"
+                aria-hidden="true"
+              >
+                {item.name.charAt(0)}
+              </span>
+              <div>
+                <p class="font-medium">{item.name}</p>
+                {item.role && <p class="text-ink-muted">{item.role}</p>}
+              </div>
             </footer>
           </Card>
         ))

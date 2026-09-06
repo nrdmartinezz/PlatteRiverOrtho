@@ -1,5 +1,4 @@
 ---
-import '@fontsource/great-vibes';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import Section from '../ui/Section.astro';
@@ -109,11 +108,11 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
         )
       }
 
-      <Heading level={1} balance={!titleAccent} class="font-heading">
+      <Heading level={1} balance={!titleAccent} class:list={[overlay && 'text-ink-inverse']}>
         {title}
         {
           titleAccent && (
-            <span class="font-script mt-1 block text-[1.15em] leading-none font-normal tracking-normal text-accent-200">
+            <span class="font-heading mt-1 block text-[1.05em] leading-none font-semibold tracking-tight text-accent-200 italic">
               {titleAccent}
             </span>
           )

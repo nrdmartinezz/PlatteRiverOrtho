@@ -1,0 +1,128 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Button from '../ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+import { site, formattedAddress } from '../../config/site';
+import type { BlockProps } from './types';
+
+interface Props extends BlockProps {
+  image?: ImageMetadata;
+  imageAlt?: string;
+  paragraphs?: string[];
+  cta?: { label: string; href: string };
+}
+
+const {
+  background = 'muted',
+  spacing = 'md',
+  width = 'page',
+  eyebrow = 'Visit Us',
+  title = "We're Open! Come On In!",
+  titleLevel = 2,
+  image,
+  imageAlt = 'Platte River Orthodontics office exterior',
+  paragraphs = [],
+  cta = { label: 'Schedule Your Appointment', href: '/contact/' },
+} = Astro.props;
+
+const query = formattedAddress;
+const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=15&output=embed`;
+const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
+---
+
+<Section background={background} spacing={spacing}>
+  <Container width={width} layout="row" gap="lg" class="md:items-start">
+    <div class="flex w-full flex-col gap-5 md:w-1/2">
+      {
+        eyebrow && (
+          <p class="text-ink-brand text-sm font-semibold tracking-wide uppercase">{eyebrow}</p>
+        )
+      }
+      {title && <Heading level={titleLevel}>{title}</Heading>}
+      {
+        paragraphs.map((paragraph) => (
+          <p class="text-ink-muted max-w-reading">{paragraph}</p>
+        ))
+      }
+
+      <div class="flex flex-col gap-3">
+        <div class="border-line-base bg-surface-base flex gap-4 rounded-2xl border p-5">
+          <span class="bg-brand-600/10 flex size-9 shrink-0 items-center justify-center rounded-2xl">
+            <Icon name="lucide:map-pin" class="text-ink-brand size-4" aria-hidden="true" />
+          </span>
+          <div>
+            <p class="text-ink-brand font-heading font-semibold">Address</p>
+            <a href={directionsHref} rel="noopener noreferrer" target="_blank" class="text-ink-muted no-underline">
+              {site.business.address.street}<br />
+              {site.business.address.locality}, {site.business.address.region}{' '}
+              {site.business.address.postalCode}
+            </a>
+          </div>
+        </div>
+
+        <div class="border-line-base bg-surface-base flex gap-4 rounded-2xl border p-5">
+          <span class="bg-accent-200/30 flex size-9 shrink-0 items-center justify-center rounded-2xl">
+            <Icon name="lucide:clock" class="text-accent-500 size-4" aria-hidden="true" />
+          </span>
+          <div>
+            <p class="text-ink-brand font-heading font-semibold">Office Hours</p>
+            <p class="text-ink-muted">Mon – Fri: 7:00 am – 7:00 pm</p>
+            <p class="text-ink-muted">Saturday: 9:00 am – 3:00 pm</p>
+            <p class="text-neutral-400">Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <Button href={cta.href}>
+        {cta.label}
+        <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
+      </Button>
+    </div>
+
+    <div class="flex w-full flex-col gap-4 md:w-1/2">
+      {
+        image && (
+          <Image
+            src={image}
+            alt={imageAlt}
+            widths={[480, 768, 1024]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            class="h-64 w-full rounded-2xl object-cover shadow-md"
+          />
+        )
+      }
+
+      <div
+        class="map-facade border-line-base bg-surface-base relative h-52 w-full overflow-hidden rounded-2xl border shadow-md"
+        data-src={embedSrc}
+      >
+        <button
+          type="button"
+          class="text-ink-base absolute inset-0 flex cursor-pointer flex-col items-center justify-center gap-2 p-6 text-center"
+        >
+          <Icon name="lucide:map-pin" class="text-brand-600 size-8" aria-hidden="true" />
+          <span class="font-medium">Load map</span>
+          <span class="text-ink-muted text-sm">Open interactive map</span>
+        </button>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<script>
+  for (const facade of document.querySelectorAll<HTMLElement>('.map-facade')) {
+    facade.querySelector('button')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = facade.dataset.src ?? '';
+      iframe.title = 'Office location map';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.className = 'absolute inset-0 h-full w-full border-0';
+      facade.replaceChildren(iframe);
+    });
+  }
+</script>
