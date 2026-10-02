@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/blocks/Hero.astro';
+import Section from '../../components/ui/Section.astro';
+import Container from '../../components/ui/Container.astro';
+import Heading from '../../components/ui/Heading.astro';
+import AppointmentForm from '../../components/forms/AppointmentForm.astro';
+import heroOffice from '../../assets/hero-office.jpg';
+import { site } from '../../config/site';
+---
+
+<BaseLayout
+  overlay
+  title="Request an Appointment"
+  description="Request a complimentary consultation at Platte River Orthodontics or book a time on the Greyfinch scheduler."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Request an Appointment', href: '/request-appointment/' },
+  ]}
+>
+  <Hero
+    overlay
+    eyebrow="Gretna, Nebraska"
+    title="Request an"
+    titleAccent="Appointment"
+    body="Send a request and our team will follow up, or choose a time on the scheduler. Your first visit is complimentary."
+    image={heroOffice}
+    imageAlt="The Platte River Orthodontics office"
+    actions={[
+      { label: 'Jump to the form', href: '#appointment-request' },
+      { label: 'Open the scheduler', href: '#scheduler', variant: 'secondary' },
+    ]}
+  />
+
+  <Section id="appointment-request" background="base" spacing="md">
+    <Container width="narrow">
+      <AppointmentForm />
+    </Container>
+  </Section>
+
+  <Section id="scheduler" background="muted" spacing="md">
+    <Container gap="md">
+      <div class="flex flex-col gap-3">
+        <Heading level={2}>Book on the scheduler</Heading>
+        <p class="text-ink-muted max-w-reading">
+          The Greyfinch scheduler shows open times and books directly with the practice. If the
+          scheduler does not load, open it in a new tab.
+        </p>
+        <p>
+          <a
+            href={site.greyfinch.scheduler}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-ink-brand font-semibold"
+          >
+            Open scheduler
+          </a>
+        </p>
+      </div>
+      <iframe
+        src={site.greyfinch.scheduler}
+        title="Greyfinch appointment scheduler"
+        class="border-line-base bg-surface-base min-h-[780px] w-full rounded-2xl border"></iframe>
+    </Container>
+  </Section>
+</BaseLayout>

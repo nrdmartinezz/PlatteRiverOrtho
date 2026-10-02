@@ -28,9 +28,17 @@ return [
 
     'forms' => [
         'contact' => [
-            'subject' => 'New enquiry — Example Business',
+            'subject' => 'New enquiry — Platte River Orthodontics',
             'notification' => 'notification-contact.html',
             // Autoreply disabled by default — set send_autoreply => true to enable.
+        ],
+        'appointment' => [
+            'subject' => 'New appointment request — Platte River Orthodontics',
+            'notification' => 'notification.html',
+        ],
+        'referral' => [
+            'subject' => 'New doctor referral — Platte River Orthodontics',
+            'notification' => 'notification.html',
         ],
     ],
 

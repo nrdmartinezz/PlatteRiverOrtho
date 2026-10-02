@@ -1,0 +1,116 @@
+---
+import Field from '../ui/Field.astro';
+import FormMessage from '../ui/FormMessage.astro';
+import Button from '../ui/Button.astro';
+import Heading from '../ui/Heading.astro';
+import { site } from '../../config/site';
+
+const action = site.formEndpoint || '';
+const thankYou = new URL('/thank-you/', site.url).href;
+
+const treatments = [
+  'Invisalign',
+  'Braces',
+  'Early treatment',
+  'Surgical orthodontics',
+  'Retainers',
+  'Teeth whitening',
+  'Airway-aware treatment',
+  'MARPE',
+  'Not sure yet',
+];
+---
+
+<div class="bg-surface-muted flex flex-col gap-6 rounded-2xl p-8 md:p-10">
+  <Heading level={2} size="md" class="text-ink-brand"> Request an appointment </Heading>
+  <p class="text-ink-muted">
+    Tell us a little about the visit and we will follow up, usually within one business day. To pick
+    a time yourself, use the scheduler below.
+  </p>
+
+  <form
+    id="appointment-form"
+    action={action}
+    method="POST"
+    novalidate
+    class="flex w-full flex-col gap-4"
+    data-site-form
+    data-thank-you={thankYou}
+    data-track-source="appointment-form"
+  >
+    <input type="hidden" name="form_type" value="appointment" />
+
+    <div class="absolute left-[-9999px]" aria-hidden="true">
+      <label for="appointment-gotcha">Leave this field empty</label>
+      <input type="text" id="appointment-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <Field name="name" label="First and last name" autocomplete="name" required />
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <Field name="email" label="Email" type="email" autocomplete="email" required />
+      <Field name="phone" label="Phone" type="tel" autocomplete="tel" required />
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <Field
+        name="patient_status"
+        label="Are you a patient here?"
+        type="select"
+        required
+        options={[
+          { label: 'Select one', value: '' },
+          { label: 'New patient', value: 'New patient' },
+          { label: 'Existing patient', value: 'Existing patient' },
+        ]}
+      />
+      <Field
+        name="visit_for"
+        label="Who is the visit for?"
+        type="select"
+        required
+        options={[
+          { label: 'Select one', value: '' },
+          { label: 'Myself', value: 'Myself' },
+          { label: 'My child', value: 'My child' },
+          { label: 'Someone else', value: 'Someone else' },
+        ]}
+      />
+    </div>
+
+    <Field
+      name="service"
+      label="Treatment interest"
+      type="select"
+      options={[
+        { label: 'Select a treatment', value: '' },
+        ...treatments.map((treatment) => ({ label: treatment, value: treatment })),
+      ]}
+    />
+
+    <Field
+      name="preferred_time"
+      label="Preferred days and times"
+      help="For example, weekday mornings or Saturday."
+    />
+
+    <Field name="message" label="Notes" type="textarea" rows={4} />
+
+    <label class="text-ink-muted flex items-start gap-3 text-sm">
+      <input
+        type="checkbox"
+        name="sms_consent"
+        value="yes"
+        class="border-line-base mt-1 size-4 rounded"
+      />
+      <span>
+        By sharing your phone number, you consent to receive communications from Platte River
+        Orthodontics, including notifications and appointment reminders. Message and data rates may
+        apply. Text STOP to unsubscribe.
+      </span>
+    </label>
+
+    <FormMessage />
+    <Button type="submit" size="lg" class="w-full">Send request</Button>
+  </form>
+</div>

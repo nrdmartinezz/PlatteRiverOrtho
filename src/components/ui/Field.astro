@@ -6,7 +6,7 @@
  */
 import type { HTMLAttributes } from 'astro/types';
 
-export type FieldType = 'text' | 'email' | 'tel' | 'url' | 'textarea' | 'select';
+export type FieldType = 'text' | 'email' | 'tel' | 'url' | 'date' | 'textarea' | 'select';
 
 interface Props extends Omit<HTMLAttributes<'input'>, 'class' | 'type' | 'name'> {
   name: string;

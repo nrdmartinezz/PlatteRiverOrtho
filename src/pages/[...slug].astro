@@ -1,0 +1,36 @@
+---
+import type { GetStaticPaths } from 'astro';
+import MarketingPage from '../components/pages/MarketingPage.astro';
+import BlogPost from '../components/pages/BlogPost.astro';
+import { marketingPages, type MarketingPageData } from '../data/marketing';
+import { getPublished, type Entry } from '../lib/posts';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getPublished();
+  const postSlugs = new Set(posts.map((entry) => entry.id));
+
+  return [
+    ...marketingPages
+      .filter((page) => !postSlugs.has(page.slug))
+      .map((page) => ({
+        params: { slug: page.slug },
+        props: { page, entry: undefined, all: undefined },
+      })),
+    ...posts.map((entry) => ({
+      params: { slug: entry.id },
+      props: { page: undefined, entry, all: posts },
+    })),
+  ];
+};
+
+interface Props {
+  page?: MarketingPageData;
+  entry?: Entry;
+  all?: Entry[];
+}
+
+const { page, entry, all } = Astro.props;
+---
+
+{page && <MarketingPage page={page} />}
+{entry && all && <BlogPost entry={entry} all={all} />}

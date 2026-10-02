@@ -53,14 +53,74 @@ if (!in_array($formType, allowedFormTypes($config), true)) {
 $formMail = getFormMailSettings($config, $formType);
 $fromName = (string) ($config['from_name'] ?? 'Site');
 
-$name = trim((string) ($_POST['name'] ?? ''));
-$email = trim((string) ($_POST['email'] ?? ''));
-$phone = trim((string) ($_POST['phone'] ?? ''));
-$message = trim((string) ($_POST['message'] ?? ''));
-$hearAbout = trim((string) ($_POST['hear_about_us'] ?? ''));
-$service = trim((string) ($_POST['service'] ?? ''));
+function postedString(string $key): string
+{
+    return trim((string) ($_POST[$key] ?? ''));
+}
 
-if ($name === '' || $email === '' || $message === '') {
+function postedList(string $key): string
+{
+    $raw = $_POST[$key] ?? [];
+    if (!is_array($raw)) {
+        $raw = [$raw];
+    }
+
+    $items = [];
+    foreach ($raw as $item) {
+        $item = trim((string) $item);
+        if ($item !== '') {
+            $items[] = $item;
+        }
+    }
+
+    return implode(', ', $items);
+}
+
+/**
+ * Pre-escaped table rows for the notification template.
+ *
+ * @param array<string, string> $pairs
+ */
+function detailRows(array $pairs): string
+{
+    $html = '';
+    foreach ($pairs as $label => $value) {
+        $value = trim($value);
+        if ($value === '') {
+            continue;
+        }
+
+        $html .= '<tr><td style="padding:8px 0;border-bottom:1px solid #e4e4e7">'
+            . '<strong style="display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#71717a">'
+            . escapeHtml($label)
+            . '</strong><span style="font-size:16px;white-space:pre-wrap">'
+            . escapeHtml($value)
+            . '</span></td></tr>';
+    }
+
+    return $html;
+}
+
+$name = postedString('name');
+$email = postedString('email');
+$phone = postedString('phone');
+$message = postedString('message');
+$hearAbout = postedString('hear_about_us');
+$service = postedString('service');
+
+if ($name === '' || $email === '') {
+    jsonError(400, 'Please fill in all required fields.');
+}
+
+if ($formType === 'contact' && $message === '') {
+    jsonError(400, 'Please fill in all required fields.');
+}
+
+if ($formType === 'appointment' && $phone === '') {
+    jsonError(400, 'Please fill in all required fields.');
+}
+
+if ($formType === 'referral' && postedString('patient_name') === '') {
     jsonError(400, 'Please fill in all required fields.');
 }
 
@@ -95,6 +155,29 @@ if ($services !== []) {
 
 $hearAboutDisplay = $hearAbout !== '' ? $hearAbout : '—';
 $phoneDisplay = $phone !== '' ? $phone : '—';
+if ($message === '') {
+    $message = '—';
+}
+
+$detailPairs = [
+    'Patient status' => postedString('patient_status'),
+    'Visit for' => postedString('visit_for'),
+    'Preferred time' => postedString('preferred_time'),
+    'SMS consent' => postedString('sms_consent'),
+    'Patient name' => postedString('patient_name'),
+    'Date of birth' => postedString('dob'),
+    'Parent name' => postedString('parent_name'),
+    'Street' => postedString('street'),
+    'City' => postedString('city'),
+    'State' => postedString('state'),
+    'ZIP' => postedString('zip'),
+    'Home phone' => postedString('home_phone'),
+    'Insurance' => postedString('insurance'),
+    'Concerns' => postedList('concerns'),
+    'Call before treatment' => postedString('call_before'),
+    'Records sent' => postedString('records_sent'),
+];
+$details = detailRows($detailPairs);
 
 $timezone = (string) ($config['timezone'] ?? 'America/New_York');
 $submittedAt = (new DateTimeImmutable('now', new DateTimeZone($timezone)))->format('M j, Y g:i A T');
@@ -111,6 +194,7 @@ $templateVars = [
     'services' => escapeHtml($servicesDisplay),
     'hear_about_us' => escapeHtml($hearAboutDisplay),
     'message' => escapeHtml($message),
+    'details' => $details,
     'form_source' => escapeHtml($formSource),
     'submitted_at' => escapeHtml($submittedAt),
     'sender_ip' => escapeHtml($remoteIp),

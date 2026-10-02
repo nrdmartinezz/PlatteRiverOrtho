@@ -1,0 +1,114 @@
+---
+import Field from '../ui/Field.astro';
+import FormMessage from '../ui/FormMessage.astro';
+import Button from '../ui/Button.astro';
+import Heading from '../ui/Heading.astro';
+import { site } from '../../config/site';
+
+const action = site.formEndpoint || '';
+const thankYou = new URL('/thank-you/', site.url).href;
+
+const concerns = [
+  'Please evaluate for early or interceptive treatment',
+  'Please evaluate for full orthodontics',
+  'Please evaluate for Invisalign treatment',
+  'Other',
+];
+---
+
+<div class="bg-surface-muted flex flex-col gap-6 rounded-2xl p-8 md:p-10">
+  <Heading level={2} size="md" class="text-ink-brand">Refer a patient</Heading>
+  <p class="text-ink-muted">
+    Send a referral to Dr. Chad Carter. We will follow up with you and with the family.
+  </p>
+
+  <form
+    id="referral-form"
+    action={action}
+    method="POST"
+    novalidate
+    class="flex w-full flex-col gap-4"
+    data-site-form
+    data-thank-you={thankYou}
+    data-track-source="referral-form"
+  >
+    <input type="hidden" name="form_type" value="referral" />
+
+    <div class="absolute left-[-9999px]" aria-hidden="true">
+      <label for="referral-gotcha">Leave this field empty</label>
+      <input type="text" id="referral-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <Field name="name" label="Referred by Dr." autocomplete="name" required />
+    <Field
+      name="email"
+      label="Email address of referring doctor"
+      type="email"
+      autocomplete="email"
+      required
+    />
+
+    <Heading level={3} size="sm">Patient</Heading>
+    <Field name="patient_name" label="Patient name" required />
+    <div class="grid gap-4 sm:grid-cols-2">
+      <Field name="dob" label="Date of birth" type="date" />
+      <Field name="parent_name" label="Parent’s name, if the patient is a minor" />
+    </div>
+
+    <Field name="street" label="Street address" autocomplete="street-address" />
+    <div class="grid gap-4 sm:grid-cols-3">
+      <Field name="city" label="City" autocomplete="address-level2" />
+      <Field name="state" label="State" value="NE" autocomplete="address-level1" />
+      <Field name="zip" label="ZIP code" autocomplete="postal-code" />
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <Field name="home_phone" label="Home phone" type="tel" />
+      <Field name="phone" label="Cell phone" type="tel" />
+    </div>
+    <Field name="insurance" label="Insurance carrier" />
+
+    <fieldset class="flex flex-col gap-3">
+      <legend class="font-medium">Dentist’s concerns for the patient</legend>
+      {
+        concerns.map((concern) => (
+          <label class="flex items-start gap-3 text-sm">
+            <input
+              type="checkbox"
+              name="concerns[]"
+              value={concern}
+              class="border-line-base mt-1 size-4 rounded"
+            />
+            <span>{concern}</span>
+          </label>
+        ))
+      }
+    </fieldset>
+
+    <Field name="message" label="Remarks" type="textarea" rows={4} />
+
+    <fieldset class="flex flex-col gap-3">
+      <legend class="font-medium">Please call me before proceeding with treatment</legend>
+      <label class="flex items-center gap-3 text-sm">
+        <input type="radio" name="call_before" value="Yes" class="size-4" />
+        Yes
+      </label>
+      <label class="flex items-center gap-3 text-sm">
+        <input type="radio" name="call_before" value="No" class="size-4" />
+        No
+      </label>
+    </fieldset>
+
+    <label class="flex items-start gap-3 text-sm">
+      <input
+        type="checkbox"
+        name="records_sent"
+        value="Yes"
+        class="border-line-base mt-1 size-4 rounded"
+      />
+      <span>I have sent records and a pano to smile@platteriverortho.com</span>
+    </label>
+
+    <FormMessage />
+    <Button type="submit" size="lg" class="w-full">Submit referral</Button>
+  </form>
+</div>

@@ -1,8 +1,7 @@
 /**
- * One nav tree, rendered two ways. `Header` reads it for the simple desktop
- * nav today; `MegaMenu` and `MobileNav` read the same tree in Phase 4, so the
- * upgrade is additive rather than a rewrite.
+ * One nav tree, rendered by MegaMenu and MobileNav.
  */
+import { site } from './site';
 
 export interface NavLink {
   label: string;
@@ -52,82 +51,151 @@ export interface NavigationConfig {
 
 export const navigation: NavigationConfig = {
   primary: [
-    { label: 'Home', href: '/' },
-    { label: 'About Dr. Carter', href: '/#meet-dr-carter' },
     {
-      label: 'Services',
-      href: '/#services',
+      label: 'About Us',
       panel: {
-        kind: 'mega',
-        columns: [
+        kind: 'links',
+        links: [
           {
-            heading: 'Treatments',
-            links: [
-              {
-                label: 'Invisalign® Clear Aligners',
-                href: '/contact/',
-                description: 'Nearly invisible trays, custom-planned for a discreet smile.',
-                icon: 'lucide:sparkles',
-              },
-              {
-                label: 'Fully Custom Braces',
-                href: '/contact/',
-                description: '3D-designed braces that are more efficient and comfortable.',
-                icon: 'lucide:smile',
-              },
-              {
-                label: 'Corrective Jaw Surgery',
-                href: '/contact/',
-                description: 'Surgical orthodontics for bite, airway, and facial balance.',
-                icon: 'lucide:scan',
-              },
-              {
-                label: 'MARPE Treatment',
-                href: '/services/marpe/',
-                description: 'Skeletal expansion for older teens and adults.',
-                icon: 'lucide:activity',
-              },
-            ],
+            label: 'Meet Dr. Carter',
+            href: '/meet-dr-carter/',
+            description: 'The story behind SnaggleTooth and this practice.',
+          },
+          {
+            label: 'Our Why',
+            href: '/our-why/',
+            description: 'World-class care with a servant’s heart.',
+          },
+          {
+            label: 'Technology',
+            href: '/technology/',
+            description: 'iTero, Grin monitoring, and custom braces.',
+          },
+          {
+            label: 'What to Expect',
+            href: '/what-to-expect/',
+            description: 'Your first visit through retention.',
+          },
+          {
+            label: 'Why Choose Us',
+            href: '/why-choose-us/',
+            description: 'Board-certified care, close to home.',
           },
         ],
-        featured: {
-          title: 'Not sure where to start?',
-          body: 'Your first visit is complimentary. We will walk through the right treatment together.',
-          href: '/contact/',
-          cta: 'Book a free consult',
-        },
       },
     },
-    { label: 'Testimonials', href: '/#testimonials' },
-    { label: 'Contact', href: '/contact/' },
+    {
+      label: 'Braces',
+      href: '/braces/',
+      panel: {
+        kind: 'links',
+        links: [
+          {
+            label: 'Braces Overview',
+            href: '/braces/',
+            description: 'KLOwen fully custom braces.',
+          },
+          { label: 'Braces for Adults', href: '/braces/braces-for-adults/' },
+          { label: 'Braces for Teens', href: '/braces/braces-for-teens/' },
+          { label: 'Braces for Kids', href: '/braces/braces-for-kids/' },
+          { label: 'Early Treatment', href: '/early-treatment/' },
+        ],
+      },
+    },
+    {
+      label: 'Invisalign',
+      href: '/invisalign/',
+      panel: {
+        kind: 'links',
+        links: [
+          { label: 'Invisalign Overview', href: '/invisalign/' },
+          { label: 'Invisalign First', href: '/invisalign/invisalign-first/' },
+          { label: 'Invisalign Teen', href: '/invisalign/invisalign-teen/' },
+          { label: 'Invisalign for Adults', href: '/invisalign/invisalign-for-adults/' },
+        ],
+      },
+    },
+    {
+      label: 'Other Treatments',
+      panel: {
+        kind: 'links',
+        links: [
+          { label: 'Surgical Orthodontics', href: '/surgical-orthodontics/' },
+          { label: 'Teeth Whitening', href: '/teeth-whitening/' },
+          { label: 'Retainers', href: '/retainers/' },
+          { label: 'Airway Aware Treatment', href: '/airway-aware-treatment/' },
+          { label: 'MARPE Treatment', href: '/services/marpe/' },
+        ],
+      },
+    },
+    {
+      label: 'Resources',
+      panel: {
+        kind: 'links',
+        links: [
+          { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },
+          { label: 'Contact Us', href: '/contact-us/' },
+          { label: 'Doctor Referral', href: '/doctor-referral/' },
+          { label: 'Request an Appointment', href: '/request-appointment/' },
+        ],
+      },
+    },
   ],
 
-  cta: { label: 'Book Your Free Consult', href: '/contact/' },
-  portal: { label: 'Patient Portal', href: '' },
+  cta: { label: 'Request an Appointment', href: '/request-appointment/' },
+  portal: { label: 'Patient Portal', href: site.greyfinch.portal },
 
   footer: [
     {
       heading: 'Quick Links',
       links: [
-        { label: 'About Dr. Carter', href: '/#meet-dr-carter' },
-        { label: 'Services', href: '/#services' },
-        { label: 'Patient Testimonials', href: '/#testimonials' },
-        { label: 'Contact Us', href: '/contact/' },
-        { label: 'MARPE Treatment', href: '/services/marpe/' },
+        { label: 'Meet Dr. Carter', href: '/meet-dr-carter/' },
+        { label: 'Why Choose Us', href: '/why-choose-us/' },
+        { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },
+        { label: 'Contact Us', href: '/contact-us/' },
+        { label: 'Doctor Referral', href: '/doctor-referral/' },
+        { label: 'Request an Appointment', href: '/request-appointment/' },
+        { label: 'Patient Portal', href: site.greyfinch.portal },
       ],
     },
     {
-      heading: 'Contact & Hours',
+      heading: 'Areas We Serve',
       links: [
-        { label: 'Book a Consult', href: '/contact/' },
-        { label: 'Call 402-322-8838', href: 'tel:+14023228838' },
-        { label: 'smile@platteriverortho.com', href: 'mailto:smile@platteriverortho.com' },
+        {
+          label: 'Ashland, NE',
+          href: '/ashland-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'Greenwood, NE',
+          href: '/greenwood-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'La Vista, NE',
+          href: '/lavista-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'Louisville, NE',
+          href: '/louisville-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'Millard, NE',
+          href: '/millard-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'Plattsmouth, NE',
+          href: '/plattsmouth-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'Springfield, NE',
+          href: '/springfield-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
+          label: 'Syracuse, NE',
+          href: '/syracuse-nebraska-orthodontist-platte-river-orthodontics/',
+        },
       ],
     },
   ],
 
-  legal: [
-    { label: 'Privacy Policy', href: '/privacy/' },
-    { label: 'Terms of Service', href: '/terms/' },
-  ],
+  legal: [{ label: 'Privacy Policy', href: '/privacy-policy/' }],
 };

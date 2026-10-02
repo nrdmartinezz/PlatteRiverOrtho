@@ -86,7 +86,10 @@ function allowedFormTypes(array $config): array
 {
     $configured = array_keys($config['forms'] ?? []);
 
-    return array_values(array_unique(array_merge(['contact'], $configured)));
+    return array_values(array_unique(array_merge(
+        ['contact', 'appointment', 'referral'],
+        $configured,
+    )));
 }
 
 function getFormMailSettings(array $config, string $formType): array
@@ -98,6 +101,18 @@ function getFormMailSettings(array $config, string $formType): array
             'source_label' => 'Contact form',
             'subject' => "New enquiry — {$fromName}",
             'autoreply_subject' => "We received your message — {$fromName}",
+            'send_autoreply' => false,
+        ],
+        'appointment' => [
+            'source_label' => 'Appointment request',
+            'subject' => "New appointment request — {$fromName}",
+            'autoreply_subject' => "We received your appointment request — {$fromName}",
+            'send_autoreply' => false,
+        ],
+        'referral' => [
+            'source_label' => 'Doctor referral',
+            'subject' => "New doctor referral — {$fromName}",
+            'autoreply_subject' => "We received your referral — {$fromName}",
             'send_autoreply' => false,
         ],
     ];

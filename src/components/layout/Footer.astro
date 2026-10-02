@@ -72,6 +72,8 @@ const year = new Date().getFullYear();
                 <li>
                   <a
                     href={link.href}
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     class="hover:text-ink-inverse inline-flex min-h-11 items-center text-neutral-300 no-underline"
                   >
                     {link.label}
