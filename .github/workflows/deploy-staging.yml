@@ -32,12 +32,28 @@ jobs:
 
       - run: npm run build
 
+      - name: Check staging FTP settings
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST || vars.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER || vars.FTP_USER }}
+          FTP_PW: ${{ secrets.FTP_PW || vars.FTP_PW }}
+        run: |
+          missing=
+          [ -z "$FTP_HOST" ] && missing="$missing FTP_HOST"
+          [ -z "$FTP_USER" ] && missing="$missing FTP_USER"
+          [ -z "$FTP_PW" ] && missing="$missing FTP_PW"
+          if [ -n "$missing" ]; then
+            echo "Missing on the staging environment:$missing"
+            echo "Add each name as a secret or a variable. Those are separate tabs, and the environment must be named staging."
+            exit 1
+          fi
+
       - name: FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ vars.FTP_HOST }}
-          username: ${{ vars.FTP_USER }}
-          password: ${{ secrets.FTP_PW }}
+          server: ${{ secrets.FTP_HOST || vars.FTP_HOST }}
+          username: ${{ secrets.FTP_USER || vars.FTP_USER }}
+          password: ${{ secrets.FTP_PW || vars.FTP_PW }}
           protocol: ftps
           local-dir: ./dist/
           # FTP account is scoped to the staging document root.

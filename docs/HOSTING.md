@@ -40,11 +40,15 @@ the same page.
 
 5. Create a GitHub Environment named `staging` for the automatic deploy:
 
-   | Name       | Kind     | Value                         |
-   | ---------- | -------- | ----------------------------- |
-   | `FTP_HOST` | Variable | Staging FTP host              |
-   | `FTP_USER` | Variable | FTP account scoped to docroot |
-   | `FTP_PW`   | Secret   | That account's password       |
+   | Name       | Kind              | Value                         |
+   | ---------- | ----------------- | ----------------------------- |
+   | `FTP_HOST` | Secret or variable | Staging FTP host             |
+   | `FTP_USER` | Secret or variable | FTP account scoped to docroot |
+   | `FTP_PW`   | Secret or variable | That account's password      |
+
+   Secrets and variables are separate tabs. A host saved only as a secret is
+   invisible to a workflow that reads variables, which fails the upload with
+   "Input required and not supplied: server". Prefer secrets for all three.
 
 6. Update `site` in `astro.config.mjs` and the `Sitemap:` line in
    `public/robots.txt` to the real domain.
