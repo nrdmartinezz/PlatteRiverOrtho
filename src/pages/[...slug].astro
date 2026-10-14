@@ -5,12 +5,11 @@ import BlogPost from '../components/pages/BlogPost.astro';
 import { marketingPages, type MarketingPageData } from '../data/marketing';
 import { getPublished, type Entry } from '../lib/posts';
 
-/** Dedicated `src/pages/<slug>/` routes win over the marketing catch-all. */
-const dedicatedPages = new Set(['meet-dr-carter']);
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getPublished();
   const postSlugs = new Set(posts.map((entry) => entry.id));
+  // Dedicated `src/pages/<slug>/` routes win over the marketing catch-all.
+  const dedicatedPages = new Set(['meet-dr-carter']);
 
   return [
     ...marketingPages
