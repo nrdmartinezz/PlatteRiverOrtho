@@ -48,7 +48,7 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
   >
     <a
       href="/"
-      class="flex items-center gap-2 font-semibold tracking-wide uppercase no-underline group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base"
+      class="group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base flex items-center gap-2 font-semibold tracking-wide uppercase no-underline"
     >
       <Icon name="lucide:hexagon" class="size-7" aria-hidden="true" />
       <span class="max-lg:text-sm">{site.name}</span>
@@ -61,7 +61,9 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
         portal && (
           <a
             href={portal.href}
-            class="hidden min-h-11 items-center px-2 text-sm no-underline xl:inline-flex group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base"
+            target={portal.href.startsWith('http') ? '_blank' : undefined}
+            rel={portal.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base hidden min-h-11 items-center px-2 text-sm no-underline xl:inline-flex"
           >
             {portal.label}
           </a>
@@ -74,7 +76,7 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
             href={navigation.cta.href}
             class:list={[
               'hidden min-h-11 items-center rounded-full border px-5 text-xs font-semibold tracking-wide uppercase no-underline md:inline-flex',
-              'group-data-[appearance=overlay]/header:border-white/70 group-data-[appearance=overlay]/header:bg-white/10 group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/20',
+              'group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:border-white/70 group-data-[appearance=overlay]/header:bg-white/10 group-data-[appearance=overlay]/header:hover:bg-white/20',
               'group-data-[appearance=solid]/header:border-brand-600 group-data-[appearance=solid]/header:bg-brand-600 group-data-[appearance=solid]/header:text-neutral-0 group-data-[appearance=solid]/header:hover:bg-brand-700',
             ]}
           >

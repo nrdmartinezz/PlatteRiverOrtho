@@ -85,10 +85,16 @@ export interface SiteConfig {
 
   /** 'none' is correct for US-only clients. Switch to 'banner' only when required. */
   consent: 'none' | 'banner';
+
+  /** Greyfinch patient portal and hosted appointment scheduler. */
+  greyfinch: {
+    portal: string;
+    scheduler: string;
+  };
 }
 
 export const site: SiteConfig = {
-  url: 'https://platteriverorthodontics.com/',
+  url: 'https://platteriverorthodontics.com',
   name: 'Platte River Orthodontics',
   legalName: 'Platte River Orthodontics',
   tagline: 'Your Smile, Our Passion',
@@ -139,6 +145,11 @@ export const site: SiteConfig = {
   },
 
   consent: 'none',
+
+  greyfinch: {
+    portal: 'https://hub.greyfinch.com/',
+    scheduler: 'https://leads.greyfinch.com/bbebd749-6508-4097-b023-15d8c6f8b6c1',
+  },
 };
 
 export const formattedAddress = [

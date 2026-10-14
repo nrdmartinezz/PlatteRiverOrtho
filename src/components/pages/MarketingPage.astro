@@ -1,0 +1,178 @@
+---
+import type { ImageMetadata } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../blocks/Hero.astro';
+import FeatureSplit from '../blocks/FeatureSplit.astro';
+import BenefitsGrid from '../blocks/BenefitsGrid.astro';
+import ProcessSteps from '../blocks/ProcessSteps.astro';
+import FAQ from '../blocks/FAQ.astro';
+import CTABanner from '../blocks/CTABanner.astro';
+import ContactBlock from '../blocks/ContactBlock.astro';
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+import Heading from '../ui/Heading.astro';
+import Prose from '../ui/Prose.astro';
+import Button from '../ui/Button.astro';
+import heroOffice from '../../assets/hero-office.jpg';
+import drCarter from '../../assets/dr-carter.png';
+import braces from '../../assets/braces.jpg';
+import invisalign from '../../assets/invisalign.jpg';
+import jawSurgery from '../../assets/jaw-surgery.jpg';
+import officeExterior from '../../assets/office-exterior.jpg';
+import quoteBand from '../../assets/quote-band.jpg';
+import type { MarketingPageData, PageImage } from '../../data/marketing/types';
+
+interface Props {
+  page: MarketingPageData;
+}
+
+const { page } = Astro.props;
+
+const images: Record<PageImage, ImageMetadata> = {
+  office: heroOffice,
+  doctor: drCarter,
+  braces,
+  invisalign,
+  jaw: jawSurgery,
+  exterior: officeExterior,
+};
+
+const heroImage = images[page.image];
+const book = { label: 'Request an Appointment', href: '/request-appointment/' };
+---
+
+<BaseLayout
+  overlay
+  title={page.title}
+  description={page.description}
+  breadcrumbs={page.breadcrumbs}
+  faqs={page.faqs}
+  service={page.serviceName ? { name: page.serviceName, description: page.description } : undefined}
+>
+  <Hero
+    overlay
+    eyebrow={page.eyebrow}
+    title={page.heroTitle}
+    titleAccent={page.heroAccent}
+    body={page.heroBody}
+    image={heroImage}
+    imageAlt=""
+    actions={[book, { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' }]}
+  />
+
+  {
+    page.legal && (
+      <Section background="base" spacing="md">
+        <Container width="narrow">
+          <Prose>
+            {page.legal.map((section) => (
+              <>
+                <h2>{section.heading}</h2>
+                {section.paragraphs?.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+                {section.items && (
+                  <ul>
+                    {section.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            ))}
+          </Prose>
+        </Container>
+      </Section>
+    )
+  }
+
+  {
+    page.features?.map((feature) => (
+      <FeatureSplit
+        eyebrow={feature.eyebrow}
+        title={feature.title}
+        body={feature.body}
+        bullets={feature.bullets}
+        image={images[feature.image ?? page.image]}
+        imageAlt=""
+        reverse={feature.reverse}
+        background={feature.background}
+      />
+    ))
+  }
+
+  {
+    page.benefits && (
+      <BenefitsGrid
+        eyebrow={page.benefits.eyebrow}
+        title={page.benefits.title}
+        body={page.benefits.body}
+        background={page.benefits.background}
+        layout="grid"
+        items={page.benefits.items}
+      />
+    )
+  }
+
+  {
+    page.steps && (
+      <ProcessSteps
+        numbered
+        eyebrow={page.steps.eyebrow}
+        title={page.steps.title}
+        body={page.steps.body}
+        background={page.steps.background}
+        items={page.steps.items}
+      />
+    )
+  }
+
+  {
+    page.related && page.related.length > 0 && (
+      <Section background="muted" spacing="md">
+        <Container gap="md">
+          <Heading level={2}>Related pages</Heading>
+          <ul class="flex flex-wrap gap-3">
+            {page.related.map((link) => (
+              <li>
+                <Button href={link.href} variant="secondary">
+                  {link.label}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </Section>
+    )
+  }
+
+  {
+    page.faqs && page.faqs.length > 0 && (
+      <FAQ
+        layout="split"
+        eyebrow="Common Questions"
+        title="Frequently Asked Questions"
+        items={page.faqs}
+        schema={false}
+        action={book}
+      />
+    )
+  }
+
+  {
+    !page.legal && (
+      <CTABanner
+        title="Ready to start your smile?"
+        body="Your first visit is complimentary. Request a time that works for you, or book directly on the scheduler."
+        image={quoteBand}
+        imageAlt=""
+        actions={[
+          book,
+          { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
+        ]}
+      />
+    )
+  }
+
+  {page.showContact && <ContactBlock />}
+</BaseLayout>

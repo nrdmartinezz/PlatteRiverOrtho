@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/blocks/Hero.astro';
+import BenefitsGrid from '../../components/blocks/BenefitsGrid.astro';
+import Section from '../../components/ui/Section.astro';
+import Container from '../../components/ui/Container.astro';
+import ReferralForm from '../../components/forms/ReferralForm.astro';
+import drCarter from '../../assets/dr-carter.png';
+---
+
+<BaseLayout
+  overlay
+  title="Doctor Referral"
+  description="Refer a patient to Dr. Chad Carter at Platte River Orthodontics in Gretna, Nebraska."
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Doctor Referral', href: '/doctor-referral/' },
+  ]}
+>
+  <Hero
+    overlay
+    eyebrow="Professional collaboration"
+    title="Refer a patient"
+    titleAccent="To Dr. Chad Carter"
+    body="Dr. Carter works with dentists, physicians, surgeons, and therapists across the region. Send a referral and we will coordinate care for your patient."
+    image={drCarter}
+    imageAlt="Dr. Chad Carter"
+    actions={[{ label: 'Jump to the form', href: '#refer' }]}
+  />
+
+  <BenefitsGrid
+    eyebrow="Why colleagues refer here"
+    title="Board-certified specialty care"
+    layout="grid"
+    items={[
+      {
+        icon: 'lucide:badge-check',
+        title: 'Verified expertise',
+        body: 'Board certification by the American Board of Orthodontics goes beyond basic licensure.',
+      },
+      {
+        icon: 'lucide:graduation-cap',
+        title: 'A teacher’s standard',
+        body: 'Dr. Carter is an Associate Professor and lectures on complex craniofacial growth.',
+      },
+      {
+        icon: 'lucide:users',
+        title: 'Whole-patient coordination',
+        body: 'He consults with the Boys Town craniofacial team and welcomes notes from your office.',
+      },
+      {
+        icon: 'lucide:mail',
+        title: 'Records welcome',
+        body: 'Send records and a pano to smile@platteriverortho.com and note that on the form.',
+      },
+    ]}
+  />
+
+  <Section id="refer" background="base" spacing="md">
+    <Container width="narrow">
+      <ReferralForm />
+    </Container>
+  </Section>
+</BaseLayout>
