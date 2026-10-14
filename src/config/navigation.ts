@@ -53,7 +53,7 @@ export interface NavigationConfig {
 export const navigation: NavigationConfig = {
   primary: [
     { label: 'Home', href: '/' },
-    { label: 'About Dr. Carter', href: '/#meet-dr-carter' },
+    { label: 'About Dr. Carter', href: '/meet-dr-carter/' },
     {
       label: 'Services',
       href: '/#services',
@@ -109,7 +109,7 @@ export const navigation: NavigationConfig = {
     {
       heading: 'Quick Links',
       links: [
-        { label: 'About Dr. Carter', href: '/#meet-dr-carter' },
+        { label: 'About Dr. Carter', href: '/meet-dr-carter/' },
         { label: 'Services', href: '/#services' },
         { label: 'Patient Testimonials', href: '/#testimonials' },
         { label: 'Contact Us', href: '/contact/' },
