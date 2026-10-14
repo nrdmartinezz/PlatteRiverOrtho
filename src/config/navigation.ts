@@ -27,16 +27,16 @@ export interface MegaPanel {
   };
 }
 
-export interface LinkListPanel {
-  kind: 'links';
-  links: NavLink[];
+export interface DropdownPanel {
+  kind: 'dropdown';
+  groups: MegaColumn[];
 }
 
 export interface NavItem {
   label: string;
   /** Present when the top-level item is itself a destination. */
   href?: string;
-  panel?: MegaPanel | LinkListPanel;
+  panel?: MegaPanel | DropdownPanel;
 }
 
 export interface NavigationConfig {
@@ -54,95 +54,86 @@ export const navigation: NavigationConfig = {
     {
       label: 'About Us',
       panel: {
-        kind: 'links',
-        links: [
+        kind: 'dropdown',
+        groups: [
           {
-            label: 'Meet Dr. Carter',
-            href: '/meet-dr-carter/',
-            description: 'The story behind SnaggleTooth and this practice.',
-          },
-          {
-            label: 'Our Why',
-            href: '/our-why/',
-            description: 'World-class care with a servant’s heart.',
-          },
-          {
-            label: 'Technology',
-            href: '/technology/',
-            description: 'iTero, Grin monitoring, and custom braces.',
-          },
-          {
-            label: 'What to Expect',
-            href: '/what-to-expect/',
-            description: 'Your first visit through retention.',
-          },
-          {
-            label: 'Why Choose Us',
-            href: '/why-choose-us/',
-            description: 'Board-certified care, close to home.',
+            links: [
+              { label: 'Meet Dr. Carter', href: '/meet-dr-carter/' },
+              { label: 'Why Choose Us', href: '/why-choose-us/' },
+              { label: 'Our Story & Mission', href: '/our-why/' },
+              { label: 'Our Technology', href: '/technology/' },
+            ],
           },
         ],
       },
     },
     {
-      label: 'Braces',
-      href: '/braces/',
+      label: 'Treatments',
       panel: {
-        kind: 'links',
-        links: [
+        kind: 'mega',
+        columns: [
           {
-            label: 'Braces Overview',
-            href: '/braces/',
-            description: 'KLOwen fully custom braces.',
+            heading: 'Braces & Early Treatment',
+            links: [
+              { label: 'Braces Overview', href: '/braces/' },
+              { label: 'Braces for Kids', href: '/braces/braces-for-kids/' },
+              { label: 'Braces for Teens', href: '/braces/braces-for-teens/' },
+              { label: 'Braces for Adults', href: '/braces/braces-for-adults/' },
+              { label: 'Early Treatment', href: '/early-treatment/' },
+            ],
           },
-          { label: 'Braces for Adults', href: '/braces/braces-for-adults/' },
-          { label: 'Braces for Teens', href: '/braces/braces-for-teens/' },
-          { label: 'Braces for Kids', href: '/braces/braces-for-kids/' },
-          { label: 'Early Treatment', href: '/early-treatment/' },
+          {
+            heading: 'Invisalign',
+            links: [
+              { label: 'Invisalign Overview', href: '/invisalign/' },
+              { label: 'Invisalign First — for Kids', href: '/invisalign/invisalign-first/' },
+              { label: 'Invisalign Teen', href: '/invisalign/invisalign-teen/' },
+              { label: 'Invisalign for Adults', href: '/invisalign/invisalign-for-adults/' },
+            ],
+          },
+          {
+            heading: 'Additional Treatments',
+            links: [
+              { label: 'Surgical Orthodontics', href: '/surgical-orthodontics/' },
+              { label: 'Retainers', href: '/retainers/' },
+              { label: 'Teeth Whitening', href: '/teeth-whitening/' },
+              { label: 'Airway Aware Treatment', href: '/airway-aware-treatment/' },
+              { label: 'MARPE Treatment', href: '/services/marpe/' },
+            ],
+          },
         ],
+        featured: {
+          title: 'Not sure where to start?',
+          body: 'Explore your treatment options.',
+          href: '/request-appointment/',
+          cta: 'Request Appointment',
+        },
       },
     },
     {
-      label: 'Invisalign',
-      href: '/invisalign/',
+      label: 'Patient Resources',
       panel: {
-        kind: 'links',
-        links: [
-          { label: 'Invisalign Overview', href: '/invisalign/' },
-          { label: 'Invisalign First', href: '/invisalign/invisalign-first/' },
-          { label: 'Invisalign Teen', href: '/invisalign/invisalign-teen/' },
-          { label: 'Invisalign for Adults', href: '/invisalign/invisalign-for-adults/' },
+        kind: 'dropdown',
+        groups: [
+          {
+            heading: 'For Patients',
+            links: [
+              { label: 'Your First Visit / What to Expect', href: '/what-to-expect/' },
+              { label: 'Patient Portal', href: site.greyfinch.portal },
+              { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },
+            ],
+          },
+          {
+            heading: 'For Referring Doctors',
+            links: [{ label: 'Refer a Patient', href: '/doctor-referral/' }],
+          },
         ],
       },
     },
-    {
-      label: 'Other Treatments',
-      panel: {
-        kind: 'links',
-        links: [
-          { label: 'Surgical Orthodontics', href: '/surgical-orthodontics/' },
-          { label: 'Teeth Whitening', href: '/teeth-whitening/' },
-          { label: 'Retainers', href: '/retainers/' },
-          { label: 'Airway Aware Treatment', href: '/airway-aware-treatment/' },
-          { label: 'MARPE Treatment', href: '/services/marpe/' },
-        ],
-      },
-    },
-    {
-      label: 'Resources',
-      panel: {
-        kind: 'links',
-        links: [
-          { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },
-          { label: 'Contact Us', href: '/contact-us/' },
-          { label: 'Doctor Referral', href: '/doctor-referral/' },
-          { label: 'Request an Appointment', href: '/request-appointment/' },
-        ],
-      },
-    },
+    { label: 'Contact Us', href: '/contact-us/' },
   ],
 
-  cta: { label: 'Book Your Free Consult', href: '/request-appointment/' },
+  cta: { label: 'Request Appointment', href: '/request-appointment/' },
   portal: { label: 'Patient Portal', href: site.greyfinch.portal },
 
   footer: [
@@ -153,7 +144,7 @@ export const navigation: NavigationConfig = {
         { label: 'Why Choose Us', href: '/why-choose-us/' },
         { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },
         { label: 'Contact Us', href: '/contact-us/' },
-        { label: 'Doctor Referral', href: '/doctor-referral/' },
+        { label: 'Refer a Patient', href: '/doctor-referral/' },
         { label: 'Request an Appointment', href: '/request-appointment/' },
         { label: 'Patient Portal', href: site.greyfinch.portal },
       ],

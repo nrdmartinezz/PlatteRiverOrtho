@@ -9,7 +9,6 @@
  * Open/close intent delay is CSS transition-delay so the no-JS baseline keeps
  * it. JS layers keyboard control, Escape, outside click, and touch toggling.
  */
-import Container from '../ui/Container.astro';
 import { navigation } from '../../config/navigation';
 import { Icon } from 'astro-icon/components';
 
@@ -23,7 +22,10 @@ const isCurrent = (href: string) =>
   href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 
 const triggerClass =
-  'inline-flex min-h-11 items-center gap-1 rounded-md px-3 text-base font-medium no-underline transition-colors group-data-[appearance=solid]/header:text-ink-base group-data-[appearance=solid]/header:hover:bg-neutral-100 group-data-[appearance=solid]/header:aria-[current=page]:text-ink-brand group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:text-ink-inverse';
+  'inline-flex min-h-11 items-center gap-1 rounded-md px-2 text-sm font-medium no-underline transition-colors lg:px-3 lg:text-base group-data-[appearance=solid]/header:text-ink-base group-data-[appearance=solid]/header:hover:bg-neutral-100 group-data-[appearance=solid]/header:aria-[current=page]:text-ink-brand group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:text-ink-inverse';
+
+const linkClass =
+  'text-ink-brand aria-[current=page]:bg-neutral-100 flex min-h-11 items-center gap-3 rounded-md px-3 py-2 font-medium no-underline hover:bg-neutral-100';
 ---
 
 <nav aria-label="Primary" class="mega hidden md:block">
@@ -46,14 +48,12 @@ const triggerClass =
           );
         }
 
-        const columns =
-          item.panel.kind === 'mega'
-            ? item.panel.columns
-            : [{ heading: undefined, links: item.panel.links }];
-        const featured = item.panel.kind === 'mega' ? item.panel.featured : undefined;
+        const isMega = item.panel.kind === 'mega';
+        const groups = isMega ? item.panel.columns : item.panel.groups;
+        const featured = isMega ? item.panel.featured : undefined;
 
         return (
-          <li class="mega-item static">
+          <li class:list={['mega-item', isMega ? 'static' : 'relative']}>
             <button
               type="button"
               aria-expanded="false"
@@ -66,22 +66,33 @@ const triggerClass =
 
             <div
               id={panelId}
-              class="mega-panel border-line-base bg-surface-base absolute inset-x-0 top-full border-b shadow-lg"
+              class:list={[
+                'mega-panel border-line-base bg-surface-base absolute shadow-lg',
+                isMega
+                  ? 'inset-x-0 top-full border-b'
+                  : index === 0
+                    ? 'top-full left-0 z-20 mt-2 w-max min-w-72 max-w-sm rounded-xl border'
+                    : 'top-full right-0 z-20 mt-2 w-max min-w-72 max-w-sm rounded-xl border',
+              ]}
             >
-              <Container gap="none" class="max-h-[70vh] overflow-y-auto py-8">
+              <div
+                class:list={[
+                  isMega
+                    ? 'px-gutter mx-auto max-h-[70vh] w-full max-w-page overflow-y-auto py-8'
+                    : 'p-5',
+                ]}
+              >
                 <div
                   class:list={[
-                    'grid w-full gap-x-8 gap-y-6',
-                    // Tablet halves the desktop column count; the panel must
-                    // survive 768px because the mega menu runs there too.
-                    'grid-cols-2',
-                    featured ? 'lg:grid-cols-3' : 'lg:grid-cols-4',
+                    isMega
+                      ? 'grid w-full grid-cols-2 gap-x-10 gap-y-8 lg:grid-cols-3'
+                      : 'flex flex-col gap-5',
                   ]}
                 >
-                  {columns.map((column) => (
-                    <div class="flex flex-col gap-2">
+                  {groups.map((column) => (
+                    <div class="flex flex-col gap-1">
                       {column.heading && (
-                        <h2 class="text-ink-muted text-sm font-semibold tracking-wide uppercase">
+                        <h2 class="text-ink-brand px-3 pb-1 text-sm font-semibold">
                           {column.heading}
                         </h2>
                       )}
@@ -91,43 +102,40 @@ const triggerClass =
                             <a
                               href={link.href}
                               aria-current={isCurrent(link.href) ? 'page' : undefined}
-                              class="group/link text-ink-base aria-[current=page]:text-ink-brand flex gap-3 rounded-md p-2 no-underline hover:bg-neutral-100"
+                              target={link.href.startsWith('http') ? '_blank' : undefined}
+                              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                              class={linkClass}
                             >
                               {link.icon && (
                                 <Icon
                                   name={link.icon}
-                                  class="text-brand-600 mt-0.5 size-5 shrink-0"
+                                  class="text-brand-600 size-5 shrink-0"
                                   aria-hidden="true"
                                 />
                               )}
-                              <span class="flex flex-col">
-                                <span class="font-medium">{link.label}</span>
-                                {link.description && (
-                                  <span class="text-ink-muted text-sm">{link.description}</span>
-                                )}
-                              </span>
+                              {link.label}
                             </a>
                           </li>
                         ))}
                       </ul>
                     </div>
                   ))}
-
-                  {featured && (
-                    <div class="bg-surface-muted flex flex-col items-start gap-2 rounded-lg p-5 max-lg:col-span-2">
-                      <h2 class="font-semibold">{featured.title}</h2>
-                      <p class="text-ink-muted text-sm">{featured.body}</p>
-                      <a
-                        href={featured.href}
-                        class="text-ink-brand mt-auto inline-flex min-h-11 items-center gap-1 font-medium"
-                      >
-                        {featured.cta}
-                        <Icon name="lucide:arrow-right" class="size-4" aria-hidden="true" />
-                      </a>
-                    </div>
-                  )}
                 </div>
-              </Container>
+
+                {featured && (
+                  <div class="border-line-base mt-8 flex flex-col items-start justify-between gap-4 border-t pt-5 sm:flex-row sm:items-center">
+                    <p class="text-ink-brand">
+                      <span class="font-semibold">{featured.title}</span> {featured.body}
+                    </p>
+                    <a
+                      href={featured.href}
+                      class="border-accent-500 bg-accent-500 text-neutral-0 hover:bg-accent-600 inline-flex min-h-11 shrink-0 items-center rounded-full border px-5 text-xs font-semibold tracking-wide uppercase no-underline"
+                    >
+                      {featured.cta}
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </li>
         );

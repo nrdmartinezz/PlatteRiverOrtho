@@ -10,7 +10,7 @@
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import { navigation } from '../../config/navigation';
-import { site, formattedPhone } from '../../config/site';
+import { site, formattedPhone, formattedAddress } from '../../config/site';
 import { Icon } from 'astro-icon/components';
 
 interface Props {
@@ -23,7 +23,9 @@ const isCurrent = (href: string) =>
   href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 
 const linkClass =
-  'flex min-h-12 items-center gap-3 rounded-md px-2 text-base no-underline text-ink-base aria-[current=page]:text-ink-brand aria-[current=page]:font-medium';
+  'text-ink-brand aria-[current=page]:font-semibold flex min-h-12 items-center gap-3 rounded-md px-2 text-base no-underline';
+
+const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(formattedAddress)}`;
 ---
 
 <button
@@ -51,12 +53,13 @@ const linkClass =
     <ul class="flex w-full flex-col">
       {
         navigation.primary.map((item, index) => {
-          const sublinks =
-            item.panel?.kind === 'mega'
-              ? item.panel.columns.flatMap((column) => column.links)
-              : (item.panel?.links ?? []);
+          const groups = item.panel
+            ? item.panel.kind === 'mega'
+              ? item.panel.columns
+              : item.panel.groups
+            : [];
 
-          if (sublinks.length === 0) {
+          if (groups.length === 0) {
             return (
               <li class="border-line-base border-b">
                 <a
@@ -107,23 +110,34 @@ const linkClass =
                 hidden
                 class="border-line-base mb-2 ml-2 flex flex-col border-l pl-3"
               >
-                {sublinks.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      aria-current={isCurrent(link.href) ? 'page' : undefined}
-                      class={linkClass}
-                    >
-                      {link.icon && (
-                        <Icon
-                          name={link.icon}
-                          class="text-brand-600 size-5 shrink-0"
-                          aria-hidden="true"
-                        />
-                      )}
-                      {link.label}
-                    </a>
-                  </li>
+                {groups.map((group) => (
+                  <>
+                    {group.heading && (
+                      <li class="text-ink-brand px-2 pt-4 text-xs font-semibold tracking-wide uppercase">
+                        {group.heading}
+                      </li>
+                    )}
+                    {group.links.map((link) => (
+                      <li>
+                        <a
+                          href={link.href}
+                          aria-current={isCurrent(link.href) ? 'page' : undefined}
+                          target={link.href.startsWith('http') ? '_blank' : undefined}
+                          rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          class={linkClass}
+                        >
+                          {link.icon && (
+                            <Icon
+                              name={link.icon}
+                              class="text-brand-600 size-5 shrink-0"
+                              aria-hidden="true"
+                            />
+                          )}
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </>
                 ))}
               </ul>
             </li>
@@ -133,7 +147,11 @@ const linkClass =
     </ul>
 
     <div class="mt-6 flex flex-col gap-3">
-      {navigation.cta && <Button href={navigation.cta.href}>{navigation.cta.label}</Button>}
+      {navigation.cta && (
+        <Button href={navigation.cta.href} variant="accent">
+          {navigation.cta.label}
+        </Button>
+      )}
       {
         navigation.portal?.href && (
           <Button
@@ -149,6 +167,10 @@ const linkClass =
       <Button href={`tel:${site.business.phoneHref}`} variant="secondary">
         <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
         {formattedPhone}
+      </Button>
+      <Button href={directionsHref} variant="secondary" target="_blank" rel="noopener noreferrer">
+        <Icon name="lucide:map-pin" class="size-4" aria-hidden="true" />
+        Directions
       </Button>
     </div>
   </Container>
