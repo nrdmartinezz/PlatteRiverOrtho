@@ -28,7 +28,8 @@ the same page.
 2. Issue the SSL certificate (AutoSSL) **before** the first deploy — `.htaccess`
    force-redirects to HTTPS and will loop against a missing certificate.
 3. Create an FTP account scoped to the document root.
-4. Add repository secrets in GitHub → Settings → Secrets → Actions:
+4. Add repository secrets in GitHub → Settings → Secrets → Actions. Production
+   reads these only when **Deploy** is run by hand:
 
    | Secret           | Value                                    |
    | ---------------- | ---------------------------------------- |
@@ -37,14 +38,27 @@ the same page.
    | `FTP_PASSWORD`   | Its password                             |
    | `FTP_SERVER_DIR` | `public_html/` (trailing slash required) |
 
-5. Update `site` in `astro.config.mjs` and the `Sitemap:` line in
+5. Create a GitHub Environment named `staging` for the automatic deploy:
+
+   | Name       | Kind     | Value                         |
+   | ---------- | -------- | ----------------------------- |
+   | `FTP_HOST` | Variable | Staging FTP host              |
+   | `FTP_USER` | Variable | FTP account scoped to docroot |
+   | `FTP_PW`   | Secret   | That account's password       |
+
+6. Update `site` in `astro.config.mjs` and the `Sitemap:` line in
    `public/robots.txt` to the real domain.
 
 ## Deploying
 
-`.github/workflows/deploy.yml` runs on every push to `main`: install → `verify`
-→ `build` → FTP upload of `dist/`. The `verify` gate means a type error or
-malformed frontmatter fails in CI instead of shipping.
+A push to `main` runs `.github/workflows/deploy-staging.yml`: install → `verify`
+→ `build` → FTP upload of `dist/` to staging. The `verify` gate means a type
+error or malformed frontmatter fails in CI instead of shipping. The FTP account
+is jailed to the staging document root, so the upload target is `./`.
+
+Production does not deploy on push. Run **Deploy** (`.github/workflows/deploy.yml`)
+from the Actions tab when staging is ready to ship. Pick the `main` ref in that
+dialog.
 
 Manual fallback: `npm run build` and upload the contents of `dist/`.
 

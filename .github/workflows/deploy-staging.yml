@@ -1,0 +1,50 @@
+name: Deploy staging
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and upload to staging
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Gate: a type error or malformed frontmatter must never reach the server.
+      - run: npm run verify
+
+      - name: Install PHPMailer
+        run: composer install --no-dev --working-dir=public/api
+
+      - run: npm run build
+
+      - name: FTP deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ vars.FTP_HOST }}
+          username: ${{ vars.FTP_USER }}
+          password: ${{ secrets.FTP_PW }}
+          protocol: ftps
+          local-dir: ./dist/
+          # FTP account is scoped to the staging document root.
+          server-dir: ./
+          # Keeps anything the server owns that the build does not produce.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            cgi-bin/**
