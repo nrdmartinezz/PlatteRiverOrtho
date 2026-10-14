@@ -82,7 +82,7 @@ const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${enc
         </div>
       </div>
 
-      <Button href={cta.href}>
+      <Button href={cta.href} variant="accent">
         {cta.label}
         <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
       </Button>
@@ -104,6 +104,7 @@ const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${enc
       <div
         class="map-facade border-line-base bg-surface-base relative h-52 w-full overflow-hidden rounded-2xl border shadow-md"
         data-src={embedSrc}
+        data-title="Office location map"
       >
         <button
           type="button"
@@ -119,15 +120,6 @@ const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${enc
 </Section>
 
 <script>
-  for (const facade of document.querySelectorAll<HTMLElement>('.map-facade')) {
-    facade.querySelector('button')?.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = facade.dataset.src ?? '';
-      iframe.title = 'Office location map';
-      iframe.loading = 'lazy';
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      iframe.className = 'absolute inset-0 h-full w-full border-0';
-      facade.replaceChildren(iframe);
-    });
-  }
+  import { initMapFacades } from '../../lib/mapFacade';
+  initMapFacades();
 </script>

@@ -8,19 +8,30 @@ interface Props {
   body?: string;
   level?: 2 | 3;
   centered?: boolean;
+  /** Light type for navy and inverse bands. */
+  inverse?: boolean;
 }
 
-const { eyebrow, title, body, level = 2, centered = false } = Astro.props;
+const { eyebrow, title, body, level = 2, centered = false, inverse = false } = Astro.props;
 ---
 
 {
   (eyebrow || title || body) && (
     <div class:list={['flex w-full flex-col gap-3', centered && 'items-center text-center']}>
       {eyebrow && (
-        <p class="text-ink-brand text-sm font-semibold tracking-wide uppercase">{eyebrow}</p>
+        <p
+          class:list={[
+            'text-sm font-semibold tracking-wide uppercase',
+            inverse ? 'text-white/70' : 'text-ink-brand',
+          ]}
+        >
+          {eyebrow}
+        </p>
       )}
-      {title && <Heading level={level}>{title}</Heading>}
-      {body && <p class="max-w-reading text-ink-muted text-lg">{body}</p>}
+      {title && <Heading level={level} class={inverse ? 'text-ink-inverse' : undefined}>{title}</Heading>}
+      {body && (
+        <p class:list={['max-w-reading text-lg', inverse ? 'text-white/75' : 'text-ink-muted']}>{body}</p>
+      )}
     </div>
   )
 }

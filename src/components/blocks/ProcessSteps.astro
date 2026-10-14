@@ -2,9 +2,10 @@
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import Heading from '../ui/Heading.astro';
+import Button from '../ui/Button.astro';
 import BlockHeader from './BlockHeader.astro';
 import { Icon } from 'astro-icon/components';
-import type { BlockProps } from './types';
+import type { BlockAction, BlockProps } from './types';
 
 export interface ProcessStep {
   title: string;
@@ -16,6 +17,8 @@ interface Props extends BlockProps {
   items: ProcessStep[];
   /** Numbers the steps rather than showing icons. */
   numbered?: boolean;
+  /** Optional call to action under the steps. */
+  action?: BlockAction;
 }
 
 const {
@@ -29,7 +32,10 @@ const {
   titleLevel = 2,
   items,
   numbered = true,
+  action,
 } = Astro.props;
+
+const onBrand = background === 'brand' || background === 'inverse';
 ---
 
 <Section background={background} spacing={spacing}>
@@ -40,6 +46,7 @@ const {
       body={body}
       level={titleLevel}
       centered={align === 'center'}
+      inverse={onBrand}
     />
 
     <ol
@@ -52,22 +59,53 @@ const {
     >
       {
         items.map((step, index) => (
-          <li class:list={['flex flex-col gap-3', align === 'center' && 'items-center text-center']}>
+          <li
+            class:list={[
+              'relative flex flex-col gap-3',
+              align === 'center' && 'items-center text-center',
+            ]}
+          >
+            {
+              onBrand && index < items.length - 1 && (
+                <span
+                  class="absolute top-8 left-[calc(50%+2.25rem)] hidden h-px w-[calc(100%-2.5rem)] bg-white/20 lg:block"
+                  aria-hidden="true"
+                />
+              )
+            }
             <span
-              class="border-brand-600 text-ink-brand flex size-16 items-center justify-center rounded-full border-2 font-heading text-xl font-semibold"
+              class:list={[
+                'flex size-16 items-center justify-center rounded-full border-2 font-heading text-2xl font-bold',
+                onBrand
+                  ? 'border-white/20 bg-white/10 text-accent-200'
+                  : 'border-brand-600 text-ink-brand',
+              ]}
               aria-hidden="true"
             >
-              {numbered || !step.icon
-                ? String(index + 1).padStart(2, '0')
-                : <Icon name={step.icon} class="size-5" />}
+              {numbered || !step.icon ? (
+                String(index + 1).padStart(2, '0')
+              ) : (
+                <Icon name={step.icon} class="size-5" />
+              )}
             </span>
-            <Heading level={titleLevel === 2 ? 3 : 4} size="md">
+            <Heading level={titleLevel === 2 ? 3 : 4} size="md" class={onBrand ? 'text-ink-inverse' : undefined}>
               {step.title}
             </Heading>
-            <p class="text-ink-muted">{step.body}</p>
+            <p class={onBrand ? 'text-sm text-white/75' : 'text-ink-muted'}>{step.body}</p>
           </li>
         ))
       }
     </ol>
+
+    {
+      action && (
+        <div class:list={['flex w-full', align === 'center' && 'justify-center']}>
+          <Button href={action.href} variant={action.variant ?? 'accent'}>
+            {action.label}
+            <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
+          </Button>
+        </div>
+      )
+    }
   </Container>
 </Section>

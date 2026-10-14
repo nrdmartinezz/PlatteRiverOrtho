@@ -7,12 +7,13 @@
  * white background once it sticks. MegaMenu (md+) and MobileNav (below md)
  * both read src/config/navigation.ts.
  */
+import { Image } from 'astro:assets';
 import Container from '../ui/Container.astro';
 import MegaMenu from './MegaMenu.astro';
 import MobileNav from './MobileNav.astro';
 import { navigation } from '../../config/navigation';
 import { site } from '../../config/site';
-import { Icon } from 'astro-icon/components';
+import logo from '../../assets/logo.png';
 
 export type HeaderSticky = 'static' | 'sticky' | 'shrink' | 'hide-on-scroll';
 
@@ -46,12 +47,14 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
     gap="none"
     class="justify-between gap-4 py-4 group-data-[scrolled=true]/header:py-2"
   >
-    <a
-      href="/"
-      class="group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base flex items-center gap-2 font-semibold tracking-wide uppercase no-underline"
-    >
-      <Icon name="lucide:hexagon" class="size-7" aria-hidden="true" />
-      <span class="max-lg:text-sm">{site.name}</span>
+    <a href="/" class="flex shrink-0 items-center no-underline">
+      <Image
+        src={logo}
+        alt={site.name}
+        widths={[165, 330]}
+        sizes="165px"
+        class="h-10 w-auto group-data-[appearance=solid]/header:brightness-0"
+      />
     </a>
 
     <div class="flex items-center gap-2 lg:gap-3">
@@ -74,11 +77,7 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
         navigation.cta && (
           <a
             href={navigation.cta.href}
-            class:list={[
-              'hidden min-h-11 items-center rounded-full border px-5 text-xs font-semibold tracking-wide uppercase no-underline md:inline-flex',
-              'group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:border-white/70 group-data-[appearance=overlay]/header:bg-white/10 group-data-[appearance=overlay]/header:hover:bg-white/20',
-              'group-data-[appearance=solid]/header:border-brand-600 group-data-[appearance=solid]/header:bg-brand-600 group-data-[appearance=solid]/header:text-neutral-0 group-data-[appearance=solid]/header:hover:bg-brand-700',
-            ]}
+            class="border-accent-500 bg-accent-500 text-neutral-0 hover:bg-accent-600 hidden min-h-11 items-center rounded-full border px-5 text-xs font-semibold tracking-wide uppercase no-underline md:inline-flex"
           >
             {navigation.cta.label}
           </a>
@@ -101,7 +100,7 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
   }
 
   header[data-appearance='overlay'] {
-    background-color: transparent;
+    background-color: var(--color-brand-500);
     color: var(--color-ink-inverse);
   }
 

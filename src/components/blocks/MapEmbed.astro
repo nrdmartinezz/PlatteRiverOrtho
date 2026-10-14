@@ -1,8 +1,8 @@
 ---
 /**
- * Facade pattern: renders a static placeholder and only loads the Google Maps
- * iframe on click. An eager map iframe costs ~700KB and several hundred ms of
- * main-thread time on every page it appears.
+ * Facade pattern: shows a static placeholder, then loads the Google Maps iframe
+ * once the block scrolls into view. An eager map iframe costs ~700KB and
+ * several hundred ms of main-thread time on every page it appears.
  */
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
@@ -50,6 +50,7 @@ const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${enc
       class="map-facade border-line-base bg-surface-muted relative w-full overflow-hidden rounded-lg border"
       style={`height:${height}`}
       data-src={embedSrc}
+      data-title="Location map"
     >
       <button
         type="button"
@@ -73,15 +74,6 @@ const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${enc
 </Section>
 
 <script>
-  for (const facade of document.querySelectorAll<HTMLElement>('.map-facade')) {
-    facade.querySelector('button')?.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = facade.dataset.src ?? '';
-      iframe.title = 'Location map';
-      iframe.loading = 'lazy';
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      iframe.className = 'absolute inset-0 h-full w-full border-0';
-      facade.replaceChildren(iframe);
-    });
-  }
+  import { initMapFacades } from '../../lib/mapFacade';
+  initMapFacades();
 </script>

@@ -18,6 +18,8 @@ import braces from '../assets/braces.jpg';
 import jawSurgery from '../assets/jaw-surgery.jpg';
 import quoteBand from '../assets/quote-band.jpg';
 import officeExterior from '../assets/office-exterior.jpg';
+import reviewLina from '../assets/review-lina.png';
+import reviewChris from '../assets/review-chris.png';
 
 const faqs = [
   {
@@ -147,7 +149,7 @@ const faqs = [
     badge={{ value: '10+', label: 'Years Experience' }}
     actions={[
       { label: 'Learn More About Dr. Carter', href: '/meet-dr-carter/' },
-      { label: 'Schedule a Consult', href: '/request-appointment/', variant: 'secondary' },
+      { label: 'Schedule a Consult', href: '/request-appointment/', variant: 'accent' },
     ]}
   />
 
@@ -177,14 +179,14 @@ const faqs = [
         imageAlt: 'The Platte River Orthodontics clinical team',
         title: 'Corrective Jaw Surgery',
         body: 'This life-changing treatment improves your ability to chew, speak, and breathe while enhancing facial aesthetics. Ideal for underbites, overbites, open bites, facial asymmetry, or sleep apnea.',
-        href: '/surgical-orthodontics/',
-        cta: 'Learn About Surgical Care',
+        href: '/request-appointment/',
+        cta: 'Book a Consultation',
       },
     ]}
   />
 
   <ProcessSteps
-    background="muted"
+    background="brand"
     align="center"
     eyebrow="Simple Process"
     title="Your Path to a Confident Smile"
@@ -203,6 +205,7 @@ const faqs = [
         body: "Begin treatment and watch your smile transform. We'll support you every step with flexible scheduling and extended hours.",
       },
     ]}
+    action={{ label: 'Start with a Free Consult', href: '/request-appointment/' }}
   />
 
   <Testimonials
@@ -217,6 +220,7 @@ const faqs = [
         name: 'Lina',
         role: 'Google Review',
         rating: 5,
+        avatar: reviewLina,
       },
       {
         quote:
@@ -231,6 +235,7 @@ const faqs = [
         name: 'Chris',
         role: 'Google Review',
         rating: 5,
+        avatar: reviewChris,
       },
       {
         quote:
@@ -249,7 +254,7 @@ const faqs = [
     image={quoteBand}
     imageAlt=""
     actions={[
-      { label: 'Schedule Your Appointment', href: '/request-appointment/' },
+      { label: 'Schedule Your Appointment', href: '/request-appointment/', variant: 'accent' },
       { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
     ]}
   />

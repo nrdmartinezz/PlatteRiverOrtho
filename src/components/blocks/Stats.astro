@@ -31,7 +31,11 @@ const {
 const columnClass = items.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-3';
 ---
 
-<Section background={background} spacing={compact ? 'sm' : spacing}>
+<Section
+  background={compact ? 'brand' : background}
+  spacing={compact ? 'none' : spacing}
+  class={compact ? 'stats-strip' : undefined}
+>
   <Container width={width} align={align} gap={compact ? 'none' : 'lg'}>
     {
       !compact && (
@@ -45,12 +49,32 @@ const columnClass = items.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:g
       )
     }
 
-    <dl class:list={['grid w-full', compact ? 'divide-line-base gap-0 sm:divide-x' : 'gap-8', columnClass]}>
+    <dl
+      class:list={[
+        'grid w-full',
+        compact ? 'gap-0 divide-white/20 sm:divide-x' : 'gap-8',
+        columnClass,
+      ]}
+    >
       {
         items.map((stat) => (
-          <div class:list={['flex flex-col', compact ? 'items-center gap-1 px-4 py-3 text-center' : 'gap-1']}>
-            <dt class="text-ink-muted order-2 text-sm">{stat.label}</dt>
-            <dd class="text-ink-brand font-heading order-1 text-3xl font-semibold tracking-tight">
+          <div class:list={['flex flex-col', compact ? 'items-center gap-0.5 px-4 py-3 text-center' : 'gap-1']}>
+            <dt
+              class:list={[
+                'order-2',
+                compact
+                  ? 'text-xs tracking-wide text-white/75 uppercase'
+                  : 'text-ink-muted text-sm',
+              ]}
+            >
+              {stat.label}
+            </dt>
+            <dd
+              class:list={[
+                'font-heading order-1 font-bold tracking-tight',
+                compact ? 'text-2xl text-white' : 'text-ink-brand text-3xl font-semibold',
+              ]}
+            >
               {stat.value}
             </dd>
           </div>
@@ -59,3 +83,14 @@ const columnClass = items.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:g
     </dl>
   </Container>
 </Section>
+
+<style>
+  .stats-strip {
+    background-image: linear-gradient(
+      90deg,
+      var(--color-brand-300) 0%,
+      var(--color-brand-500) 50%,
+      var(--color-accent-500) 100%
+    );
+  }
+</style>

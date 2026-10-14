@@ -142,7 +142,7 @@ export const navigation: NavigationConfig = {
     },
   ],
 
-  cta: { label: 'Request an Appointment', href: '/request-appointment/' },
+  cta: { label: 'Book Your Free Consult', href: '/request-appointment/' },
   portal: { label: 'Patient Portal', href: site.greyfinch.portal },
 
   footer: [
@@ -197,5 +197,5 @@ export const navigation: NavigationConfig = {
     },
   ],
 
-  legal: [{ label: 'Privacy Policy', href: '/privacy-policy/' }],
+  legal: [{ label: 'Privacy Statement', href: '/privacy-policy/' }],
 };

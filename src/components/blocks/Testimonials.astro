@@ -1,4 +1,6 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import Card from '../ui/Card.astro';
@@ -12,6 +14,8 @@ export interface Testimonial {
   role?: string;
   /** 1–5; omit to hide the star row. */
   rating?: number;
+  /** Optional reviewer photo. Falls back to a monogram. */
+  avatar?: ImageMetadata;
 }
 
 interface Props extends BlockProps {
@@ -52,9 +56,9 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
           <div class="border-line-base bg-surface-base shrink-0 rounded-2xl border px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2">
               <p class="font-heading text-ink-brand text-2xl font-bold">{ratingSummary.score}</p>
-              <div class="flex gap-0.5" role="img" aria-label={`${ratingSummary.score} out of 5 stars`}>
+              <div class="review-stars flex gap-0.5" role="img" aria-label={`${ratingSummary.score} out of 5 stars`}>
                 {Array.from({ length: 5 }).map(() => (
-                  <Icon name="lucide:star" class="size-3.5 text-accent-500" aria-hidden="true" />
+                  <Icon name="lucide:star" class="size-3.5 fill-current" aria-hidden="true" />
                 ))}
               </div>
             </div>
@@ -70,14 +74,11 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
           <Card as="li" variant="outlined" class="rounded-2xl">
             <Icon name="lucide:quote" class="text-brand-600 size-6" aria-hidden="true" />
             {item.rating && (
-              <div class="flex gap-0.5" role="img" aria-label={`${item.rating} out of 5 stars`}>
+              <div class="review-stars flex gap-0.5" role="img" aria-label={`${item.rating} out of 5 stars`}>
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Icon
                     name="lucide:star"
-                    class:list={[
-                      'size-4',
-                      index < item.rating! ? 'text-accent-500' : 'text-neutral-300',
-                    ]}
+                    class:list={['size-3.5', index < item.rating! ? 'fill-current' : 'text-neutral-300']}
                     aria-hidden="true"
                   />
                 ))}
@@ -89,12 +90,24 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
             </blockquote>
 
             <footer class="border-line-base flex items-center gap-3 border-t pt-4 text-sm">
-              <span
-                class="bg-brand-600 text-neutral-0 flex size-10 items-center justify-center rounded-full font-heading font-semibold"
-                aria-hidden="true"
-              >
-                {item.name.charAt(0)}
-              </span>
+              {
+                item.avatar ? (
+                  <Image
+                    src={item.avatar}
+                    alt=""
+                    width={40}
+                    height={40}
+                    class="size-10 rounded-full object-cover"
+                  />
+                ) : (
+                  <span
+                    class="bg-brand-500 text-neutral-0 flex size-10 items-center justify-center rounded-full font-heading text-sm font-semibold"
+                    aria-hidden="true"
+                  >
+                    {item.name.charAt(0)}
+                  </span>
+                )
+              }
               <div>
                 <p class="font-medium">{item.name}</p>
                 {item.role && <p class="text-ink-muted">{item.role}</p>}
@@ -106,3 +119,9 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
     </ul>
   </Container>
 </Section>
+
+<style>
+  .review-stars {
+    color: #f59e0b;
+  }
+</style>

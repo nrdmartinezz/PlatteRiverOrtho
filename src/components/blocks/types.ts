@@ -21,5 +21,5 @@ export interface BlockProps {
 export interface BlockAction {
   label: string;
   href: string;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'inverse';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'inverse' | 'accent';
 }

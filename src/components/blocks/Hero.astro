@@ -154,7 +154,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
               return isPrimary ? (
                 <a
                   href={action.href}
-                  class="inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-wide uppercase text-ink-inverse no-underline hover:opacity-80"
+                  class="border-accent-500 bg-accent-500 hover:bg-accent-600 inline-flex min-h-11 items-center gap-2 rounded-full border-2 px-8 text-xs font-semibold tracking-wide text-ink-inverse uppercase no-underline"
                 >
                   {action.label}
                   <Icon name="lucide:arrow-right" class="size-4" aria-hidden="true" />

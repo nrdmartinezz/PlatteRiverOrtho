@@ -1,7 +1,7 @@
 ---
 /**
  * Utility strip above the sticky nav. Scrolls away with the page — it is never
- * sticky. On overlay (hero) pages it is transparent so the image shows through.
+ * sticky. Stays navy on every page, including overlay heroes.
  */
 import Container from '../ui/Container.astro';
 import { site, formattedPhone, topBarMessage } from '../../config/site';
@@ -16,10 +16,8 @@ const { overlay = false } = Astro.props;
 
 <div
   data-topbar
-  class:list={[
-    'relative z-40 w-full text-ink-inverse',
-    overlay ? 'bg-transparent' : 'bg-brand-200',
-  ]}
+  data-overlay={overlay ? 'true' : 'false'}
+  class="bg-brand-300 text-ink-inverse relative z-40 w-full"
 >
   <Container as="div" layout="bar" gap="none" class="justify-between gap-4 py-2.5">
     <p class="min-w-0 truncate text-[12px] leading-none">{topBarMessage}</p>

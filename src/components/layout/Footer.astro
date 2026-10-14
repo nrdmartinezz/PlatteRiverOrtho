@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import { navigation } from '../../config/navigation';
-import { site, formattedAddress, formattedPhone } from '../../config/site';
+import { site, formattedPhone } from '../../config/site';
 import { Icon } from 'astro-icon/components';
+import logo from '../../assets/logo.png';
 
 const socialIcons: Record<string, string> = {
   facebook: 'lucide:facebook',
@@ -21,50 +23,46 @@ const socials = Object.entries(site.social).filter(([, href]) => Boolean(href)) 
 const year = new Date().getFullYear();
 ---
 
-<Section as="footer" background="inverse" spacing="md">
+<Section as="footer" background="brand" spacing="md" class="footer-navy">
   <Container gap="lg">
-    <div class="grid w-full gap-10 md:grid-cols-4">
-      <div class="flex flex-col gap-3 md:col-span-2">
-        <a href="/" class="text-ink-inverse flex items-center gap-2 font-semibold no-underline">
-          <Icon name="lucide:hexagon" class="size-7" aria-hidden="true" />
-          <span>{site.name}</span>
+    <div class="grid w-full gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div class="flex flex-col gap-4">
+        <a href="/" class="inline-flex no-underline">
+          <Image src={logo} alt={site.name} widths={[165, 330]} sizes="165px" class="h-10 w-auto" />
         </a>
-        <p class="max-w-reading text-neutral-300">
+        <p class="max-w-xs text-sm text-white/65">
           With precision and care, we craft smiles that radiate confidence—supporting our patients’
           success at every stage of life.
         </p>
-
-        <address class="mt-2 flex flex-col gap-2 text-neutral-300 not-italic">
-          <a
-            href={`tel:${site.business.phoneHref}`}
-            class="text-ink-inverse inline-flex min-h-11 items-center gap-2 no-underline"
-          >
-            <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
-            {formattedPhone}
-          </a>
-          <a
-            href={`mailto:${site.business.email}`}
-            class="text-ink-inverse inline-flex min-h-11 items-center gap-2 no-underline"
-          >
-            <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
-            {site.business.email}
-          </a>
-          <span class="flex items-start gap-2">
-            <Icon name="lucide:map-pin" class="mt-1 size-4 shrink-0" aria-hidden="true" />
-            {formattedAddress}
-          </span>
-        </address>
-
-        <dl class="mt-2 text-neutral-300">
-          <dt class="sr-only">Opening hours</dt>
-          {site.business.hours.map((line) => <dd>{line}</dd>)}
-        </dl>
+        {
+          socials.length > 0 && (
+            <ul class="flex gap-3">
+              {socials.map(([platform, href]) => (
+                <li>
+                  <a
+                    href={href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    class="inline-flex size-8 items-center justify-center rounded-xl bg-white/10 text-white no-underline hover:bg-white/20"
+                  >
+                    <span class="sr-only">{platform}</span>
+                    <Icon
+                      name={socialIcons[platform] ?? 'lucide:link'}
+                      class="size-3.5"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
       </div>
 
       {
         navigation.footer.map((group) => (
           <nav aria-label={group.heading} class="flex flex-col gap-3">
-            <h2 class="text-sm font-semibold tracking-wide text-neutral-400 uppercase">
+            <h2 class="font-heading text-sm font-semibold tracking-wide text-white uppercase">
               {group.heading}
             </h2>
             <ul class="flex flex-col gap-1">
@@ -74,7 +72,7 @@ const year = new Date().getFullYear();
                     href={link.href}
                     target={link.href.startsWith('http') ? '_blank' : undefined}
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    class="hover:text-ink-inverse inline-flex min-h-11 items-center text-neutral-300 no-underline"
+                    class="inline-flex min-h-11 items-center text-sm text-white/65 no-underline hover:text-white"
                   >
                     {link.label}
                   </a>
@@ -84,41 +82,56 @@ const year = new Date().getFullYear();
           </nav>
         ))
       }
+
+      <div class="flex flex-col gap-4">
+        <h2 class="font-heading text-sm font-semibold tracking-wide text-white uppercase">
+          Contact &amp; Hours
+        </h2>
+        <address class="flex flex-col gap-3 text-sm text-white/65 not-italic">
+          <span class="flex items-start gap-3">
+            <Icon name="lucide:map-pin" class="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+            <span>
+              {site.business.address.street}
+              <br />
+              {site.business.address.locality}, {site.business.address.region}{' '}
+              {site.business.address.postalCode}
+            </span>
+          </span>
+          <a
+            href={`tel:${site.business.phoneHref}`}
+            class="inline-flex items-center gap-3 text-white/65 no-underline hover:text-white"
+          >
+            <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
+            {formattedPhone}
+          </a>
+          <a
+            href={`mailto:${site.business.email}`}
+            class="inline-flex items-center gap-3 text-white/65 no-underline hover:text-white"
+          >
+            <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
+            {site.business.email}
+          </a>
+        </address>
+        <div class="rounded-2xl bg-white/10 p-4">
+          <p class="font-heading text-xs font-semibold tracking-wide text-white/90 uppercase">
+            Office Hours
+          </p>
+          <p class="mt-2 text-sm text-white/65">Mon – Fri: 7:00 am – 7:00 pm</p>
+          <p class="text-sm text-white/65">Saturday: 9:00 am – 3:00 pm</p>
+          <p class="text-sm text-white/65">Sunday: Closed</p>
+        </div>
+      </div>
     </div>
 
-    {
-      socials.length > 0 && (
-        <ul class="flex gap-2">
-          {socials.map(([platform, href]) => (
-            <li>
-              <a
-                href={href}
-                rel="noopener noreferrer"
-                target="_blank"
-                class="hover:text-ink-inverse inline-flex size-11 items-center justify-center rounded-md text-neutral-300 no-underline hover:bg-neutral-800"
-              >
-                <span class="sr-only">{platform}</span>
-                <Icon
-                  name={socialIcons[platform] ?? 'lucide:link'}
-                  class="size-5"
-                  aria-hidden="true"
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
-      )
-    }
-
     <div
-      class="flex w-full flex-col gap-3 border-t border-neutral-800 pt-6 text-sm text-neutral-400 md:flex-row md:items-center md:justify-between"
+      class="flex w-full flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/40 md:flex-row md:items-center md:justify-between"
     >
       <p>&copy; {year} {site.legalName ?? site.name}. All rights reserved.</p>
       <ul class="flex flex-wrap gap-4">
         {
           navigation.legal.map((link) => (
             <li>
-              <a href={link.href} class="hover:text-ink-inverse text-neutral-400 no-underline">
+              <a href={link.href} class="text-white/40 no-underline hover:text-white">
                 {link.label}
               </a>
             </li>
@@ -128,3 +141,9 @@ const year = new Date().getFullYear();
     </div>
   </Container>
 </Section>
+
+<style>
+  .footer-navy {
+    background-color: var(--color-brand-300);
+  }
+</style>
