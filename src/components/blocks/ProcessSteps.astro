@@ -52,14 +52,18 @@ const {
     >
       {
         items.map((step, index) => (
-          <li class:list={['flex flex-col gap-3', align === 'center' && 'items-center text-center']}>
+          <li
+            class:list={['flex flex-col gap-3', align === 'center' && 'items-center text-center']}
+          >
             <span
-              class="border-brand-600 text-ink-brand flex size-16 items-center justify-center rounded-full border-2 font-heading text-xl font-semibold"
+              class="border-brand-600 text-ink-brand font-heading flex size-16 items-center justify-center rounded-full border-2 text-xl font-semibold"
               aria-hidden="true"
             >
-              {numbered || !step.icon
-                ? String(index + 1).padStart(2, '0')
-                : <Icon name={step.icon} class="size-5" />}
+              {numbered || !step.icon ? (
+                String(index + 1).padStart(2, '0')
+              ) : (
+                <Icon name={step.icon} class="size-5" />
+              )}
             </span>
             <Heading level={titleLevel === 2 ? 3 : 4} size="md">
               {step.title}

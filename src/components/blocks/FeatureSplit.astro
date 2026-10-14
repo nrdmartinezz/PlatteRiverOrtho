@@ -65,7 +65,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
         badge && (
           <div class="bg-brand-600 text-ink-inverse absolute right-4 bottom-4 rounded-2xl px-4 py-3 shadow-md">
             <p class="font-heading text-2xl font-bold">{badge.value}</p>
-            <p class="text-xs tracking-wide uppercase text-white/80">{badge.label}</p>
+            <p class="text-xs tracking-wide text-white/80 uppercase">{badge.label}</p>
           </div>
         )
       }
@@ -88,11 +88,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
         )
       }
       {title && <Heading level={titleLevel}>{title}</Heading>}
-      {
-        paragraphs.map((paragraph) => (
-          <p class="text-ink-muted max-w-reading">{paragraph}</p>
-        ))
-      }
+      {paragraphs.map((paragraph) => <p class="text-ink-muted max-w-reading">{paragraph}</p>)}
 
       {
         bullets.length > 0 && (

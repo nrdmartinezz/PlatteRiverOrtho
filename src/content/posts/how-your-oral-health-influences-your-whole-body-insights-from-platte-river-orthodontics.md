@@ -1,20 +1,21 @@
 ---
-title: "How Your Oral Health Influences Your Whole Body: Insights from Platte River Orthodontics"
-description: "When most people think about orthodontics, they picture a straighter smile and boosted confidence. While that’s certainly true, here at Platte River Orthodontics in Gretna, NE,..."
+title: 'How Your Oral Health Influences Your Whole Body: Insights from Platte River Orthodontics'
+description: 'When most people think about orthodontics, they picture a straighter smile and boosted confidence. While that’s certainly true, here at Platte River Orthodontics in Gretna, NE,...'
 publishDate: 2025-11-16
 updatedDate: 2026-05-06
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/how-your-oral-health-influences-your-whole-body-insights-from-platte-river-orthodontics-hero.jpg
-heroImageAlt: "How Your Oral Health Influences Your Whole Body: Insights from Platte River Orthodontics"
+heroImageAlt: 'How Your Oral Health Influences Your Whole Body: Insights from Platte River Orthodontics'
 ---
+
 When most people think about orthodontics, they picture a straighter smile and boosted confidence. While that’s certainly true, here at **Platte River Orthodontics** in Gretna, NE, Dr. Chad Carter and our team understand there’s much more at stake. Your oral health is deeply connected to your overall wellness—a relationship known as the **oral-systemic connection**.
 
 ## Your Mouth: The Gateway to Whole-Body Health
 
 Your mouth hosts a complex ecosystem of bacteria—mostly harmless when balanced by daily brushing, flossing, and regular dental visits. But when oral hygiene is compromised or when crooked teeth make cleaning tricky, harmful bacteria can take hold. These bacteria trigger inflammation in your gums, a condition called **periodontal disease**.
 
-This inflammation isn’t just local. Harmful bacteria and inflammatory markers can enter your bloodstream and affect other parts of your body. A significant study published in *Scientific Reports* analyzed data from over 13,000 adults and revealed a strong link between gum disease and systemic conditions like diabetes and high blood pressure. This scientific evidence highlights why maintaining your oral health is vital for your entire body.
+This inflammation isn’t just local. Harmful bacteria and inflammatory markers can enter your bloodstream and affect other parts of your body. A significant study published in _Scientific Reports_ analyzed data from over 13,000 adults and revealed a strong link between gum disease and systemic conditions like diabetes and high blood pressure. This scientific evidence highlights why maintaining your oral health is vital for your entire body.
 
 ## The Link Between Gum Disease and Heart Health
 

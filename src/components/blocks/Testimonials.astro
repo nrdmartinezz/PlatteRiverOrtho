@@ -52,9 +52,13 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
           <div class="border-line-base bg-surface-base shrink-0 rounded-2xl border px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2">
               <p class="font-heading text-ink-brand text-2xl font-bold">{ratingSummary.score}</p>
-              <div class="flex gap-0.5" role="img" aria-label={`${ratingSummary.score} out of 5 stars`}>
+              <div
+                class="flex gap-0.5"
+                role="img"
+                aria-label={`${ratingSummary.score} out of 5 stars`}
+              >
                 {Array.from({ length: 5 }).map(() => (
-                  <Icon name="lucide:star" class="size-3.5 text-accent-500" aria-hidden="true" />
+                  <Icon name="lucide:star" class="text-accent-500 size-3.5" aria-hidden="true" />
                 ))}
               </div>
             </div>
@@ -90,7 +94,7 @@ const columnClass = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' }[columns];
 
             <footer class="border-line-base flex items-center gap-3 border-t pt-4 text-sm">
               <span
-                class="bg-brand-600 text-neutral-0 flex size-10 items-center justify-center rounded-full font-heading font-semibold"
+                class="bg-brand-600 text-neutral-0 font-heading flex size-10 items-center justify-center rounded-full font-semibold"
                 aria-hidden="true"
               >
                 {item.name.charAt(0)}

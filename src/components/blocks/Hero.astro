@@ -72,10 +72,8 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
           fetchpriority="high"
           class="size-full object-cover object-[68%_center] max-md:object-center"
         />
-        <div
-          class="absolute inset-0 bg-linear-to-r from-brand-100 from-8% via-brand-200/90 via-42% to-brand-400/20 to-78% max-md:from-brand-100/95 max-md:via-brand-200/88 max-md:to-brand-200/70"
-        />
-        <div class="absolute inset-0 bg-linear-to-t from-brand-100/45 via-transparent to-brand-100/25" />
+        <div class="from-brand-100 via-brand-200/90 to-brand-400/20 max-md:from-brand-100/95 max-md:via-brand-200/88 max-md:to-brand-200/70 absolute inset-0 bg-linear-to-r from-8% via-42% to-78%" />
+        <div class="from-brand-100/45 to-brand-100/25 absolute inset-0 bg-linear-to-t via-transparent" />
       </div>
     )
   }
@@ -112,7 +110,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
         {title}
         {
           titleAccent && (
-            <span class="font-heading mt-1 block text-[1.05em] leading-none font-semibold tracking-tight text-accent-200 italic">
+            <span class="font-heading text-accent-200 mt-1 block text-[1.05em] leading-none font-semibold tracking-tight italic">
               {titleAccent}
             </span>
           )
@@ -121,7 +119,12 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
 
       {
         paragraphs.length > 0 && (
-          <div class:list={['flex max-w-reading flex-col gap-4', overlay ? 'text-base opacity-90' : 'text-lg opacity-90']}>
+          <div
+            class:list={[
+              'max-w-reading flex flex-col gap-4',
+              overlay ? 'text-base opacity-90' : 'text-lg opacity-90',
+            ]}
+          >
             {paragraphs.map((paragraph) => (
               <p>{paragraph}</p>
             ))}
@@ -154,7 +157,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
               return isPrimary ? (
                 <a
                   href={action.href}
-                  class="inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-wide uppercase text-ink-inverse no-underline hover:opacity-80"
+                  class="text-ink-inverse inline-flex min-h-11 items-center gap-2 text-xs font-semibold tracking-wide uppercase no-underline hover:opacity-80"
                 >
                   {action.label}
                   <Icon name="lucide:arrow-right" class="size-4" aria-hidden="true" />
@@ -162,7 +165,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
               ) : (
                 <a
                   href={action.href}
-                  class="inline-flex min-h-11 items-center rounded-full border border-white/80 px-6 text-xs font-semibold tracking-wide uppercase text-ink-inverse no-underline hover:bg-white/10"
+                  class="text-ink-inverse inline-flex min-h-11 items-center rounded-full border border-white/80 px-6 text-xs font-semibold tracking-wide uppercase no-underline hover:bg-white/10"
                 >
                   {action.label}
                 </a>
@@ -189,7 +192,7 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
           <ul class="flex flex-wrap items-center gap-x-8 gap-y-3">
             {highlights.map((item) => (
               <li class="flex items-center gap-2.5 text-sm">
-                <Icon name={item.icon} class="size-4 shrink-0 text-accent-200" aria-hidden="true" />
+                <Icon name={item.icon} class="text-accent-200 size-4 shrink-0" aria-hidden="true" />
                 <span>{item.label}</span>
               </li>
             ))}

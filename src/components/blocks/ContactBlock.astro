@@ -53,7 +53,7 @@ const socialIcons: Record<string, string> = {
       <div class="bg-brand-600 text-ink-inverse flex flex-col gap-6 p-8 md:p-10">
         {
           eyebrow && (
-            <p class="text-sm font-semibold tracking-wide uppercase text-white/70">{eyebrow}</p>
+            <p class="text-sm font-semibold tracking-wide text-white/70 uppercase">{eyebrow}</p>
           )
         }
         <Heading level={titleLevel} class="text-ink-inverse">
@@ -74,7 +74,9 @@ const socialIcons: Record<string, string> = {
               data-source="contact-block"
               class="inline-flex min-h-11 items-center gap-3 no-underline"
             >
-              <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <span
+                class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15"
+              >
                 <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
               </span>
               402-322-8838
@@ -85,7 +87,9 @@ const socialIcons: Record<string, string> = {
               href={`mailto:${site.business.email}`}
               class="inline-flex min-h-11 items-center gap-3 break-all no-underline"
             >
-              <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+              <span
+                class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15"
+              >
                 <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
               </span>
               {site.business.email}
@@ -96,7 +100,7 @@ const socialIcons: Record<string, string> = {
         {
           socials.length > 0 && (
             <div class="mt-auto pt-4">
-              <p class="mb-3 text-sm tracking-wide uppercase text-white/70">Follow Us</p>
+              <p class="mb-3 text-sm tracking-wide text-white/70 uppercase">Follow Us</p>
               <ul class="flex gap-2">
                 {socials.map(([platform, href]) => (
                   <li>

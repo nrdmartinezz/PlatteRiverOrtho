@@ -28,7 +28,8 @@ const {
   imageAlt = '',
 } = Astro.props;
 
-const defaultVariant = background === 'brand' || background === 'inverse' || image ? 'inverse' : 'primary';
+const defaultVariant =
+  background === 'brand' || background === 'inverse' || image ? 'inverse' : 'primary';
 ---
 
 <Section
@@ -46,7 +47,7 @@ const defaultVariant = background === 'brand' || background === 'inverse' || ima
           sizes="100vw"
           class="size-full object-cover"
         />
-        <div class="absolute inset-0 bg-linear-to-br from-brand-100/95 via-brand-500/90 to-accent-400/85" />
+        <div class="from-brand-100/95 via-brand-500/90 to-accent-400/85 absolute inset-0 bg-linear-to-br" />
       </div>
     )
   }
@@ -57,7 +58,9 @@ const defaultVariant = background === 'brand' || background === 'inverse' || ima
       title && (
         <Heading
           level={titleLevel}
-          class:list={[(background === 'brand' || background === 'inverse' || image) && 'text-ink-inverse']}
+          class:list={[
+            (background === 'brand' || background === 'inverse' || image) && 'text-ink-inverse',
+          ]}
         >
           {title}
         </Heading>
@@ -78,7 +81,7 @@ const defaultVariant = background === 'brand' || background === 'inverse' || ima
               class:list={[
                 onDark &&
                   variant === 'secondary' &&
-                  'border-white/80 text-ink-inverse hover:bg-white/10',
+                  'text-ink-inverse border-white/80 hover:bg-white/10',
               ]}
             >
               {action.label}

@@ -1,13 +1,14 @@
 ---
-title: "Screen Time, Mouth Breathing & Your Child’s Smile: What Gretna Parents Should Know"
-description: "In today’s digital age, screens have become a staple in childhood—from tablets used for learning to the latest video games and streaming shows. Here in Gretna, NE, we’re seeing..."
+title: 'Screen Time, Mouth Breathing & Your Child’s Smile: What Gretna Parents Should Know'
+description: 'In today’s digital age, screens have become a staple in childhood—from tablets used for learning to the latest video games and streaming shows. Here in Gretna, NE, we’re seeing...'
 publishDate: 2026-02-10
 updatedDate: 2026-05-06
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/screen-time-mouth-breathing-your-childs-smile-what-gretna-parents-should-know-hero.jpg
-heroImageAlt: "Screen Time, Mouth Breathing & Your Child’s Smile: What Gretna Parents Should Know"
+heroImageAlt: 'Screen Time, Mouth Breathing & Your Child’s Smile: What Gretna Parents Should Know'
 ---
+
 In today’s digital age, screens have become a staple in childhood—from tablets used for learning to the latest video games and streaming shows. Here in Gretna, NE, we’re seeing kids spending more hours than ever in front of devices. While most parents are aware of the effects on sleep and focus, one often overlooked concern is how screen habits can contribute to **mouth breathing** — a habit that can impact your child’s dental growth and overall oral health.
 
 At **Platte River Orthodontics**, Dr. Chad Carter frequently observes young patients who breathe through their mouths, and we want to share why this matters and what you can do to help your child maintain a healthy, confident smile.

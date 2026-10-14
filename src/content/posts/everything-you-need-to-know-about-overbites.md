@@ -1,11 +1,12 @@
 ---
-title: "Everything You Need to Know About Overbites"
-description: "Many people think the sole purpose of braces is to provide a straight, aesthetic smile. While braces definitely correct crooked teeth, they are also imperative for fixing..."
+title: 'Everything You Need to Know About Overbites'
+description: 'Many people think the sole purpose of braces is to provide a straight, aesthetic smile. While braces definitely correct crooked teeth, they are also imperative for fixing...'
 publishDate: 2025-10-14
 updatedDate: 2026-01-26
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 ---
+
 Many people think the sole purpose of braces is to provide a straight, aesthetic smile. While braces definitely correct crooked teeth, they are also imperative for fixing misaligned bites. It is super important to your overall oral health for your jaws to line up properly. Misalignment of the top and bottom jaws can cause chewing difficulties, breathing issues, speech problems, gum disease, and jaw pain.
 
 An overbite is classified by top teeth that protrude over the bottom teeth. In a proper bite, the top jaw sits one to two millimeters over the bottom jaw, but any further protrusion classifies the bite as an overbite. The severity of an overbite is measured by the degree of overlap. A higher degree of overlap means your case is more severe and your treatment will be more complex.

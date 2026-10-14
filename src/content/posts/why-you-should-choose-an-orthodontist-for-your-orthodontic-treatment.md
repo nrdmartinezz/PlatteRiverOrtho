@@ -1,13 +1,14 @@
 ---
-title: "Why You Should Choose an Orthodontist for Your Orthodontic Treatment"
-description: "When it’s time for you or your child to get braces, who should you go to for treatment? Your family dentist probably offers some orthodontic treatment, but should you find an..."
+title: 'Why You Should Choose an Orthodontist for Your Orthodontic Treatment'
+description: 'When it’s time for you or your child to get braces, who should you go to for treatment? Your family dentist probably offers some orthodontic treatment, but should you find an...'
 publishDate: 2026-01-27
 updatedDate: 2026-05-06
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/why-you-should-choose-an-orthodontist-for-your-orthodontic-treatment-hero.jpg
-heroImageAlt: "Why You Should Choose an Orthodontist for Your Orthodontic Treatment"
+heroImageAlt: 'Why You Should Choose an Orthodontist for Your Orthodontic Treatment'
 ---
+
 When it’s time for you or your child to get braces, who should you go to for treatment? Your family dentist probably offers some orthodontic treatment, but should you find an orthodontist instead?
 
 Although some people may use the terms interchangeably, orthodontists and dentists are two different types of medical professionals working in the same field. Think about various kinds of doctors in the medical field. For instance, a family practitioner and a cardio surgeon are both doctors, but they have received different specialized training, so they can help patients with those specialized needs.

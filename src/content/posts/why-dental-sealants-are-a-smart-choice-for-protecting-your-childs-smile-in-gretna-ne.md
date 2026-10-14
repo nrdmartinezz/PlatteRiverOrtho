@@ -1,12 +1,13 @@
 ---
-title: "Why Dental Sealants Are a Smart Choice for Protecting Your Child’s Smile in Gretna, NE"
-description: "At Platte River Orthodontics, led by Dr. Chad Carter, we believe prevention is the cornerstone of a lifetime of healthy smiles. One of the simplest yet most effective ways to..."
+title: 'Why Dental Sealants Are a Smart Choice for Protecting Your Child’s Smile in Gretna, NE'
+description: 'At Platte River Orthodontics, led by Dr. Chad Carter, we believe prevention is the cornerstone of a lifetime of healthy smiles. One of the simplest yet most effective ways to...'
 publishDate: 2026-05-06
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/why-dental-sealants-are-a-smart-choice-for-protecting-your-childs-smile-in-gretna-ne-hero.jpg
-heroImageAlt: "Why Dental Sealants Are a Smart Choice for Protecting Your Child’s Smile in Gretna, NE"
+heroImageAlt: 'Why Dental Sealants Are a Smart Choice for Protecting Your Child’s Smile in Gretna, NE'
 ---
+
 At Platte River Orthodontics, led by Dr. Chad Carter, we believe prevention is the cornerstone of a lifetime of healthy smiles. One of the simplest yet most effective ways to guard your child’s teeth from decay is through dental sealants — a quick, painless treatment that acts as a shield against cavities during the years when kids’ teeth are most vulnerable.
 
 ## What Exactly Are Dental Sealants?

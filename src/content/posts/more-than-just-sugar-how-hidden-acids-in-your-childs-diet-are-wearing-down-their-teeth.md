@@ -1,13 +1,14 @@
 ---
-title: "More Than Just Sugar: How Hidden Acids in Your Child’s Diet Are Wearing Down Their Teeth"
-description: "When parents think about what harms their child’s teeth, sugar usually takes the spotlight. But at Platte River Orthodontics, Dr. Chad Carter wants families in Gretna, NE, to..."
+title: 'More Than Just Sugar: How Hidden Acids in Your Child’s Diet Are Wearing Down Their Teeth'
+description: 'When parents think about what harms their child’s teeth, sugar usually takes the spotlight. But at Platte River Orthodontics, Dr. Chad Carter wants families in Gretna, NE, to...'
 publishDate: 2026-02-22
 updatedDate: 2026-05-06
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/more-than-just-sugar-how-hidden-acids-in-your-childs-diet-are-wearing-down-their-teeth-hero.jpg
-heroImageAlt: "More Than Just Sugar: How Hidden Acids in Your Child’s Diet Are Wearing Down Their Teeth"
+heroImageAlt: 'More Than Just Sugar: How Hidden Acids in Your Child’s Diet Are Wearing Down Their Teeth'
 ---
+
 When parents think about what harms their child’s teeth, sugar usually takes the spotlight. But at **Platte River Orthodontics**, Dr. Chad Carter wants families in Gretna, NE, to know there’s another sneaky enemy damaging young smiles: **dietary acids**. These acids quietly wear away enamel over time, leaving teeth vulnerable long before cavities become obvious.
 
 Understanding how acid erosion differs from cavities — and spotting the acidic culprits lurking in everyday foods and drinks — can make a big impact on maintaining your child’s healthy, confident smile.

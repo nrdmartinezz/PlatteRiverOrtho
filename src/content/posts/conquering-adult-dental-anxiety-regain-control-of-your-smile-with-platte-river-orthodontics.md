@@ -1,13 +1,14 @@
 ---
-title: "Conquering Adult Dental Anxiety: Regain Control of Your Smile with Platte River Orthodontics"
-description: "If the thought of visiting the orthodontist makes your heart race, you’re far from alone. Studies reveal that nearly three-quarters of adults experience some degree of dental..."
+title: 'Conquering Adult Dental Anxiety: Regain Control of Your Smile with Platte River Orthodontics'
+description: 'If the thought of visiting the orthodontist makes your heart race, you’re far from alone. Studies reveal that nearly three-quarters of adults experience some degree of dental...'
 publishDate: 2025-12-17
 updatedDate: 2026-05-07
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/conquering-adult-dental-anxiety-regain-control-of-your-smile-with-platte-river-orthodontics-hero.jpg
-heroImageAlt: "Conquering Adult Dental Anxiety: Regain Control of Your Smile with Platte River Orthodontics"
+heroImageAlt: 'Conquering Adult Dental Anxiety: Regain Control of Your Smile with Platte River Orthodontics'
 ---
+
 If the thought of visiting the orthodontist makes your heart race, you’re far from alone. Studies reveal that nearly three-quarters of adults experience some degree of dental anxiety, with more than a quarter facing intense fear. At **Platte River Orthodontics**, Dr. Chad Carter understands how this fear can stand in the way of achieving a healthy, radiant smile. Our mission is to transform your orthodontic journey into one defined by comfort, confidence, and control.
 
 ## Understanding the Roots of Dental Anxiety

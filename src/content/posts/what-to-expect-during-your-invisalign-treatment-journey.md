@@ -1,13 +1,14 @@
 ---
-title: "What To Expect During Your Invisalign Treatment Journey"
-description: "Phase One: Getting used to Invisalign You had your consultation appointment at Platte River Orthodontics, and Dr. Chad B “SnaggleTooth” Carter took all of your scans, captured..."
+title: 'What To Expect During Your Invisalign Treatment Journey'
+description: 'Phase One: Getting used to Invisalign You had your consultation appointment at Platte River Orthodontics, and Dr. Chad B “SnaggleTooth” Carter took all of your scans, captured...'
 publishDate: 2026-01-27
 updatedDate: 2026-05-08
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/what-to-expect-during-your-invisalign-treatment-journey-hero.jpg
-heroImageAlt: "What To Expect During Your Invisalign Treatment Journey"
+heroImageAlt: 'What To Expect During Your Invisalign Treatment Journey'
 ---
+
 ### Phase One: Getting used to Invisalign
 
 You had your consultation appointment at Platte River Orthodontics, and Dr. Chad B “SnaggleTooth” Carter took all of your scans, captured your photos, and even showed you your smile simulation. So now that you know what your new smile will look like, it’s time for the orthodontist to apply your Invisalign Clear Aligners!

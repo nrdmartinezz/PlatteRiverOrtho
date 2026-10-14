@@ -1,13 +1,14 @@
 ---
-title: "What to Expect After Braces: Your Essential Guide to Retention | Platte River Orthodontics, Gretna NE"
-description: "Congratulations! Whether you’ve just had your braces removed or finished your final Invisalign aligners, reaching this point marks a major achievement on your smile journey. At..."
+title: 'What to Expect After Braces: Your Essential Guide to Retention | Platte River Orthodontics, Gretna NE'
+description: 'Congratulations! Whether you’ve just had your braces removed or finished your final Invisalign aligners, reaching this point marks a major achievement on your smile journey. At...'
 publishDate: 2026-01-15
 updatedDate: 2026-05-06
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/what-to-expect-after-braces-your-essential-guide-to-retention-platte-river-orthodontics-gretna-ne-hero.jpg
-heroImageAlt: "What to Expect After Braces: Your Essential Guide to Retention | Platte River Orthodontics, Gretna NE"
+heroImageAlt: 'What to Expect After Braces: Your Essential Guide to Retention | Platte River Orthodontics, Gretna NE'
 ---
+
 Congratulations! Whether you’ve just had your braces removed or finished your final Invisalign aligners, reaching this point marks a major achievement on your smile journey. At **Platte River Orthodontics**, Dr. Chad Carter and our team take pride in crafting smiles that boost your confidence and support your success. But the work doesn’t stop once your braces come off — it’s time to focus on retention, the crucial next step in maintaining your beautiful, straight teeth for years to come.
 
 ## Why Teeth Shift After Orthodontic Treatment

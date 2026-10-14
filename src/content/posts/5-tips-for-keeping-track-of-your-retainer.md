@@ -1,13 +1,14 @@
 ---
-title: "5 Tips for Keeping Track of Your Retainer"
-description: "After months of wearing braces or clear aligner trays, you finally have the smile of your dreams! And now that you know what your best smile looks like, you of course want to..."
+title: '5 Tips for Keeping Track of Your Retainer'
+description: 'After months of wearing braces or clear aligner trays, you finally have the smile of your dreams! And now that you know what your best smile looks like, you of course want to...'
 publishDate: 2025-12-11
 updatedDate: 2026-05-08
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/5-tips-for-keeping-track-of-your-retainer-hero.jpg
-heroImageAlt: "5 Tips for Keeping Track of Your Retainer"
+heroImageAlt: '5 Tips for Keeping Track of Your Retainer'
 ---
+
 After months of wearing braces or clear aligner trays, you finally have the smile of your dreams! And now that you know what your best smile looks like, you of course want to keep it that way. That is where your retainer comes into play. [Dr. Chad B “SnaggleTooth” Carter](/meet-dr-carter/)at **Platte River Orthodontics** will provide you with a retainer to keep your teeth from shifting after your treatment. For the first few months, you might have to wear your retainer during the day and at night. So keeping track of your retainer becomes extremely important. You don’t want to be without your retainer because the work those braces or clear aligners did can be reversed in a short amount of time. So you never have to worry about being without it, here are 5 tips for keeping track of your retainer.
 
 ### 1. Place it in the case when you take it out

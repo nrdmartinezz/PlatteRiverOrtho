@@ -1,10 +1,11 @@
 ---
-title: "Elastics for Braces"
-description: "Did you seek orthodontic treatment because you want to improve the look of your smile? While orthodontic treatment will improve the look of your smile, it can also help correct..."
+title: 'Elastics for Braces'
+description: 'Did you seek orthodontic treatment because you want to improve the look of your smile? While orthodontic treatment will improve the look of your smile, it can also help correct...'
 publishDate: 2026-01-26
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 ---
+
 Did you seek orthodontic treatment because you want to improve the look of your smile? While orthodontic treatment will improve the look of your smile, it can also help correct your bite and can even improve the way your top and bottom jaws function together. Most people have heard of braces and understand what they do—straighten teeth—but do you know the purpose of elastics for braces?
 
 [Metal braces](/braces/)and [clear aligners](/invisalign/) are just part of the puzzle when it comes to straightening your teeth and correcting your bite. Another major player in the orthodontic treatment game is elastics.
@@ -31,7 +32,7 @@ Your orthodontic treatment plan may require elastics if you have any of the foll
 
 - Open bite
 
-*Open bite treatment may require a different positioning of the elastic bands over the braces brackets.*
+_Open bite treatment may require a different positioning of the elastic bands over the braces brackets._
 
 Orthodontic elastics come in many lengths and thicknesses. Your orthodontist will pair the perfect length and thickness with your braces treatment, depending on your orthodontic needs and your treatment plan.
 

@@ -1,13 +1,14 @@
 ---
-title: "5 Habits That Can Be Harmful to Your Teeth"
-description: "Hello, Dr. Chad B “SnaggleTooth” Carter here with Platte River Orthodontics in Gretna, NE. As your orthodontist, I want to teach you how to properly care for your teeth, so you..."
+title: '5 Habits That Can Be Harmful to Your Teeth'
+description: 'Hello, Dr. Chad B “SnaggleTooth” Carter here with Platte River Orthodontics in Gretna, NE. As your orthodontist, I want to teach you how to properly care for your teeth, so you...'
 publishDate: 2026-01-27
 updatedDate: 2026-05-13
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/5-habits-that-can-be-harmful-to-your-teeth-hero.jpg
-heroImageAlt: "5 Habits That Can Be Harmful to Your Teeth"
+heroImageAlt: '5 Habits That Can Be Harmful to Your Teeth'
 ---
+
 Hello, **Dr. Chad B “SnaggleTooth” Carter** here with **Platte River Orthodontics** in **Gretna, NE**. As your orthodontist, I want to teach you how to properly care for your teeth, so you can have the best smile possible! Investing in the treatment process is a big commitment, and we don’t want anything to harm your smile during that process.
 
 Caring for your teeth involves more than brushing and flossing. There are small behaviors you should be aware of that can have a negative impact on your smile and your overall oral health. Because these habits typically come naturally to most of our patients, we want to make sure you are aware of them. Here are 5 Habits That Can Be Harmful to Your Teeth.

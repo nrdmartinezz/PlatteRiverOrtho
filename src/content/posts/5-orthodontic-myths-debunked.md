@@ -1,11 +1,12 @@
 ---
-title: "5 Orthodontic Myths Debunked"
-description: "People have been preoccupied with the idea of straight teeth for hundreds of years, and braces have been around in some form or fashion since the early 1800s! While orthodontic..."
+title: '5 Orthodontic Myths Debunked'
+description: 'People have been preoccupied with the idea of straight teeth for hundreds of years, and braces have been around in some form or fashion since the early 1800s! While orthodontic...'
 publishDate: 2025-11-20
 updatedDate: 2026-01-26
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 ---
+
 People have been preoccupied with the idea of straight teeth for hundreds of years, and [braces have been around in some form or fashion since the early 1800s!](/braces/) While orthodontic technology has drastically improved over the years, some myths about braces never seem to fade.
 
 If you have heard any of the below braces myths, you may be feeling discouraged about your orthodontic journey. At **Platte River Orthodontics**, we are here to debunk those myths and shed some light on the specifics of the orthodontic treatment process.

@@ -1,12 +1,13 @@
 ---
-title: "A Parent’s Guide to Raising Cavity-Free Kids — Platte River Orthodontics’ Age-by-Age Oral Care Tips in Gretna, NE"
-description: "As parents, nothing matters more than setting our kids up for success — and that includes nurturing a healthy, confident smile from the very start. But with so many questions..."
+title: 'A Parent’s Guide to Raising Cavity-Free Kids — Platte River Orthodontics’ Age-by-Age Oral Care Tips in Gretna, NE'
+description: 'As parents, nothing matters more than setting our kids up for success — and that includes nurturing a healthy, confident smile from the very start. But with so many questions...'
 publishDate: 2026-04-24
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/a-parents-guide-to-raising-cavity-free-kids-platte-river-orthodontics-age-by-age-oral-care-tips-in-gretna-ne-hero.jpg
-heroImageAlt: "A Parent’s Guide to Raising Cavity-Free Kids — Platte River Orthodontics’ Age-by-Age Oral Care Tips in Gretna, NE"
+heroImageAlt: 'A Parent’s Guide to Raising Cavity-Free Kids — Platte River Orthodontics’ Age-by-Age Oral Care Tips in Gretna, NE'
 ---
+
 As parents, nothing matters more than setting our kids up for success — and that includes nurturing a healthy, confident smile from the very start. But with so many questions around when to begin brushing, how to handle flossing, or when to seek professional care, it can feel like a lot to keep track of. At Platte River Orthodontics, Dr. Chad Carter and our team are here to guide you through every milestone of your child’s dental development with expert advice tailored for each stage of growth.
 
 ## From Birth to First Tooth: Gentle Beginnings (0–6 Months)
@@ -39,7 +40,7 @@ For active kids involved in sports, a custom-fitted mouthguard from Platte River
 
 ## Quick Reference: Key Dental Milestones & Tips
 
-Age RangeKey MilestonesRecommended CareBirth–6 monthsNo teeth yet    Wipe gums with a damp cloth after feeding6–12 monthsClean gums after feedings with a clothFirst dental visit; brush with rice-sized fluoride toothpaste1–3 yearsTeeth touching; more eruptingStart flossing; avoid bedtime bottles; limit juice3–6 yearsFull baby teeth; first molarsPea-sized toothpaste; supervise brushing; discuss sealants6–12 yearsPermanent teeth eruptingSealants on molars; mouthguard for sports; biannual cleanings
+Age RangeKey MilestonesRecommended CareBirth–6 monthsNo teeth yet Wipe gums with a damp cloth after feeding6–12 monthsClean gums after feedings with a clothFirst dental visit; brush with rice-sized fluoride toothpaste1–3 yearsTeeth touching; more eruptingStart flossing; avoid bedtime bottles; limit juice3–6 yearsFull baby teeth; first molarsPea-sized toothpaste; supervise brushing; discuss sealants6–12 yearsPermanent teeth eruptingSealants on molars; mouthguard for sports; biannual cleanings
 
 At Platte River Orthodontics, we combine state-of-the-art technology with warm, personalized care to support every smile at every stage. Whether your child is just starting their oral care journey or preparing for orthodontic treatment, we’re here to help you build healthy habits that last a lifetime.
 

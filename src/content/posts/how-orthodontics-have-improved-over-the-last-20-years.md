@@ -1,13 +1,14 @@
 ---
-title: "How Orthodontics Have Improved Over the Last 20 Years"
-description: "When you think about orthodontics, what is the first thing that comes to mind? Most would-be patients here at Platte River Orthodontics in Gretna, NE, say that they think of..."
+title: 'How Orthodontics Have Improved Over the Last 20 Years'
+description: 'When you think about orthodontics, what is the first thing that comes to mind? Most would-be patients here at Platte River Orthodontics in Gretna, NE, say that they think of...'
 publishDate: 2026-01-27
 updatedDate: 2026-05-08
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/how-orthodontics-have-improved-over-the-last-20-years-hero.jpg
-heroImageAlt: "How Orthodontics Have Improved Over the Last 20 Years"
+heroImageAlt: 'How Orthodontics Have Improved Over the Last 20 Years'
 ---
+
 When you think about orthodontics, what is the first thing that comes to mind? Most would-be patients here at **Platte River Orthodontics** in **Gretna, NE**, say that they think of Invisalign, but it hasn’t always been the most popular or prominent form of orthodontic treatment. When parents think back, they might remember bulky braces and headgear that made it hard to sleep. Luckily, a lot has changed in the orthodontic world in the last 20 years.
 
 ### More braces options than ever before

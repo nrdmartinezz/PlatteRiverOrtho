@@ -1,11 +1,12 @@
 ---
-title: "Life After Braces"
-description: "Life After Braces: Your Complete Guide to Retention and Preventing Relapse At Platte River Orthodontics, Dr. Chad Carter and our team understand that your journey to a..."
+title: 'Life After Braces'
+description: 'Life After Braces: Your Complete Guide to Retention and Preventing Relapse At Platte River Orthodontics, Dr. Chad Carter and our team understand that your journey to a...'
 publishDate: 2026-05-15
 updatedDate: 2026-06-17
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 ---
+
 ## Life After Braces: Your Complete Guide to Retention and Preventing Relapse
 
 At Platte River Orthodontics, Dr. Chad Carter and our team understand that your journey to a confident smile doesn’t end when your braces come off. In fact, life after braces is just as important as the treatment itself. With precision and care, we help you maintain your beautiful new smile by guiding you through retention, retainer use, and strategies to prevent relapse. Whether you’ve worn fully custom braces, Invisalign® clear aligners, or are exploring options like corrective jaw surgery, this guide will equip you with the knowledge to protect your investment for years to come.

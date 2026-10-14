@@ -1,13 +1,14 @@
 ---
-title: "12 Things You Should Know Before Getting Braces"
-description: "Have you decided you’re ready to achieve your best smile with Platte River Orthodontics? Are braces the right fit for your lifestyle and your orthodontic needs? If so, you are..."
+title: '12 Things You Should Know Before Getting Braces'
+description: 'Have you decided you’re ready to achieve your best smile with Platte River Orthodontics? Are braces the right fit for your lifestyle and your orthodontic needs? If so, you are...'
 publishDate: 2026-01-27
 updatedDate: 2026-05-08
 draft: false
-author: "Platte River Orthodontics"
+author: 'Platte River Orthodontics'
 heroImage: ./images/12-things-you-should-know-before-getting-braces-hero.jpg
-heroImageAlt: "12 Things You Should Know Before Getting Braces"
+heroImageAlt: '12 Things You Should Know Before Getting Braces'
 ---
+
 Have you decided you’re ready to achieve your best smile with **Platte River Orthodontics**? Are braces the right fit for your lifestyle and your orthodontic needs? If so, you are about to join approximately 4 million Americans who have also said yes and are currently sporting braces.
 
 Braces are super common, and you probably know someone who has braces right now, but if you still have questions about the process of straightening your teeth, here are 12 Things You Should Know Before Getting Braces.
