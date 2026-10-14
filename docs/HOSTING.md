@@ -40,11 +40,27 @@ the same page.
 5. Update `site` in `astro.config.mjs` and the `Sitemap:` line in
    `public/robots.txt` to the real domain.
 
+### Staging
+
+`.github/workflows/deploy-staging.yml` deploys the same build to staging on every
+push to `main`. Create a GitHub Environment named `staging` and add:
+
+| Name       | Kind     | Value                          |
+| ---------- | -------- | ------------------------------ |
+| `FTP_HOST` | Variable | Staging FTP host               |
+| `FTP_USER` | Variable | FTP account scoped to docroot  |
+| `FTP_PW`   | Secret   | That account's password        |
+
+`FTP_PW` is a secret so the password is masked in logs. The workflow uploads to
+`./` because the FTP account is jailed to the staging document root. Issue SSL
+on the staging host before the first deploy, same as production.
+
 ## Deploying
 
 `.github/workflows/deploy.yml` runs on every push to `main`: install → `verify`
 → `build` → FTP upload of `dist/`. The `verify` gate means a type error or
-malformed frontmatter fails in CI instead of shipping.
+malformed frontmatter fails in CI instead of shipping. Staging runs the same
+steps in parallel and does not block the production upload.
 
 Manual fallback: `npm run build` and upload the contents of `dist/`.
 
