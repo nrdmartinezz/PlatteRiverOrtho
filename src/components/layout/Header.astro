@@ -7,12 +7,13 @@
  * white background once it sticks. MegaMenu (md+) and MobileNav (below md)
  * both read src/config/navigation.ts.
  */
+import { Image } from 'astro:assets';
 import Container from '../ui/Container.astro';
 import MegaMenu from './MegaMenu.astro';
 import MobileNav from './MobileNav.astro';
 import { navigation } from '../../config/navigation';
 import { site } from '../../config/site';
-import { Icon } from 'astro-icon/components';
+import logo from '../../assets/logo-horizontal-white.png';
 
 export type HeaderSticky = 'static' | 'sticky' | 'shrink' | 'hide-on-scroll';
 
@@ -46,12 +47,13 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
     gap="none"
     class="justify-between gap-4 py-4 group-data-[scrolled=true]/header:py-2"
   >
-    <a
-      href="/"
-      class="group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base flex items-center gap-2 font-semibold tracking-wide uppercase no-underline"
-    >
-      <Icon name="lucide:hexagon" class="size-7" aria-hidden="true" />
-      <span class="max-lg:text-sm">{site.name}</span>
+    <a href="/" class="inline-flex shrink-0 items-center no-underline">
+      <Image
+        src={logo}
+        alt={site.name}
+        width={480}
+        class="h-10 w-auto md:h-14 group-data-[appearance=solid]/header:brightness-0"
+      />
     </a>
 
     <div class="flex items-center gap-2 lg:gap-3">
