@@ -159,7 +159,7 @@ export const formattedAddress = [
 
 export const formattedPhone = site.business.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
 
-export const topBarMessage = `Now Open in ${site.business.address.locality}, ${site.business.address.region} — ${site.business.address.street}`;
+export const topBarMessage = `${site.business.address.locality}, ${site.business.address.region} — ${site.business.address.street}`;
 
 /** No configured ID means the analytics bundle is never mounted at all. */
 export const hasAnalytics = Object.values(site.analytics).some(Boolean);

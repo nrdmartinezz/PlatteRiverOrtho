@@ -21,6 +21,13 @@ interface Props extends Omit<BlockProps, 'titleLevel' | 'body'> {
   actions?: BlockAction[];
   image?: ImageMetadata;
   imageAlt?: string;
+  /**
+   * YouTube video id, played muted and looping behind an overlay hero.
+   * The image stays visible before playback and when motion is reduced.
+   */
+  videoId?: string;
+  /** Accessible name for the background video. */
+  videoTitle?: string;
   /** Places the image first on desktop; small screens always stack image-first. */
   reverse?: boolean;
   bullets?: string[];
@@ -44,6 +51,8 @@ const {
   actions = [],
   image,
   imageAlt = '',
+  videoId,
+  videoTitle = 'Platte River Orthodontics',
   reverse = false,
   bullets = [],
   highlights = [],
@@ -52,6 +61,10 @@ const {
 
 const splitImage = Boolean(image) && !overlay;
 const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
+const youtubeId = videoId && /^[\w-]{6,}$/.test(videoId) ? videoId : undefined;
+const videoSrc = youtubeId
+  ? `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=${youtubeId}&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&cc_load_policy=0`
+  : undefined;
 ---
 
 <Section
@@ -72,6 +85,19 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
           fetchpriority="high"
           class="size-full object-cover object-[68%_center] max-md:object-center"
         />
+        {
+          videoSrc && (
+            <div class="hero-video absolute inset-0" aria-hidden="true">
+              <iframe
+                src={videoSrc}
+                title={videoTitle}
+                allow="autoplay; encrypted-media; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                tabindex="-1"
+              />
+            </div>
+          )
+        }
         <div class="from-brand-100 via-brand-200/90 to-brand-400/20 max-md:from-brand-100/95 max-md:via-brand-200/88 max-md:to-brand-200/70 absolute inset-0 bg-linear-to-r from-8% via-42% to-78%" />
         <div class="from-brand-100/45 to-brand-100/25 absolute inset-0 bg-linear-to-t via-transparent" />
       </div>
@@ -235,5 +261,29 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
         transparent 78%
       ),
       linear-gradient(160deg, var(--color-brand-200), var(--color-brand-100));
+  }
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    container-type: size;
+  }
+
+  .hero-video iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100cqw, calc(100cqh * 16 / 9));
+    height: max(100cqh, calc(100cqw * 9 / 16));
+    transform: translate(-50%, -50%);
+    border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video {
+      display: none;
+    }
   }
 </style>

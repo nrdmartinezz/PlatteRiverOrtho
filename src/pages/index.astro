@@ -11,8 +11,8 @@ import CTABanner from '../components/blocks/CTABanner.astro';
 import FAQ from '../components/blocks/FAQ.astro';
 import VisitUs from '../components/blocks/VisitUs.astro';
 import ContactBlock from '../components/blocks/ContactBlock.astro';
-import familyPractice from '../assets/live/family-practice-platte-river-ortho-1.png';
 import officeInterior from '../assets/live/IMG_1802-2.jpg';
+import treatmentChair from '../assets/live/platte-river-ortho-treatment-chair.jpg';
 import officeDetail from '../assets/live/IMG_2725-2.jpg';
 import invisalign from '../assets/live/gretna-ne-orthodontist-invisalign-platte-river-orthodontics.jpg';
 import braces from '../assets/live/braces-gretna-ne-platte-river-orthodontics.jpg';
@@ -56,22 +56,24 @@ const faqs = [
 <BaseLayout
   overlay
   titleExact
-  title="Platte River Orthodontics - Platte River Orthodontics"
-  description="Discover Platte River Orthodontics in Gretna, NE—opening Fall 2025! Our modern, patient-focused office combines advanced technology with comfort and convenience to make every visit seamless. Call 402-322-8838 to learn more."
-  image={familyPractice.src}
+  title="Platte River Orthodontics | Orthodontist in Gretna, NE"
+  description="Orthodontic care in Gretna, NE for braces, Invisalign, and early treatment. Families from Gretna, Omaha, and Papillion are welcome. Call 402-322-8838."
+  image={treatmentChair.src}
   faqs={faqs}
 >
   <Hero
     overlay
-    eyebrow="Now Open in Gretna, Nebraska"
+    eyebrow="Orthodontist in Gretna, Nebraska"
     title="Crafting Smiles That"
     titleAccent="Radiate Confidence"
     body={[
-      "Welcome to Platte River Orthodontics. We've made Gretna our home and we could not be more excited to serve families in Gretna, Omaha, Papillion and the surrounding areas!",
+      'Platte River Orthodontics has cared for families in Gretna, Omaha, and Papillion for more than a year. The same warm office is here for a child’s first visit or the smile you have been putting off.',
       'Dr. Chad B. Carter created this practice to deliver modern orthodontic care in a warm, friendly environment. Whether you are bringing in your child for their first visit or you are an adult looking to finally straighten your teeth, we treat every patient like family.',
     ]}
-    image={familyPractice}
-    imageAlt="The Platte River Orthodontics team in Gretna"
+    image={treatmentChair}
+    imageAlt="A treatment room at Platte River Orthodontics in Gretna"
+    videoId="NS_gJJ2On0k"
+    videoTitle="The Platte River Orthodontics team in Gretna"
     actions={[
       { label: 'Book Your Free Consult', href: '/request-appointment/' },
       { label: 'Explore Services', href: '#services', variant: 'secondary' },
@@ -252,7 +254,7 @@ const faqs = [
   <CTABanner
     eyebrow="Limited New Patient Spots"
     title="“With precision and care, we craft smiles that radiate confidence—supporting our patients’ success at every stage of life.”"
-    body="Rooted in years of experience, global service, and advanced training, this practice is more than a clinic — it's a place where patients of all ages are welcomed, educated, and empowered. Welcome, Gretna — your smile's new home is here!"
+    body="Rooted in years of experience, global service, and advanced training, this practice is more than a clinic — it's a place where patients of all ages are welcomed, educated, and empowered. Families across Gretna and the Omaha metro already come here for their smiles."
     image={quoteBand}
     imageAlt=""
     actions={[
@@ -274,7 +276,7 @@ const faqs = [
   <VisitUs
     image={officeDetail}
     paragraphs={[
-      "Our brand-new orthodontic office in Gretna is now open and ready to welcome you! More than just a location, it's a space thoughtfully crafted around your experience.",
+      'The Standing Stone Drive office is built around comfort and a visit that respects your time.',
       'From advanced digital imaging and modern treatment bays to flexible scheduling and a warm, welcoming atmosphere, everything about our office is built to make you feel at ease.',
     ]}
   />
