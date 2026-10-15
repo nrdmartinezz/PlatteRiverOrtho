@@ -4,8 +4,9 @@
  * needs its own positioning and stacking context. Container is used inside.
  *
  * On overlay pages the bar sits transparent over the hero, then switches to a
- * white background once it sticks. MegaMenu (md+) and MobileNav (below md)
- * both read src/config/navigation.ts.
+ * white background once it sticks. MegaMenu (xl+) and MobileNav (below xl)
+ * both read src/config/navigation.ts. The full link row does not fit beside
+ * the logo until 1280px.
  */
 import { Image } from 'astro:assets';
 import Container from '../ui/Container.astro';
@@ -65,7 +66,7 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
             href={portal.href}
             target={portal.href.startsWith('http') ? '_blank' : undefined}
             rel={portal.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base hidden min-h-11 items-center px-2 text-sm no-underline xl:inline-flex"
+            class="group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=solid]/header:text-ink-base hidden min-h-11 items-center px-2 text-sm whitespace-nowrap no-underline min-[1440px]:inline-flex"
           >
             {portal.label}
           </a>
@@ -77,7 +78,7 @@ const portal = navigation.portal?.href ? navigation.portal : undefined;
           <a
             href={navigation.cta.href}
             class:list={[
-              'hidden min-h-11 items-center rounded-full border px-5 text-xs font-semibold tracking-wide uppercase no-underline md:inline-flex',
+              'hidden min-h-11 shrink-0 items-center rounded-full border px-5 text-xs font-semibold tracking-wide whitespace-nowrap uppercase no-underline md:inline-flex',
               'group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:border-white/70 group-data-[appearance=overlay]/header:bg-white/10 group-data-[appearance=overlay]/header:hover:bg-white/20',
               'group-data-[appearance=solid]/header:border-brand-600 group-data-[appearance=solid]/header:bg-brand-600 group-data-[appearance=solid]/header:text-neutral-0 group-data-[appearance=solid]/header:hover:bg-brand-700',
             ]}

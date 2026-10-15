@@ -85,19 +85,17 @@ const videoSrc = youtubeId
           fetchpriority="high"
           class="size-full object-cover object-[68%_center] max-md:object-center"
         />
-        {
-          videoSrc && (
-            <div class="hero-video absolute inset-0" aria-hidden="true">
-              <iframe
-                src={videoSrc}
-                title={videoTitle}
-                allow="autoplay; encrypted-media; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin"
-                tabindex="-1"
-              />
-            </div>
-          )
-        }
+        {videoSrc && (
+          <div class="hero-video absolute inset-0" aria-hidden="true">
+            <iframe
+              src={videoSrc}
+              title={videoTitle}
+              allow="autoplay; encrypted-media; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+              tabindex="-1"
+            />
+          </div>
+        )}
         <div class="from-brand-100 via-brand-200/90 to-brand-400/20 max-md:from-brand-100/95 max-md:via-brand-200/88 max-md:to-brand-200/70 absolute inset-0 bg-linear-to-r from-8% via-42% to-78%" />
         <div class="from-brand-100/45 to-brand-100/25 absolute inset-0 bg-linear-to-t via-transparent" />
       </div>

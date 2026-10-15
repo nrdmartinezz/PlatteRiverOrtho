@@ -47,7 +47,7 @@ const {
       {intro && <p class="text-ink-muted max-w-xs text-sm md:text-right">{intro}</p>}
     </div>
 
-    <ul class="grid w-full gap-6 md:grid-cols-3">
+    <ul class="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         items.map((item) => (
           <li>
@@ -57,7 +57,7 @@ const {
                   src={item.image}
                   alt={item.imageAlt}
                   widths={[400, 640, 800]}
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   class="size-full object-cover"
                 />
                 <div class="from-brand-100/70 absolute inset-0 bg-linear-to-t to-transparent" />
