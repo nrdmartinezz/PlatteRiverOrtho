@@ -155,9 +155,12 @@ const linkClass =
 </div>
 
 <style>
-  /* Overwritten from the real header height when the drawer opens. */
+  /* Overwritten from the real header height when the drawer opens.
+     The overlay header paints its text white; reset that here so chevrons
+     and submenu labels stay dark on the white drawer. */
   #mobile-nav {
     --header-h: 4rem;
+    color: var(--color-ink-base);
   }
 
   .mobile-accordion[aria-expanded='true'] :global(svg) {
