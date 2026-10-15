@@ -4,7 +4,12 @@ import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 
-const EXCLUDED_FROM_SITEMAP = ['/thank-you/', '/styleguide/'];
+const EXCLUDED_FROM_SITEMAP = [
+  '/thank-you/',
+  '/styleguide/',
+  '/retainers/',
+  '/airway-aware-treatment/',
+];
 
 // https://astro.build/config
 export default defineConfig({

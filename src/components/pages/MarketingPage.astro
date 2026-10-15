@@ -1,5 +1,4 @@
 ---
-import type { ImageMetadata } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../blocks/Hero.astro';
 import FeatureSplit from '../blocks/FeatureSplit.astro';
@@ -13,14 +12,10 @@ import Container from '../ui/Container.astro';
 import Heading from '../ui/Heading.astro';
 import Prose from '../ui/Prose.astro';
 import Button from '../ui/Button.astro';
-import heroOffice from '../../assets/hero-office.jpg';
-import drCarter from '../../assets/dr-carter.png';
-import braces from '../../assets/braces.jpg';
-import invisalign from '../../assets/invisalign.jpg';
-import jawSurgery from '../../assets/jaw-surgery.jpg';
-import officeExterior from '../../assets/office-exterior.jpg';
+import VisitUs from '../blocks/VisitUs.astro';
 import quoteBand from '../../assets/quote-band.jpg';
-import type { MarketingPageData, PageImage } from '../../data/marketing/types';
+import { pageImages } from '../../data/marketing/images';
+import type { MarketingPageData } from '../../data/marketing/types';
 
 interface Props {
   page: MarketingPageData;
@@ -28,23 +23,17 @@ interface Props {
 
 const { page } = Astro.props;
 
-const images: Record<PageImage, ImageMetadata> = {
-  office: heroOffice,
-  doctor: drCarter,
-  braces,
-  invisalign,
-  jaw: jawSurgery,
-  exterior: officeExterior,
-};
-
-const heroImage = images[page.image];
+const heroImage = pageImages[page.image];
 const book = { label: 'Request an Appointment', href: '/request-appointment/' };
 ---
 
 <BaseLayout
   overlay
+  titleExact
+  noindex={page.noindex}
   title={page.title}
   description={page.description}
+  image={heroImage.src}
   breadcrumbs={page.breadcrumbs}
   faqs={page.faqs}
   service={page.serviceName ? { name: page.serviceName, description: page.description } : undefined}
@@ -93,7 +82,7 @@ const book = { label: 'Request an Appointment', href: '/request-appointment/' };
         title={feature.title}
         body={feature.body}
         bullets={feature.bullets}
-        image={images[feature.image ?? page.image]}
+        image={pageImages[feature.image ?? page.image]}
         imageAlt=""
         reverse={feature.reverse}
         background={feature.background}
@@ -169,6 +158,17 @@ const book = { label: 'Request an Appointment', href: '/request-appointment/' };
         actions={[
           book,
           { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
+        ]}
+      />
+    )
+  }
+
+  {
+    page.showVisit && (
+      <VisitUs
+        image={pageImages.officeInterior}
+        paragraphs={[
+          '11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Monday through Friday 7:00 am–7:00 pm, Saturday 9:00 am–3:00 pm.',
         ]}
       />
     )

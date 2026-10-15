@@ -12,12 +12,12 @@ function page(
 export const practicePages: MarketingPageData[] = [
   page({
     slug: 'meet-dr-carter',
-    title: 'Meet Dr. Carter',
+    title: 'Meet Dr. Carter | Platte River Orthodontics | Gretna, NE',
     description:
-      'Meet Dr. Chad B. “SnaggleTooth” Carter, board-certified orthodontist and U.S. Air Force veteran serving Gretna, Nebraska.',
+      'Meet Dr. Chad B Carter, board-certified orthodontist at Platte River Orthodontics in Gretna, NE. Learn about his unique background. Call 402-322-8838.',
     crumbs: [{ name: 'Meet Dr. Carter', href: '/meet-dr-carter/' }],
     serviceName: 'Meet Dr. Carter',
-    image: 'doctor',
+    image: 'familyPractice',
     eyebrow: 'Platte River Orthodontics',
     heroTitle: 'Meet Dr. Chad B.',
     heroAccent: '“SnaggleTooth” Carter',
@@ -31,14 +31,14 @@ export const practicePages: MarketingPageData[] = [
           'Dr. Carter’s journey began in physics research. That training still shapes how he plans treatment: precise, methodical, and grounded in evidence.',
           'Known to friends as SnaggleTooth, he pairs scientific discipline with a servant’s heart. Patients of every age get both the technical care and the human care.',
         ],
-        image: 'doctor',
+        image: 'burkina1',
       },
       {
         eyebrow: 'Seven years in West Africa',
         title: 'A life-changing adventure',
         reverse: true,
         background: 'muted',
-        image: 'exterior',
+        image: 'burkina3',
         body: [
           'Dr. Carter and his wife Amy spent seven years as volunteers in a rural village on the edge of the Sahara in Burkina Faso. Their partnership with ministries in West Africa has continued for more than two decades.',
           'Living there taught him that healthcare is about meeting people where they are. A smile, he likes to say, is a universal language. He still uses the languages he learned there with patients every week.',
@@ -86,11 +86,11 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'our-why',
-    title: 'Our Why',
+    title: 'Our Why | Platte River Orthodontics | Gretna, NE',
     description:
-      'The mission of Platte River Orthodontics: world-class orthodontic care with a servant’s heart in Gretna, Nebraska.',
+      'Discover the mission and values of Platte River Orthodontics in Gretna, NE. World-class care with a personal touch. Call 402-322-8838.',
     crumbs: [{ name: 'Our Why', href: '/our-why/' }],
-    image: 'office',
+    image: 'familyHotel',
     eyebrow: 'Gretna, Nebraska',
     heroTitle: 'More than straight teeth',
     heroAccent: 'Confident lives',
@@ -103,14 +103,14 @@ export const practicePages: MarketingPageData[] = [
           'As Gretna grows, we intend to grow with it. We want every child to have an early orthodontic evaluation, teenagers to reach their smile goals without putting life on hold, and adults to know it is never too late.',
           'We also give back globally, partnering with projects in West Africa that support orphans, sustainable farming, and clean water. Ask us about those partnerships when you visit.',
         ],
-        image: 'office',
+        image: 'africaClinic',
       },
       {
         eyebrow: 'The foundation',
         title: 'A life of service',
         reverse: true,
         background: 'muted',
-        image: 'doctor',
+        image: 'burkina1',
         body: 'Few experiences shaped this practice more than the years Dr. Carter and Amy spent in a rural village in Burkina Faso. It was a complete immersion in another culture and a different understanding of what it means to serve.',
       },
     ],
@@ -142,11 +142,11 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'why-choose-us',
-    title: 'Why Choose Us',
+    title: 'Why Choose Us | Platte River Orthodontics | Gretna, NE',
     description:
-      'Why families choose Platte River Orthodontics in Gretna for board-certified, technology-forward orthodontic care.',
+      'Why choose Platte River Orthodontics in Gretna, NE? Board-certified expert, advanced technology, and personalized care. Call 402-322-8838.',
     crumbs: [{ name: 'Why Choose Us', href: '/why-choose-us/' }],
-    image: 'office',
+    image: 'officeInterior',
     eyebrow: 'Gretna, Nebraska',
     heroTitle: 'The clear choice',
     heroAccent: 'For your family’s smile',
@@ -156,7 +156,7 @@ export const practicePages: MarketingPageData[] = [
       {
         eyebrow: 'Meet the team',
         title: 'Your new ortho family',
-        image: 'doctor',
+        image: 'orthodontist',
         body: [
           'Dr. Chad “SnaggleTooth” Carter leads the practice with a heart for service and years of experience, from physics research and military service to board-certified orthodontics.',
           'His wife and partner, Amy Carter, keeps the practice centered on family. Boone and Huck, their bird dogs, are the Chief Furry Officer and Head of the Party Planning Committee.',
@@ -167,7 +167,7 @@ export const practicePages: MarketingPageData[] = [
         title: 'What sets us apart',
         reverse: true,
         background: 'muted',
-        image: 'exterior',
+        image: 'officeDetail',
         body: 'Physics research helps with complex planning. Years in Africa built cultural sensitivity and a habit of meeting people where they are. Military service added precision. Teaching keeps the care current. All of that happens in a Gretna office built for comfort.',
       },
     ],
@@ -201,11 +201,11 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'technology',
-    title: 'Technology',
+    title: 'Orthodontic Technology | Platte River Orthodontics | Gretna, NE',
     description:
-      'iTero scanning, Grin remote monitoring, and KLOwen custom braces at Platte River Orthodontics in Gretna.',
+      'Advanced orthodontic technology at Platte River Orthodontics in Gretna, NE. iTero, KLOwen, and more. Call 402-322-8838.',
     crumbs: [{ name: 'Technology', href: '/technology/' }],
-    image: 'office',
+    image: 'surgical',
     eyebrow: 'Advanced orthodontic technology',
     heroTitle: 'Innovation meets',
     heroAccent: 'Dr. Carter’s expertise',
@@ -215,7 +215,7 @@ export const practicePages: MarketingPageData[] = [
       {
         eyebrow: 'iTero',
         title: 'No more goopy impressions',
-        image: 'office',
+        image: 'smileSimulator',
         body: 'The iTero scanner replaces traditional impressions with a comfortable digital model of your teeth and bite. Dr. Carter can study that model in ways plaster never allowed, and the treatment simulator can show a realistic preview of your result.',
       },
       {
@@ -223,7 +223,7 @@ export const practicePages: MarketingPageData[] = [
         title: 'Monitoring that fits a busy life',
         reverse: true,
         background: 'muted',
-        image: 'invisalign',
+        image: 'drCarter',
         body: 'Grin lets Dr. Carter check progress between visits using clinical-quality photos from your phone. It is especially helpful if you travel, live a little farther out, or simply want fewer trips to the office without giving up close supervision.',
       },
     ],
@@ -256,11 +256,11 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'what-to-expect',
-    title: 'What to Expect',
+    title: 'What to Expect | Platte River Orthodontics | Gretna, NE',
     description:
-      'What to expect at Platte River Orthodontics in Gretna, from your complimentary first visit through retention.',
+      'What to expect at your orthodontic visit to Platte River Orthodontics in Gretna, NE. A guide to your treatment journey. Call 402-322-8838.',
     crumbs: [{ name: 'What to Expect', href: '/what-to-expect/' }],
-    image: 'office',
+    image: 'orthodontist',
     eyebrow: 'Orthodontics in Gretna, NE',
     heroTitle: 'Your journey to',
     heroAccent: 'A confident smile',
@@ -331,11 +331,11 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'in-office-consultation',
-    title: 'In-Office Consultation',
+    title: 'In-Office Consultation | Platte River Orthodontics | Gretna, NE',
     description:
-      'What happens at your in-office consultation with Dr. Carter at Platte River Orthodontics in Gretna.',
+      'Schedule your in-office consultation at Platte River Orthodontics in Gretna, NE. Discuss braces or Invisalign with Dr. Carter. Call us at 402-322-8838.',
     crumbs: [{ name: 'In-Office Consultation', href: '/in-office-consultation/' }],
-    image: 'office',
+    image: 'consult',
     eyebrow: 'Gretna, Nebraska',
     heroTitle: 'Your in-office',
     heroAccent: 'Consultation',
@@ -344,7 +344,7 @@ export const practicePages: MarketingPageData[] = [
     features: [
       {
         title: 'What to bring',
-        image: 'office',
+        image: 'consultRecords',
         body: 'Bring insurance information so we can talk about benefits and out-of-pocket cost with real numbers. A short list of questions helps us cover everything you care about. Younger patients are welcome to bring a comfort item, and a parent should plan to stay for the visit.',
         bullets: [
           'Insurance card and any referral notes',
@@ -357,7 +357,7 @@ export const practicePages: MarketingPageData[] = [
         title: 'A clear conversation about investment',
         reverse: true,
         background: 'muted',
-        image: 'exterior',
+        image: 'consultSmile',
         body: 'We go over treatment cost, payment options, and insurance in the same visit. The goal is a plan your family can actually use, including flexible payments and financing when that helps.',
       },
     ],
@@ -377,9 +377,9 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'contact-us',
-    title: 'Contact Us',
+    title: 'Contact Us | Platte River Orthodontics | Gretna, NE',
     description:
-      'Contact Platte River Orthodontics in Gretna, Nebraska. Call 402-322-8838 or send a message.',
+      'Contact Platte River Orthodontics in Gretna, NE. We are here to answer your questions about braces and Invisalign. Call us today at 402-322-8838',
     crumbs: [{ name: 'Contact Us', href: '/contact-us/' }],
     image: 'exterior',
     eyebrow: 'Gretna, Nebraska',
@@ -395,10 +395,11 @@ export const practicePages: MarketingPageData[] = [
   }),
   page({
     slug: 'privacy-policy',
-    title: 'Privacy Policy',
-    description: 'How Platte River Orthodontics collects, uses, and protects personal information.',
+    title: 'Privacy Policy - Platte River Orthodontics',
+    description:
+      'Learn how Platte River Orthodontics in Gretna, NE protects your personal information. Our privacy policy outlines what we collect, how it is used, and your rights as a patient.',
     crumbs: [{ name: 'Privacy Policy', href: '/privacy-policy/' }],
-    image: 'office',
+    image: 'exterior',
     eyebrow: 'Last updated July 9, 2025',
     heroTitle: 'Privacy Policy',
     heroBody:
@@ -446,6 +447,38 @@ export const practicePages: MarketingPageData[] = [
           'We do not knowingly transfer personal data outside the United States. If that ever becomes necessary, we will protect it in line with this policy.',
         ],
       },
+    ],
+  }),
+  page({
+    slug: 'our-office',
+    title: 'Our Office | Platte River Orthodontics | Gretna, NE',
+    description:
+      'Visit Platte River Orthodontics at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Open weekdays 7am–7pm and Saturdays 9am–3pm. Call 402-322-8838.',
+    crumbs: [{ name: 'Our Office', href: '/our-office/' }],
+    image: 'exterior',
+    eyebrow: 'Gretna, Nebraska',
+    heroTitle: 'Our Gretna',
+    heroAccent: 'Office',
+    heroBody:
+      'Platte River Orthodontics is at 11844 Standing Stone Dr, Suite 100 in Gretna. The office is built for comfort, with digital imaging, modern treatment bays, and hours that fit school and work.',
+    features: [
+      {
+        title: 'A place designed around your visit',
+        image: 'officeInterior',
+        body: 'From the treatment floor to the welcome area, the office is set up so records, planning, and adjustments happen in one stop. Parking is at the building, and the first visit is complimentary.',
+      },
+      {
+        title: 'Hours that work for families',
+        image: 'treatmentChair',
+        reverse: true,
+        background: 'muted',
+        body: 'Monday through Friday 7:00 am–7:00 pm and Saturday 9:00 am–3:00 pm. Call 402-322-8838 or request a time online.',
+      },
+    ],
+    showVisit: true,
+    related: [
+      { label: 'Contact us', href: '/contact-us/' },
+      { label: 'Request an appointment', href: '/request-appointment/' },
     ],
   }),
 ];

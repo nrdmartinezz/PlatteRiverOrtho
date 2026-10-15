@@ -7,17 +7,20 @@ import WhySplit from '../../components/blocks/WhySplit.astro';
 import CTABanner from '../../components/blocks/CTABanner.astro';
 import VisitUs from '../../components/blocks/VisitUs.astro';
 import ContactBlock from '../../components/blocks/ContactBlock.astro';
-import heroOffice from '../../assets/hero-office.jpg';
-import drCarter from '../../assets/dr-carter.png';
-import heroMarpe from '../../assets/hero-marpe.jpg';
-import officeExterior from '../../assets/office-exterior.jpg';
+import familyPractice from '../../assets/live/family-practice-platte-river-ortho-1.png';
+import familyHotel from '../../assets/live/20240616-Family-Picture_Grand-Hotel-2024.jpg';
+import burkina1 from '../../assets/live/20251126-Burkina-Dental-Picture1.jpg';
+import amyCarter from '../../assets/live/platte-river-orthodontics-gretna-ne-amy-carter.jpg';
+import treatmentChair from '../../assets/live/platte-river-ortho-treatment-chair.jpg';
 import quoteBand from '../../assets/quote-band.jpg';
 ---
 
 <BaseLayout
   overlay
-  title="Meet Dr. Carter"
-  description="Meet Dr. Chad B. Carter — board-certified orthodontist, U.S. Air Force veteran, and Associate Professor — at Platte River Orthodontics in Gretna, Nebraska."
+  titleExact
+  title="Meet Dr. Carter | Platte River Orthodontics | Gretna, NE"
+  description="Meet Dr. Chad B Carter, board-certified orthodontist at Platte River Orthodontics in Gretna, NE. Learn about his unique background. Call 402-322-8838."
+  image={familyPractice.src}
   breadcrumbs={[
     { name: 'Home', href: '/' },
     { name: 'Meet Dr. Carter', href: '/meet-dr-carter/' },
@@ -29,8 +32,8 @@ import quoteBand from '../../assets/quote-band.jpg';
     title="Meet Dr. Carter"
     titleAccent="A Journey of Purpose"
     body="From physics research laboratories to rural African villages, from Air Force Special Operations to the orthodontic classroom, Dr. Chad B. Carter’s path has been anything but ordinary — and that is exactly what shapes the care you receive."
-    image={heroOffice}
-    imageAlt="The treatment floor at Platte River Orthodontics in Gretna"
+    image={familyPractice}
+    imageAlt="The Platte River Orthodontics team in Gretna"
     actions={[
       { label: 'Book Your Free Consult', href: '/request-appointment/' },
       { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
@@ -46,8 +49,8 @@ import quoteBand from '../../assets/quote-band.jpg';
       'When you meet Dr. Chad B. Carter at Platte River Orthodontics in Gretna, Nebraska, you are meeting someone whose life story reads like an adventure novel. Yet it is precisely this extraordinary background that makes him the exceptional orthodontist and compassionate caregiver he is today.',
       'Known affectionately to his friends as “SnaggleTooth,” Dr. Carter brings scientific precision, a global perspective, military discipline, and a servant’s heart to every smile he helps shape. His story is one of continuous learning, dedicated service, and an unwavering commitment to helping others achieve their best smiles and highest confidence.',
     ]}
-    image={drCarter}
-    imageAlt="Dr. Chad Carter"
+    image={familyHotel}
+    imageAlt="Dr. Carter with his family"
     callout={{
       title: 'Background Overview',
       items: [
@@ -69,8 +72,8 @@ import quoteBand from '../../assets/quote-band.jpg';
     eyebrow="A Foundation in Scientific Excellence"
     title="The Early Years: From Physics to Purpose"
     body="Dr. Carter’s journey to orthodontics began in an unexpected place — the world of physics research. That scientific foundation instilled a deep appreciation for precision, methodology, and evidence-based decision-making. The analytical thinking and problem-solving skills developed in the lab still shape how he approaches complex orthodontic cases today."
-    image={heroMarpe}
-    imageAlt="A modern treatment bay at Platte River Orthodontics"
+    image={burkina1}
+    imageAlt="Dr. Carter during his years of service in Burkina Faso"
     bullets={[
       'Precision and methodology from a physics research background',
       'Evidence-based planning for even the most complex cases',
@@ -116,8 +119,8 @@ import quoteBand from '../../assets/quote-band.jpg';
     asideEyebrow="A Practice Built for Families"
     asideTitle="Care that respects your time"
     asideBody="Amy’s experience as a parent, military spouse, and community member helps ensure Platte River Orthodontics serves families at every level — with extended hours, thoughtful scheduling, and the same hospitality Dr. Carter is known for."
-    image={officeExterior}
-    imageAlt="The Platte River Orthodontics office in Gretna"
+    image={amyCarter}
+    imageAlt="Amy Carter"
   />
 
   <CTABanner
@@ -133,7 +136,7 @@ import quoteBand from '../../assets/quote-band.jpg';
   />
 
   <VisitUs
-    image={officeExterior}
+    image={treatmentChair}
     paragraphs={[
       'Come meet Dr. Carter at our Gretna office. Your first visit is complimentary — a chance to talk through your goals and see whether we are the right fit.',
     ]}

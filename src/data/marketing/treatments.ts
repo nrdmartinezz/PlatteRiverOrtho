@@ -15,9 +15,9 @@ const invisalignCrumb: Crumb = { name: 'Invisalign', href: '/invisalign/' };
 export const treatmentPages: MarketingPageData[] = [
   page({
     slug: 'braces',
-    title: 'Braces',
+    title: 'Braces Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'KLOwen fully custom braces at Platte River Orthodontics in Gretna, Nebraska. Precise, comfortable, and efficient.',
+      'Expert braces treatment at Platte River Orthodontics in Gretna, NE. KLOwen custom braces for all ages. Call 402-322-8838 for a free consultation.',
     crumbs: [bracesCrumb],
     serviceName: 'Braces',
     image: 'braces',
@@ -36,7 +36,7 @@ export const treatmentPages: MarketingPageData[] = [
         title: 'How the appliances are made',
         reverse: true,
         background: 'muted',
-        image: 'office',
+        image: 'bracesDetail',
         bullets: [
           'Digital treatment planning maps each movement before anything is bonded',
           'Low-dose 3D imaging shows roots, bone, and the structures around the teeth',
@@ -53,12 +53,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'braces/braces-for-adults',
-    title: 'Braces for Adults',
+    title: 'Braces for Adults | Platte River Orthodontics | Gretna, NE',
     description:
-      'Adult braces in Gretna with KLOwen custom technology. Discreet, efficient treatment that respects a work schedule.',
+      'Looking for adult braces in Gretna, NE? Platte River Orthodontics offers KLOwen customized braces for a confident smile. Call us at 402-322-8838 to schedule.',
     crumbs: [bracesCrumb, { name: 'Braces for Adults', href: '/braces/braces-for-adults/' }],
     serviceName: 'Braces for Adults',
-    image: 'braces',
+    image: 'customBraces',
     eyebrow: 'Adult orthodontics',
     heroTitle: 'Invest in the smile',
     heroAccent: 'You have been waiting on',
@@ -67,14 +67,14 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Precision with a lower profile',
-        image: 'braces',
+        image: 'customBraces',
         body: 'Each KLOwen bracket is designed for your tooth, so the appliance can be smaller and less noticeable than traditional braces. Custom planning often shortens treatment, which matters when you are balancing work and family.',
       },
       {
         title: 'Options that fit a professional life',
         reverse: true,
         background: 'muted',
-        image: 'office',
+        image: 'adultBraces',
         body: 'Clear ceramic brackets are available when you want braces to blend in. Appointments are fewer and more focused because the movements were designed before the braces went on. Invisalign is also here if aligners are the better fit.',
       },
     ],
@@ -85,12 +85,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'braces/braces-for-teens',
-    title: 'Braces for Teens',
+    title: 'Braces for Teens | Platte River Orthodontics | Gretna, NE',
     description:
-      'Teen braces in Gretna using KLOwen custom braces during the years when teeth and jaws respond especially well.',
+      'Get a confident smile with braces for teens at Platte River Orthodontics in Gretna, NE. We offer clear and metal braces. Call 402-322-8838.',
     crumbs: [bracesCrumb, { name: 'Braces for Teens', href: '/braces/braces-for-teens/' }],
     serviceName: 'Braces for Teens',
-    image: 'braces',
+    image: 'customBraces',
     eyebrow: 'Teenage orthodontics',
     heroTitle: 'Confidence through',
     heroAccent: 'The teenage years',
@@ -128,12 +128,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'braces/braces-for-kids',
-    title: 'Braces for Kids',
+    title: 'Braces for Kids | Platte River Orthodontics | Gretna, NE',
     description:
-      'Wild Smiles designer braces and gentle early care for kids at Platte River Orthodontics in Gretna.',
+      'Fun Wild Smiles braces for kids at Platte River Orthodontics in Gretna, NE. Make orthodontics a positive experience! Call 402-322-8838.',
     crumbs: [bracesCrumb, { name: 'Braces for Kids', href: '/braces/braces-for-kids/' }],
     serviceName: 'Braces for Kids',
-    image: 'braces',
+    image: 'wildSmiles',
     eyebrow: 'Braces for kids',
     heroTitle: 'Express yourself',
     heroAccent: 'With Wild Smiles',
@@ -160,7 +160,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         title: 'A foundation, not just straight teeth',
         background: 'muted',
-        image: 'doctor',
+        image: 'kidsBraces',
         body: 'Childhood treatment can use growth to correct habits, make space, and guide the jaws. Dr. Carter’s pediatric experience includes early intervention and more complex growth cases.',
       },
     ],
@@ -171,12 +171,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'early-treatment',
-    title: 'Early Treatment',
+    title: 'Early Orthodontic Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'Phase I and interceptive orthodontics for growing children at Platte River Orthodontics in Gretna.',
+      'Learn about early orthodontic treatment for your child at Platte River Orthodontics in Gretna, NE. Schedule a consultation today by calling 402-322-8838.',
     crumbs: [{ name: 'Early Treatment', href: '/early-treatment/' }],
     serviceName: 'Early Treatment',
-    image: 'doctor',
+    image: 'earlyTreatment',
     eyebrow: 'Early orthodontic treatment',
     heroTitle: 'Foundations for',
     heroAccent: 'A lifelong smile',
@@ -185,7 +185,7 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Why age 7 is the usual starting point',
-        image: 'doctor',
+        image: 'treatmentCompanion',
         body: 'The American Association of Orthodontists recommends a first checkup by age 7, when the first permanent molars and incisors are typically in. Some children should be seen sooner if growth, habits, or breathing are a concern. Not every child needs treatment that day. The visit tells us whether to watch, wait, or act.',
       },
     ],
@@ -222,12 +222,13 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'airway-aware-treatment',
-    title: 'Airway Aware Treatment',
+    title: 'Early Orthodontic Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'Airway-aware early orthodontic care in Gretna for children whose bite, growth, or breathing needs attention.',
+      'Learn about early orthodontic treatment for your child at Platte River Orthodontics in Gretna, NE. Schedule a consultation today by calling 402-322-8838.',
     crumbs: [{ name: 'Airway Aware Treatment', href: '/airway-aware-treatment/' }],
     serviceName: 'Airway Aware Treatment',
-    image: 'doctor',
+    image: 'earlyTreatment',
+    noindex: true,
     eyebrow: 'Early orthodontic treatment',
     heroTitle: 'Smiles that also',
     heroAccent: 'Help kids breathe and grow',
@@ -236,7 +237,7 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Early intervention with the whole child in mind',
-        image: 'doctor',
+        image: 'treatmentCompanion',
         body: 'Interceptive treatment uses the mixed-dentition years to guide teeth and jaws. Addressing crowding, crossbites, and habits early can make later treatment simpler and support healthier facial growth. If expansion or MARPE is the right tool for an older patient, we will say so plainly.',
       },
     ],
@@ -247,9 +248,9 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'invisalign',
-    title: 'Invisalign',
+    title: 'Invisalign Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'Invisalign clear aligners in Gretna, Nebraska, planned by Dr. Carter with digital scanning and remote monitoring.',
+      'Expert Invisalign treatment at Platte River Orthodontics in Gretna, NE. Clear aligners for all ages. Call 402-322-8838 for a free consultation.',
     crumbs: [invisalignCrumb],
     serviceName: 'Invisalign',
     image: 'invisalign',
@@ -287,7 +288,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         title: 'The science behind the trays',
         background: 'muted',
-        image: 'invisalign',
+        image: 'smileSimulator',
         body: 'A series of custom aligners moves teeth in small, planned steps. Dr. Carter’s physics training shows up in how those steps are sequenced so the result is stable, not just straight for a photograph.',
       },
     ],
@@ -299,12 +300,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'invisalign/invisalign-first',
-    title: 'Invisalign First',
+    title: 'Invisalign First | Platte River Orthodontics | Gretna, NE',
     description:
-      'Invisalign First for children ages 6–10 at Platte River Orthodontics in Gretna. Early treatment with clear aligners.',
+      'Early orthodontic treatment with Invisalign First at Platte River Orthodontics in Gretna, NE. For children ages 6-10. Call 402-322-8838.',
     crumbs: [invisalignCrumb, { name: 'Invisalign First', href: '/invisalign/invisalign-first/' }],
     serviceName: 'Invisalign First',
-    image: 'invisalign',
+    image: 'invisalignTreatmentFirst',
     eyebrow: 'Invisalign for kids',
     heroTitle: 'Early care',
     heroAccent: 'Without metal appliances',
@@ -313,7 +314,7 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Made for mixed dentition',
-        image: 'invisalign',
+        image: 'palatalExpander',
         body: 'These aligners include features for developing teeth and growing jaws. Dr. Carter’s early-treatment experience is what makes the timing useful. The goal is a healthier foundation, not a finished adult smile in second grade.',
       },
     ],
@@ -324,12 +325,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'invisalign/invisalign-teen',
-    title: 'Invisalign Teen',
+    title: 'Invisalign for Teens | Platte River Orthodontics | Gretna, NE',
     description:
-      'Invisalign Teen in Gretna: clear, removable aligners for teenagers who want a confident smile without metal braces.',
+      'Invisalign for teens at Platte River Orthodontics in Gretna, NE. A clear alternative to braces for a confident smile. Call 402-322-8838.',
     crumbs: [invisalignCrumb, { name: 'Invisalign Teen', href: '/invisalign/invisalign-teen/' }],
     serviceName: 'Invisalign Teen',
-    image: 'invisalign',
+    image: 'invisalignTeen',
     eyebrow: 'Invisalign for teens',
     heroTitle: 'The clear choice',
     heroAccent: 'For a confident smile',
@@ -367,15 +368,15 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'invisalign/invisalign-for-adults',
-    title: 'Invisalign for Adults',
+    title: 'Invisalign for Adults | Platte River Orthodontics | Gretna, NE',
     description:
-      'Adult Invisalign in Gretna for professionals who want a discreet way to straighten teeth without brackets and wires.',
+      "Get the smile you've always wanted with Invisalign for adults at Platte River Orthodontics in Gretna, NE. Call 402-322-8838 for a consultation!",
     crumbs: [
       invisalignCrumb,
       { name: 'Invisalign for Adults', href: '/invisalign/invisalign-for-adults/' },
     ],
     serviceName: 'Invisalign for Adults',
-    image: 'invisalign',
+    image: 'invisalignAdults',
     eyebrow: 'Adult clear aligners',
     heroTitle: 'A clear path',
     heroAccent: 'To the smile you wanted',
@@ -410,7 +411,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         title: 'It is not too late',
         background: 'muted',
-        image: 'office',
+        image: 'smileSimulator',
         body: 'Adult treatment is about health and confidence, not only appearance. We listen first, then build a plan around your goals and your calendar.',
       },
     ],
@@ -421,12 +422,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'surgical-orthodontics',
-    title: 'Surgical Orthodontics',
+    title: 'Surgical Orthodontics | Platte River Orthodontics | Gretna, NE',
     description:
-      'Surgical orthodontics and orthognathic care coordinated by Dr. Carter at Platte River Orthodontics in Gretna.',
+      'Expert surgical orthodontics at Platte River Orthodontics in Gretna, NE. Coordinated care for complex cases. Call 402-322-8838.',
     crumbs: [{ name: 'Surgical Orthodontics', href: '/surgical-orthodontics/' }],
     serviceName: 'Surgical Orthodontics',
-    image: 'jaw',
+    image: 'surgical',
     eyebrow: 'Surgical orthodontics in Gretna',
     heroTitle: 'When braces alone',
     heroAccent: 'Are not enough',
@@ -456,7 +457,7 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Who this is for',
-        image: 'jaw',
+        image: 'surgicalCase',
         body: 'Underbites, overbites, open bites, facial asymmetry, and some airway concerns can come from jaw position rather than crooked teeth. The evaluation uses 3D imaging and a careful look at chewing, speech, and facial proportions before anyone recommends surgery.',
       },
     ],
@@ -470,12 +471,12 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'teeth-whitening',
-    title: 'Teeth Whitening',
+    title: 'Teeth Whitening | Platte River Orthodontics | Gretna, NE',
     description:
-      'Professional teeth whitening at Platte River Orthodontics in Gretna to finish the smile after orthodontic treatment.',
+      'Professional teeth whitening at Platte River Orthodontics in Gretna, NE. Brighten your smile after orthodontic treatment. Call 402-322-8838.',
     crumbs: [{ name: 'Teeth Whitening', href: '/teeth-whitening/' }],
     serviceName: 'Teeth Whitening',
-    image: 'invisalign',
+    image: 'whitening',
     eyebrow: 'Professional whitening',
     heroTitle: 'Brighten the smile',
     heroAccent: 'You just straightened',
@@ -484,26 +485,27 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Why teeth darken',
-        image: 'invisalign',
+        image: 'officeInterior',
         body: 'Surface stains come from foods and drinks. Deeper discoloration builds as enamel thins with age and pigment settles in. Professional systems are aimed at those deeper stains, which is why they outperform most store kits.',
       },
       {
         title: 'In-office whitening',
         reverse: true,
         background: 'muted',
-        image: 'office',
+        image: 'whiteningSmile',
         body: 'An in-office visit can lighten teeth several shades in a single appointment. It is a good fit before an event, or if you want the process supervised so sensitivity stays in check.',
       },
     ],
   }),
   page({
     slug: 'retainers',
-    title: 'Retainers',
+    title: 'Orthodontic Retainers | Platte River Orthodontics | Gretna, NE',
     description:
-      'Retainers and retention care at Platte River Orthodontics in Gretna, including replacement retainers.',
+      'Learn about retainers at Platte River Orthodontics in Gretna, NE. Maintain your beautiful smile for a lifetime. Call 402-322-8838.',
     crumbs: [{ name: 'Retainers', href: '/retainers/' }],
     serviceName: 'Retainers',
-    image: 'braces',
+    image: 'retainers',
+    noindex: true,
     eyebrow: 'After treatment',
     heroTitle: 'Protect the smile',
     heroAccent: 'You worked for',
@@ -512,7 +514,7 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Why retainers are not optional',
-        image: 'braces',
+        image: 'retainersChair',
         body: 'Periodontal ligaments and bone keep remodeling after braces or aligners come off. Without retention, the time and cost of treatment can slip away. Dr. Carter designs the retainer plan around your case, including more complex surgical and craniofacial finishes.',
       },
     ],

@@ -149,6 +149,7 @@ export const navigation: NavigationConfig = {
     {
       heading: 'Quick Links',
       links: [
+        { label: 'Our Gretna Office', href: '/our-office/' },
         { label: 'Meet Dr. Carter', href: '/meet-dr-carter/' },
         { label: 'Why Choose Us', href: '/why-choose-us/' },
         { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },

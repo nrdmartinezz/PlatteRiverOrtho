@@ -1,6 +1,7 @@
 import type { SectionBackground } from '../../components/ui/Section.astro';
+import type { PageImage } from './images';
 
-export type PageImage = 'office' | 'doctor' | 'braces' | 'invisalign' | 'jaw' | 'exterior';
+export type { PageImage };
 
 export interface Crumb {
   name: string;
@@ -56,5 +57,8 @@ export interface MarketingPageData {
   faqs?: { question: string; answer: string }[];
   related?: { label: string; href: string }[];
   showContact?: boolean;
+  /** Renders the office map, address, and hours. */
+  showVisit?: boolean;
+  noindex?: boolean;
   legal?: LegalSection[];
 }

@@ -1,17 +1,21 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/blocks/Hero.astro';
 import BenefitsGrid from '../../components/blocks/BenefitsGrid.astro';
 import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
 import ReferralForm from '../../components/forms/ReferralForm.astro';
-import drCarter from '../../assets/dr-carter.png';
+import orthodontist from '../../assets/live/orthodontist-gretna-ne-platte-river-orthodontics-1.jpg';
+import drCarter from '../../assets/live/platte-river-orthodontics-chad-carter-gretna-ne.jpg';
 ---
 
 <BaseLayout
   overlay
-  title="Doctor Referral"
-  description="Refer a patient to Dr. Chad Carter at Platte River Orthodontics in Gretna, Nebraska."
+  titleExact
+  title="Doctor Referral | Platte River Orthodontics | Gretna, NE"
+  description="Refer a patient to Platte River Orthodontics in Gretna, NE. We specialize in KLOwen custom braces and complex cases. Contact our office at 402-322-8838."
+  image={orthodontist.src}
   breadcrumbs={[
     { name: 'Home', href: '/' },
     { name: 'Doctor Referral', href: '/doctor-referral/' },
@@ -23,8 +27,8 @@ import drCarter from '../../assets/dr-carter.png';
     title="Refer a patient"
     titleAccent="To Dr. Chad Carter"
     body="Dr. Carter works with dentists, physicians, surgeons, and therapists across the region. Send a referral and we will coordinate care for your patient."
-    image={drCarter}
-    imageAlt="Dr. Chad Carter"
+    image={orthodontist}
+    imageAlt="Dr. Chad Carter at Platte River Orthodontics in Gretna"
     actions={[{ label: 'Jump to the form', href: '#refer' }]}
   />
 
@@ -57,8 +61,17 @@ import drCarter from '../../assets/dr-carter.png';
   />
 
   <Section id="refer" background="base" spacing="md">
-    <Container width="narrow">
-      <ReferralForm />
+    <Container layout="row" gap="lg" class="md:items-start">
+      <Image
+        src={drCarter}
+        alt="Dr. Chad Carter"
+        class="w-full rounded-2xl object-cover md:w-5/12"
+        widths={[480, 720]}
+        sizes="(min-width: 768px) 40vw, 100vw"
+      />
+      <div class="w-full md:w-7/12">
+        <ReferralForm />
+      </div>
     </Container>
   </Section>
 </BaseLayout>
