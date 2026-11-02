@@ -9,9 +9,14 @@
  * Open/close intent delay is CSS transition-delay so the no-JS baseline keeps
  * it. JS layers keyboard control, Escape, outside click, and touch toggling.
  */
-import Container from '../ui/Container.astro';
-import { navigation } from '../../config/navigation';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import { navigation, type MegaPanel, type NavLink } from '../../config/navigation';
+import { formattedPhone, site } from '../../config/site';
+import officeExterior from '../../assets/office-exterior.jpg';
+import treatmentRoom from '../../assets/live/platte-river-ortho-treatment-chair.jpg';
 
 interface Props {
   currentPath: string;
@@ -23,7 +28,23 @@ const isCurrent = (href: string) =>
   href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 
 const triggerClass =
-  'inline-flex min-h-11 items-center gap-1 rounded-md px-2 text-base font-medium whitespace-nowrap no-underline transition-colors group-data-[appearance=solid]/header:text-ink-base group-data-[appearance=solid]/header:hover:bg-neutral-100 group-data-[appearance=solid]/header:aria-[current=page]:text-ink-brand group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:text-ink-inverse';
+  'relative inline-flex min-h-11 items-center gap-1 rounded-md px-2 text-base font-medium whitespace-nowrap no-underline transition-colors group-data-[appearance=solid]/header:text-ink-base group-data-[appearance=solid]/header:hover:bg-neutral-100 group-data-[appearance=solid]/header:aria-[current=page]:text-ink-brand group-data-[appearance=overlay]/header:text-ink-inverse group-data-[appearance=overlay]/header:hover:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:bg-white/10 group-data-[appearance=overlay]/header:aria-[current=page]:text-ink-inverse';
+
+const eyebrowClass = 'text-ink-muted text-xs font-semibold tracking-wide uppercase';
+
+const textCtaClass =
+  'text-ink-brand inline-flex shrink-0 items-center gap-2 border-b border-accent-500 pb-1 text-xs font-semibold tracking-wide uppercase no-underline';
+
+const officeHours = [
+  'Mon – Fri: 7:00 am – 7:00 pm',
+  'Saturday: 9:00 am – 3:00 pm',
+  'Sunday: Closed',
+];
+
+const gridClass = (panel: MegaPanel) =>
+  panel.variant === 'treatments'
+    ? 'grid w-full items-start gap-8 xl:grid-cols-[minmax(0,1fr)_20rem]'
+    : 'grid w-full items-start gap-8 xl:grid-cols-[16rem_minmax(0,1fr)_minmax(0,1fr)_18.75rem]';
 ---
 
 <nav aria-label="Primary" class="mega hidden xl:block">
@@ -32,7 +53,7 @@ const triggerClass =
       navigation.primary.map((item, index) => {
         const panelId = `mega-panel-${index}`;
 
-        if (!item.panel) {
+        if (!item.panel || item.panel.kind !== 'mega') {
           return (
             <li>
               <a
@@ -46,11 +67,7 @@ const triggerClass =
           );
         }
 
-        const columns =
-          item.panel.kind === 'mega'
-            ? item.panel.columns
-            : [{ heading: undefined, links: item.panel.links }];
-        const featured = item.panel.kind === 'mega' ? item.panel.featured : undefined;
+        const panel = item.panel;
 
         return (
           <li class="mega-item static">
@@ -66,43 +83,50 @@ const triggerClass =
 
             <div
               id={panelId}
-              class="mega-panel border-line-base bg-surface-base absolute inset-x-0 top-full border-b shadow-lg"
+              class="mega-panel border-line-base bg-surface-base absolute inset-x-0 top-full flex flex-col border-b shadow-lg"
             >
-              <Container gap="none" class="max-h-[70vh] overflow-y-auto py-8">
-                <div
-                  class:list={[
-                    'grid w-full gap-x-8 gap-y-6',
-                    featured ? 'grid-cols-3' : 'grid-cols-4',
-                  ]}
-                >
-                  {columns.map((column) => (
-                    <div class="flex flex-col gap-2">
-                      {column.heading && (
-                        <h2 class="text-ink-muted text-sm font-semibold tracking-wide uppercase">
-                          {column.heading}
-                        </h2>
-                      )}
+              <Container gap="none" class="max-h-[70vh] overflow-y-auto py-10">
+                <div class={gridClass(panel)}>
+                  {panel.intro && (
+                    <div class="flex min-w-0 flex-col gap-4 pr-2">
+                      <p class={eyebrowClass}>{panel.intro.eyebrow}</p>
+                      <p class="font-heading text-ink-base text-2xl leading-tight">
+                        {panel.intro.title}
+                        {panel.intro.titleAccent && (
+                          <span class="text-accent-500 mt-1 block">{panel.intro.titleAccent}</span>
+                        )}
+                      </p>
+                      <span class="bg-accent-500 block h-px w-11" aria-hidden="true" />
+                      <p class="text-ink-muted text-sm leading-normal">{panel.intro.body}</p>
+                    </div>
+                  )}
+
+                  {panel.columns.map((column) => (
+                    <div class="flex min-w-0 flex-col gap-3">
+                      {column.heading && <p class={eyebrowClass}>{column.heading}</p>}
                       <ul class="flex flex-col">
-                        {column.links.map((link) => (
+                        {column.links.map((link: NavLink) => (
                           <li>
                             <a
                               href={link.href}
                               aria-current={isCurrent(link.href) ? 'page' : undefined}
-                              class="group/link text-ink-base aria-[current=page]:text-ink-brand flex gap-3 rounded-md p-2 no-underline hover:bg-neutral-100"
+                              class="group/entry border-line-base flex flex-col gap-2 border-t py-4 no-underline"
                             >
-                              {link.icon && (
+                              <span class="flex items-start gap-2">
+                                <span class="font-heading text-ink-base group-hover/entry:text-ink-brand min-w-0 flex-1 text-lg leading-snug">
+                                  {link.label}
+                                </span>
                                 <Icon
-                                  name={link.icon}
-                                  class="text-brand-600 mt-0.5 size-5 shrink-0"
+                                  name="lucide:arrow-up-right"
+                                  class="text-ink-brand mt-1 size-4 shrink-0"
                                   aria-hidden="true"
                                 />
-                              )}
-                              <span class="flex flex-col">
-                                <span class="font-medium">{link.label}</span>
-                                {link.description && (
-                                  <span class="text-ink-muted text-sm">{link.description}</span>
-                                )}
                               </span>
+                              {link.description && (
+                                <span class="text-ink-muted text-sm leading-normal">
+                                  {link.description}
+                                </span>
+                              )}
                             </a>
                           </li>
                         ))}
@@ -110,21 +134,89 @@ const triggerClass =
                     </div>
                   ))}
 
-                  {featured && (
-                    <div class="bg-surface-muted flex flex-col items-start gap-2 rounded-lg p-5">
-                      <h2 class="font-semibold">{featured.title}</h2>
-                      <p class="text-ink-muted text-sm">{featured.body}</p>
+                  {panel.feature?.kind === 'office' && (
+                    <div class="flex min-w-0 flex-col gap-3">
+                      <Image
+                        src={officeExterior}
+                        alt="Entrance to Platte River Orthodontics at 11844 Standing Stone Drive"
+                        widths={[320, 480, 640]}
+                        sizes="300px"
+                        class="h-40 w-full object-cover"
+                      />
+                      <p class={eyebrowClass}>{panel.feature.eyebrow}</p>
+                      <p class="text-ink-base text-sm leading-normal">
+                        {site.business.address.street}
+                        <br />
+                        {site.business.address.locality}, {site.business.address.region}{' '}
+                        {site.business.address.postalCode}
+                      </p>
                       <a
-                        href={featured.href}
-                        class="text-ink-brand mt-auto inline-flex min-h-11 items-center gap-1 font-medium"
+                        href={`tel:${site.business.phoneHref}`}
+                        class="text-ink-brand text-sm font-semibold no-underline"
                       >
-                        {featured.cta}
-                        <Icon name="lucide:arrow-right" class="size-4" aria-hidden="true" />
+                        {formattedPhone}
+                      </a>
+                      <div class="border-line-base flex flex-col gap-1 border-t pt-3 text-sm leading-normal">
+                        {officeHours.map((line, hourIndex) => (
+                          <p class={hourIndex === officeHours.length - 1 ? 'text-neutral-400' : 'text-ink-muted'}>
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {panel.feature?.kind === 'card' && (
+                    <div class="bg-surface-muted flex min-w-0 flex-col items-start gap-4 p-6">
+                      <p class={eyebrowClass}>{panel.feature.eyebrow}</p>
+                      <span class="bg-accent-500 block h-px w-11" aria-hidden="true" />
+                      <p class="font-heading text-ink-base text-xl leading-tight">
+                        {panel.feature.title}
+                      </p>
+                      <p class="text-ink-muted text-sm leading-normal">{panel.feature.body}</p>
+                      <Button href={panel.feature.href} size="sm">
+                        {panel.feature.cta}
+                        <Icon name="lucide:arrow-up-right" class="size-4" aria-hidden="true" />
+                      </Button>
+                      {panel.feature.note && (
+                        <p class="text-ink-muted text-xs">{panel.feature.note}</p>
+                      )}
+                    </div>
+                  )}
+
+                  {panel.feature?.kind === 'media' && (
+                    <div class="flex min-w-0 flex-col gap-4">
+                      <Image
+                        src={treatmentRoom}
+                        alt="Treatment chair in a Platte River Orthodontics operatory"
+                        widths={[320, 480, 640]}
+                        sizes="300px"
+                        class="h-40 w-full object-cover"
+                      />
+                      <p class="font-heading text-ink-base text-xl leading-tight">
+                        {panel.feature.title}
+                      </p>
+                      <p class="text-ink-muted text-sm leading-normal">{panel.feature.body}</p>
+                      <a href={panel.feature.href} class={textCtaClass}>
+                        {panel.feature.cta}
+                        <Icon name="lucide:arrow-up-right" class="size-4" aria-hidden="true" />
                       </a>
                     </div>
                   )}
                 </div>
               </Container>
+
+              {panel.support && (
+                <div class="border-line-base bg-surface-muted border-t">
+                  <Container layout="bar" gap="none" class="justify-between gap-6 py-5">
+                    <p class="text-ink-muted min-w-0 text-sm">{panel.support.text}</p>
+                    <a href={panel.support.href} class={textCtaClass}>
+                      {panel.support.cta}
+                      <Icon name="lucide:arrow-up-right" class="size-4" aria-hidden="true" />
+                    </a>
+                  </Container>
+                </div>
+              )}
             </div>
           </li>
         );
@@ -149,6 +241,17 @@ const triggerClass =
     transition: transform 160ms ease;
   }
 
+  .mega-item > button::after {
+    content: '';
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.2rem;
+    left: 0.5rem;
+    height: 3px;
+    background: var(--color-brand-600);
+    opacity: 0;
+  }
+
   /* Hover intent only where hovering is real — a touch tablet would otherwise
      open and immediately close the panel on first tap. */
   @media (hover: hover) {
@@ -162,6 +265,18 @@ const triggerClass =
     .mega-item:hover > button > .mega-chevron {
       transform: rotate(180deg);
     }
+
+    .mega-item:hover > button::after {
+      opacity: 1;
+    }
+
+    :global(header[data-appearance='solid']) .mega-item:hover > button {
+      color: var(--color-ink-brand);
+    }
+  }
+
+  :global(header[data-appearance='solid']) .mega-item[data-open='true'] > button {
+    color: var(--color-ink-brand);
   }
 
   /* No-JS baseline: keyboard focus alone opens the panel. Disabled once JS is
@@ -173,6 +288,10 @@ const triggerClass =
     transition-delay: 0s;
   }
 
+  :global(html:not(.js)) .mega-item:focus-within > button::after {
+    opacity: 1;
+  }
+
   .mega-item[data-open='true'] > .mega-panel {
     visibility: visible;
     opacity: 1;
@@ -182,6 +301,10 @@ const triggerClass =
 
   .mega-item[data-open='true'] > button > .mega-chevron {
     transform: rotate(180deg);
+  }
+
+  .mega-item[data-open='true'] > button::after {
+    opacity: 1;
   }
 
   @media (prefers-reduced-motion: reduce) {

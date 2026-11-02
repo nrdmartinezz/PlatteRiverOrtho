@@ -39,6 +39,11 @@ import adultBraces from '../../assets/live/adult-braces-orthodontics-platte-rive
 import retainers from '../../assets/live/retainers-gretna-ne-platte-river-orthodontics.jpg';
 import retainersChair from '../../assets/live/chad-carter-platte-river-orthodontics-retainers-gretna-ne.jpg';
 import exterior from '../../assets/office-exterior.jpg';
+import teamDrCarter from '../../assets/team/dr-carter.jpg';
+import teamAmy from '../../assets/team/amy-carter.jpg';
+import teamDenice from '../../assets/team/denice.jpg';
+import teamRebecca from '../../assets/team/rebecca.jpg';
+import teamSam from '../../assets/team/sam.jpg';
 
 export const pageImages = {
   familyPractice,
@@ -81,6 +86,11 @@ export const pageImages = {
   retainers,
   retainersChair,
   exterior,
+  teamDrCarter,
+  teamAmy,
+  teamDenice,
+  teamRebecca,
+  teamSam,
 } satisfies Record<string, ImageMetadata>;
 
 export type PageImage = keyof typeof pageImages;

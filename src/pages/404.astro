@@ -19,13 +19,23 @@ import { site } from '../config/site';
 
       <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
         {
-          navigation.primary.map((item) => (
-            <li>
-              <a href={item.href ?? '/'} class="text-ink-brand inline-flex min-h-11 items-center">
-                {item.label}
-              </a>
-            </li>
-          ))
+          navigation.primary.map((item) => {
+            const fallback =
+              item.panel?.kind === 'mega'
+                ? item.panel.columns[0]?.links[0]?.href
+                : item.panel?.links[0]?.href;
+
+            return (
+              <li>
+                <a
+                  href={item.href ?? fallback ?? '/'}
+                  class="text-ink-brand inline-flex min-h-11 items-center"
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
 

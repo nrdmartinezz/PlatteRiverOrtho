@@ -37,6 +37,12 @@ const columnClass = {
   3: 'sm:grid-cols-2 lg:grid-cols-3',
   4: 'sm:grid-cols-2 lg:grid-cols-4',
 }[columns];
+
+const imageSizes = {
+  2: '(max-width: 640px) 100vw, 50vw',
+  3: '(max-width: 640px) 100vw, 33vw',
+  4: '(max-width: 640px) 100vw, 25vw',
+}[columns];
 ---
 
 <Section background={background} spacing={spacing}>
@@ -56,9 +62,9 @@ const columnClass = {
             {member.photo ? (
               <Image
                 src={member.photo}
-                alt=""
+                alt={`${member.name}, ${member.role}`}
                 widths={[240, 480]}
-                sizes="(max-width: 640px) 100vw, 25vw"
+                sizes={imageSizes}
                 loading="lazy"
                 class="aspect-4/5 w-full rounded-lg object-cover"
               />

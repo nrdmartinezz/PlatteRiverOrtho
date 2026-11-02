@@ -51,10 +51,13 @@ const linkClass =
     <ul class="flex w-full flex-col">
       {
         navigation.primary.map((item, index) => {
-          const sublinks =
+          const columns =
             item.panel?.kind === 'mega'
-              ? item.panel.columns.flatMap((column) => column.links)
-              : (item.panel?.links ?? []);
+              ? item.panel.columns
+              : item.panel
+                ? [{ heading: undefined, links: item.panel.links }]
+                : [];
+          const sublinks = columns.flatMap((column) => column.links);
 
           if (sublinks.length === 0) {
             return (
@@ -74,22 +77,10 @@ const linkClass =
 
           return (
             <li class="border-line-base border-b">
-              <div class="flex items-center">
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    aria-current={isCurrent(item.href) ? 'page' : undefined}
-                    class={`${linkClass} flex-1`}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <span class={`${linkClass} flex-1`}>{item.label}</span>
-                )}
-
+              <div class="relative min-h-12">
                 <button
                   type="button"
-                  class="mobile-accordion inline-flex size-12 shrink-0 items-center justify-center rounded-md hover:bg-neutral-100"
+                  class="mobile-accordion absolute inset-0 z-0 flex items-center justify-end rounded-md px-2 hover:bg-neutral-100"
                   aria-expanded="false"
                   aria-controls={panelId}
                 >
@@ -100,31 +91,90 @@ const linkClass =
                     aria-hidden="true"
                   />
                 </button>
+                {
+                  item.href ? (
+                    <a
+                      href={item.href}
+                      aria-current={isCurrent(item.href) ? 'page' : undefined}
+                      class="text-ink-base aria-[current=page]:text-ink-brand relative z-10 inline-flex min-h-12 items-center px-2 no-underline aria-[current=page]:font-medium"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span class="pointer-events-none relative z-10 inline-flex min-h-12 items-center px-2">
+                      {item.label}
+                    </span>
+                  )
+                }
               </div>
 
-              <ul
-                id={panelId}
-                hidden
-                class="border-line-base mb-2 ml-2 flex flex-col border-l pl-3"
-              >
-                {sublinks.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      aria-current={isCurrent(link.href) ? 'page' : undefined}
-                      class={linkClass}
-                    >
-                      {link.icon && (
-                        <Icon
-                          name={link.icon}
-                          class="text-brand-600 size-5 shrink-0"
-                          aria-hidden="true"
-                        />
-                      )}
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+              <ul id={panelId} hidden class="border-line-base mb-2 ml-2 flex flex-col border-l pl-3">
+                {columns.map((column, columnIndex) => {
+                  const links = column.links.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        aria-current={isCurrent(link.href) ? 'page' : undefined}
+                        class={linkClass}
+                      >
+                        {link.icon && (
+                          <Icon
+                            name={link.icon}
+                            class="text-brand-600 size-5 shrink-0"
+                            aria-hidden="true"
+                          />
+                        )}
+                        {link.label}
+                      </a>
+                    </li>
+                  ));
+
+                  if (!column.heading) return links;
+
+                  const columnPanelId = `${panelId}-col-${columnIndex}`;
+
+                  return (
+                    <li>
+                      <div class="relative min-h-12">
+                        <button
+                          type="button"
+                          class="mobile-accordion absolute inset-0 z-0 flex items-center justify-end rounded-md px-2 hover:bg-neutral-100"
+                          aria-expanded="false"
+                          aria-controls={columnPanelId}
+                        >
+                          <span class="sr-only">Show {column.heading} links</span>
+                          <Icon
+                            name="lucide:chevron-down"
+                            class="size-5 transition-transform"
+                            aria-hidden="true"
+                          />
+                        </button>
+                        {
+                          column.href ? (
+                            <a
+                              href={column.href}
+                              aria-current={isCurrent(column.href) ? 'page' : undefined}
+                              class="text-ink-base aria-[current=page]:text-ink-brand relative z-10 inline-flex min-h-12 items-center px-2 no-underline aria-[current=page]:font-medium"
+                            >
+                              {column.heading}
+                            </a>
+                          ) : (
+                            <span class="pointer-events-none relative z-10 inline-flex min-h-12 items-center px-2">
+                              {column.heading}
+                            </span>
+                          )
+                        }
+                      </div>
+                      <ul
+                        id={columnPanelId}
+                        hidden
+                        class="border-line-base mb-2 ml-2 flex flex-col border-l pl-3"
+                      >
+                        {links}
+                      </ul>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
           );

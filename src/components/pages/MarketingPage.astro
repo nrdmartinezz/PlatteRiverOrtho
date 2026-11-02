@@ -13,6 +13,7 @@ import Heading from '../ui/Heading.astro';
 import Prose from '../ui/Prose.astro';
 import Button from '../ui/Button.astro';
 import VisitUs from '../blocks/VisitUs.astro';
+import Team from '../blocks/Team.astro';
 import quoteBand from '../../assets/quote-band.jpg';
 import { pageImages } from '../../data/marketing/images';
 import type { MarketingPageData } from '../../data/marketing/types';
@@ -76,17 +77,30 @@ const book = { label: 'Request an Appointment', href: '/request-appointment/' };
   }
 
   {
-    page.features?.map((feature) => (
-      <FeatureSplit
-        eyebrow={feature.eyebrow}
-        title={feature.title}
-        body={feature.body}
-        bullets={feature.bullets}
-        image={pageImages[feature.image ?? page.image]}
-        imageAlt=""
-        reverse={feature.reverse}
-        background={feature.background}
-      />
+    page.features?.map((feature, index) => (
+      <>
+        <FeatureSplit
+          eyebrow={feature.eyebrow}
+          title={feature.title}
+          body={feature.body}
+          bullets={feature.bullets}
+          image={pageImages[feature.image ?? page.image]}
+          imageAlt=""
+          reverse={feature.reverse}
+          background={feature.background}
+        />
+        {index === 0 && page.team && (
+          <Team
+            columns={3}
+            spacing="sm"
+            items={page.team.items.map((member) => ({
+              name: member.name,
+              role: member.role,
+              photo: pageImages[member.photo],
+            }))}
+          />
+        )}
+      </>
     ))
   }
 

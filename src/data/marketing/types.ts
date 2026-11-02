@@ -40,6 +40,10 @@ export interface LegalSection {
   items?: string[];
 }
 
+export interface TeamBlock {
+  items: { name: string; role: string; photo: PageImage }[];
+}
+
 export interface MarketingPageData {
   slug: string;
   title: string;
@@ -61,4 +65,6 @@ export interface MarketingPageData {
   showVisit?: boolean;
   noindex?: boolean;
   legal?: LegalSection[];
+  /** Photo roster rendered after the first feature block. */
+  team?: TeamBlock;
 }

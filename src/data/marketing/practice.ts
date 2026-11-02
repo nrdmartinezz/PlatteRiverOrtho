@@ -159,7 +159,7 @@ export const practicePages: MarketingPageData[] = [
         image: 'orthodontist',
         body: [
           'Dr. Chad “SnaggleTooth” Carter leads the practice with a heart for service and years of experience, from physics research and military service to board-certified orthodontics.',
-          'His wife and partner, Amy Carter, keeps the practice centered on family. Boone and Huck, their bird dogs, are the Chief Furry Officer and Head of the Party Planning Committee.',
+          'His wife and partner, Amy Carter, is the Smile Coach and keeps the practice centered on family. Boone and Huck, their bird dogs, are the Chief Furry Officer and Head of the Party Planning Committee.',
         ],
       },
       {
@@ -171,6 +171,15 @@ export const practicePages: MarketingPageData[] = [
         body: 'Physics research helps with complex planning. Years in Africa built cultural sensitivity and a habit of meeting people where they are. Military service added precision. Teaching keeps the care current. All of that happens in a Gretna office built for comfort.',
       },
     ],
+    team: {
+      items: [
+        { name: 'Dr. Carter', role: 'Orthodontist', photo: 'teamDrCarter' },
+        { name: 'Amy Carter', role: 'Smile Coach', photo: 'teamAmy' },
+        { name: 'Denice', role: 'Smile Stylist', photo: 'teamDenice' },
+        { name: 'Rebecca', role: 'Director of First Impressions', photo: 'teamRebecca' },
+        { name: 'Sam', role: 'Smile Stylist', photo: 'teamSam' },
+      ],
+    },
     benefits: {
       eyebrow: 'Technology',
       title: 'Innovation in service of better care',
