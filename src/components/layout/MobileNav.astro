@@ -129,7 +129,7 @@ const linkClass =
                     </li>
                   ));
 
-                  if (!column.heading) return links;
+                  if (!column.heading || !column.href) return links;
 
                   const columnPanelId = `${panelId}-col-${columnIndex}`;
 
