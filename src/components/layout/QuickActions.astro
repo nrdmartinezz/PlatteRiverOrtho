@@ -56,7 +56,9 @@ import { Icon } from 'astro-icon/components';
   data-src={site.greyfinch.scheduler}
   class="bg-surface-base border-line-base fixed inset-x-0 z-40 flex flex-col overflow-y-auto border-t shadow-lg"
 >
-  <div class="border-line-base flex min-h-11 shrink-0 items-center justify-between gap-3 border-b px-4">
+  <div
+    class="border-line-base flex min-h-11 shrink-0 items-center justify-between gap-3 border-b px-4"
+  >
     <h2 id="scheduler-drawer-title" class="font-heading text-ink-brand text-sm font-semibold">
       Book online
     </h2>
@@ -90,8 +92,7 @@ import { Icon } from 'astro-icon/components';
       data-scheduler-frame
       title="Greyfinch appointment scheduler"
       allow="geolocation"
-      class="block h-[650px] w-full shrink-0 border-0"
-    ></iframe>
+      class="block h-[650px] w-full shrink-0 border-0"></iframe>
   </div>
 </div>
 

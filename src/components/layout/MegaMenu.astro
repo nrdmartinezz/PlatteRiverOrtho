@@ -14,7 +14,13 @@ import { Icon } from 'astro-icon/components';
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import { navigation, type MegaPanel, type NavLink } from '../../config/navigation';
-import { clinicHours, directionsHref, formattedPhone, phoneHoursNote, site } from '../../config/site';
+import {
+  clinicHours,
+  directionsHref,
+  formattedPhone,
+  phoneHoursNote,
+  site,
+} from '../../config/site';
 import officeExterior from '../../assets/office-exterior.jpg';
 import treatmentRoom from '../../assets/live/platte-river-ortho-treatment-chair.jpg';
 
@@ -157,7 +163,11 @@ const gridClass = (panel: MegaPanel) =>
                       </a>
                       <div class="border-line-base flex flex-col gap-1 border-t pt-3 text-sm leading-normal">
                         {clinicHours.map((line) => (
-                          <p class={line.includes('Closed') ? 'text-neutral-400' : 'text-ink-muted'}>{line}</p>
+                          <p
+                            class={line.includes('Closed') ? 'text-neutral-400' : 'text-ink-muted'}
+                          >
+                            {line}
+                          </p>
                         ))}
                         <p class="text-ink-muted mt-2">{phoneHoursNote}</p>
                       </div>

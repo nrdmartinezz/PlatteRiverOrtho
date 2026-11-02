@@ -6,7 +6,13 @@ import Container from '../ui/Container.astro';
 import Heading from '../ui/Heading.astro';
 import Button from '../ui/Button.astro';
 import { Icon } from 'astro-icon/components';
-import { site, formattedAddress, directionsHref, clinicHours, phoneHoursNote } from '../../config/site';
+import {
+  site,
+  formattedAddress,
+  directionsHref,
+  clinicHours,
+  phoneHoursNote,
+} from '../../config/site';
 import type { BlockProps } from './types';
 
 interface Props extends BlockProps {
@@ -76,7 +82,9 @@ const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=
             <p class="text-ink-brand font-heading font-semibold">Office Hours</p>
             {
               clinicHours.map((line) => (
-                <p class={line.includes('Closed') ? 'text-neutral-400' : 'text-ink-muted'}>{line}</p>
+                <p class={line.includes('Closed') ? 'text-neutral-400' : 'text-ink-muted'}>
+                  {line}
+                </p>
               ))
             }
             <p class="text-ink-muted mt-3">{phoneHoursNote}</p>

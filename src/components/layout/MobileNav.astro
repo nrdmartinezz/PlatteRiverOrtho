@@ -91,24 +91,26 @@ const linkClass =
                     aria-hidden="true"
                   />
                 </button>
-                {
-                  item.href ? (
-                    <a
-                      href={item.href}
-                      aria-current={isCurrent(item.href) ? 'page' : undefined}
-                      class="text-ink-base aria-[current=page]:text-ink-brand relative z-10 inline-flex min-h-12 items-center px-2 no-underline aria-[current=page]:font-medium"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <span class="pointer-events-none relative z-10 inline-flex min-h-12 items-center px-2">
-                      {item.label}
-                    </span>
-                  )
-                }
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    aria-current={isCurrent(item.href) ? 'page' : undefined}
+                    class="text-ink-base aria-[current=page]:text-ink-brand relative z-10 inline-flex min-h-12 items-center px-2 no-underline aria-[current=page]:font-medium"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <span class="pointer-events-none relative z-10 inline-flex min-h-12 items-center px-2">
+                    {item.label}
+                  </span>
+                )}
               </div>
 
-              <ul id={panelId} hidden class="border-line-base mb-2 ml-2 flex flex-col border-l pl-3">
+              <ul
+                id={panelId}
+                hidden
+                class="border-line-base mb-2 ml-2 flex flex-col border-l pl-3"
+              >
                 {columns.map((column, columnIndex) => {
                   const links = column.links.map((link) => (
                     <li>
@@ -149,21 +151,19 @@ const linkClass =
                             aria-hidden="true"
                           />
                         </button>
-                        {
-                          column.href ? (
-                            <a
-                              href={column.href}
-                              aria-current={isCurrent(column.href) ? 'page' : undefined}
-                              class="text-ink-base aria-[current=page]:text-ink-brand relative z-10 inline-flex min-h-12 items-center px-2 no-underline aria-[current=page]:font-medium"
-                            >
-                              {column.heading}
-                            </a>
-                          ) : (
-                            <span class="pointer-events-none relative z-10 inline-flex min-h-12 items-center px-2">
-                              {column.heading}
-                            </span>
-                          )
-                        }
+                        {column.href ? (
+                          <a
+                            href={column.href}
+                            aria-current={isCurrent(column.href) ? 'page' : undefined}
+                            class="text-ink-base aria-[current=page]:text-ink-brand relative z-10 inline-flex min-h-12 items-center px-2 no-underline aria-[current=page]:font-medium"
+                          >
+                            {column.heading}
+                          </a>
+                        ) : (
+                          <span class="pointer-events-none relative z-10 inline-flex min-h-12 items-center px-2">
+                            {column.heading}
+                          </span>
+                        )}
                       </div>
                       <ul
                         id={columnPanelId}

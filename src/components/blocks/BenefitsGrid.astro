@@ -116,18 +116,16 @@ const rest = items.filter((item) => !item.featured);
                   {item.title}
                 </Heading>
                 <p class:list={[item.featured ? 'text-white/80' : 'text-ink-muted']}>{item.body}</p>
-                {
-                  item.href && item.cta && (
-                    <Button
-                      href={item.href}
-                      variant={item.featured ? 'inverse' : 'secondary'}
-                      size="sm"
-                      class="mt-auto self-start"
-                    >
-                      {item.cta}
-                    </Button>
-                  )
-                }
+                {item.href && item.cta && (
+                  <Button
+                    href={item.href}
+                    variant={item.featured ? 'inverse' : 'secondary'}
+                    size="sm"
+                    class="mt-auto self-start"
+                  >
+                    {item.cta}
+                  </Button>
+                )}
               </article>
             </li>
           ))}

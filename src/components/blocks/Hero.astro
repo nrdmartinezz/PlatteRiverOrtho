@@ -133,7 +133,11 @@ const videoSrc = youtubeId
         )
       }
 
-      <Heading level={1} balance={!titleAccent && !titleMiddle} class:list={[overlay && 'text-ink-inverse']}>
+      <Heading
+        level={1}
+        balance={!titleAccent && !titleMiddle}
+        class:list={[overlay && 'text-ink-inverse']}
+      >
         {title}
         {titleMiddle && <span class="mt-1 block">{titleMiddle}</span>}
         {
