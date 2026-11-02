@@ -68,12 +68,31 @@ import { Icon } from 'astro-icon/components';
       Close
     </button>
   </div>
-  <iframe
-    data-scheduler-frame
-    title="Greyfinch appointment scheduler"
-    allow="geolocation"
-    style="height: 650px; width: 100%; border: 0; display: block; margin: auto;"
-  ></iframe>
+  <div class="relative shrink-0 bg-white" style="height: 650px">
+    <div
+      data-scheduler-facade
+      class="bg-surface-muted absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 p-6 text-center"
+    >
+      <p class="text-ink-base font-semibold">Loading the scheduler</p>
+      <p class="text-ink-muted max-w-xs text-sm">
+        The booking window opens here. If it takes a moment, you can open it in a new tab.
+      </p>
+      <a
+        href={site.greyfinch.scheduler}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-ink-brand text-sm font-semibold"
+      >
+        Open scheduler
+      </a>
+    </div>
+    <iframe
+      data-scheduler-frame
+      title="Greyfinch appointment scheduler"
+      allow="geolocation"
+      class="block h-[650px] w-full shrink-0 border-0"
+    ></iframe>
+  </div>
 </div>
 
 <style>
@@ -94,6 +113,7 @@ import { Icon } from 'astro-icon/components';
   const book = document.querySelector<HTMLButtonElement>('#book-online-toggle');
   const drawer = document.querySelector<HTMLElement>('#scheduler-drawer');
   const frame = drawer?.querySelector<HTMLIFrameElement>('[data-scheduler-frame]');
+  const facade = drawer?.querySelector<HTMLElement>('[data-scheduler-facade]');
   const closeButton = drawer?.querySelector<HTMLButtonElement>('[data-close-scheduler]');
   const navToggle = document.querySelector<HTMLButtonElement>('#nav-toggle');
 
@@ -108,9 +128,17 @@ import { Icon } from 'astro-icon/components';
     setBarHeight();
     window.addEventListener('resize', setBarHeight);
 
+    frame.addEventListener('load', () => {
+      if (!frame.getAttribute('src')) return;
+      facade?.setAttribute('hidden', '');
+    });
+
     const loadFrame = () => {
-      if (frame.getAttribute('src') || src === '') return;
-      frame.src = src;
+      if (src === '') return;
+      if (!frame.getAttribute('src')) {
+        facade?.removeAttribute('hidden');
+        frame.src = src;
+      }
     };
 
     const setDrawer = (open: boolean) => {
