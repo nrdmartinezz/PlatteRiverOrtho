@@ -282,7 +282,7 @@ export const practicePages: MarketingPageData[] = [
       items: [
         {
           title: 'Schedule the consult',
-          body: 'Flexible hours, including early mornings, evenings, and Saturday, so the first visit can fit a family schedule.',
+          body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
         },
         {
           title: 'Complete evaluation',
@@ -330,12 +330,12 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'Will appointments take over my schedule?',
         answer:
-          'Visits are planned around school and work. Remote monitoring can reduce some trips, and our hours run early, late, and on Saturday.',
+          'Visits are planned around school and work. The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
       },
     ],
     related: [
       { label: 'In-office consultation', href: '/in-office-consultation/' },
-      { label: 'Request an appointment', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
     ],
   }),
   page({
@@ -398,7 +398,7 @@ export const practicePages: MarketingPageData[] = [
       'Call, email, or send a note. For a new-patient visit, you can also request a time or use the online scheduler.',
     showContact: true,
     related: [
-      { label: 'Request an appointment', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Doctor referral', href: '/doctor-referral/' },
     ],
   }),
@@ -462,7 +462,7 @@ export const practicePages: MarketingPageData[] = [
     slug: 'our-office',
     title: 'Our Office | Platte River Orthodontics | Gretna, NE',
     description:
-      'Visit Platte River Orthodontics at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Open weekdays 7am–7pm and Saturdays 9am–3pm. Call 402-322-8838.',
+      'Visit Platte River Orthodontics at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Clinic hours are Monday–Thursday 8am–5pm and Saturday 9am–3pm. Call 402-322-8838.',
     crumbs: [{ name: 'Our Office', href: '/our-office/' }],
     image: 'exterior',
     eyebrow: 'Gretna, Nebraska',
@@ -481,13 +481,13 @@ export const practicePages: MarketingPageData[] = [
         image: 'treatmentChair',
         reverse: true,
         background: 'muted',
-        body: 'Monday through Friday 7:00 am–7:00 pm and Saturday 9:00 am–3:00 pm. Call 402-322-8838 or request a time online.',
+        body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm. Call 402-322-8838 or request a time online.',
       },
     ],
     showVisit: true,
     related: [
       { label: 'Contact us', href: '/contact-us/' },
-      { label: 'Request an appointment', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
     ],
   }),
 ];

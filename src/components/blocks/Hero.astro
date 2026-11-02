@@ -15,7 +15,9 @@ export interface HeroHighlight {
 
 interface Props extends Omit<BlockProps, 'titleLevel' | 'body'> {
   title: string;
-  /** Second headline line — script + mint on overlay heroes. */
+  /** Middle headline line, same style as the title. Sits above the script accent. */
+  titleMiddle?: string;
+  /** Script accent line. Mint on overlay heroes. */
   titleAccent?: string;
   body?: string | string[];
   actions?: BlockAction[];
@@ -46,6 +48,7 @@ const {
   width = 'page',
   eyebrow,
   title,
+  titleMiddle,
   titleAccent,
   body,
   actions = [],
@@ -130,8 +133,9 @@ const videoSrc = youtubeId
         )
       }
 
-      <Heading level={1} balance={!titleAccent} class:list={[overlay && 'text-ink-inverse']}>
+      <Heading level={1} balance={!titleAccent && !titleMiddle} class:list={[overlay && 'text-ink-inverse']}>
         {title}
+        {titleMiddle && <span class="mt-1 block">{titleMiddle}</span>}
         {
           titleAccent && (
             <span class="font-heading text-accent-200 mt-1 block text-[1.05em] leading-none font-semibold tracking-tight italic">

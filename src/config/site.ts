@@ -115,7 +115,8 @@ export const site: SiteConfig = {
       country: 'US',
     },
     geo: { latitude: 41.1375, longitude: -96.2397 },
-    hours: ['Mo-Fr 07:00-19:00', 'Sa 09:00-15:00'],
+    /** Clinic visits only. Friday is phone-only, so it is not an opening hour. */
+    hours: ['Mo-Th 08:00-17:00', 'Sa 09:00-15:00'],
     priceRange: '$$',
   },
 
@@ -156,6 +157,18 @@ export const formattedAddress = [
   site.business.address.street,
   `${site.business.address.locality}, ${site.business.address.region} ${site.business.address.postalCode}`,
 ].join(', ');
+
+export const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(formattedAddress)}`;
+
+/** Clinic visits. Friday has no appointments. Sunday is closed. */
+export const clinicHours = [
+  'Monday–Thursday: 8:00 am – 5:00 pm',
+  'Saturday: 9:00 am – 3:00 pm',
+  'Friday and Sunday: Closed',
+];
+
+/** Answering coverage. Kept out of schema.org openingHours. */
+export const phoneHoursNote = 'Calls answered Monday–Friday, 7am–7pm';
 
 export const formattedPhone = site.business.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
 

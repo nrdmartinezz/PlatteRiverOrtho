@@ -1,0 +1,124 @@
+---
+/**
+ * Fills from /api/reviews.php. Stays hidden when the Place ID or API key is
+ * missing, or when PHP is not serving the endpoint, so the static testimonials
+ * remain the fallback.
+ */
+import Section from '../ui/Section.astro';
+import Container from '../ui/Container.astro';
+---
+
+<Section id="google-reviews" background="base" spacing="md" hidden>
+  <Container gap="lg">
+    <div data-google-reviews></div>
+  </Container>
+</Section>
+
+<script>
+  const section = document.querySelector<HTMLElement>('#google-reviews');
+  const root = section?.querySelector<HTMLElement>('[data-google-reviews]');
+
+  type Review = {
+    author: string;
+    authorUrl: string;
+    rating: number;
+    text: string;
+    relativeTime: string;
+  };
+
+  type Payload = {
+    ok: boolean;
+    rating?: number;
+    reviewCount?: number;
+    mapsUrl?: string;
+    reviews?: Review[];
+  };
+
+  const stars = (rating: number) => {
+    const rounded = Math.max(0, Math.min(5, Math.round(rating)));
+    return `${'★'.repeat(rounded)}${'☆'.repeat(5 - rounded)}`;
+  };
+
+  const addText = (parent: HTMLElement, tag: string, className: string, text: string) => {
+    const el = document.createElement(tag);
+    el.className = className;
+    el.textContent = text;
+    parent.append(el);
+    return el;
+  };
+
+  if (section && root) {
+    fetch('/api/reviews.php')
+      .then((response) => {
+        if (!response.ok) throw new Error('reviews unavailable');
+        return response.json() as Promise<Payload>;
+      })
+      .then((data) => {
+        if (!data.ok || data.rating == null) return;
+
+        const header = document.createElement('div');
+        header.className = 'flex flex-col gap-2';
+        addText(header, 'p', 'text-ink-brand text-sm font-semibold tracking-wide uppercase', 'Google reviews');
+        const title = document.createElement('h2');
+        title.className = 'font-heading text-ink-base text-3xl font-semibold';
+        title.textContent = `${data.rating.toFixed(1)} out of 5`;
+        header.append(title);
+
+        const summary = document.createElement('p');
+        summary.className = 'text-ink-muted';
+        const count = data.reviewCount ?? 0;
+        summary.textContent = `${stars(data.rating)} · ${count} Google ${count === 1 ? 'review' : 'reviews'}`;
+        header.append(summary);
+
+        if (data.mapsUrl) {
+          const link = document.createElement('a');
+          link.href = data.mapsUrl;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'text-ink-brand font-semibold';
+          link.textContent = 'Read reviews on Google';
+          header.append(link);
+        }
+        root.append(header);
+
+        const list = document.createElement('ul');
+        list.className = 'grid w-full gap-4 md:grid-cols-2';
+        for (const review of data.reviews ?? []) {
+          const item = document.createElement('li');
+          item.className = 'border-line-base bg-surface-muted flex flex-col gap-3 rounded-2xl border p-5';
+          const rating = document.createElement('p');
+          rating.className = 'text-ink-brand';
+          rating.setAttribute('aria-label', `${review.rating} out of 5 stars`);
+          rating.textContent = stars(review.rating);
+          item.append(rating);
+          addText(item, 'p', 'text-ink-base', review.text);
+
+          const byline = document.createElement('p');
+          byline.className = 'text-ink-muted text-sm';
+          if (review.authorUrl) {
+            const author = document.createElement('a');
+            author.href = review.authorUrl;
+            author.target = '_blank';
+            author.rel = 'noopener noreferrer';
+            author.className = 'text-ink-base font-semibold no-underline';
+            author.textContent = review.author || 'Google user';
+            byline.append(author);
+          } else {
+            byline.textContent = review.author || 'Google user';
+          }
+          if (review.relativeTime) {
+            byline.append(document.createTextNode(` · ${review.relativeTime}`));
+          }
+          item.append(byline);
+          list.append(item);
+        }
+        if (list.childElementCount > 0) root.append(list);
+
+        addText(root, 'p', 'text-ink-muted text-sm', 'Reviews from Google');
+        section.hidden = false;
+      })
+      .catch(() => {
+        section.hidden = true;
+      });
+  }
+</script>

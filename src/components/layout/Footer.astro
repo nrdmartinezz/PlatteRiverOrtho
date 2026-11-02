@@ -2,7 +2,14 @@
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import { navigation } from '../../config/navigation';
-import { site, formattedAddress, formattedPhone } from '../../config/site';
+import {
+  site,
+  formattedAddress,
+  formattedPhone,
+  directionsHref,
+  clinicHours,
+  phoneHoursNote,
+} from '../../config/site';
 import { Icon } from 'astro-icon/components';
 
 const socialIcons: Record<string, string> = {
@@ -49,15 +56,22 @@ const year = new Date().getFullYear();
             <Icon name="lucide:mail" class="size-4" aria-hidden="true" />
             {site.business.email}
           </a>
-          <span class="flex items-start gap-2">
+          <a
+            href={directionsHref}
+            rel="noopener noreferrer"
+            target="_blank"
+            class="text-ink-inverse inline-flex min-h-11 items-start gap-2 no-underline"
+          >
             <Icon name="lucide:map-pin" class="mt-1 size-4 shrink-0" aria-hidden="true" />
             {formattedAddress}
-          </span>
+          </a>
         </address>
 
         <dl class="mt-2 text-neutral-300">
-          <dt class="sr-only">Opening hours</dt>
-          {site.business.hours.map((line) => <dd>{line}</dd>)}
+          <dt class="text-sm font-semibold tracking-wide text-neutral-400 uppercase">Office hours</dt>
+          {clinicHours.map((line) => <dd>{line}</dd>)}
+          <dt class="mt-3 text-sm font-semibold tracking-wide text-neutral-400 uppercase">Phone</dt>
+          <dd>{phoneHoursNote}</dd>
         </dl>
       </div>
 
@@ -84,6 +98,30 @@ const year = new Date().getFullYear();
           </nav>
         ))
       }
+    </div>
+
+    <div class="flex w-full flex-col gap-4 border-t border-neutral-800 pt-6">
+      <h2 class="text-sm font-semibold tracking-wide text-neutral-400 uppercase">Organizations</h2>
+      <a
+        href="https://www.bbb.org/us/ne/gretna/profile/orthodontist/platte-river-orthodontics-0714-1000075181/#sealclick"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
+        <img
+          src="https://seal-nebraska.bbb.org/seals/blue-seal-200-42-bbb-1000075181.png"
+          alt="Platte River Orthodontics BBB Business Review"
+          width="200"
+          height="42"
+          class="h-auto w-48 border-0"
+        />
+      </a>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-300">
+        <li>ABO (American Board of Orthodontics)</li>
+        <li>AAO (American Association of Orthodontists)</li>
+        <li>ODDS (Omaha District Dental Society)</li>
+        <li>Gretna Chamber of Commerce</li>
+        <li>American Cleft Palate Association</li>
+      </ul>
     </div>
 
     {

@@ -11,7 +11,8 @@ import CTABanner from '../components/blocks/CTABanner.astro';
 import FAQ from '../components/blocks/FAQ.astro';
 import VisitUs from '../components/blocks/VisitUs.astro';
 import ContactBlock from '../components/blocks/ContactBlock.astro';
-import officeInterior from '../assets/live/IMG_1802-2.jpg';
+import GoogleReviews from '../components/blocks/GoogleReviews.astro';
+import drCarter from '../assets/team/dr-carter.jpg';
 import treatmentChair from '../assets/live/platte-river-ortho-treatment-chair.jpg';
 import officeDetail from '../assets/live/IMG_2725-2.jpg';
 import invisalign from '../assets/live/gretna-ne-orthodontist-invisalign-platte-river-orthodontics.jpg';
@@ -43,7 +44,7 @@ const faqs = [
   {
     question: 'Do you accept insurance and offer payment plans?',
     answer:
-      'Yes. We work with most major insurance plans and offer flexible payment and financing options. Your free consultation includes a clear cost breakdown with no surprises.',
+      'Yes. We work with most major insurance plans and offer flexible payment and financing options. Your complimentary consultation includes a clear cost breakdown with no surprises.',
   },
   {
     question: 'What areas do you serve?',
@@ -57,31 +58,29 @@ const faqs = [
   overlay
   titleExact
   title="Platte River Orthodontics | Orthodontist in Gretna, NE"
-  description="Orthodontic care in Gretna, NE for braces, Invisalign, and early treatment. Families from Gretna, Omaha, and Papillion are welcome. Call 402-322-8838."
+  description="Board-certified orthodontic care for children, teens, and adults in Gretna, NE. Dr. Carter explains the plan in plain language. Call 402-322-8838."
   image={treatmentChair.src}
   faqs={faqs}
 >
   <Hero
     overlay
     eyebrow="Orthodontist in Gretna, Nebraska"
-    title="Crafting Smiles That"
-    titleAccent="Radiate Confidence"
-    body={[
-      'Platte River Orthodontics has cared for families in Gretna, Omaha, and Papillion for more than a year. The same warm office is here for a child’s first visit or the smile you have been putting off.',
-      'Dr. Chad B. Carter created this practice to deliver modern orthodontic care in a warm, friendly environment. Whether you are bringing in your child for their first visit or you are an adult looking to finally straighten your teeth, we treat every patient like family.',
-    ]}
+    title="Expert Orthodontic Care."
+    titleMiddle="A Personal Integrated Approach."
+    titleAccent="Confidence for Life."
+    body="Exceptional orthodontic care for children, teens, and adults in Gretna, Nebraska. Get a treatment plan tailored to your needs, clear answers to your questions, and a team that treats you like family."
     image={treatmentChair}
     imageAlt="A treatment room at Platte River Orthodontics in Gretna"
     videoId="NS_gJJ2On0k"
     videoTitle="The Platte River Orthodontics team in Gretna"
     actions={[
-      { label: 'Book Your Free Consult', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Explore Services', href: '#services', variant: 'secondary' },
     ]}
     highlights={[
-      { icon: 'lucide:star', label: '5-Star Rated' },
-      { icon: 'lucide:shield', label: 'Veteran Owned' },
-      { icon: 'lucide:users', label: 'Free Consultations' },
+      { icon: 'lucide:award', label: 'Board-Certified' },
+      { icon: 'lucide:house', label: 'Family-Owned' },
+      { icon: 'lucide:users', label: 'Complimentary Consults' },
     ]}
   />
 
@@ -90,44 +89,50 @@ const faqs = [
     background="muted"
     items={[
       { value: '10+', label: 'Years of Experience' },
-      { value: 'Free', label: 'Consultations' },
+      { value: 'Complimentary', label: 'Consultations' },
       { value: '5★', label: 'Patient Reviews' },
-      { value: '7am–7pm', label: 'Mon–Fri Hours' },
+      { value: '8am–5pm', label: 'Mon–Thu Clinic' },
     ]}
   />
 
   <BenefitsGrid
-    eyebrow="Why Choose Us"
-    title="Our Benefits"
-    body="Everything we do is designed around your experience — from the moment you walk in to the day you reveal your new smile."
+    layout="grid"
+    eyebrow="Why Families Choose Us"
+    title="Why families choose Platte River Orthodontics"
+    body="Board-certified orthodontic expertise. Personalized treatment. Straightforward communication. Convenient care. A local family-owned practice with a mission beyond the office. Gretna’s full-time orthodontic practice."
     items={[
       {
         featured: true,
-        icon: 'lucide:circle-dollar-sign',
-        title: 'Affordable Care',
-        body: "Flexible payment plans and financing options designed to fit your family's budget — because a great smile shouldn't be out of reach.",
-        href: '/request-appointment/',
-        cta: 'Ask About Financing',
+        icon: 'lucide:award',
+        title: 'Board-certified orthodontic expertise',
+        body: 'After dental school and an orthodontic residency, American Board of Orthodontics certification is a voluntary extra step: a written exam and a review of finished cases. It is an outside check on knowledge and results, which matters when a child’s growth or bite is more than simple straightening.',
+        href: '/meet-dr-carter/',
+        cta: 'Meet Dr. Carter',
       },
       {
-        icon: 'lucide:monitor',
-        title: 'Virtual Consultations',
-        body: 'Start your smile journey from the comfort of home with our convenient virtual consult option.',
+        icon: 'lucide:user-round',
+        title: 'Personalized treatment',
+        body: 'A plan built for that child, teen, or adult. Digital imaging helps Dr. Carter see the bite clearly and shape treatment around it.',
       },
       {
-        icon: 'lucide:heart',
-        title: 'Local Family & Veteran Owned',
-        body: 'Dr. Carter is a U.S. Air Force veteran and proud Gretna community member who treats every patient like family.',
-      },
-      {
-        icon: 'lucide:scan',
-        title: 'Advanced 3D Technology',
-        body: 'State-of-the-art digital imaging and custom treatment planning for more precise, faster results.',
+        icon: 'lucide:message-circle',
+        title: 'Straightforward communication',
+        body: 'Dr. Carter explains findings and options in plain language, so a family can decide without a sales pitch.',
       },
       {
         icon: 'lucide:clock',
-        title: 'Extended Hours',
-        body: 'Open 7am–7pm Mon–Fri and Saturdays 9am–3pm to fit your busy schedule.',
+        title: 'Convenient care',
+        body: 'Flexible financing, virtual consults, clinic hours Monday–Thursday 8am–5pm and Saturday 9am–3pm, and calls answered Monday–Friday 7am–7pm.',
+      },
+      {
+        icon: 'lucide:heart',
+        title: 'A local family-owned practice',
+        body: 'Dr. Carter and his family own the practice. The same commitment to service continues beyond the office, including a long partnership with projects in West Africa.',
+      },
+      {
+        icon: 'lucide:map-pin',
+        title: 'Gretna’s full-time orthodontic practice',
+        body: 'This Gretna office is the practice, open full time for families from Gretna, Omaha, Papillion, and nearby communities.',
       },
     ]}
   />
@@ -136,34 +141,35 @@ const faqs = [
     id="meet-dr-carter"
     reverse
     eyebrow="Meet Your Orthodontist"
-    subtitle="Father. Husband. Veteran. Orthodontist. Community Educator."
+    subtitle="Board-certified orthodontist. Veteran. Teacher. Father."
     title="Meet Dr. Chad Carter"
     body={[
-      'Dr. Carter—known by many as “SnaggleTooth”—brings heart, humor, and high-level expertise to every smile he helps shape. As an orthodontist and dentofacial orthopedist, he’s passionate about blending science with artistry to create confident, healthy outcomes for patients of all ages.',
-      'Whether teaching as an Associate Professor, consulting on craniofacial cases, or working one-on-one with families, Dr. Carter is driven by a love for lifelong learning and meaningful connection.',
+      'Dr. Chad B. Carter is a board-certified orthodontist. He explains what he sees, answers questions directly, and builds a treatment plan for that patient — a child in early treatment, a teen in braces, or an adult ready for a change.',
+      'He is easy to talk with, and the office treats patients like family.',
     ]}
-    image={officeInterior}
-    imageAlt="The treatment floor at Platte River Orthodontics in Gretna"
+    image={drCarter}
+    imageAlt="Dr. Chad B. Carter, board-certified orthodontist at Platte River Orthodontics"
     callout={{
       title: "Dr. Carter's Experience",
       items: [
-        'Over a decade of service-focused experience in dentistry, orthodontics, and community care',
-        'Served 7 years as a volunteer in West Africa before pursuing dentistry',
-        'U.S. Air Force veteran with advanced training in orthodontics and dentofacial orthopedics',
-        'Associate Professor and international lecturer on complex craniofacial growth and orthodontics',
+        'Board-certified by the American Board of Orthodontics',
+        'U.S. Air Force veteran',
+        'Associate Professor and international lecturer on craniofacial growth',
+        'Consultant to the Boys Town National Research Hospital Craniofacial Team',
+        'Seven years of service in West Africa before dentistry',
       ],
     }}
-    badge={{ value: '10+', label: 'Years Experience' }}
+    badge={{ value: 'ABO', label: 'Board Certified' }}
     actions={[
       { label: 'Learn More About Dr. Carter', href: '/meet-dr-carter/' },
-      { label: 'Schedule a Consult', href: '/request-appointment/', variant: 'secondary' },
+      { label: 'Request a Consultation', href: '/request-appointment/', variant: 'secondary' },
     ]}
   />
 
   <TreatmentCards
     eyebrow="What We Do"
     title="Services We Offer"
-    intro="Every treatment is personalized using advanced 3D technology and Dr. Carter's clinical expertise."
+    intro="Every treatment is a plan Dr. Carter builds for that patient. Digital imaging helps him see the bite clearly and explain the options."
     items={[
       {
         image: invisalign,
@@ -197,22 +203,24 @@ const faqs = [
     align="center"
     eyebrow="Simple Process"
     title="Your Path to a Confident Smile"
-    body="Getting started is easier than you think. Here's what to expect when you choose Platte River Orthodontics."
+    body="Getting started is a conversation, not a commitment. Here is what to expect."
     items={[
       {
-        title: 'Book Your Free Consult',
-        body: 'Schedule online or call us at 402-322-8838. Your first visit is completely free — no pressure, no commitment.',
+        title: 'Request a Consultation',
+        body: 'Schedule online or call 402-322-8838. The first visit is complimentary, with time for your questions.',
       },
       {
-        title: 'Get Your Custom Plan',
-        body: 'Dr. Carter uses advanced 3D imaging to create a personalized treatment plan tailored to your smile goals and lifestyle.',
+        title: 'Hear the Plan in Plain Language',
+        body: 'Dr. Carter examines the bite, uses digital imaging where it helps, and explains a plan tailored to that child, teen, or adult.',
       },
       {
-        title: 'Start Smiling with Confidence',
-        body: "Begin treatment and watch your smile transform. We'll support you every step with flexible scheduling and extended hours.",
+        title: 'Start Treatment with a Team You Know',
+        body: 'Begin care in a welcoming office, with scheduling that respects school and work.',
       },
     ]}
   />
+
+  <GoogleReviews />
 
   <Testimonials
     eyebrow="Patient Stories"
@@ -253,12 +261,12 @@ const faqs = [
 
   <CTABanner
     eyebrow="Limited New Patient Spots"
-    title="“With precision and care, we craft smiles that radiate confidence—supporting our patients’ success at every stage of life.”"
-    body="Rooted in years of experience, global service, and advanced training, this practice is more than a clinic — it's a place where patients of all ages are welcomed, educated, and empowered. Families across Gretna and the Omaha metro already come here for their smiles."
+    title="Expert care, clear answers, and an office that treats you like family."
+    body="Board-certified orthodontic care for children, teens, and adults in Gretna. Dr. Carter explains the plan, and the team is here for every visit."
     image={quoteBand}
     imageAlt=""
     actions={[
-      { label: 'Schedule Your Appointment', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
     ]}
   />
@@ -267,8 +275,8 @@ const faqs = [
     layout="split"
     eyebrow="Common Questions"
     title="Frequently Asked Questions"
-    body="Have more questions? We're happy to help. Call us at 402-322-8838 or schedule your free consultation online."
-    action={{ label: 'Book Free Consult', href: '/request-appointment/' }}
+    body="Have more questions? We're happy to help. Call us at 402-322-8838 or request your complimentary consultation online."
+    action={{ label: 'Request a Consultation', href: '/request-appointment/' }}
     items={faqs}
     schema={false}
   />

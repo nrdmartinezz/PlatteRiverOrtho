@@ -45,4 +45,9 @@ return [
     'recaptcha_min_score' => 0.5,
     'rate_limit_seconds' => 60,
     'rate_limit_max' => 5,
+
+    // Google Places API (New). Leave blank until the key and Place ID are set.
+    // The key stays in this private file. Never commit a real key.
+    'google_places_api_key' => '',
+    'google_place_id' => '',
 ];

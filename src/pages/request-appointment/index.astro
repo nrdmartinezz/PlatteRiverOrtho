@@ -11,19 +11,19 @@ import { site } from '../../config/site';
 
 <BaseLayout
   overlay
-  title="Request an Appointment"
+  title="Request a Consultation"
   description="Request a complimentary consultation at Platte River Orthodontics or book a time on the Greyfinch scheduler."
   breadcrumbs={[
     { name: 'Home', href: '/' },
-    { name: 'Request an Appointment', href: '/request-appointment/' },
+    { name: 'Request a Consultation', href: '/request-appointment/' },
   ]}
 >
   <Hero
     overlay
     eyebrow="Gretna, Nebraska"
-    title="Request an"
-    titleAccent="Appointment"
-    body="Send a request and our team will follow up, or choose a time on the scheduler. Your first visit is complimentary."
+    title="Request a"
+    titleAccent="Consultation"
+    body="Send your name, phone, email, and request. We email and text within one business day. Calls are answered Monday–Friday, 7am–7pm. To choose a time now, use the scheduler. Your first visit is complimentary."
     image={heroOffice}
     imageAlt="The Platte River Orthodontics office"
     actions={[
@@ -60,7 +60,9 @@ import { site } from '../../config/site';
       <iframe
         src={site.greyfinch.scheduler}
         title="Greyfinch appointment scheduler"
-        class="border-line-base bg-surface-base min-h-[780px] w-full rounded-2xl border"></iframe>
+        allow="geolocation"
+        class="border-line-base bg-surface-base block w-full rounded-2xl border"
+        style="height: 650px; width: 100%; border: 0; display: block; margin: auto;"></iframe>
     </Container>
   </Section>
 </BaseLayout>

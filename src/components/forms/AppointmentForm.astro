@@ -3,7 +3,7 @@ import Field from '../ui/Field.astro';
 import FormMessage from '../ui/FormMessage.astro';
 import Button from '../ui/Button.astro';
 import Heading from '../ui/Heading.astro';
-import { site } from '../../config/site';
+import { site, phoneHoursNote } from '../../config/site';
 
 const action = site.formEndpoint || '';
 const thankYou = new URL('/thank-you/', site.url).href;
@@ -22,10 +22,10 @@ const treatments = [
 ---
 
 <div class="bg-surface-muted flex flex-col gap-6 rounded-2xl p-8 md:p-10">
-  <Heading level={2} size="md" class="text-ink-brand"> Request an appointment </Heading>
+  <Heading level={2} size="md" class="text-ink-brand">Request a Consultation</Heading>
   <p class="text-ink-muted">
-    Tell us a little about the visit and we will follow up, usually within one business day. To pick
-    a time yourself, use the scheduler below.
+    Share your name, phone, email, and request. We email and text within one business day.
+    {phoneHoursNote}. To choose a time yourself, use the scheduler below.
   </p>
 
   <form
@@ -52,36 +52,13 @@ const treatments = [
       <Field name="phone" label="Phone" type="tel" autocomplete="tel" required />
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2">
-      <Field
-        name="patient_status"
-        label="Are you a patient here?"
-        type="select"
-        required
-        options={[
-          { label: 'Select one', value: '' },
-          { label: 'New patient', value: 'New patient' },
-          { label: 'Existing patient', value: 'Existing patient' },
-        ]}
-      />
-      <Field
-        name="visit_for"
-        label="Who is the visit for?"
-        type="select"
-        required
-        options={[
-          { label: 'Select one', value: '' },
-          { label: 'Myself', value: 'Myself' },
-          { label: 'My child', value: 'My child' },
-          { label: 'Someone else', value: 'Someone else' },
-        ]}
-      />
-    </div>
+    <Field name="message" label="Request" type="textarea" rows={4} required />
 
     <Field
       name="service"
       label="Treatment interest"
       type="select"
+      help="Optional."
       options={[
         { label: 'Select a treatment', value: '' },
         ...treatments.map((treatment) => ({ label: treatment, value: treatment })),
@@ -89,12 +66,12 @@ const treatments = [
     />
 
     <Field
-      name="preferred_time"
-      label="Preferred days and times"
-      help="For example, weekday mornings or Saturday."
+      name="concerns"
+      label="Additional concerns"
+      type="textarea"
+      rows={3}
+      help="Optional."
     />
-
-    <Field name="message" label="Notes" type="textarea" rows={4} />
 
     <label class="text-ink-muted flex items-start gap-3 text-sm">
       <input

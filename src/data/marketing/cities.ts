@@ -6,7 +6,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
       name: 'Ashland',
       slug: 'ashland-nebraska-orthodontist-platte-river-orthodontics',
       blurb:
-        'Ashland families are a short drive from a full orthodontic office in Gretna, with early mornings, evenings, and Saturday hours.',
+        'Ashland families are a short drive from a full orthodontic office in Gretna, with Saturday appointments and a phone line answered Monday through Friday, 7am to 7pm.',
       title: 'Ashland NE Orthodontist | Platte River Orthodontics',
       description:
         'Platte River Orthodontics serves Ashland, NE with Invisalign & braces. Expert care near you. Call 402-322-8838 for your consultation!',
@@ -42,7 +42,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
       name: 'Millard',
       slug: 'millard-nebraska-orthodontist-platte-river-orthodontics',
       blurb:
-        'Millard is an easy trip to Standing Stone Drive. Parents tell us the extended hours are what make a multi-year treatment realistic.',
+        'Millard is an easy trip to Standing Stone Drive. Saturday appointments, and a phone line answered Monday through Friday from 7am to 7pm, make a multi-year treatment realistic.',
       title: 'Millard NE Orthodontist | Platte River Orthodontics',
       description:
         'Serving Millard, NE with advanced orthodontic care. Invisalign, braces & family-friendly service. Call Platte River at 402-322-8838!',
@@ -108,7 +108,7 @@ export const cityPages: MarketingPageData[] = cities.map((city) => ({
       {
         icon: 'lucide:clock',
         title: 'Hours that fit',
-        body: 'Monday through Friday 7:00 am–7:00 pm and Saturday 9:00 am–3:00 pm.',
+        body: 'Clinic hours are Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
       },
       {
         icon: 'lucide:badge-check',
@@ -117,13 +117,13 @@ export const cityPages: MarketingPageData[] = cities.map((city) => ({
       },
       {
         icon: 'lucide:calendar',
-        title: 'A free first visit',
+        title: 'A complimentary first visit',
         body: 'The consultation is complimentary, with a clear conversation about cost.',
       },
     ],
   },
   related: [
-    { label: 'Request an appointment', href: '/request-appointment/' },
+    { label: 'Request a Consultation', href: '/request-appointment/' },
     { label: 'Contact us', href: '/contact-us/' },
   ],
 }));

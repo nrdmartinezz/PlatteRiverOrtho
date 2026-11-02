@@ -89,15 +89,15 @@ const consultationFeature: MegaCard = {
   kind: 'card',
   eyebrow: "Let's find your fit",
   title: 'A thoughtful plan starts with a conversation.',
-  body: 'Talk through your goals and treatment options at a free consultation.',
+  body: 'Talk through your goals and treatment options at a complimentary consultation.',
   href: '/request-appointment/',
-  cta: 'Request an Appointment',
+  cta: 'Request a Consultation',
   note: 'For children, teens, and adults.',
 };
 
 const consultationSupport: MegaSupport = {
   text: 'Personalized treatment for children, teens, and adults.',
-  cta: 'Request an Appointment',
+  cta: 'Request a Consultation',
   href: '/request-appointment/',
 };
 
@@ -121,7 +121,7 @@ export const navigation: NavigationConfig = {
               {
                 label: 'Meet Dr. Carter',
                 href: '/meet-dr-carter/',
-                description: 'The story behind SnaggleTooth and this practice.',
+                description: 'Board-certified orthodontist, teacher, and Gretna neighbor.',
               },
               {
                 label: 'Our Why',
@@ -297,7 +297,7 @@ export const navigation: NavigationConfig = {
             heading: 'Plan your visit',
             links: [
               {
-                label: 'Request an Appointment',
+                label: 'Request a Consultation',
                 href: '/request-appointment/',
                 description: 'Tell us a time that works and we will follow up.',
               },
@@ -340,7 +340,7 @@ export const navigation: NavigationConfig = {
     },
   ],
 
-  cta: { label: 'Request an Appointment', href: '/request-appointment/' },
+  cta: { label: 'Request a Consultation', href: '/request-appointment/' },
   portal: { label: 'Patient Portal', href: site.greyfinch.portal },
 
   footer: [
@@ -353,7 +353,7 @@ export const navigation: NavigationConfig = {
         { label: 'Happy Tooth Blog', href: '/happy-tooth-blog/' },
         { label: 'Contact Us', href: '/contact-us/' },
         { label: 'Doctor Referral', href: '/doctor-referral/' },
-        { label: 'Request an Appointment', href: '/request-appointment/' },
+        { label: 'Request a Consultation', href: '/request-appointment/' },
         { label: 'Patient Portal', href: site.greyfinch.portal },
       ],
     },

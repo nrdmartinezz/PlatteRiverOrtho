@@ -17,7 +17,7 @@ export const treatmentPages: MarketingPageData[] = [
     slug: 'braces',
     title: 'Braces Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'Expert braces treatment at Platte River Orthodontics in Gretna, NE. KLOwen custom braces for all ages. Call 402-322-8838 for a free consultation.',
+      'Expert braces treatment at Platte River Orthodontics in Gretna, NE. KLOwen custom braces for all ages. Call 402-322-8838 for a complimentary consultation.',
     crumbs: [bracesCrumb],
     serviceName: 'Braces',
     image: 'braces',
@@ -250,7 +250,7 @@ export const treatmentPages: MarketingPageData[] = [
     slug: 'invisalign',
     title: 'Invisalign Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'Expert Invisalign treatment at Platte River Orthodontics in Gretna, NE. Clear aligners for all ages. Call 402-322-8838 for a free consultation.',
+      'Expert Invisalign treatment at Platte River Orthodontics in Gretna, NE. Clear aligners for all ages. Call 402-322-8838 for a complimentary consultation.',
     crumbs: [invisalignCrumb],
     serviceName: 'Invisalign',
     image: 'invisalign',

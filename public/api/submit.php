@@ -116,7 +116,7 @@ if ($formType === 'contact' && $message === '') {
     jsonError(400, 'Please fill in all required fields.');
 }
 
-if ($formType === 'appointment' && $phone === '') {
+if ($formType === 'appointment' && ($phone === '' || $message === '')) {
     jsonError(400, 'Please fill in all required fields.');
 }
 

@@ -7,8 +7,8 @@ import WhySplit from '../../components/blocks/WhySplit.astro';
 import CTABanner from '../../components/blocks/CTABanner.astro';
 import VisitUs from '../../components/blocks/VisitUs.astro';
 import ContactBlock from '../../components/blocks/ContactBlock.astro';
+import drCarter from '../../assets/team/dr-carter.jpg';
 import familyPractice from '../../assets/live/family-practice-platte-river-ortho-1.png';
-import familyHotel from '../../assets/live/20240616-Family-Picture_Grand-Hotel-2024.jpg';
 import burkina1 from '../../assets/live/20251126-Burkina-Dental-Picture1.jpg';
 import amyCarter from '../../assets/live/platte-river-orthodontics-gretna-ne-amy-carter.jpg';
 import treatmentChair from '../../assets/live/platte-river-ortho-treatment-chair.jpg';
@@ -19,7 +19,7 @@ import quoteBand from '../../assets/quote-band.jpg';
   overlay
   titleExact
   title="Meet Dr. Carter | Platte River Orthodontics | Gretna, NE"
-  description="Meet Dr. Chad B Carter, board-certified orthodontist at Platte River Orthodontics in Gretna, NE. Learn about his unique background. Call 402-322-8838."
+  description="Meet Dr. Chad B. Carter, a board-certified orthodontist in Gretna, NE. See what that certification means for your family. Call 402-322-8838."
   image={familyPractice.src}
   breadcrumbs={[
     { name: 'Home', href: '/' },
@@ -29,13 +29,13 @@ import quoteBand from '../../assets/quote-band.jpg';
   <Hero
     overlay
     eyebrow="Platte River Orthodontics | Gretna, NE"
-    title="Meet Dr. Carter"
-    titleAccent="A Journey of Purpose"
-    body="From physics research laboratories to rural African villages, from Air Force Special Operations to the orthodontic classroom, Dr. Chad B. Carter’s path has been anything but ordinary — and that is exactly what shapes the care you receive."
+    title="Meet Dr. Chad B. Carter"
+    titleAccent="Board-certified orthodontist"
+    body="Families here get expert care, answers in plain language, and a plan made for their child, teen, or adult. The path below is why that care is trustworthy."
     image={familyPractice}
     imageAlt="The Platte River Orthodontics team in Gretna"
     actions={[
-      { label: 'Book Your Free Consult', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
     ]}
   />
@@ -43,26 +43,27 @@ import quoteBand from '../../assets/quote-band.jpg';
   <FeatureSplit
     reverse
     eyebrow="Meet Your Orthodontist"
-    subtitle={'Father. Husband. Veteran. Orthodontist. Community Educator.'}
-    title={'Meet Dr. Chad B. “SnaggleTooth” Carter'}
+    subtitle="Board-certified orthodontist. Veteran. Teacher. Father."
+    title="What board certification means"
     body={[
-      'When you meet Dr. Chad B. Carter at Platte River Orthodontics in Gretna, Nebraska, you are meeting someone whose life story reads like an adventure novel. Yet it is precisely this extraordinary background that makes him the exceptional orthodontist and compassionate caregiver he is today.',
-      'Known affectionately to his friends as “SnaggleTooth,” Dr. Carter brings scientific precision, a global perspective, military discipline, and a servant’s heart to every smile he helps shape. His story is one of continuous learning, dedicated service, and an unwavering commitment to helping others achieve their best smiles and highest confidence.',
+      'After dental school and an orthodontic residency, American Board of Orthodontics certification is a voluntary extra step: a written exam and a review of finished cases. It is an outside check on Dr. Carter’s knowledge and results. That matters when a child’s growth or bite is more than simple straightening.',
+      'He explains what he finds, answers questions directly, and builds the plan around that patient. The office is welcoming, and he is easy to talk with.',
     ]}
-    image={familyHotel}
-    imageAlt="Dr. Carter with his family"
+    image={drCarter}
+    imageAlt="Dr. Chad B. Carter, board-certified orthodontist at Platte River Orthodontics"
     callout={{
-      title: 'Background Overview',
+      title: "Dr. Carter's Experience",
       items: [
-        'Over a decade of service-focused experience in dentistry, orthodontics, and community care',
-        'Served 7 years as a volunteer in West Africa before pursuing dentistry',
-        'U.S. Air Force veteran with advanced training in orthodontics and dentofacial orthopedics',
-        'Associate Professor and international lecturer on complex craniofacial growth and orthodontics',
+        'Board-certified by the American Board of Orthodontics',
+        'U.S. Air Force veteran',
+        'Associate Professor and international lecturer on craniofacial growth',
+        'Consultant to the Boys Town National Research Hospital Craniofacial Team',
+        'Seven years of service in West Africa before dentistry',
       ],
     }}
-    badge={{ value: '10+', label: 'Years Experience' }}
+    badge={{ value: 'ABO', label: 'Board Certified' }}
     actions={[
-      { label: 'Schedule a Consult', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Explore MARPE Care', href: '/services/marpe/', variant: 'secondary' },
     ]}
   />
@@ -70,8 +71,8 @@ import quoteBand from '../../assets/quote-band.jpg';
   <FeatureSplit
     background="muted"
     eyebrow="A Foundation in Scientific Excellence"
-    title="The Early Years: From Physics to Purpose"
-    body="Dr. Carter’s journey to orthodontics began in an unexpected place — the world of physics research. That scientific foundation instilled a deep appreciation for precision, methodology, and evidence-based decision-making. The analytical thinking and problem-solving skills developed in the lab still shape how he approaches complex orthodontic cases today."
+    title="From Physics to Careful Planning"
+    body="Dr. Carter’s training began in physics research. That foundation still shapes how he plans treatment: precise, methodical, and grounded in evidence. The same problem-solving shows up when a case involves growth, the bite, or the jaws."
     image={burkina1}
     imageAlt="Dr. Carter during his years of service in Burkina Faso"
     bullets={[
@@ -83,9 +84,9 @@ import quoteBand from '../../assets/quote-band.jpg';
 
   <BenefitsGrid
     layout="grid"
-    eyebrow="Seven Years in Africa"
-    title="A Life-Changing Adventure"
-    body="Perhaps no experience has shaped Dr. Carter’s approach to patient care more profoundly than the seven years he and Amy spent as volunteers in a rural village on the edge of the Sahara Desert in Burkina Faso. This was not a short-term mission trip — it was a complete immersion into a different culture, a different way of life, and a different understanding of what it means to serve others. Their partnership with ministries in West Africa has now extended over two and a half decades."
+    eyebrow="Seven Years in West Africa"
+    title="Service that still shapes the visit"
+    body="Dr. Carter and Amy spent seven years as volunteers in a rural village on the edge of the Sahara in Burkina Faso. It was a full life there, not a short trip, and it taught him to meet people where they are. Their partnership with ministries in West Africa has continued for more than twenty-five years. Patients still hear that care as clear explanations, patience, and respect."
     items={[
       {
         icon: 'lucide:languages',
@@ -106,9 +107,9 @@ import quoteBand from '../../assets/quote-band.jpg';
   />
 
   <WhySplit
-    eyebrow="Personal Life: Family, Faith, and Fun"
+    eyebrow="Family"
     title="Amy Carter: Partner in Life and Mission"
-    body="Dr. Carter’s wife, Amy, has been with him through all the twists and turns of their 25-year journey — from their early days in Africa to military life and building Platte River Orthodontics. A dedicated school teacher who also homeschooled their two sons while moving with the Air Force, Amy instilled a deep respect for family time and education. Those values inspire convenient, customized appointments that minimize time kids need to be out of school."
+    body="Dr. Carter’s wife, Amy, has been with him through their 25-year journey — from their years in West Africa to military life and building Platte River Orthodontics. A school teacher who also homeschooled their two sons while moving with the Air Force, Amy keeps family time at the center of the practice. Those values show up as appointments that respect school and work. Friends sometimes call him SnaggleTooth. That nickname stays in the background. The visit is a clinical conversation with someone who takes the time to explain the plan."
     items={[
       'Family perspective: understanding the needs and concerns of parents',
       'Cultural sensitivity from living and working in diverse communities',
@@ -118,7 +119,7 @@ import quoteBand from '../../assets/quote-band.jpg';
     ]}
     asideEyebrow="A Practice Built for Families"
     asideTitle="Care that respects your time"
-    asideBody="Amy’s experience as a parent, military spouse, and community member helps ensure Platte River Orthodontics serves families at every level — with extended hours, thoughtful scheduling, and the same hospitality Dr. Carter is known for."
+    asideBody="Amy’s experience as a parent, military spouse, and community member helps ensure Platte River Orthodontics serves families at every level — with Monday–Thursday and Saturday clinic hours, a phone line answered Monday–Friday 7am–7pm, and the same hospitality Dr. Carter is known for."
     image={amyCarter}
     imageAlt="Amy Carter"
   />
@@ -130,7 +131,7 @@ import quoteBand from '../../assets/quote-band.jpg';
     image={quoteBand}
     imageAlt=""
     actions={[
-      { label: 'Schedule Your Appointment', href: '/request-appointment/' },
+      { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Call 402-322-8838', href: 'tel:+14023228838', variant: 'secondary' },
     ]}
   />
@@ -140,7 +141,7 @@ import quoteBand from '../../assets/quote-band.jpg';
     paragraphs={[
       'Come meet Dr. Carter at our Gretna office. Your first visit is complimentary — a chance to talk through your goals and see whether we are the right fit.',
     ]}
-    cta={{ label: 'Schedule Your Appointment', href: '/request-appointment/' }}
+    cta={{ label: 'Request a Consultation', href: '/request-appointment/' }}
   />
 
   <ContactBlock />

@@ -25,7 +25,7 @@ interface Props {
 const { page } = Astro.props;
 
 const heroImage = pageImages[page.image];
-const book = { label: 'Request an Appointment', href: '/request-appointment/' };
+const book = { label: 'Request a Consultation', href: '/request-appointment/' };
 ---
 
 <BaseLayout
@@ -182,7 +182,7 @@ const book = { label: 'Request an Appointment', href: '/request-appointment/' };
       <VisitUs
         image={pageImages.officeInterior}
         paragraphs={[
-          '11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Monday through Friday 7:00 am–7:00 pm, Saturday 9:00 am–3:00 pm.',
+          'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
         ]}
       />
     )

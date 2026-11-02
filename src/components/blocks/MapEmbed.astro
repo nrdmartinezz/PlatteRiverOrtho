@@ -8,7 +8,7 @@ import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import BlockHeader from './BlockHeader.astro';
 import { Icon } from 'astro-icon/components';
-import { site, formattedAddress } from '../../config/site';
+import { site, formattedAddress, directionsHref } from '../../config/site';
 import type { BlockProps } from './types';
 
 interface Props extends BlockProps {
@@ -33,7 +33,10 @@ const {
 } = Astro.props;
 
 const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${zoom}&output=embed`;
-const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
+const directionsLink =
+  query === formattedAddress
+    ? directionsHref
+    : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
 ---
 
 <Section background={background} spacing={spacing}>
@@ -62,7 +65,7 @@ const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${enc
     </div>
 
     <div class="flex flex-wrap gap-4 text-sm">
-      <a href={directionsHref} rel="noopener noreferrer" target="_blank" class="text-ink-brand">
+      <a href={directionsLink} rel="noopener noreferrer" target="_blank" class="text-ink-brand">
         Get directions
       </a>
       <a href={`tel:${site.business.phoneHref}`} class="text-ink-brand">

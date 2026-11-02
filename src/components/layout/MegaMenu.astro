@@ -14,7 +14,7 @@ import { Icon } from 'astro-icon/components';
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import { navigation, type MegaPanel, type NavLink } from '../../config/navigation';
-import { formattedPhone, site } from '../../config/site';
+import { clinicHours, directionsHref, formattedPhone, phoneHoursNote, site } from '../../config/site';
 import officeExterior from '../../assets/office-exterior.jpg';
 import treatmentRoom from '../../assets/live/platte-river-ortho-treatment-chair.jpg';
 
@@ -34,12 +34,6 @@ const eyebrowClass = 'text-ink-muted text-xs font-semibold tracking-wide upperca
 
 const textCtaClass =
   'text-ink-brand inline-flex shrink-0 items-center gap-2 border-b border-accent-500 pb-1 text-xs font-semibold tracking-wide uppercase no-underline';
-
-const officeHours = [
-  'Mon – Fri: 7:00 am – 7:00 pm',
-  'Saturday: 9:00 am – 3:00 pm',
-  'Sunday: Closed',
-];
 
 const gridClass = (panel: MegaPanel) =>
   panel.variant === 'treatments'
@@ -144,12 +138,17 @@ const gridClass = (panel: MegaPanel) =>
                         class="h-40 w-full object-cover"
                       />
                       <p class={eyebrowClass}>{panel.feature.eyebrow}</p>
-                      <p class="text-ink-base text-sm leading-normal">
+                      <a
+                        href={directionsHref}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        class="text-ink-base text-sm leading-normal no-underline"
+                      >
                         {site.business.address.street}
                         <br />
                         {site.business.address.locality}, {site.business.address.region}{' '}
                         {site.business.address.postalCode}
-                      </p>
+                      </a>
                       <a
                         href={`tel:${site.business.phoneHref}`}
                         class="text-ink-brand text-sm font-semibold no-underline"
@@ -157,11 +156,10 @@ const gridClass = (panel: MegaPanel) =>
                         {formattedPhone}
                       </a>
                       <div class="border-line-base flex flex-col gap-1 border-t pt-3 text-sm leading-normal">
-                        {officeHours.map((line, hourIndex) => (
-                          <p class={hourIndex === officeHours.length - 1 ? 'text-neutral-400' : 'text-ink-muted'}>
-                            {line}
-                          </p>
+                        {clinicHours.map((line) => (
+                          <p class={line.includes('Closed') ? 'text-neutral-400' : 'text-ink-muted'}>{line}</p>
                         ))}
+                        <p class="text-ink-muted mt-2">{phoneHoursNote}</p>
                       </div>
                     </div>
                   )}

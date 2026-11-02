@@ -1,0 +1,148 @@
+---
+/**
+ * Two sibling controls. Text/Call never opens the scheduler, and Book online
+ * never places a call. The drawer loads Greyfinch only after it is opened.
+ */
+import { site, formattedPhone, phoneHoursNote } from '../../config/site';
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  type="button"
+  id="book-online-toggle"
+  aria-expanded="false"
+  aria-controls="scheduler-drawer"
+  class="bg-brand-600 fixed top-1/2 right-0 z-40 inline-flex min-h-11 -translate-y-1/2 items-center gap-2 rounded-l-2xl px-3 py-4 text-xs font-semibold tracking-wide text-white uppercase shadow-lg [writing-mode:vertical-rl]"
+>
+  <Icon name="lucide:calendar" class="size-4 rotate-90" aria-hidden="true" />
+  Book online
+</button>
+
+<div
+  id="quick-actions"
+  class="pointer-events-none fixed inset-x-0 bottom-0 z-40 flex items-end px-4 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+>
+  <div
+    class="border-line-base bg-surface-base pointer-events-auto flex max-w-full flex-col gap-1 rounded-2xl border p-2 shadow-lg"
+  >
+    <p class="text-ink-muted px-1 text-[11px] leading-snug">{phoneHoursNote}</p>
+    <div class="flex gap-2">
+      <a
+        href={`sms:${site.business.phoneHref}`}
+        class="bg-brand-600 inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full px-4 text-xs font-semibold tracking-wide text-white uppercase no-underline"
+      >
+        <Icon name="lucide:message-square" class="size-4" aria-hidden="true" />
+        Text
+        <span class="sr-only">{formattedPhone}</span>
+      </a>
+      <a
+        href={`tel:${site.business.phoneHref}`}
+        class="border-brand-600 text-ink-brand inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full border bg-white px-4 text-xs font-semibold tracking-wide uppercase no-underline"
+      >
+        <Icon name="lucide:phone" class="size-4" aria-hidden="true" />
+        Call
+        <span class="sr-only">{formattedPhone}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div
+  id="scheduler-drawer"
+  hidden
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="scheduler-drawer-title"
+  data-src={site.greyfinch.scheduler}
+  class="bg-surface-base border-line-base fixed inset-x-0 z-40 flex flex-col overflow-y-auto border-t shadow-lg"
+>
+  <div class="border-line-base flex min-h-11 shrink-0 items-center justify-between gap-3 border-b px-4">
+    <h2 id="scheduler-drawer-title" class="font-heading text-ink-brand text-sm font-semibold">
+      Book online
+    </h2>
+    <button
+      type="button"
+      data-close-scheduler
+      class="inline-flex min-h-11 items-center px-2 text-sm font-semibold"
+    >
+      Close
+    </button>
+  </div>
+  <iframe
+    data-scheduler-frame
+    title="Greyfinch appointment scheduler"
+    allow="geolocation"
+    style="height: 650px; width: 100%; border: 0; display: block; margin: auto;"
+  ></iframe>
+</div>
+
+<style>
+  :global(body:has(#nav-toggle[aria-expanded='true']) #quick-actions),
+  :global(body:has(#nav-toggle[aria-expanded='true']) #book-online-toggle),
+  :global(body:has(#nav-toggle[aria-expanded='true']) #scheduler-drawer) {
+    display: none;
+  }
+
+  #scheduler-drawer {
+    top: var(--nav-h, 4.5rem);
+    bottom: var(--quick-actions-h, 9rem);
+  }
+</style>
+
+<script>
+  const actions = document.querySelector<HTMLElement>('#quick-actions');
+  const book = document.querySelector<HTMLButtonElement>('#book-online-toggle');
+  const drawer = document.querySelector<HTMLElement>('#scheduler-drawer');
+  const frame = drawer?.querySelector<HTMLIFrameElement>('[data-scheduler-frame]');
+  const closeButton = drawer?.querySelector<HTMLButtonElement>('[data-close-scheduler]');
+  const navToggle = document.querySelector<HTMLButtonElement>('#nav-toggle');
+
+  if (actions && book && drawer && frame) {
+    const src = drawer.dataset.src ?? '';
+
+    const setBarHeight = () => {
+      const height = actions.offsetHeight;
+      document.documentElement.style.setProperty('--quick-actions-h', `${height}px`);
+      document.body.style.paddingBottom = `${height}px`;
+    };
+    setBarHeight();
+    window.addEventListener('resize', setBarHeight);
+
+    const loadFrame = () => {
+      if (frame.getAttribute('src') || src === '') return;
+      frame.src = src;
+    };
+
+    const setDrawer = (open: boolean) => {
+      book.setAttribute('aria-expanded', String(open));
+      drawer.hidden = !open;
+      if (open) {
+        loadFrame();
+        closeButton?.focus();
+      }
+    };
+
+    book.addEventListener('click', () => {
+      setDrawer(book.getAttribute('aria-expanded') !== 'true');
+    });
+
+    closeButton?.addEventListener('click', () => {
+      setDrawer(false);
+      book.focus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || drawer.hidden) return;
+      if (navToggle?.getAttribute('aria-expanded') === 'true') return;
+      setDrawer(false);
+      book.focus();
+    });
+
+    if (navToggle) {
+      const observer = new MutationObserver(() => {
+        if (navToggle.getAttribute('aria-expanded') === 'true') setDrawer(false);
+      });
+      observer.observe(navToggle, { attributes: true, attributeFilter: ['aria-expanded'] });
+    }
+  }
+</script>
