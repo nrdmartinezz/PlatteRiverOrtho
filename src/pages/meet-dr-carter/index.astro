@@ -5,6 +5,7 @@ import FeatureSplit from '../../components/blocks/FeatureSplit.astro';
 import BenefitsGrid from '../../components/blocks/BenefitsGrid.astro';
 import WhySplit from '../../components/blocks/WhySplit.astro';
 import CTABanner from '../../components/blocks/CTABanner.astro';
+import FAQ from '../../components/blocks/FAQ.astro';
 import VisitUs from '../../components/blocks/VisitUs.astro';
 import ContactBlock from '../../components/blocks/ContactBlock.astro';
 import drCarter from '../../assets/team/dr-carter.jpg';
@@ -13,6 +14,34 @@ import burkina1 from '../../assets/live/20251126-Burkina-Dental-Picture1.jpg';
 import amyCarter from '../../assets/live/platte-river-orthodontics-gretna-ne-amy-carter.jpg';
 import treatmentChair from '../../assets/live/platte-river-ortho-treatment-chair.jpg';
 import quoteBand from '../../assets/quote-band.jpg';
+
+const faqs = [
+  {
+    question: 'What kind of doctor is Dr. Chad Carter?',
+    answer:
+      'He is a board-certified orthodontist and dentofacial orthopedist. American Board of Orthodontics certification is a voluntary step after residency: a written exam and a review of finished cases. He is also an Associate Professor and an international lecturer on craniofacial growth.',
+  },
+  {
+    question: 'Does Dr. Carter see children as well as adults?',
+    answer:
+      'Yes. He plans care for a child in early treatment, a teen in braces, or an adult ready for a change. The first visit is complimentary.',
+  },
+  {
+    question: 'What treatment options can I ask about?',
+    answer:
+      'You can ask about Invisalign clear aligners, KLOwen custom braces, Wild Smiles for kids, early treatment, and surgical orthodontics coordinated with an oral surgeon. The consultation shows which options fit.',
+  },
+  {
+    question: 'Does Dr. Carter speak my language?',
+    answer:
+      'He uses more than one language in the office each week, including languages he learned during seven years in West Africa. Call 402-322-8838 to ask whether the team can communicate in the language you prefer.',
+  },
+  {
+    question: 'Where is Platte River Orthodontics?',
+    answer:
+      'The office is at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
+  },
+];
 ---
 
 <BaseLayout
@@ -21,6 +50,7 @@ import quoteBand from '../../assets/quote-band.jpg';
   title="Meet Dr. Carter | Platte River Orthodontics | Gretna, NE"
   description="Meet Dr. Chad B. Carter, a board-certified orthodontist in Gretna, NE. See what that certification means for your family. Call 402-322-8838."
   image={familyPractice.src}
+  faqs={faqs}
   breadcrumbs={[
     { name: 'Home', href: '/' },
     { name: 'Meet Dr. Carter', href: '/meet-dr-carter/' },
@@ -122,6 +152,16 @@ import quoteBand from '../../assets/quote-band.jpg';
     asideBody="Amy’s experience as a parent, military spouse, and community member helps ensure Platte River Orthodontics serves families at every level — with Monday–Thursday and Saturday clinic hours, a phone line answered Monday–Friday 7am–7pm, and the same hospitality Dr. Carter is known for."
     image={amyCarter}
     imageAlt="Amy Carter"
+  />
+
+  <FAQ
+    layout="split"
+    eyebrow="Common Questions"
+    title="Frequently Asked Questions"
+    body="Have more questions? Call 402-322-8838 or request a complimentary consultation."
+    action={{ label: 'Request a Consultation', href: '/request-appointment/' }}
+    items={faqs}
+    schema={false}
   />
 
   <CTABanner

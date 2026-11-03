@@ -6,8 +6,37 @@ import BenefitsGrid from '../../components/blocks/BenefitsGrid.astro';
 import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
 import ReferralForm from '../../components/forms/ReferralForm.astro';
+import FAQ from '../../components/blocks/FAQ.astro';
 import orthodontist from '../../assets/live/orthodontist-gretna-ne-platte-river-orthodontics-1.jpg';
 import drCarter from '../../assets/live/platte-river-orthodontics-chad-carter-gretna-ne.jpg';
+
+const faqs = [
+  {
+    question: 'Does a patient need a doctor referral to contact the practice?',
+    answer:
+      'No. Patients and families can request a complimentary consultation directly. A referral is welcome from dentists, physicians, surgeons, and therapists who want Dr. Carter to coordinate care.',
+  },
+  {
+    question: 'What information does the referral form ask for?',
+    answer:
+      'The referring doctor’s name and email, the patient’s name and date of birth, a parent’s name if the patient is a minor, contact details, and the insurance carrier. You can note your concerns, ask for a call before treatment, and confirm that records and a pano were sent to smile@platteriverortho.com.',
+  },
+  {
+    question: 'Can a referral ask about Invisalign?',
+    answer:
+      'Yes. The form includes evaluation requests for early or interceptive treatment, full orthodontics, Invisalign, or another concern. Dr. Carter confirms the approach after he sees the patient.',
+  },
+  {
+    question: 'Does the practice accept insurance?',
+    answer:
+      'The form asks for the insurance carrier so the team can review benefits with the family. We work with most major insurance plans. The complimentary consultation includes a clear cost breakdown.',
+  },
+  {
+    question: 'What happens after a referral is sent?',
+    answer:
+      'The office follows up with the referring doctor and with the family. Records and a panoramic image can be emailed to smile@platteriverortho.com. Call 402-322-8838 if you want to check on a referral.',
+  },
+];
 ---
 
 <BaseLayout
@@ -16,6 +45,7 @@ import drCarter from '../../assets/live/platte-river-orthodontics-chad-carter-gr
   title="Doctor Referral | Platte River Orthodontics | Gretna, NE"
   description="Refer a patient to Platte River Orthodontics in Gretna, NE. We specialize in KLOwen custom braces and complex cases. Contact our office at 402-322-8838."
   image={orthodontist.src}
+  faqs={faqs}
   breadcrumbs={[
     { name: 'Home', href: '/' },
     { name: 'Doctor Referral', href: '/doctor-referral/' },
@@ -74,4 +104,13 @@ import drCarter from '../../assets/live/platte-river-orthodontics-chad-carter-gr
       </div>
     </Container>
   </Section>
+
+  <FAQ
+    layout="split"
+    eyebrow="Common Questions"
+    title="Frequently Asked Questions"
+    body="Referring offices and families can also call 402-322-8838."
+    items={faqs}
+    schema={false}
+  />
 </BaseLayout>

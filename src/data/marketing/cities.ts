@@ -122,6 +122,31 @@ export const cityPages: MarketingPageData[] = cities.map((city) => ({
       },
     ],
   },
+  faqs: [
+    {
+      question: `Is there a Platte River Orthodontics office in ${city.name}?`,
+      answer: `${city.name} is a community we serve. Visits happen at the Gretna office, 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028.`,
+    },
+    {
+      question: 'Do you offer Invisalign?',
+      answer:
+        'Yes. Dr. Carter offers Invisalign clear aligners, including options for children, teens, and adults. The consultation shows whether aligners fit your case.',
+    },
+    {
+      question: 'What braces are available for children?',
+      answer:
+        'Kids can be treated with KLOwen custom braces or Wild Smiles brackets shaped like hearts, stars, sports, and favorite characters. Early treatment is also available when growth should be guided first.',
+    },
+    {
+      question: 'Do I need a referral to schedule?',
+      answer: `No. ${city.name} families can request a complimentary consultation directly. A dentist’s referral is welcome when they want to send records.`,
+    },
+    {
+      question: 'What are the hours, and will insurance help with the cost?',
+      answer:
+        'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Friday and Sunday are closed for visits. Calls are answered Monday–Friday, 7am–7pm. The complimentary consultation includes a cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+    },
+  ],
   related: [
     { label: 'Request a Consultation', href: '/request-appointment/' },
     { label: 'Contact us', href: '/contact-us/' },

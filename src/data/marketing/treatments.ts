@@ -50,6 +50,33 @@ export const treatmentPages: MarketingPageData[] = [
       { label: 'Braces for teens', href: '/braces/braces-for-teens/' },
       { label: 'Braces for kids', href: '/braces/braces-for-kids/' },
     ],
+    faqs: [
+      {
+        question: 'Do braces hurt?',
+        answer:
+          'You may feel pressure for a few days when teeth start to move. Most patients manage that with over-the-counter relief. Dr. Carter will tell you what to expect for your own braces.',
+      },
+      {
+        question: 'How long will I need braces?',
+        answer:
+          'Treatment length depends on your teeth, bite, and plan. Dr. Carter gives a personal estimate at the complimentary consultation.',
+      },
+      {
+        question: 'Will I need regular appointments?',
+        answer:
+          'Yes. You return for adjustment visits so Dr. Carter can check progress. KLOwen brackets are planned before they go on, which keeps those visits focused. Your schedule is set for your case.',
+      },
+      {
+        question: 'Can my child get braces?',
+        answer:
+          'Yes. The practice treats children, teens, and adults. Kids can choose Wild Smiles brackets shaped like hearts, stars, sports, and favorite characters. The first visit shows whether to start now or watch growth.',
+      },
+      {
+        question: 'Can I eat normally or play sports with braces?',
+        answer:
+          'Bring up food, sports, and instruments at the consultation. Dr. Carter gives guidance for your appliance, including when a mouthguard is useful. Home-care instructions are part of the start visit.',
+      },
+    ],
   }),
   page({
     slug: 'braces/braces-for-adults',
@@ -81,6 +108,33 @@ export const treatmentPages: MarketingPageData[] = [
     related: [
       { label: 'Invisalign for adults', href: '/invisalign/invisalign-for-adults/' },
       { label: 'Braces overview', href: '/braces/' },
+    ],
+    faqs: [
+      {
+        question: 'Am I too old for braces?',
+        answer:
+          'No. Healthy teeth can move at any age. Adults come in to refine a smile, correct a bite, or restart treatment after teeth have shifted.',
+      },
+      {
+        question: 'Can braces help if my teeth shifted after earlier treatment?',
+        answer:
+          'Yes, that is a common reason adults come in. An evaluation shows whether braces, Invisalign, or another plan fits how your teeth have moved.',
+      },
+      {
+        question: 'Are adult braces only for appearance?',
+        answer:
+          'No. Adult treatment can address crowding, spacing, and the bite, along with how the smile looks at work and in photos. The plan is built around your goals and your calendar.',
+      },
+      {
+        question: 'Can I choose Invisalign instead of braces?',
+        answer:
+          'Invisalign is available when aligners are the better fit. Clear ceramic brackets are also available when you want braces to blend in. Dr. Carter explains which option matches your bite.',
+      },
+      {
+        question: 'How long will adult braces take, and what will they cost?',
+        answer:
+          'Timing depends on the plan. Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
     ],
   }),
   page({
@@ -125,6 +179,33 @@ export const treatmentPages: MarketingPageData[] = [
       { label: 'Invisalign Teen', href: '/invisalign/invisalign-teen/' },
       { label: 'Braces overview', href: '/braces/' },
     ],
+    faqs: [
+      {
+        question: 'When should a teen get braces?',
+        answer:
+          'These years are often an effective time, because most permanent teeth are in and the jaws are still growing. Whether to start now depends on the teen. The complimentary consultation is the place to decide.',
+      },
+      {
+        question: 'What kind of braces do teens get here?',
+        answer:
+          'Teens are treated with KLOwen custom braces. Each bracket is designed for the tooth it sits on, and the movements are planned before the braces go on.',
+      },
+      {
+        question: 'Can my teen play sports or music with braces?',
+        answer:
+          'Yes. Tell Dr. Carter which sports or instruments are part of the week. He will explain protection, such as a mouthguard, and what to do if a bracket or wire is bothering your teen.',
+      },
+      {
+        question: 'How long will teen braces take?',
+        answer:
+          'Treatment length follows the individual plan. Dr. Carter gives an estimate at the consultation and explains what can change the timing.',
+      },
+      {
+        question: 'Could Invisalign be an option for my teen?',
+        answer:
+          'Yes. Invisalign Teen is a clear, removable alternative when aligners fit the bite and the teen can wear them as prescribed. The evaluation compares braces and aligners for that teen.',
+      },
+    ],
   }),
   page({
     slug: 'braces/braces-for-kids',
@@ -167,6 +248,33 @@ export const treatmentPages: MarketingPageData[] = [
     related: [
       { label: 'Early treatment', href: '/early-treatment/' },
       { label: 'Invisalign First', href: '/invisalign/invisalign-first/' },
+    ],
+    faqs: [
+      {
+        question: 'Do children have to wait until all permanent teeth are in?',
+        answer:
+          'No. Some concerns are easier to treat while a child still has baby teeth. Comprehensive braces often start later, once more permanent teeth are in. The visit tells you whether to watch or begin.',
+      },
+      {
+        question: 'Will braces be painful for my child?',
+        answer:
+          'Some pressure is normal as teeth start to move and after an adjustment. Dr. Carter explains home care in language kids can use and tells you how to handle soreness.',
+      },
+      {
+        question: 'Can my child play sports with braces?',
+        answer:
+          'Yes. Ask about a mouthguard and any activity-specific precautions for your child. The team covers that when the braces go on.',
+      },
+      {
+        question: 'Can my child choose how the braces look?',
+        answer:
+          'Yes. Wild Smiles brackets come in shapes such as hearts, stars, sports, and favorite characters. Your child picks shapes and elastic colors with the team.',
+      },
+      {
+        question: 'How much do kids’ braces cost, and does insurance help?',
+        answer:
+          'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
     ],
   }),
   page({
@@ -218,6 +326,33 @@ export const treatmentPages: MarketingPageData[] = [
       { label: 'Airway aware treatment', href: '/airway-aware-treatment/' },
       { label: 'Invisalign First', href: '/invisalign/invisalign-first/' },
       { label: 'Braces for kids', href: '/braces/braces-for-kids/' },
+    ],
+    faqs: [
+      {
+        question: 'Does every child need early orthodontic treatment?',
+        answer:
+          'No. The first visit tells us whether to watch, wait, or act. Early treatment, sometimes called Phase I, is for problems that are easier to guide while baby and permanent teeth are both present.',
+      },
+      {
+        question: 'Is age 7 too early for an orthodontic visit?',
+        answer:
+          'No. The American Association of Orthodontists recommends a first checkup by age 7, when the first permanent molars and incisors are typically in. Some children should be seen sooner if growth, habits, or breathing are a concern.',
+      },
+      {
+        question: 'Does early treatment mean my child will not need braces later?',
+        answer:
+          'Early treatment handles a specific growth or bite problem. It does not promise that later braces or aligners will be unnecessary. Dr. Carter will say what is known now and what to keep watching.',
+      },
+      {
+        question: 'What happens at the first evaluation?',
+        answer:
+          'The complimentary visit looks at teeth, bite, facial proportions, growth, jaw function, and airway. You leave knowing whether the next step is monitoring or treatment, explained in plain language.',
+      },
+      {
+        question: 'How long does early treatment take?',
+        answer:
+          'Timing depends on the child and the problem being guided. Dr. Carter gives an estimate if treatment is recommended. There is no single Phase I timeline for every child.',
+      },
     ],
   }),
   page({
@@ -297,6 +432,33 @@ export const treatmentPages: MarketingPageData[] = [
       { label: 'Invisalign Teen', href: '/invisalign/invisalign-teen/' },
       { label: 'Invisalign for adults', href: '/invisalign/invisalign-for-adults/' },
     ],
+    faqs: [
+      {
+        question: 'Can Invisalign treat bite problems as well as crooked teeth?',
+        answer:
+          'Aligners can treat simpler alignment and, when the plan is done carefully, more complex bites. An evaluation shows whether Invisalign fits your case or whether braces are the better tool.',
+      },
+      {
+        question: 'Is Invisalign an option for a child?',
+        answer:
+          'Invisalign First is built for children about 6 to 10 who still have baby teeth and permanent teeth. Teens and adults have their own aligner options. The consultation confirms whether aligners match that stage of growth.',
+      },
+      {
+        question: 'Do you scan the teeth before planning treatment?',
+        answer:
+          'Yes. Dr. Carter uses an iTero scan to plan the trays and the smile simulator to preview a possible result. A simulation is a planning aid. It is a preview to discuss, and your result still depends on the plan and how the trays are worn.',
+      },
+      {
+        question: 'How long will Invisalign take?',
+        answer:
+          'Many patients finish in 12 to 18 months. Your timeline depends on the plan and how consistently the trays are worn. Dr. Carter gives a personal estimate at the complimentary consultation.',
+      },
+      {
+        question: 'What does Invisalign cost, and will insurance help?',
+        answer:
+          'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
+    ],
   }),
   page({
     slug: 'invisalign/invisalign-first',
@@ -321,6 +483,33 @@ export const treatmentPages: MarketingPageData[] = [
     related: [
       { label: 'Early treatment', href: '/early-treatment/' },
       { label: 'Braces for kids', href: '/braces/braces-for-kids/' },
+    ],
+    faqs: [
+      {
+        question: 'What age is Invisalign First for?',
+        answer:
+          'Invisalign First is for children about 6 to 10 who still have a mix of baby teeth and permanent teeth. Age alone does not decide. Dr. Carter looks at growth and eruption before recommending it.',
+      },
+      {
+        question: 'Does every child with crowded teeth need Invisalign First?',
+        answer:
+          'No. Crowding is one reason to evaluate a child. The visit may lead to Invisalign First, another approach, or monitoring until more permanent teeth are in.',
+      },
+      {
+        question: 'Can my child take the aligners out?',
+        answer:
+          'Yes. The trays come out to eat, brush, and floss, then go back in. Dr. Carter prescribes how they should be worn. The goal is a healthier foundation, not a finished adult smile in second grade.',
+      },
+      {
+        question: 'How long will Invisalign First take?',
+        answer:
+          'Timing depends on your child’s growth and the plan. Dr. Carter gives an estimate if aligners are recommended. Early aligner care follows development, so it is not the same timeline as adult Invisalign.',
+      },
+      {
+        question: 'How do we find out whether Invisalign First is an option?',
+        answer:
+          'Request a complimentary consultation. Dr. Carter will explain whether Invisalign First, braces, or watching growth is the right next step.',
+      },
     ],
   }),
   page({
@@ -364,6 +553,33 @@ export const treatmentPages: MarketingPageData[] = [
     related: [
       { label: 'Braces for teens', href: '/braces/braces-for-teens/' },
       { label: 'Invisalign overview', href: '/invisalign/' },
+    ],
+    faqs: [
+      {
+        question: 'How many hours a day does my teen need to wear the aligners?',
+        answer:
+          'Wear them as Dr. Carter prescribes. The trays come out for meals, brushing, and flossing, then go back in. The daily schedule is part of your teen’s plan, given at the consultation.',
+      },
+      {
+        question: 'Can my teen eat with the aligners in?',
+        answer:
+          'The aligners come out for meals. That is how teens keep eating normally, then brush and put the trays back in. Dr. Carter covers drinks, cleaning, and storage when treatment starts.',
+      },
+      {
+        question: 'Can Invisalign Teen fix crowding or a bite problem?',
+        answer:
+          'It can, when the case is planned carefully and the trays are worn as prescribed. The evaluation compares Invisalign Teen with braces so you know which one fits your teen.',
+      },
+      {
+        question: 'What if an aligner is lost or breaks?',
+        answer:
+          'Call the office before deciding which tray to wear next. The team will tell you how to keep treatment on track. Calls are answered Monday–Friday, 7am–7pm.',
+      },
+      {
+        question: 'How much does Invisalign Teen cost?',
+        answer:
+          'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
     ],
   }),
   page({
@@ -419,6 +635,33 @@ export const treatmentPages: MarketingPageData[] = [
       { label: 'Braces for adults', href: '/braces/braces-for-adults/' },
       { label: 'Invisalign overview', href: '/invisalign/' },
     ],
+    faqs: [
+      {
+        question: 'Can adults get Invisalign?',
+        answer:
+          'Yes. Invisalign is the treatment many adults choose when metal braces do not fit work or social life. It is discreet, removable, and capable of more than minor crowding when the plan is done carefully.',
+      },
+      {
+        question: 'Will Invisalign work for my teeth or bite?',
+        answer:
+          'That depends on the evaluation. Aligners can handle simpler alignment and more complex bites when the case is planned well. Braces remain available if they are the better fit.',
+      },
+      {
+        question: 'How long will adult Invisalign take?',
+        answer:
+          'Many patients finish in 12 to 18 months. Your timeline depends on the plan and how consistently the trays are worn. Dr. Carter gives a personal estimate at the complimentary consultation.',
+      },
+      {
+        question: 'Can I eat and drink with aligners in?',
+        answer:
+          'Take the trays out to eat, brush, and floss, then put them back in. Wear them as prescribed. Dr. Carter reviews drink and cleaning instructions for your plan before you start.',
+      },
+      {
+        question: 'How much does adult Invisalign cost, and does insurance help?',
+        answer:
+          'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
+    ],
   }),
   page({
     slug: 'surgical-orthodontics',
@@ -467,13 +710,33 @@ export const treatmentPages: MarketingPageData[] = [
         answer:
           'No. Many bites are treated with braces or aligners alone. Surgery is reserved for skeletal differences that orthodontics cannot correct by itself.',
       },
+      {
+        question: 'Can braces or aligners replace jaw surgery?',
+        answer:
+          'Often, yes. Braces or aligners are enough when the problem is tooth position. Surgery is discussed when jaw size or jaw position is what tooth movement cannot fix.',
+      },
+      {
+        question: 'Who performs the jaw surgery?',
+        answer:
+          'An oral surgeon repositions the jaws. Dr. Carter coordinates the orthodontic stages and consults with the Boys Town craniofacial team. He will tell you who would be involved in your case.',
+      },
+      {
+        question: 'How long does surgical treatment take, and what is recovery like?',
+        answer:
+          'Care unfolds in stages: orthodontics before surgery, surgical planning, the procedure, then finishing orthodontics after healing. Timing and recovery follow your plan. Dr. Carter and the surgeon explain both before you decide.',
+      },
+      {
+        question: 'How do I find out whether surgical orthodontics fits my needs?',
+        answer:
+          'Start with a complimentary consultation. The evaluation uses 3D imaging and a look at chewing, speech, and facial proportions before anyone recommends surgery.',
+      },
     ],
   }),
   page({
     slug: 'teeth-whitening',
     title: 'Teeth Whitening | Platte River Orthodontics | Gretna, NE',
     description:
-      'Professional teeth whitening at Platte River Orthodontics in Gretna, NE. Brighten your smile after orthodontic treatment. Call 402-322-8838.',
+      'In-office teeth whitening at Platte River Orthodontics in Gretna, NE can lighten teeth several shades in one supervised visit. Call 402-322-8838.',
     crumbs: [{ name: 'Teeth Whitening', href: '/teeth-whitening/' }],
     serviceName: 'Teeth Whitening',
     image: 'whitening',
@@ -494,6 +757,33 @@ export const treatmentPages: MarketingPageData[] = [
         background: 'muted',
         image: 'whiteningSmile',
         body: 'An in-office visit can lighten teeth several shades in a single appointment. It is a good fit before an event, or if you want the process supervised so sensitivity stays in check.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What kind of teeth whitening do you offer?',
+        answer:
+          'In-office whitening, supervised at the Gretna office. A visit can lighten teeth several shades in a single appointment, with the gums protected and the strength of the gel supervised.',
+      },
+      {
+        question: 'Can whitening make my teeth sensitive?',
+        answer:
+          'Sensitivity can happen, which is why the visit is supervised. Tell the team if your teeth are already sensitive so they can keep the process comfortable.',
+      },
+      {
+        question: 'How long does whitening take?',
+        answer:
+          'An in-office visit can lighten teeth several shades in a single appointment. It is a practical choice before an event or when you want the process supervised.',
+      },
+      {
+        question: 'Is whitening appropriate during braces or for a child?',
+        answer:
+          'Whitening here is aimed at brightening a smile, often once teeth are aligned. Ask at your consultation if you are in braces or aligners, or if you are asking for a child or teen.',
+      },
+      {
+        question: 'How much does teeth whitening cost?',
+        answer:
+          'The fee is reviewed at your consultation, along with whether it makes sense for your smile. Call 402-322-8838 to ask about a whitening visit.',
       },
     ],
   }),

@@ -139,6 +139,33 @@ export const practicePages: MarketingPageData[] = [
         },
       ],
     },
+    faqs: [
+      {
+        question: 'What is the mission of Platte River Orthodontics?',
+        answer:
+          'The mission is world-class orthodontic care with a servant’s heart, so patients can face the world with confidence. That shows up as plain-language plans and time to ask questions.',
+      },
+      {
+        question: 'Do you see children and adults?',
+        answer:
+          'Yes. Care runs from early growth guidance through teen treatment and adult smiles, including craniofacial and cleft care through Dr. Carter’s Boys Town consulting work.',
+      },
+      {
+        question: 'What if my child or I feel nervous about treatment?',
+        answer:
+          'Tell the team what is worrying you. Dr. Carter explains findings in plain language, and the office is set up as a family visit. You can take the consultation home and decide later.',
+      },
+      {
+        question: 'Does the practice support the local community?',
+        answer:
+          'Yes. The practice supports local schools, sports teams, and community organizations, and it is rooted in Gretna as a neighbor practice.',
+      },
+      {
+        question: 'What are the West Africa partnerships?',
+        answer:
+          'Dr. Carter and Amy spent years in a rural village in Burkina Faso. The practice continues to partner with projects there that support orphans, sustainable farming, and clean water. Ask about those partnerships when you visit.',
+      },
+    ],
   }),
   page({
     slug: 'why-choose-us',
@@ -207,6 +234,33 @@ export const practicePages: MarketingPageData[] = [
         },
       ],
     },
+    faqs: [
+      {
+        question: 'Do you treat adults as well as children and teens?',
+        answer:
+          'Yes. The practice welcomes children, teens, and adults. Braces, Invisalign, and early treatment are matched to the person after an evaluation.',
+      },
+      {
+        question: 'How do I know whether Invisalign or braces is right for me?',
+        answer:
+          'Dr. Carter offers both KLOwen custom braces and Invisalign clear aligners. The complimentary consultation is where he explains which one fits your bite, your routine, and what each asks of you day to day.',
+      },
+      {
+        question: 'Can I have a virtual consultation?',
+        answer:
+          'Yes. You can start with a virtual consult, then come in for an iTero scan and records when you are ready to move forward. Call 402-322-8838 or request a consultation online.',
+      },
+      {
+        question: 'What will treatment cost, and do you accept insurance?',
+        answer:
+          'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
+      {
+        question: 'What should I expect at the first consultation?',
+        answer:
+          'It is a complimentary, educational visit. Bring your insurance card and your questions. Dr. Carter can use an iTero scan, explain the findings in plain language, and outline the options. You do not have to start treatment that day.',
+      },
+    ],
   }),
   page({
     slug: 'technology',
@@ -262,6 +316,33 @@ export const practicePages: MarketingPageData[] = [
         },
       ],
     },
+    faqs: [
+      {
+        question: 'Will a digital scan involve traditional impressions?',
+        answer:
+          'No. The iTero scanner replaces traditional impressions with a digital model of your teeth and bite. Tell the team if you have a strong gag reflex so they can walk you through the scan.',
+      },
+      {
+        question: 'Does Grin monitoring replace office visits?',
+        answer:
+          'Grin lets Dr. Carter check progress between visits with photos from your phone. It is useful if you travel or want fewer trips. You still come in when an in-person check is needed.',
+      },
+      {
+        question: 'Will the smile simulator show my exact final smile?',
+        answer:
+          'It shows a realistic preview from your own scan so you can talk about the goal before treatment starts. Dr. Carter will explain what the preview can show for your case.',
+      },
+      {
+        question: 'Does this technology change the cost of treatment?',
+        answer:
+          'iTero scanning, the treatment simulator, Grin monitoring, and KLOwen custom braces are how treatment is planned here. Your complimentary consultation includes a clear cost breakdown for the recommended plan.',
+      },
+      {
+        question: 'How do I know which technology fits my child or me?',
+        answer:
+          'That comes from the evaluation. Dr. Carter uses the scan, imaging, and custom appliances that match the case, whether the patient is a child, a teen, or an adult.',
+      },
+    ],
   }),
   page({
     slug: 'what-to-expect',
@@ -323,9 +404,29 @@ export const practicePages: MarketingPageData[] = [
     },
     faqs: [
       {
+        question: 'What happens at the first consultation?',
+        answer:
+          'The complimentary visit includes an evaluation of teeth, bite, facial proportions, growth, jaw function, and airway. Dr. Carter explains the findings and the options in plain language.',
+      },
+      {
+        question: 'Will I need braces or Invisalign?',
+        answer:
+          'Both are available. The evaluation is what shows which one, if either, fits your bite and your routine. You leave knowing the options and what treatment would ask of you day to day.',
+      },
+      {
         question: 'Is orthodontic treatment extremely painful?',
         answer:
           'Modern treatment with custom braces or Invisalign is much more comfortable than many people expect. You may feel pressure for a few days when teeth start to move. Most patients manage that with over-the-counter relief.',
+      },
+      {
+        question: 'How long will treatment take?',
+        answer:
+          'Timing is individual. Many Invisalign patients finish in 12 to 18 months. Dr. Carter gives an estimate from your evaluation, and braces timing follows the same kind of personal plan.',
+      },
+      {
+        question: 'What should I bring to the appointment?',
+        answer:
+          'Bring your insurance card, any referral notes, and the questions you do not want to forget. Younger patients are welcome to bring a comfort item, and a parent should plan to stay for the visit.',
       },
       {
         question: 'Will appointments take over my schedule?',
@@ -377,9 +478,29 @@ export const practicePages: MarketingPageData[] = [
           'No. The visit is educational. You should leave understanding your options and feeling free to decide on your own timeline.',
       },
       {
-        question: 'Do I need to be ready to start treatment that day?',
+        question: 'Do I have to start treatment at the consultation?',
         answer:
           'No. Many families use the consult to learn, then schedule records or a start visit when they are ready.',
+      },
+      {
+        question: 'What should I bring?',
+        answer:
+          'Bring your insurance card, any referral notes, and a short list of questions. Younger patients can bring a comfort item, and a parent should plan to stay for the visit.',
+      },
+      {
+        question: 'Can my child have a consultation?',
+        answer:
+          'Yes. The practice welcomes children, teens, and adults. A parent should plan to stay with a younger patient, and a comfort item is welcome.',
+      },
+      {
+        question: 'Will I find out whether braces or Invisalign are right for me?',
+        answer:
+          'You can discuss both. Dr. Carter explains which options fit after he has looked at your bite. No single appliance is right for every patient.',
+      },
+      {
+        question: 'How much will treatment cost, and does insurance cover it?',
+        answer:
+          'Cost, payment options, and insurance are part of the same complimentary visit. We work with most major insurance plans and offer flexible payments and financing. Bring your insurance card so the numbers are based on your plan.',
       },
     ],
     related: [{ label: 'What to expect', href: '/what-to-expect/' }],
@@ -400,6 +521,28 @@ export const practicePages: MarketingPageData[] = [
     related: [
       { label: 'Request a Consultation', href: '/request-appointment/' },
       { label: 'Doctor referral', href: '/doctor-referral/' },
+    ],
+    faqs: [
+      {
+        question: 'How do I contact Platte River Orthodontics?',
+        answer:
+          'Call 402-322-8838, email smile@platteriverortho.com, or send a message through the form on this page. For a new-patient visit, you can also request a time or use the online scheduler.',
+      },
+      {
+        question: 'What are the office hours?',
+        answer:
+          'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Friday and Sunday are closed for visits. Calls are answered Monday–Friday, 7am–7pm.',
+      },
+      {
+        question: 'Can I ask about an in-office or virtual consultation?',
+        answer:
+          'Yes. You can start with a virtual consult or come to the Gretna office. Records and an iTero scan happen in the office when you are ready to move forward. Call or request a time online.',
+      },
+      {
+        question: 'Do I need a referral, and do you accept insurance?',
+        answer:
+          'You can request a consultation without a referral. A dentist’s referral is welcome when they want to send records. We work with most major insurance plans, and the complimentary visit includes a clear cost breakdown.',
+      },
     ],
   }),
   page({
