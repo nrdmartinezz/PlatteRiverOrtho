@@ -68,18 +68,23 @@ The office is at **11844 Standing Stone Dr, Suite 100, Gretna, NE 68028**. Liste
 ## Frequently asked questions
 
 ### Does Platte River Orthodontics treat children and adults?
+
 Yes. The homepage says the practice welcomes patients of all ages. A consultation can help determine what care, if any, is appropriate for a particular patient.
 
 ### How do I know whether Invisalign or braces are right for me?
+
 Both Invisalign clear aligners and fully custom braces are listed services. The best option depends on your individual needs; ask Dr. Carter to discuss the choices, responsibilities, and expected care for your case.
 
 ### How long does orthodontic treatment take?
+
 Treatment time varies by person and treatment plan. The homepage does not give a typical timeframe. Ask the practice what may affect your expected timeline. [CONFIRM WITH PRACTICE: Add any approved general guidance on treatment time, if available.]
 
 ### Can a consultation be virtual?
+
 Virtual consultations are listed among the practice’s benefits. Contact the office to confirm whether a virtual visit is available and suitable for your situation. [CONFIRM WITH PRACTICE]
 
 ### What will treatment cost, and will my insurance help?
+
 The homepage does not provide prices or insurance details. Ask the practice about costs for your recommended care and whether it can review your specific insurance questions. [CONFIRM WITH PRACTICE]
 
 ## Contact Platte River Orthodontics
@@ -119,18 +124,23 @@ The office is at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. The websi
 ## Frequently asked questions
 
 ### Does Platte River Orthodontics treat adults as well as younger patients?
+
 The practice welcomes patients of all ages and highlights braces for teens and aligners for adults. Which treatment options fit a particular person depends on an individual evaluation.
 
 ### How do I know whether Invisalign or braces is right for me?
+
 The practice offers both Invisalign clear aligners and fully custom braces. Ask Dr. Carter to explain which options may address your orthodontic needs and the practical differences between them. The website does not list patient-specific eligibility rules. [CONFIRM WITH PRACTICE]
 
 ### Can I have a virtual consultation?
+
 The homepage lists virtual consultations, but does not explain how to arrange one or what it includes. Call 402-322-8838 to ask whether a virtual consultation suits your needs and how to request it. [CONFIRM WITH PRACTICE]
 
 ### What will orthodontic treatment cost, and does the practice accept my insurance?
+
 The website does not provide treatment prices or insurance details. Contact the practice to ask about costs for your proposed care and whether your plan can be reviewed. [CONFIRM WITH PRACTICE]
 
 ### What should I expect at an initial consultation?
+
 The website mentions an initial consultation and digital scanning, but does not outline every step. Call ahead to ask what to bring and whether a scan is appropriate for your visit. [CONFIRM WITH PRACTICE]
 
 ## Talk with the team
@@ -168,18 +178,23 @@ Some discomfort may occur as teeth begin to move. The source page describes init
 ## Patient and parent FAQs
 
 ### What happens at the first consultation?
+
 The practice describes an orthodontic evaluation of your teeth, bite, facial proportions, growth, and oral functions, followed by an explanation of findings and recommendations. Ask which parts apply to your situation.
 
 ### Will I need braces or Invisalign?
+
 The practice lists both braces and Invisalign, but the website does not say which option is right for an individual patient. The evaluation helps guide that discussion. [CONFIRM WITH PRACTICE: Ask what options are appropriate for your case.]
 
 ### Will orthodontic treatment hurt?
+
 Some discomfort can happen as teeth begin to move, but experiences vary. Ask your orthodontist for advice tailored to your treatment; do not assume someone else’s experience will be the same.
 
 ### How long will treatment take?
+
 The website does not give a treatment timeline. Timing is individual, so ask the orthodontist for an estimate based on your evaluation. [CONFIRM WITH PRACTICE]
 
 ### What should I bring to the appointment?
+
 The website does not list required records or forms. Call ahead to ask what, if anything, you should bring. [CONFIRM WITH PRACTICE]
 
 ## Ready to take the first step?
@@ -215,18 +230,23 @@ The current page does not list treatment fees, insurance coverage, or a specific
 ## Teeth whitening questions
 
 ### Is in-office or take-home whitening better for me?
+
 The practice offers both options. In-office whitening is professionally supervised, while the take-home option uses custom trays and gel. Ask the team to explain the differences and help you decide what to consider for your circumstances. [CONFIRM WITH PRACTICE]
 
 ### Can whitening make my teeth sensitive?
+
 The page does not say how often sensitivity occurs or how it is managed. If your teeth are sensitive now, tell the practice and ask about possible discomfort and what to do if it happens. [CONFIRM WITH PRACTICE]
 
 ### How long does whitening take?
+
 The page does not give a set appointment length or a take-home schedule. Ask the practice what timing to expect for the option you are considering. [CONFIRM WITH PRACTICE]
 
 ### Is whitening appropriate for a child or teenager?
+
 The page does not provide age guidance. A parent or guardian should ask the practice whether whitening is appropriate for their child and what factors the team considers. [CONFIRM WITH PRACTICE]
 
 ### How much does teeth whitening cost, and is it covered by insurance?
+
 The page does not list fees or insurance coverage. Call the practice at 402-322-8838 to ask about current costs and coverage questions. [CONFIRM WITH PRACTICE]
 
 ## Ask about teeth whitening
@@ -311,18 +331,23 @@ For a child who may need braces, ask the practice whether Wild Smiles braces are
 ## Questions Syracuse families often ask
 
 ### Does Platte River Orthodontics have an office in Syracuse?
+
 No. The Syracuse page presents Syracuse as a service area and lists the practice’s office at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Call 402-322-8838 if you need help confirming where to go.
 
 ### What orthodontic services does the practice list?
+
 The homepage lists Invisalign clear aligners, fully custom braces, and corrective jaw surgery. Ask the practice which, if any, may address your individual concerns; a website description cannot determine what treatment you need.
 
 ### Can I ask about Invisalign?
+
 Yes. Invisalign clear aligners are listed on the practice homepage. Contact the office to discuss whether an evaluation is appropriate and what questions to bring. Suitability depends on your individual needs. [CONFIRM WITH PRACTICE: Ask how to arrange an evaluation.]
 
 ### Does the practice offer braces for children?
+
 The homepage lists fully custom braces. Ask whether braces are appropriate for your child and whether Wild Smiles is an available option. Treatment recommendations should come from the practice after discussing your child’s needs. [CONFIRM WITH PRACTICE]
 
 ### Do I need a referral before contacting the office?
+
 The pages reviewed do not explain referral requirements. Call 402-322-8838 to ask whether a referral is needed for your situation. [CONFIRM WITH PRACTICE]
 
 ## Contact Platte River Orthodontics
@@ -412,18 +437,23 @@ Office hours listed online are 7 a.m.–7 p.m. Monday through Friday and 9 a.m.�
 ## Springfield orthodontics: common questions
 
 ### Is there a Platte River Orthodontics office in Springfield?
+
 No Springfield office is listed. The Springfield page describes care for the Springfield area at the Gretna office: 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028.
 
 ### What orthodontic services can I ask about?
+
 The website lists Invisalign clear aligners, fully custom braces, and corrective jaw surgery. A consultation can help determine which options, if any, may be appropriate for you. [CONFIRM WITH PRACTICE]
 
 ### Does the practice see children as well as adults?
+
 The homepage says the practice welcomes patients of all ages. For a child who may need braces, ask about Wild Smiles and whether the practice offers them. [CONFIRM WITH PRACTICE]
 
 ### Can I find out whether Invisalign may suit me?
+
 Invisalign clear aligners are among the services listed by the practice. Suitability depends on your circumstances; contact the team to ask about an evaluation and available consultation options. [CONFIRM WITH PRACTICE]
 
 ### How do I ask about an appointment or virtual consultation?
+
 Call 402-322-8838. The homepage mentions virtual consultations and invites patients to schedule an appointment. Ask the team which options are available and how to request one. [CONFIRM WITH PRACTICE]
 
 ## Contact Platte River Orthodontics
@@ -460,18 +490,23 @@ The homepage lists virtual consultations, but does not explain how to request on
 ## Questions patients and parents ask
 
 ### Does Platte River Orthodontics have an office in Plattsmouth?
+
 No. The listed office is in Gretna, at 11844 Standing Stone Dr, Suite 100. Plattsmouth is a community the practice says it serves.
 
 ### What orthodontic treatments are offered?
+
 The website lists Invisalign clear aligners, fully custom braces, and corrective jaw surgery. Contact the practice to discuss which options, if any, may suit your individual needs.
 
 ### Can my child be evaluated for braces?
+
 The practice cares for patients of all ages. Call to ask about an evaluation for your child and what to expect. Ask whether Wild Smiles is available for your child. [CONFIRM WITH PRACTICE]
 
 ### Do you accept my insurance, and what will treatment cost?
+
 The website does not specify insurance plans, benefits, or treatment fees. Ask the practice to review your particular coverage and explain costs before making decisions. [CONFIRM WITH PRACTICE]
 
 ### How do I ask about a consultation?
+
 Call 402-322-8838. The homepage lists virtual consultations; ask which consultation options are available and how to proceed. [CONFIRM WITH PRACTICE]
 
 ## Contact Platte River Orthodontics
@@ -565,21 +600,27 @@ The homepage lists virtual consultations. Ask the team whether a virtual convers
 ## Frequently asked questions
 
 ### Does Platte River Orthodontics have an office in Millard?
+
 The current website identifies Millard as a community the practice serves. Its listed office is in Gretna, at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028.
 
 ### What treatments can I ask about?
+
 The website lists Invisalign clear aligners, fully custom braces, and corrective jaw surgery. Ask the practice which options, if any, are suitable for your individual needs.
 
 ### Is Invisalign right for me or my teen?
+
 The practice offers Invisalign and says it treats patients of all ages. Suitability varies by individual; ask the orthodontic team to assess your situation and explain available options.
 
 ### Does the practice offer Wild Smiles braces for children?
+
 The homepage describes fully custom braces but does not confirm a child-specific brand. Ask whether Wild Smiles is offered and whether it may be an option for your child. [CONFIRM WITH PRACTICE]
 
 ### Are virtual consultations available?
+
 The homepage lists virtual consultations. Contact the practice to ask how to arrange one and whether it is appropriate for your questions. [CONFIRM WITH PRACTICE]
 
 ### When is the Gretna office open?
+
 Listed hours are 7 a.m.–7 p.m. Monday through Friday and 9 a.m.–3 p.m. Saturday. The office is listed as closed Sunday. Call to confirm current hours.
 
 ## Contact Platte River Orthodontics
@@ -673,18 +714,23 @@ The homepage notes that virtual consultations are offered. [CONFIRM WITH PRACTIC
 ## Frequently asked questions
 
 ### Is there a Platte River Orthodontics office in Louisville?
+
 No. The Louisville page identifies Gretna as the location serving Louisville patients. The office address is 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028.
 
 ### What orthodontic services can I ask about?
+
 The website lists Invisalign clear aligners, fully custom braces, and corrective jaw surgery. An orthodontic evaluation can help determine whether any option is appropriate for your situation.
 
 ### Can my child get Wild Smiles braces?
+
 Ask the practice whether Wild Smiles braces are currently available and appropriate for your child. [CONFIRM WITH PRACTICE: availability and individual eligibility.] The website does not provide age guidelines or an individualized treatment recommendation.
 
 ### Are Invisalign clear aligners right for me?
+
 The practice offers Invisalign, but the website does not state who qualifies. Ask the orthodontist to assess your teeth and discuss whether aligners or another option may suit your needs.
 
 ### Does the practice accept my insurance or offer payment plans?
+
 The pages reviewed do not specify accepted insurance plans, coverage, or payment-plan terms. Call 402-322-8838 to ask about your particular plan and available payment arrangements. [CONFIRM WITH PRACTICE: current insurance and payment details.]
 
 ## Contact Platte River Orthodontics
@@ -722,18 +768,23 @@ Treatment recommendations depend on an individual evaluation. You can ask what o
 ## Frequently asked questions
 
 ### Is there a Platte River Orthodontics office in La Vista?
+
 No. The practice’s La Vista page identifies its office in Gretna, at 11844 Standing Stone Dr, Suite 100. La Vista is a service area, not the stated office location.
 
 ### Does the practice offer Invisalign treatment?
+
 Yes. Invisalign clear aligners are listed among the practice’s services. Ask the team whether aligners are a suitable option for your needs.
 
 ### What braces can my child get?
+
 The practice lists fully custom braces. Ask which options fit your child’s situation and whether Wild Smiles braces are available [CONFIRM WITH PRACTICE]. An orthodontist can assess your child; this page cannot determine which treatment is appropriate.
 
 ### Can the practice help with bite or jaw concerns?
+
 The website lists corrective jaw surgery care and examples such as underbite, overbite, open bite, and facial asymmetry. Contact the practice to ask whether an evaluation may be appropriate; individual care depends on clinical assessment.
 
 ### How do I ask about an appointment?
+
 Call 402-322-8838 or use the practice’s online appointment request link. Ask the team about availability and any steps needed before a visit [CONFIRM WITH PRACTICE].
 
 ## Contact Platte River Orthodontics
@@ -768,18 +819,23 @@ The practice’s Invisalign page lists concerns such as crowding, spacing, overb
 ## Questions parents and teens ask
 
 ### How many hours a day does my teen need to wear the aligners?
+
 The website does not give a daily wear-hour recommendation. Ask the orthodontic team for the specific instructions for your teen’s plan and how the compliance indicators should be read.
 
 ### Can my teen eat with the aligners in?
+
 The aligners are removable for eating. Ask the practice whether it has specific guidance about drinks, cleaning, and putting aligners back in after meals. **[CONFIRM WITH PRACTICE: food, drink, and cleaning instructions.]**
 
 ### Can Invisalign Teen address my teen’s bite or crowded teeth?
+
 The practice lists several alignment and bite concerns that Invisalign may address, but no treatment is right for everyone. An orthodontic evaluation is needed to discuss whether it may fit your teen’s situation.
 
 ### What if an aligner is lost or breaks?
+
 Contact the practice for instructions before deciding what to wear next. The teen page mentions up to six replacement aligners, but does not explain the terms or when replacements apply. **[CONFIRM WITH PRACTICE: replacement coverage and next steps for a lost or damaged aligner.]**
 
 ### How much does Invisalign Teen cost?
+
 The website does not state a price or payment terms. Ask the practice to explain the expected cost and any available payment or insurance information for your teen’s treatment. **[CONFIRM WITH PRACTICE: case-specific fees and payment or insurance details.]**
 
 ## Talk with Platte River Orthodontics
@@ -869,18 +925,23 @@ Ask how long your proposed treatment may take, what your aligner routine will be
 ## Invisalign questions from patients and parents
 
 ### Can Invisalign treat bite problems as well as crooked or spaced teeth?
+
 The practice lists crowding, spacing, overbites, underbites, crossbites, and open bites among concerns Invisalign may address. An orthodontic evaluation is needed to determine whether aligners are a suitable option for your case. **[CONFIRM WITH PRACTICE]**
 
 ### Is Invisalign an option for a child?
+
 The practice offers Invisalign First for children ages 6–10 and describes options for teens as well. A consultation can help determine whether aligners are appropriate for your child’s teeth and stage of development. **[CONFIRM WITH PRACTICE]**
 
 ### Does the practice take a scan before planning treatment?
+
 The website says the team uses an iTero® digital scanner to capture a 3D model of the teeth and plan treatment. Ask whether a scan is part of your first consultation and what to expect at that visit. **[CONFIRM WITH PRACTICE]**
 
 ### How long will I need Invisalign?
+
 The website does not give a standard treatment length. Ask the orthodontist for an estimate based on your examination and proposed treatment plan. **[CONFIRM WITH PRACTICE]**
 
 ### What does Invisalign cost, and will insurance help?
+
 The website does not publish Invisalign pricing or insurance information. Contact the practice to ask about fees and whether your plan may apply. **[CONFIRM WITH PRACTICE]**
 
 ## Ask about Invisalign in Gretna
@@ -916,18 +977,23 @@ For a child who feels nervous, the practice suggests that a parent be present or
 ## Questions patients and parents often ask
 
 ### Do I have to start treatment at the consultation?
+
 No. The practice says the consultation is meant to provide information so you can consider your options. You can take time to discuss the information with your family before making a decision.
 
 ### What should I bring?
+
 Bring your questions and, if you want to discuss benefits, your insurance information. Ask the team in advance whether they need any additional records or documents. [CONFIRM WITH PRACTICE]
 
 ### Can my child have a consultation?
+
 The practice welcomes patients of all ages and suggests that a parent be present for younger children. Ask the team what to expect for your child’s age and concerns. [CONFIRM WITH PRACTICE]
 
 ### Will I find out whether braces or Invisalign are right for me?
+
 You can discuss braces and Invisalign clear aligners with the practice. The orthodontist can explain which options may be appropriate after learning about your needs; no treatment option is right for everyone.
 
 ### How much will treatment cost, and does insurance cover it?
+
 The practice says treatment costs and insurance benefits can be discussed at the consultation. Exact costs and coverage depend on your situation and plan, so ask the team for details before making decisions. [CONFIRM WITH PRACTICE]
 
 ## Request an in-office consultation
@@ -1020,18 +1086,23 @@ Early treatment may address a specific developmental concern, but it does not gu
 ## Questions parents often ask
 
 ### Does every child need early orthodontic treatment?
+
 No. An evaluation helps determine whether there is a concern to treat or monitor. A recommendation should be based on your child’s individual assessment.
 
 ### Is age 7 too early for an orthodontic evaluation?
+
 Not necessarily. The practice cites age 7 as the recommended age for a first evaluation because it allows the developing bite to be assessed. Some children with specific growth concerns may need an earlier evaluation.
 
 ### Does early treatment mean my child will not need braces later?
+
 Not always. The practice says many children still need a second phase once more permanent teeth have erupted. Ask what is known about your child’s needs and what remains uncertain.
 
 ### What will happen at the first evaluation?
+
 The website encourages early evaluation but does not describe exactly what an appointment includes. Call the office to ask what to expect and whether you should bring anything. [CONFIRM WITH PRACTICE]
 
 ### How long does early treatment take?
+
 Treatment length depends on the child and the approach, and the website does not give a general timeframe. Ask the orthodontic team for an estimate if treatment is recommended. [CONFIRM WITH PRACTICE]
 
 ## Talk with Platte River Orthodontics
@@ -1065,18 +1136,23 @@ The referral form includes a checkbox for providers who have sent patient record
 ### Frequently asked questions
 
 #### Does a patient need a doctor referral to contact the practice?
+
 The website provides a doctor referral form, but does not say whether a referral is required to request an appointment. Call the practice to ask what applies to your situation. [CONFIRM WITH PRACTICE: referral requirement and appointment steps.]
 
 #### What information should a parent provide?
+
 The form asks for the patient’s name and date of birth, a parent’s name for a minor, and contact details. Your referring provider can add their concerns and any remarks. Contact the practice if you are unsure which information to include. [CONFIRM WITH PRACTICE: whether families should submit information directly or have the referring provider complete the form.]
 
 #### Can a referral ask about Invisalign treatment?
+
 Yes. The referral form lists “Please evaluate for Invisalign treatment” as an option. Whether Invisalign is appropriate for an individual patient is something to discuss with the orthodontic team after evaluation.
 
 #### Does the practice accept my insurance?
+
 The referral form requests an insurance carrier, but the website does not list accepted plans or confirm benefits. Call the practice to ask about your plan and what information to provide. [CONFIRM WITH PRACTICE: insurance participation and benefit-verification process.]
 
 #### How soon will the practice respond after a referral?
+
 The website does not state a response time or explain what happens after submission. Ask the referring provider or call Platte River Orthodontics to confirm follow-up steps. [CONFIRM WITH PRACTICE: expected response and follow-up process.]
 
 ## Contact Platte River Orthodontics
@@ -1113,18 +1189,23 @@ If you provide a phone number, the form states that you consent to communication
 ## Frequently asked questions
 
 ### How do I contact Platte River Orthodontics?
+
 Call **402-322-8838**, email **smile@platteriverortho.com**, or send a message through the website form. For an appointment request, use the form or call the office; contact the team to confirm available times. **[CONFIRM WITH PRACTICE: current appointment-request process and availability.]**
 
 ### Where is the office located?
+
 The office is at **11844 Standing Stone Dr, Suite 100, Gretna, NE 68028**. The website links to a map for directions.
 
 ### What are the office hours?
+
 The listed hours are 7 a.m.–7 p.m. Monday through Friday, 9 a.m.–3 p.m. Saturday, and closed Sunday. Call to confirm if you have a question about a particular visit time.
 
 ### Can I ask about an in-office or virtual consultation?
+
 The homepage lists virtual consultations. Contact the practice by phone or email to ask which consultation options are available and how to arrange one. **[CONFIRM WITH PRACTICE: in-office consultation availability and scheduling details.]**
 
 ### Do I need a referral, and does the practice accept my insurance?
+
 The website does not state referral requirements or insurance participation. Ask the practice directly before making plans. **[CONFIRM WITH PRACTICE: referral requirements, insurance participation, and any plan-specific questions.]**
 
 ## Get in touch
@@ -1268,18 +1349,23 @@ Bring up any concerns about your bite, tooth movement, dental history, or daily 
 ## Frequently asked questions
 
 ### Am I too old to get braces?
+
 Age alone does not answer whether braces are suitable. An orthodontic evaluation can help determine whether treatment is appropriate for your teeth and bite. Discuss your health and dental history with the practice.
 
 ### Can braces help if my teeth shifted after I had them before?
+
 The practice says adults may experience shifting after braces. Ask whether your particular tooth movement can be evaluated and what options may be appropriate; results and treatment needs vary.
 
 ### Are braces only for appearance?
+
 Adults may ask about alignment and bite concerns as well as appearance. The reason for treatment and the potential benefits depend on your individual situation, so have the practice assess your concerns.
 
 ### Is Invisalign available instead of braces?
+
 The practice lists Invisalign® clear aligners as a service. Ask whether aligners or braces are appropriate for your needs and what differences matter in your case.
 
 ### How long will adult braces take, and what will they cost?
+
 The website does not state treatment timelines or prices. Ask the practice for an estimate based on an evaluation and for current cost, insurance, and payment information. [CONFIRM WITH PRACTICE]
 
 ## Talk with Platte River Orthodontics
@@ -1366,18 +1452,23 @@ Before deciding, request a clear explanation of the proposed treatment, expected
 ## Frequently asked questions
 
 ### Can adults get Invisalign?
+
 The practice offers Invisalign and welcomes patients at different stages of life. An orthodontic evaluation can help determine whether clear aligners are suitable for your individual needs; not every treatment option is right for every person.
 
 ### Will Invisalign work for my teeth or bite?
+
 That depends on your specific alignment and bite. The practice page discusses several types of alignment concerns, but only an evaluation can clarify which approach may be appropriate for you. Ask about alternatives as well.
 
 ### How long will my treatment take?
+
 There is no single timeline that applies to everyone. Ask the practice for an estimate based on your evaluation and proposed plan. The site does not publish a standard adult timeline. [CONFIRM WITH PRACTICE]
 
 ### Can I eat and drink with aligners in?
+
 The page describes the aligners as removable but does not give eating, drinking, or wear instructions. Ask the orthodontist what to do for meals and beverages, and how to care for the aligners. [CONFIRM WITH PRACTICE]
 
 ### How much does adult Invisalign cost, and does insurance help?
+
 The site does not list adult Invisalign fees or confirm insurance coverage. Contact the practice to ask about your estimated cost and whether your specific plan offers applicable benefits. [CONFIRM WITH PRACTICE]
 
 ## Ask Platte River Orthodontics
@@ -1412,18 +1503,23 @@ The website notes virtual consultations, but does not explain how to arrange one
 ## Ashland orthodontic care FAQs
 
 ### Is there a Platte River Orthodontics office in Ashland?
+
 No. The website identifies Ashland as a community served by the practice and lists the office in Gretna. Plan to contact the Gretna office for care.
 
 ### Does the practice offer Invisalign?
+
 Yes. Invisalign clear aligners are listed among the practice’s services. Ask the orthodontic team whether this option fits your needs; suitability is determined individually.
 
 ### What braces are available for children?
+
 The website lists fully custom braces but does not identify a child-specific braces brand. Ask whether Wild Smiles is offered and appropriate for your child. [CONFIRM WITH PRACTICE]
 
 ### Do I need a referral to schedule?
+
 The website does not state whether a referral is needed. Call 402-322-8838 to ask about the practice’s current process. [CONFIRM WITH PRACTICE]
 
 ### Does the website list treatment costs or insurance details?
+
 It does not provide specific costs, insurance acceptance, or coverage information. Contact the practice to discuss your questions before starting care. [CONFIRM WITH PRACTICE]
 
 ## Ask the practice about your next step
