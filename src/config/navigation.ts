@@ -381,6 +381,10 @@ export const navigation: NavigationConfig = {
           href: '/millard-nebraska-orthodontist-platte-river-orthodontics/',
         },
         {
+          label: 'Omaha, NE',
+          href: '/omaha-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
           label: 'Plattsmouth, NE',
           href: '/plattsmouth-nebraska-orthodontist-platte-river-orthodontics/',
         },

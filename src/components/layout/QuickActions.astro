@@ -54,7 +54,7 @@ import { Icon } from 'astro-icon/components';
   aria-modal="false"
   aria-labelledby="scheduler-drawer-title"
   data-src={site.greyfinch.scheduler}
-  class="bg-surface-base border-line-base fixed inset-x-0 z-40 flex flex-col overflow-y-auto border-t shadow-lg"
+  class="bg-surface-base border-line-base fixed inset-x-0 z-40 flex flex-col overflow-hidden border-t shadow-lg"
 >
   <div
     class="border-line-base flex min-h-11 shrink-0 items-center justify-between gap-3 border-b px-4"
@@ -70,7 +70,7 @@ import { Icon } from 'astro-icon/components';
       Close
     </button>
   </div>
-  <div class="relative shrink-0 bg-white" style="height: 650px">
+  <div class="relative min-h-0 flex-1 bg-white">
     <div
       data-scheduler-facade
       class="bg-surface-muted absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 p-6 text-center"
@@ -92,7 +92,7 @@ import { Icon } from 'astro-icon/components';
       data-scheduler-frame
       title="Greyfinch appointment scheduler"
       allow="geolocation"
-      class="block h-[650px] w-full shrink-0 border-0"></iframe>
+      class="absolute inset-0 block h-full w-full border-0"></iframe>
   </div>
 </div>
 
@@ -106,6 +106,20 @@ import { Icon } from 'astro-icon/components';
   #scheduler-drawer {
     top: var(--nav-h, 4.5rem);
     bottom: var(--quick-actions-h, 9rem);
+  }
+
+  /* Below the desktop nav, an open scheduler covers the call and text buttons. */
+  @media (max-width: 1279px) {
+    :global(body:has(#book-online-toggle[aria-expanded='true']) #quick-actions),
+    :global(body:has(#book-online-toggle[aria-expanded='true']) #book-online-toggle) {
+      display: none;
+    }
+
+    #scheduler-drawer {
+      inset: 0;
+      z-index: 60;
+      border-top-width: 0;
+    }
   }
 </style>
 
@@ -142,9 +156,20 @@ import { Icon } from 'astro-icon/components';
       }
     };
 
+    const setScrollLock = (open: boolean) => {
+      if (open) {
+        document.body.style.overflow = 'hidden';
+        return;
+      }
+      if (navToggle?.getAttribute('aria-expanded') === 'true') return;
+      document.body.style.overflow = '';
+    };
+
     const setDrawer = (open: boolean) => {
       book.setAttribute('aria-expanded', String(open));
       drawer.hidden = !open;
+      drawer.setAttribute('aria-modal', String(open));
+      setScrollLock(open);
       if (open) {
         loadFrame();
         closeButton?.focus();

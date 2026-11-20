@@ -6,7 +6,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
       name: 'Ashland',
       slug: 'ashland-nebraska-orthodontist-platte-river-orthodontics',
       blurb:
-        'Ashland families are a short drive from a full orthodontic office in Gretna, with Saturday appointments and a phone line answered Monday through Friday, 7am to 7pm.',
+        'Ashland families are a short drive from a full orthodontic office in Gretna. The clinic is open Monday through Thursday, 8am to 5pm, and calls are answered those days from 7am to 7pm.',
       title: 'Ashland NE Orthodontist | Platte River Orthodontics',
       description:
         'Orthodontist for Ashland, NE. Platte River Orthodontics sees Ashland families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
@@ -42,10 +42,19 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
       name: 'Millard',
       slug: 'millard-nebraska-orthodontist-platte-river-orthodontics',
       blurb:
-        'Millard is an easy trip to Standing Stone Drive. Saturday appointments, and a phone line answered Monday through Friday from 7am to 7pm, make a multi-year treatment realistic.',
+        'Millard is an easy trip to Standing Stone Drive. Monday through Thursday clinic hours, and a phone line answered those days from 7am to 7pm, make a multi-year treatment realistic.',
       title: 'Millard NE Orthodontist | Platte River Orthodontics',
       description:
         'Orthodontist for Millard, NE. Platte River Orthodontics sees Millard families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
+    },
+    {
+      name: 'Omaha',
+      slug: 'omaha-nebraska-orthodontist-platte-river-orthodontics',
+      blurb:
+        'Omaha families come south to the Gretna office for board-certified braces and Invisalign. The clinic is open Monday through Thursday, 8am to 5pm, and the first visit is complimentary.',
+      title: 'Omaha NE Orthodontist | Platte River Orthodontics',
+      description:
+        'Orthodontist for Omaha, NE. Platte River Orthodontics sees Omaha families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Plattsmouth',
@@ -108,7 +117,7 @@ export const cityPages: MarketingPageData[] = cities.map((city) => ({
       {
         icon: 'lucide:clock',
         title: 'Hours that fit',
-        body: 'Clinic hours are Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
+        body: 'Clinic hours are Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm.',
       },
       {
         icon: 'lucide:badge-check',
@@ -144,7 +153,7 @@ export const cityPages: MarketingPageData[] = cities.map((city) => ({
     {
       question: 'What are the hours, and will insurance help with the cost?',
       answer:
-        'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Friday and Sunday are closed for visits. Calls are answered Monday–Friday, 7am–7pm. The complimentary consultation includes a cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+        'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. Friday, Saturday, and Sunday are closed. Calls are answered Monday–Thursday, 7am–7pm. The complimentary consultation includes a cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
     },
   ],
   related: [

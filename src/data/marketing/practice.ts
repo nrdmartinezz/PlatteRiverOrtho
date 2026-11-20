@@ -186,7 +186,7 @@ export const practicePages: MarketingPageData[] = [
         image: 'orthodontist',
         body: [
           'Dr. Chad “SnaggleTooth” Carter leads the practice with a heart for service and years of experience, from physics research and military service to board-certified orthodontics.',
-          'His wife and partner, Amy Carter, is the Smile Coach and keeps the practice centered on family. Boone and Huck, their bird dogs, are the Chief Furry Officer and Head of the Party Planning Committee.',
+          'His wife and partner, Amy, is the Smile Coach and keeps the practice centered on family. Boone and Huck, their bird dogs, are the Chief Furry Officer and Head of the Party Planning Committee.',
         ],
       },
       {
@@ -201,7 +201,7 @@ export const practicePages: MarketingPageData[] = [
     team: {
       items: [
         { name: 'Dr. Carter', role: 'Orthodontist', photo: 'teamDrCarter' },
-        { name: 'Amy Carter', role: 'Smile Coach', photo: 'teamAmy' },
+        { name: 'Amy', role: 'Smile Coach', photo: 'teamAmy' },
         { name: 'Denice', role: 'Smile Stylist', photo: 'teamDenice' },
         { name: 'Rebecca', role: 'Director of First Impressions', photo: 'teamRebecca' },
         { name: 'Sam', role: 'Smile Stylist', photo: 'teamSam' },
@@ -363,7 +363,7 @@ export const practicePages: MarketingPageData[] = [
       items: [
         {
           title: 'Schedule the consult',
-          body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
+          body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm.',
         },
         {
           title: 'Complete evaluation',
@@ -431,7 +431,7 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'Will appointments take over my schedule?',
         answer:
-          'Visits are planned around school and work. The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm.',
+          'Visits are planned around school and work. The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm.',
       },
     ],
     related: [
@@ -531,7 +531,7 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'What are the office hours?',
         answer:
-          'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Friday and Sunday are closed for visits. Calls are answered Monday–Friday, 7am–7pm.',
+          'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. Friday, Saturday, and Sunday are closed. Calls are answered Monday–Thursday, 7am–7pm.',
       },
       {
         question: 'Can I ask about an in-office or virtual consultation?',
@@ -605,7 +605,7 @@ export const practicePages: MarketingPageData[] = [
     slug: 'our-office',
     title: 'Our Office | Platte River Orthodontics | Gretna, NE',
     description:
-      'Visit Platte River Orthodontics at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Clinic hours are Monday–Thursday 8am–5pm and Saturday 9am–3pm. Call 402-322-8838.',
+      'Visit Platte River Orthodontics at 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028. Clinic hours are Monday–Thursday 8am–5pm. The office is closed Friday, Saturday, and Sunday. Call 402-322-8838.',
     crumbs: [{ name: 'Our Office', href: '/our-office/' }],
     image: 'exterior',
     eyebrow: 'Gretna, Nebraska',
@@ -624,7 +624,7 @@ export const practicePages: MarketingPageData[] = [
         image: 'treatmentChair',
         reverse: true,
         background: 'muted',
-        body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm, and Saturday, 9:00 am–3:00 pm. Calls are answered Monday–Friday, 7am–7pm. Call 402-322-8838 or request a time online.',
+        body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm. Call 402-322-8838 or request a time online.',
       },
     ],
     showVisit: true,
