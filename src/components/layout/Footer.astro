@@ -4,6 +4,11 @@ import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import { navigation } from '../../config/navigation';
 import logo from '../../assets/logo-horizontal-white.png';
+import aboSeal from '../../assets/badges/abo-seal.jpg';
+import aaoLogo from '../../assets/badges/aao-logo.svg';
+import oddsLogo from '../../assets/badges/odds-logo.png';
+import chamberLogo from '../../assets/badges/gretna-chamber.png';
+import acpaLogo from '../../assets/badges/acpa-logo.png';
 import {
   site,
   formattedAddress,
@@ -28,6 +33,39 @@ const socials = Object.entries(site.social).filter(([, href]) => Boolean(href)) 
   string,
 ][];
 const year = new Date().getFullYear();
+
+const organizations = [
+  {
+    name: 'American Board of Orthodontics',
+    href: 'https://www.americanboardortho.com/',
+    image: aboSeal,
+    widths: [250, 375],
+  },
+  {
+    name: 'American Association of Orthodontists',
+    href: 'https://www2.aaoinfo.org/',
+    image: aaoLogo,
+    widths: [188],
+  },
+  {
+    name: 'Omaha District Dental Society',
+    href: 'https://www.omahadistrictds.com/',
+    image: oddsLogo,
+    widths: [250, 517],
+  },
+  {
+    name: 'Gretna Chamber of Commerce',
+    href: 'https://www.gretnachamber.com/',
+    image: chamberLogo,
+    widths: [225],
+  },
+  {
+    name: 'American Cleft Palate Craniofacial Association',
+    href: 'https://acpacares.org/',
+    image: acpaLogo,
+    widths: [250, 500],
+  },
+];
 ---
 
 <Section as="footer" background="inverse" spacing="md">
@@ -105,25 +143,44 @@ const year = new Date().getFullYear();
 
     <div class="flex w-full flex-col gap-4 border-t border-neutral-800 pt-6">
       <h2 class="text-sm font-semibold tracking-wide text-neutral-400 uppercase">Organizations</h2>
-      <a
-        href="https://www.bbb.org/us/ne/gretna/profile/orthodontist/platte-river-orthodontics-0714-1000075181/#sealclick"
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-      >
-        <img
-          src="https://seal-nebraska.bbb.org/seals/blue-seal-200-42-bbb-1000075181.png"
-          alt="Platte River Orthodontics BBB Business Review"
-          width="200"
-          height="42"
-          class="h-auto w-48 border-0"
-        />
-      </a>
-      <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-300">
-        <li>ABO (American Board of Orthodontics)</li>
-        <li>AAO (American Association of Orthodontists)</li>
-        <li>ODDS (Omaha District Dental Society)</li>
-        <li>Gretna Chamber of Commerce</li>
-        <li>American Cleft Palate Association</li>
+      <ul class="flex flex-wrap items-center gap-3">
+        <li>
+          <a
+            href="https://www.bbb.org/us/ne/gretna/profile/orthodontist/platte-river-orthodontics-0714-1000075181/#sealclick"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            class="flex size-[125px] items-center justify-center rounded-md bg-white p-2"
+          >
+            <img
+              src="https://seal-nebraska.bbb.org/seals/blue-seal-200-42-bbb-1000075181.png"
+              alt="Platte River Orthodontics BBB Business Review"
+              width="200"
+              height="42"
+              class="h-auto max-h-full w-auto max-w-full border-0 object-contain"
+            />
+          </a>
+        </li>
+        {
+          organizations.map((org) => (
+            <li>
+              <a
+                href={org.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex size-[125px] items-center justify-center rounded-md bg-white p-2"
+              >
+                <Image
+                  src={org.image}
+                  alt={org.name}
+                  widths={org.widths}
+                  sizes="125px"
+                  quality={90}
+                  class="h-auto max-h-full w-auto max-w-full object-contain"
+                />
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
