@@ -736,7 +736,7 @@ export const treatmentPages: MarketingPageData[] = [
     slug: 'teeth-whitening',
     title: 'Teeth Whitening | Platte River Orthodontics | Gretna, NE',
     description:
-      'In-office teeth whitening at Platte River Orthodontics in Gretna, NE can lighten teeth several shades in one supervised visit. Call 402-322-8838.',
+      'In-office and take-home teeth whitening at Platte River Orthodontics in Gretna, NE. Supervised visits or custom iTero trays. Call 402-322-8838.',
     crumbs: [{ name: 'Teeth Whitening', href: '/teeth-whitening/' }],
     serviceName: 'Teeth Whitening',
     image: 'whitening',
@@ -758,12 +758,22 @@ export const treatmentPages: MarketingPageData[] = [
         image: 'whiteningSmile',
         body: 'An in-office visit can lighten teeth several shades in a single appointment. It is a good fit before an event, or if you want the process supervised so sensitivity stays in check.',
       },
+      {
+        title: 'Take-home whitening',
+        image: 'whitening',
+        body: 'Take-home whitening uses custom trays made from an iTero scan and professional-strength gel. It is a gradual option when you want to whiten on your own schedule, or ease into the process if your teeth are sensitive.',
+      },
     ],
     faqs: [
       {
         question: 'What kind of teeth whitening do you offer?',
         answer:
-          'In-office whitening, supervised at the Gretna office. A visit can lighten teeth several shades in a single appointment, with the gums protected and the strength of the gel supervised.',
+          'In-office whitening and take-home whitening. An in-office visit is supervised at the Gretna office and can lighten teeth several shades in a single appointment. Take-home whitening uses custom trays made from an iTero scan.',
+      },
+      {
+        question: 'Do you offer in-office and take-home whitening?',
+        answer:
+          'Yes. In-office whitening is supervised in Gretna and can lighten teeth several shades in one visit. Take-home whitening uses custom iTero trays and professional gel on your own schedule. The consultation is where we decide which option fits.',
       },
       {
         question: 'Can whitening make my teeth sensitive?',

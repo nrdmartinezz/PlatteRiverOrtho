@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../ui/Section.astro';
 import Container from '../ui/Container.astro';
 import { navigation } from '../../config/navigation';
+import logo from '../../assets/logo-horizontal-white.png';
 import {
   site,
   formattedAddress,
@@ -32,9 +34,8 @@ const year = new Date().getFullYear();
   <Container gap="lg">
     <div class="grid w-full gap-10 md:grid-cols-2 lg:grid-cols-4">
       <div class="flex flex-col gap-3 md:col-span-2">
-        <a href="/" class="text-ink-inverse flex items-center gap-2 font-semibold no-underline">
-          <Icon name="lucide:hexagon" class="size-7" aria-hidden="true" />
-          <span>{site.name}</span>
+        <a href="/" class="inline-flex w-fit no-underline">
+          <Image src={logo} alt={site.name} width={480} class="h-16 w-auto" />
         </a>
         <p class="max-w-reading text-neutral-300">
           With precision and care, we craft smiles that radiate confidence—supporting our patients’

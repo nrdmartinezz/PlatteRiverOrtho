@@ -9,7 +9,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Ashland families are a short drive from a full orthodontic office in Gretna, with Saturday appointments and a phone line answered Monday through Friday, 7am to 7pm.',
       title: 'Ashland NE Orthodontist | Platte River Orthodontics',
       description:
-        'Platte River Orthodontics serves Ashland, NE with Invisalign & braces. Expert care near you. Call 402-322-8838 for your consultation!',
+        'Orthodontist for Ashland, NE. Platte River Orthodontics sees Ashland families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Greenwood',
@@ -18,7 +18,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Greenwood neighbors do not need a downtown commute for braces, Invisalign, or an early checkup. The Gretna office is close, and the first visit is complimentary.',
       title: 'Greenwood NE Orthodontist | Platte River Orthodontics',
       description:
-        'Expert orthodontic care for Greenwood, NE families. Invisalign, braces & more at Platte River Orthodontics. Call 402-322-8838 today!',
+        'Orthodontist for Greenwood, NE. Platte River Orthodontics sees Greenwood families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'La Vista',
@@ -27,7 +27,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'La Vista patients come south to Gretna for board-certified care, digital scanning, and a schedule that works around school and work.',
       title: 'La Vista NE Orthodontist | Platte River Orthodontics',
       description:
-        'Top-rated orthodontist serving La Vista, NE. Invisalign, braces & consultations at Platte River Orthodontics. Call 402-322-8838!',
+        'Orthodontist for La Vista, NE. Platte River Orthodontics sees La Vista families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Louisville',
@@ -36,7 +36,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Louisville families are welcome at our Gretna office for the same custom braces, clear aligners, and early treatment we provide close to home.',
       title: 'Louisville NE Orthodontist | Platte River Orthodontics',
       description:
-        'Platte River Orthodontics provides expert care to Louisville, NE. Invisalign, braces & virtual consultations. Call 402-322-8838 today!',
+        'Orthodontist for Louisville, NE. Platte River Orthodontics sees Louisville families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Millard',
@@ -45,7 +45,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Millard is an easy trip to Standing Stone Drive. Saturday appointments, and a phone line answered Monday through Friday from 7am to 7pm, make a multi-year treatment realistic.',
       title: 'Millard NE Orthodontist | Platte River Orthodontics',
       description:
-        'Serving Millard, NE with advanced orthodontic care. Invisalign, braces & family-friendly service. Call Platte River at 402-322-8838!',
+        'Orthodontist for Millard, NE. Platte River Orthodontics sees Millard families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Plattsmouth',
@@ -54,7 +54,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Plattsmouth patients head north to Gretna for specialist orthodontic care, including surgical cases and early growth guidance.',
       title: 'Plattsmouth NE Orthodontist | Platte River Orthodontics',
       description:
-        'Quality orthodontic care for Plattsmouth, NE residents. Invisalign & braces at Platte River Orthodontics. Call 402-322-8838 to book!',
+        'Orthodontist for Plattsmouth, NE. Platte River Orthodontics sees Plattsmouth families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Springfield',
@@ -63,7 +63,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Springfield families use Platte River Orthodontics as their nearby smile team, from a child’s first checkup to adult Invisalign.',
       title: 'Springfield NE Orthodontist | Platte River Orthodontics',
       description:
-        'Expert orthodontist serving Springfield, NE. Invisalign, braces & personalized care at Platte River Orthodontics. Call 402-322-8838!',
+        'Orthodontist for Springfield, NE. Platte River Orthodontics sees Springfield families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
       name: 'Syracuse',
@@ -72,7 +72,7 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Syracuse patients are seen at our Gretna location. Remote monitoring can cut down on some of the longer drives once treatment is underway.',
       title: 'Syracuse NE Orthodontist | Platte River Orthodontics',
       description:
-        'Platte River Orthodontics serves Syracuse, NE with expert orthodontic care. Invisalign, braces & consultations. Call 402-322-8838 today!',
+        'Orthodontist for Syracuse, NE. Platte River Orthodontics sees Syracuse families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
   ];
 
@@ -125,7 +125,7 @@ export const cityPages: MarketingPageData[] = cities.map((city) => ({
   faqs: [
     {
       question: `Is there a Platte River Orthodontics office in ${city.name}?`,
-      answer: `${city.name} is a community we serve. Visits happen at the Gretna office, 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028.`,
+      answer: `Platte River Orthodontics is the orthodontist for ${city.name} families. Visits are at the Gretna office, 11844 Standing Stone Dr, Suite 100, Gretna, NE 68028.`,
     },
     {
       question: 'Do you offer Invisalign?',
