@@ -166,8 +166,8 @@ export const clinicHours = [
   'Friday, Saturday, and Sunday: Closed',
 ];
 
-/** Answering coverage. Kept out of schema.org openingHours. */
-export const phoneHoursNote = 'Calls answered Monday–Thursday, 7am–7pm';
+/** Answering coverage. Friday has no clinic visits. Kept out of schema.org openingHours. */
+export const phoneHoursNote = 'Calls answered Monday–Friday, 7am–7pm';
 
 export const formattedPhone = site.business.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
 

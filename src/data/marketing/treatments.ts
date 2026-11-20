@@ -573,7 +573,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         question: 'What if an aligner is lost or breaks?',
         answer:
-          'Call the office before deciding which tray to wear next. The team will tell you how to keep treatment on track. Calls are answered Monday–Thursday, 7am–7pm.',
+          'Call the office before deciding which tray to wear next. The team will tell you how to keep treatment on track. Calls are answered Monday–Friday, 7am–7pm.',
       },
       {
         question: 'How much does Invisalign Teen cost?',

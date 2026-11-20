@@ -363,7 +363,7 @@ export const practicePages: MarketingPageData[] = [
       items: [
         {
           title: 'Schedule the consult',
-          body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm.',
+          body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Friday, 7am–7pm.',
         },
         {
           title: 'Complete evaluation',
@@ -431,7 +431,7 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'Will appointments take over my schedule?',
         answer:
-          'Visits are planned around school and work. The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm.',
+          'Visits are planned around school and work. The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Friday, 7am–7pm.',
       },
     ],
     related: [
@@ -531,7 +531,7 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'What are the office hours?',
         answer:
-          'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. Friday, Saturday, and Sunday are closed. Calls are answered Monday–Thursday, 7am–7pm.',
+          'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. Friday, Saturday, and Sunday are closed. Calls are answered Monday–Friday, 7am–7pm.',
       },
       {
         question: 'Can I ask about an in-office or virtual consultation?',
@@ -624,7 +624,7 @@ export const practicePages: MarketingPageData[] = [
         image: 'treatmentChair',
         reverse: true,
         background: 'muted',
-        body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Thursday, 7am–7pm. Call 402-322-8838 or request a time online.',
+        body: 'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. The office is closed Friday, Saturday, and Sunday. Calls are answered Monday–Friday, 7am–7pm. Call 402-322-8838 or request a time online.',
       },
     ],
     showVisit: true,
