@@ -13,8 +13,8 @@ import VisitUs from '../components/blocks/VisitUs.astro';
 import ContactBlock from '../components/blocks/ContactBlock.astro';
 import GoogleReviews from '../components/blocks/GoogleReviews.astro';
 import drCarter from '../assets/team/dr-carter.jpg';
-import treatmentChair from '../assets/live/platte-river-ortho-treatment-chair.jpg';
-import officeDetail from '../assets/live/IMG_2725-2.jpg';
+import lobby from '../assets/office/lobby.jpg';
+import lounge from '../assets/office/lounge.jpg';
 import invisalign from '../assets/live/gretna-ne-orthodontist-invisalign-platte-river-orthodontics.jpg';
 import braces from '../assets/live/braces-gretna-ne-platte-river-orthodontics.jpg';
 import jawSurgery from '../assets/live/platte-river-orthodontics-gretna-ne-surgical-orthodontics.jpg';
@@ -69,7 +69,7 @@ const faqs = [
   titleExact
   title="Platte River Orthodontics | Orthodontist in Gretna, NE"
   description="Board-certified orthodontic care for children, teens, and adults in Gretna, NE. Dr. Carter explains the plan in plain language. Call 402-322-8838."
-  image={treatmentChair.src}
+  image={lobby.src}
   faqs={faqs}
 >
   <Hero
@@ -79,8 +79,8 @@ const faqs = [
     titleMiddle="A Personal Integrated Approach."
     titleAccent="Confidence for Life."
     body="Exceptional orthodontic care for children, teens, and adults in Gretna, Nebraska. Get a treatment plan tailored to your needs, clear answers to your questions, and a team that treats you like family."
-    image={treatmentChair}
-    imageAlt="A treatment room at Platte River Orthodontics in Gretna"
+    image={lobby}
+    imageAlt="The welcome area at Platte River Orthodontics in Gretna"
     videoId="NS_gJJ2On0k"
     videoTitle="The Platte River Orthodontics team in Gretna"
     actions={[
@@ -132,7 +132,12 @@ const faqs = [
       {
         icon: 'lucide:clock',
         title: 'Convenient care',
-        body: 'Flexible financing, virtual consults, clinic hours Monday–Thursday 8am–5pm, and calls answered Monday–Friday 7am–7pm. The office is closed Friday, Saturday, and Sunday.',
+        body: 'Flexible financing and virtual consults.',
+        points: [
+          { icon: 'lucide:clock', label: 'Clinic', text: 'Monday–Thursday, 8am–5pm' },
+          { icon: 'lucide:phone', label: 'Calls', text: 'Monday–Friday, 7am–7pm' },
+          { icon: 'lucide:calendar-off', label: 'Closed', text: 'Friday, Saturday, and Sunday' },
+        ],
       },
       {
         icon: 'lucide:heart',
@@ -292,7 +297,8 @@ const faqs = [
   />
 
   <VisitUs
-    image={officeDetail}
+    image={lounge}
+    imageAlt="The lobby at Platte River Orthodontics in Gretna"
     paragraphs={[
       'The Standing Stone Drive office is built around comfort and a visit that respects your time.',
       'From advanced digital imaging and modern treatment bays to flexible scheduling and a warm, welcoming atmosphere, everything about our office is built to make you feel at ease.',

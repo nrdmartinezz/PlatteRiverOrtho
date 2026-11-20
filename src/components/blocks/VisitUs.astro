@@ -114,30 +114,20 @@ const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=
       <div
         class="map-facade border-line-base bg-surface-base relative h-52 w-full overflow-hidden rounded-2xl border shadow-md"
         data-src={embedSrc}
+        data-title="Office location map"
       >
-        <button
-          type="button"
-          class="text-ink-base absolute inset-0 flex cursor-pointer flex-col items-center justify-center gap-2 p-6 text-center"
+        <div
+          class="text-ink-base pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 p-6 text-center"
+          aria-hidden="true"
         >
-          <Icon name="lucide:map-pin" class="text-brand-600 size-8" aria-hidden="true" />
-          <span class="font-medium">Load map</span>
-          <span class="text-ink-muted text-sm">Open interactive map</span>
-        </button>
+          <Icon name="lucide:map-pin" class="text-brand-600 size-8" />
+          <span class="font-medium">Office map</span>
+        </div>
       </div>
     </div>
   </Container>
 </Section>
 
 <script>
-  for (const facade of document.querySelectorAll<HTMLElement>('.map-facade')) {
-    facade.querySelector('button')?.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = facade.dataset.src ?? '';
-      iframe.title = 'Office location map';
-      iframe.loading = 'lazy';
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      iframe.className = 'absolute inset-0 h-full w-full border-0';
-      facade.replaceChildren(iframe);
-    });
-  }
+  import '../../scripts/lazy-maps';
 </script>

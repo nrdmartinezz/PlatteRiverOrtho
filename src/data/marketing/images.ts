@@ -1,7 +1,9 @@
 import type { ImageMetadata } from 'astro';
 import familyPractice from '../../assets/live/family-practice-platte-river-ortho-1.png';
-import officeInterior from '../../assets/live/IMG_1802-2.jpg';
-import officeDetail from '../../assets/live/IMG_2725-2.jpg';
+import officeInterior from '../../assets/office/consult.jpg';
+import officeDetail from '../../assets/office/lounge.jpg';
+import lobby from '../../assets/office/lobby.jpg';
+import officeTeam from '../../assets/office/team.jpg';
 import orthodontist from '../../assets/live/orthodontist-gretna-ne-platte-river-orthodontics-1.jpg';
 import treatmentCompanion from '../../assets/live/platte-river-orthodontics-treatment-companion.jpg';
 import whitening from '../../assets/live/platte-river-orthod-chad-carter-teeth-whitening-gretna-ne.jpg';
@@ -38,7 +40,7 @@ import kidsBraces from '../../assets/live/kids-braces-mythis-e1764088364216.jpg'
 import adultBraces from '../../assets/live/adult-braces-orthodontics-platte-river-gretna-ne.jpg';
 import retainers from '../../assets/live/retainers-gretna-ne-platte-river-orthodontics.jpg';
 import retainersChair from '../../assets/live/chad-carter-platte-river-orthodontics-retainers-gretna-ne.jpg';
-import exterior from '../../assets/office-exterior.jpg';
+import exterior from '../../assets/office/entrance.jpg';
 import teamDrCarter from '../../assets/team/dr-carter.jpg';
 import teamAmy from '../../assets/team/amy-carter.jpg';
 import teamDenice from '../../assets/team/denice.jpg';
@@ -49,6 +51,8 @@ export const pageImages = {
   familyPractice,
   officeInterior,
   officeDetail,
+  lobby,
+  officeTeam,
   orthodontist,
   treatmentCompanion,
   whitening,

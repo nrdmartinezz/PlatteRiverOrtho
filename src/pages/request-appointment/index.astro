@@ -5,7 +5,7 @@ import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
 import Heading from '../../components/ui/Heading.astro';
 import AppointmentForm from '../../components/forms/AppointmentForm.astro';
-import heroOffice from '../../assets/hero-office.jpg';
+import consultRoom from '../../assets/office/consult.jpg';
 import { site } from '../../config/site';
 ---
 
@@ -24,8 +24,8 @@ import { site } from '../../config/site';
     title="Request a"
     titleAccent="Consultation"
     body="Send your name, phone, email, and request. We email and text within one business day. Calls are answered Monday–Friday, 7am–7pm. To choose a time now, use the scheduler. Your first visit is complimentary."
-    image={heroOffice}
-    imageAlt="The Platte River Orthodontics office"
+    image={consultRoom}
+    imageAlt="A consultation room at Platte River Orthodontics"
     actions={[
       { label: 'Jump to the form', href: '#appointment-request' },
       { label: 'Open the scheduler', href: '#scheduler', variant: 'secondary' },

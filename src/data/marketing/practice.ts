@@ -173,7 +173,7 @@ export const practicePages: MarketingPageData[] = [
     description:
       'Why choose Platte River Orthodontics in Gretna, NE? Board-certified expert, advanced technology, and personalized care. Call 402-322-8838.',
     crumbs: [{ name: 'Why Choose Us', href: '/why-choose-us/' }],
-    image: 'officeInterior',
+    image: 'officeTeam',
     eyebrow: 'Gretna, Nebraska',
     heroTitle: 'The clear choice',
     heroAccent: 'For your family’s smile',
@@ -551,7 +551,7 @@ export const practicePages: MarketingPageData[] = [
     description:
       'Learn how Platte River Orthodontics in Gretna, NE protects your personal information. Our privacy policy outlines what we collect, how it is used, and your rights as a patient.',
     crumbs: [{ name: 'Privacy Policy', href: '/privacy-policy/' }],
-    image: 'exterior',
+    image: 'lobby',
     eyebrow: 'Last updated July 9, 2025',
     heroTitle: 'Privacy Policy',
     heroBody:
