@@ -66,6 +66,15 @@ const cities: { name: string; slug: string; blurb: string; title: string; descri
         'Orthodontist for Plattsmouth, NE. Platte River Orthodontics sees Plattsmouth families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
     },
     {
+      name: 'Raymond',
+      slug: 'raymond-nebraska-orthodontist-platte-river-orthodontics',
+      blurb:
+        'Raymond families come south to the Gretna office for board-certified braces and Invisalign. The clinic is open Monday through Thursday, 8am to 5pm, and the first visit is complimentary.',
+      title: 'Raymond NE Orthodontist | Platte River Orthodontics',
+      description:
+        'Orthodontist for Raymond, NE. Platte River Orthodontics sees Raymond families at its Gretna office for Invisalign and braces. Call 402-322-8838.',
+    },
+    {
       name: 'Springfield',
       slug: 'springfield-nebraska-orthodontist-platte-river-orthodontics',
       blurb:

@@ -46,6 +46,7 @@ import teamAmy from '../../assets/team/amy-carter.jpg';
 import teamDenice from '../../assets/team/denice.jpg';
 import teamRebecca from '../../assets/team/rebecca.jpg';
 import teamSam from '../../assets/team/sam.jpg';
+import teamDogs from '../../assets/team/boone-huck.jpg';
 
 export const pageImages = {
   familyPractice,
@@ -95,6 +96,7 @@ export const pageImages = {
   teamDenice,
   teamRebecca,
   teamSam,
+  teamDogs,
 } satisfies Record<string, ImageMetadata>;
 
 export type PageImage = keyof typeof pageImages;

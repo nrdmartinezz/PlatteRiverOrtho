@@ -85,7 +85,7 @@ export const treatmentPages: MarketingPageData[] = [
       'Looking for adult braces in Gretna, NE? Platte River Orthodontics offers KLOwen customized braces for a confident smile. Call us at 402-322-8838 to schedule.',
     crumbs: [bracesCrumb, { name: 'Braces for Adults', href: '/braces/braces-for-adults/' }],
     serviceName: 'Braces for Adults',
-    image: 'customBraces',
+    image: 'adultBraces',
     eyebrow: 'Adult orthodontics',
     heroTitle: 'Invest in the smile',
     heroAccent: 'You have been waiting on',
@@ -94,7 +94,7 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Precision with a lower profile',
-        image: 'customBraces',
+        image: 'adultBraces',
         body: 'Each KLOwen bracket is designed for your tooth, so the appliance can be smaller and less noticeable than traditional braces. Custom planning often shortens treatment, which matters when you are balancing work and family.',
       },
       {
@@ -135,6 +135,26 @@ export const treatmentPages: MarketingPageData[] = [
         answer:
           'Timing depends on the plan. Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
       },
+      {
+        question: 'Can braces help with jaw or TMJ pain?',
+        answer:
+          'Jaw pain and temporomandibular disorders have more than one cause. Dr. Carter looks at the bite and how the jaws work during the consultation. When the problem is not tooth movement alone, he coordinates with a dentist, physician, or surgeon. Braces are not a cure for TMJ pain.',
+      },
+      {
+        question: 'I had dental trauma. Can I still have braces?',
+        answer:
+          'Often, yes. The consultation looks at the teeth that were injured, the bite, and what a dentist may still need to restore. Treatment is planned around that history, not around a standard start date.',
+      },
+      {
+        question: 'Should braces come before crowns, veneers, or other restorations?',
+        answer:
+          'When teeth need to be in a better position before a dentist places crowns or veneers, orthodontics can come first. Dr. Carter coordinates that sequence with your dentist so the restoration is planned around the final tooth position.',
+      },
+      {
+        question: 'Can adult braces help with sleep apnea?',
+        answer:
+          'Orthodontics does not treat sleep apnea by itself. If jaw position or a narrow upper jaw is part of a breathing concern, Dr. Carter evaluates that and coordinates with a physician when a medical evaluation is needed.',
+      },
     ],
   }),
   page({
@@ -144,7 +164,7 @@ export const treatmentPages: MarketingPageData[] = [
       'Get a confident smile with braces for teens at Platte River Orthodontics in Gretna, NE. We offer clear and metal braces. Call 402-322-8838.',
     crumbs: [bracesCrumb, { name: 'Braces for Teens', href: '/braces/braces-for-teens/' }],
     serviceName: 'Braces for Teens',
-    image: 'customBraces',
+    image: 'bracesTeens',
     eyebrow: 'Teenage orthodontics',
     heroTitle: 'Confidence through',
     heroAccent: 'The teenage years',
@@ -357,28 +377,52 @@ export const treatmentPages: MarketingPageData[] = [
   }),
   page({
     slug: 'airway-aware-treatment',
-    title: 'Early Orthodontic Treatment | Platte River Orthodontics | Gretna, NE',
+    title: 'Airway Aware Treatment | Platte River Orthodontics | Gretna, NE',
     description:
-      'Learn about early orthodontic treatment for your child at Platte River Orthodontics in Gretna, NE. Schedule a consultation today by calling 402-322-8838.',
+      'Airway-aware orthodontic care at Platte River Orthodontics in Gretna, NE. Growth, breathing, and the bite, evaluated together. Call 402-322-8838.',
     crumbs: [{ name: 'Airway Aware Treatment', href: '/airway-aware-treatment/' }],
     serviceName: 'Airway Aware Treatment',
     image: 'earlyTreatment',
-    noindex: true,
-    eyebrow: 'Early orthodontic treatment',
+    eyebrow: 'Airway-aware orthodontics',
     heroTitle: 'Smiles that also',
     heroAccent: 'Help kids breathe and grow',
     heroBody:
-      'A narrow jaw, chronic mouth breathing, or a bite that is developing off track can affect more than how teeth look. Dr. Carter evaluates growth, function, and airway together, especially in children.',
+      'A parent searching at night for answers about snoring, grinding, or a child who is tired no matter how much they sleep deserves a clear look at growth, the bite, and the airway. Dr. Carter evaluates those together, especially in children.',
     features: [
       {
-        title: 'Early intervention with the whole child in mind',
+        title: 'The whole child, not only the teeth',
         image: 'treatmentCompanion',
-        body: 'Interceptive treatment uses the mixed-dentition years to guide teeth and jaws. Addressing crowding, crossbites, and habits early can make later treatment simpler and support healthier facial growth. If expansion or MARPE is the right tool for an older patient, we will say so plainly.',
+        body: [
+          'A narrow jaw, mouth breathing, or a bite that is developing off track can affect sleep, energy, and how the face grows. Interceptive treatment uses the mixed-dentition years to guide teeth and jaws. Expansion is sometimes the right early step when the upper jaw is too narrow for the tongue and for nasal breathing.',
+          'This is interdisciplinary care. When tonsils, adenoids, or muscle habits are part of the picture, Dr. Carter coordinates with an ENT and with myofunctional therapy. He will say plainly when expansion, monitoring, or a referral is the next step. If MARPE is the better tool for an older patient, he will say that too.',
+        ],
       },
     ],
     related: [
       { label: 'Early treatment', href: '/early-treatment/' },
       { label: 'MARPE', href: '/services/marpe/' },
+    ],
+    faqs: [
+      {
+        question: 'Why would an orthodontist talk about breathing?',
+        answer:
+          'The jaws, the tongue, and the airway share the same space. Snoring, mouth breathing, teeth grinding, and a child who stays tired can sit next to a narrow jaw or a bite that is off track. The consultation looks at growth and function, not only crowding.',
+      },
+      {
+        question: 'Do you work with other specialists?',
+        answer:
+          'Yes. Airway-aware care is interdisciplinary. Dr. Carter coordinates with an ENT when tonsils or adenoids may be involved, and with myofunctional therapy when habits of the tongue and lips need attention. He will tell you who else should be part of the plan.',
+      },
+      {
+        question: 'When is early expansion considered?',
+        answer:
+          'Early expansion is considered when a narrow upper jaw is affecting eruption, the bite, or room for the tongue and nasal breathing. Age alone does not decide it. Some children need guidance before age 7 when breathing or growth is a concern. Dr. Carter explains what is known now and what to keep watching.',
+      },
+      {
+        question: 'Does orthodontic treatment replace a medical evaluation for sleep or snoring?',
+        answer:
+          'No. Orthodontics does not diagnose or treat sleep apnea. If snoring, grinding, or daytime tiredness is a concern, a physician or ENT evaluation may be needed alongside the orthodontic exam. Dr. Carter will say when that referral belongs in the plan.',
+      },
     ],
   }),
   page({
@@ -424,6 +468,7 @@ export const treatmentPages: MarketingPageData[] = [
         title: 'The science behind the trays',
         background: 'muted',
         image: 'smileSimulator',
+        imageHref: 'https://www.invisalign.com/results/smileview',
         body: 'A series of custom aligners moves teeth in small, planned steps. Dr. Carter’s physics training shows up in how those steps are sequenced so the result is stable, not just straight for a photograph.',
       },
     ],
@@ -457,6 +502,11 @@ export const treatmentPages: MarketingPageData[] = [
         question: 'What does Invisalign cost, and will insurance help?',
         answer:
           'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
+      },
+      {
+        question: 'Can any dentist do Invisalign?',
+        answer:
+          'Invisalign is a strong tool, and many dentists offer it. The result still depends on who plans the tooth movement. Dr. Carter compares it to having the Snap-on and Matco tools and also the premier mechanic to use them. A specialist plans for stability, a correct bite, and an efficient path, not only straighter front teeth.',
       },
     ],
   }),
@@ -558,7 +608,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         question: 'How many hours a day does my teen need to wear the aligners?',
         answer:
-          'Wear them as Dr. Carter prescribes. The trays come out for meals, brushing, and flossing, then go back in. The daily schedule is part of your teen’s plan, given at the consultation.',
+          'Wear them as Dr. Carter prescribes. The trays come out for meals, brushing, and flossing, then go back in. Wear them all the time except when eating or drinking. If they are not in your face, they belong in the case.',
       },
       {
         question: 'Can my teen eat with the aligners in?',
@@ -573,7 +623,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         question: 'What if an aligner is lost or breaks?',
         answer:
-          'Call the office before deciding which tray to wear next. The team will tell you how to keep treatment on track. Calls are answered Monday–Friday, 7am–7pm.',
+          'Call the office or message us on Grin before deciding which tray to wear next. The team will tell you how to keep treatment on track. Calls are answered Monday–Friday, 7am–7pm.',
       },
       {
         question: 'How much does Invisalign Teen cost?',
@@ -597,7 +647,7 @@ export const treatmentPages: MarketingPageData[] = [
     heroTitle: 'A clear path',
     heroAccent: 'To the smile you wanted',
     heroBody:
-      'If metal braces do not fit your work or social life, Invisalign is the treatment many adults choose. It is discreet, removable, and capable of more than minor crowding when the plan is done carefully.',
+      'If metal braces do not fit your work or social life, Invisalign is the treatment many adults choose. It is discreet and removable, and it can address more than minor crowding, including relapse after earlier treatment, jaw discomfort related to the bite, and tooth position before veneers or crowns.',
     benefits: {
       title: 'Why adults choose aligners',
       items: [
@@ -628,7 +678,8 @@ export const treatmentPages: MarketingPageData[] = [
         title: 'It is not too late',
         background: 'muted',
         image: 'smileSimulator',
-        body: 'Adult treatment is about health and confidence, not only appearance. We listen first, then build a plan around your goals and your calendar.',
+        imageHref: 'https://www.invisalign.com/results/smileview',
+        body: 'Adult treatment is about health and confidence, not only appearance. That can include relapse after braces, bite-related jaw discomfort, and moving teeth into position before a dentist places veneers or crowns. We listen first, then build a plan around your goals and your calendar.',
       },
     ],
     related: [
@@ -661,6 +712,21 @@ export const treatmentPages: MarketingPageData[] = [
         answer:
           'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
       },
+      {
+        question: 'Can Invisalign help if my teeth shifted after earlier treatment?',
+        answer:
+          'Yes. Relapse after braces or aligners is a common reason adults come in. The consultation shows whether aligners can move those teeth back into a stable position.',
+      },
+      {
+        question: 'Can adult Invisalign help with jaw discomfort?',
+        answer:
+          'Temporomandibular discomfort has more than one cause. If the bite is part of it, Dr. Carter evaluates that during the consultation. Aligners are not a treatment for a joint disorder by themselves, and he coordinates with a dentist or physician when the problem goes beyond tooth position.',
+      },
+      {
+        question: 'Can Invisalign prepare my teeth for veneers or crowns?',
+        answer:
+          'Yes, when the dentist wants teeth in a better position before restorations. Dr. Carter plans that pre-prosthetic movement with your dentist so the veneers or crowns are designed around the final tooth position.',
+      },
     ],
   }),
   page({
@@ -675,7 +741,7 @@ export const treatmentPages: MarketingPageData[] = [
     heroTitle: 'When braces alone',
     heroAccent: 'Are not enough',
     heroBody:
-      'Orthognathic treatment combines orthodontics with jaw surgery for skeletal differences that tooth movement cannot fix. Dr. Carter coordinates these cases and consults with the Boys Town craniofacial team.',
+      'Orthognathic treatment combines orthodontics with jaw surgery for skeletal differences that tooth movement alone does not address. Dr. Carter coordinates these cases with oral surgeons in the area to pursue function and facial balance together.',
     steps: {
       title: 'How surgical treatment unfolds',
       items: [
@@ -718,7 +784,7 @@ export const treatmentPages: MarketingPageData[] = [
       {
         question: 'Who performs the jaw surgery?',
         answer:
-          'An oral surgeon repositions the jaws. Dr. Carter coordinates the orthodontic stages and consults with the Boys Town craniofacial team. He will tell you who would be involved in your case.',
+          'An oral surgeon repositions the jaws. Dr. Carter coordinates the orthodontic stages and consults with the oral surgeon for the case. He will tell you who would be involved. He has helped hundreds of patients through this journey.',
       },
       {
         question: 'How long does surgical treatment take, and what is recovery like?',
@@ -739,7 +805,7 @@ export const treatmentPages: MarketingPageData[] = [
       'In-office and take-home teeth whitening at Platte River Orthodontics in Gretna, NE. Supervised visits or custom iTero trays. Call 402-322-8838.',
     crumbs: [{ name: 'Teeth Whitening', href: '/teeth-whitening/' }],
     serviceName: 'Teeth Whitening',
-    image: 'whitening',
+    image: 'consultSmile',
     eyebrow: 'Professional whitening',
     heroTitle: 'Brighten the smile',
     heroAccent: 'You just straightened',
@@ -748,19 +814,19 @@ export const treatmentPages: MarketingPageData[] = [
     features: [
       {
         title: 'Why teeth darken',
-        image: 'officeInterior',
+        image: 'invisalignAdults',
         body: 'Surface stains come from foods and drinks. Deeper discoloration builds as enamel thins with age and pigment settles in. Professional systems are aimed at those deeper stains, which is why they outperform most store kits.',
       },
       {
         title: 'In-office whitening',
         reverse: true,
         background: 'muted',
-        image: 'whiteningSmile',
-        body: 'An in-office visit can lighten teeth several shades in a single appointment. It is a good fit before an event, or if you want the process supervised so sensitivity stays in check.',
+        image: 'consultSmile',
+        body: 'Zoom in-office whitening can lighten teeth several shades in a single appointment. It is a good fit before an event, or if you want the process supervised so sensitivity stays in check.',
       },
       {
         title: 'Take-home whitening',
-        image: 'whitening',
+        image: 'invisalignAdults',
         body: 'Take-home whitening uses custom trays made from an iTero scan and professional-strength gel. It is a gradual option when you want to whiten on your own schedule, or ease into the process if your teeth are sensitive.',
       },
     ],
@@ -768,12 +834,12 @@ export const treatmentPages: MarketingPageData[] = [
       {
         question: 'What kind of teeth whitening do you offer?',
         answer:
-          'In-office whitening and take-home whitening. An in-office visit is supervised at the Gretna office and can lighten teeth several shades in a single appointment. Take-home whitening uses custom trays made from an iTero scan.',
+          'Zoom in-office whitening and take-home whitening. A Zoom visit is supervised at the Gretna office and can lighten teeth several shades in a single appointment. Take-home whitening uses custom trays made from an iTero scan.',
       },
       {
         question: 'Do you offer in-office and take-home whitening?',
         answer:
-          'Yes. In-office whitening is supervised in Gretna and can lighten teeth several shades in one visit. Take-home whitening uses custom iTero trays and professional gel on your own schedule. The consultation is where we decide which option fits.',
+          'Yes. Zoom in-office whitening is supervised in Gretna and can lighten teeth several shades in one visit. Take-home whitening uses custom iTero trays and professional gel on your own schedule. The consultation is where we decide which option fits.',
       },
       {
         question: 'Can whitening make my teeth sensitive?',
@@ -805,17 +871,16 @@ export const treatmentPages: MarketingPageData[] = [
     crumbs: [{ name: 'Retainers', href: '/retainers/' }],
     serviceName: 'Retainers',
     image: 'retainers',
-    noindex: true,
     eyebrow: 'After treatment',
     heroTitle: 'Protect the smile',
     heroAccent: 'You worked for',
     heroBody:
-      'Teeth want to drift back toward where they started. Retainers hold the result while bone and ligaments settle, and they keep protecting that result for years after.',
+      'Teeth want to drift back toward where they started. Retainers hold the result while bone and ligaments settle, and they keep protecting that result for years after. We partner with Retainers for Life in the office, an option patients can ask about as a retainer membership.',
     features: [
       {
         title: 'Why retainers are not optional',
         image: 'retainersChair',
-        body: 'Periodontal ligaments and bone keep remodeling after braces or aligners come off. Without retention, the time and cost of treatment can slip away. Dr. Carter designs the retainer plan around your case, including more complex surgical and craniofacial finishes.',
+        body: 'Periodontal ligaments and bone keep remodeling after braces or aligners come off. Without retention, the time and cost of treatment can slip away. Dr. Carter designs the retainer plan around your case, including more complex surgical and craniofacial finishes. Ask the team about a Retainers for Life membership.',
       },
     ],
     benefits: {
@@ -839,9 +904,27 @@ export const treatmentPages: MarketingPageData[] = [
         {
           icon: 'lucide:refresh-cw',
           title: 'Replacements',
-          body: 'Lost or worn retainers can be replaced before teeth have time to move.',
+          body: 'Lost or worn retainers can be replaced before teeth have time to move. Ask about the Retainers for Life membership for that ongoing value.',
         },
       ],
     },
+    related: [{ label: 'Retainers for Life', href: 'https://www.myretainersforlife.com/' }],
+    faqs: [
+      {
+        question: 'What is a bonded retainer?',
+        answer:
+          'A bonded retainer is a thin wire fixed behind the front teeth. It holds those teeth while you are not wearing a removable retainer. Dr. Carter will say whether a bonded wire, a removable retainer, or both fit your case.',
+      },
+      {
+        question: 'What is a Hawley retainer?',
+        answer:
+          'A Hawley retainer is a removable acrylic-and-wire retainer. It is one of the options Dr. Carter may use when a clear retainer is not the best fit for how your teeth finished.',
+      },
+      {
+        question: 'What if my retainer is lost, broken, or worn out?',
+        answer:
+          'Call the office before teeth have time to shift. Lost or worn retainers can be replaced. Ask about the Retainers for Life membership when you want a plan for those replacements.',
+      },
+    ],
   }),
 ];

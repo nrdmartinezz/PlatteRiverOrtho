@@ -14,6 +14,8 @@ export interface FeatureBlock {
   body: string | string[];
   bullets?: string[];
   image?: PageImage;
+  /** External or internal link for the feature image. */
+  imageHref?: string;
   reverse?: boolean;
   background?: SectionBackground;
 }
@@ -41,7 +43,7 @@ export interface LegalSection {
 }
 
 export interface TeamBlock {
-  items: { name: string; role: string; photo: PageImage }[];
+  items: { name: string; role: string; photo: PageImage; imagePosition?: string }[];
 }
 
 export interface MarketingPageData {

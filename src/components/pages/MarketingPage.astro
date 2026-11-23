@@ -86,6 +86,7 @@ const book = { label: 'Request a Consultation', href: '/request-appointment/' };
           bullets={feature.bullets}
           image={pageImages[feature.image ?? page.image]}
           imageAlt=""
+          imageHref={feature.imageHref}
           reverse={feature.reverse}
           background={feature.background}
         />
@@ -97,6 +98,7 @@ const book = { label: 'Request a Consultation', href: '/request-appointment/' };
               name: member.name,
               role: member.role,
               photo: pageImages[member.photo],
+              imagePosition: member.imagePosition,
             }))}
           />
         )}
@@ -138,7 +140,12 @@ const book = { label: 'Request a Consultation', href: '/request-appointment/' };
           <ul class="flex flex-wrap gap-3">
             {page.related.map((link) => (
               <li>
-                <Button href={link.href} variant="secondary">
+                <Button
+                  href={link.href}
+                  variant="secondary"
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                >
                   {link.label}
                 </Button>
               </li>
