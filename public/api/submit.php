@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $config = loadMailConfig();
-if ($config === [] || empty($config['recaptcha_secret']) || empty($config['from_email']) || parseEmailList($config['notify_to'] ?? '') === []) {
+if ($config === [] || empty($config['recaptcha_secret']) || empty($config['from_email']) || notificationRecipients($config) === []) {
     error_log('Form mail config missing or incomplete.');
     jsonError(503, 'Form is temporarily unavailable.');
 }
@@ -210,12 +210,13 @@ try {
 
     sendMail(
         $config,
-        $config['notify_to'],
+        notificationRecipients($config),
         $fromName,
         $subjectLine,
         $notificationHtml,
         $email,
         $name,
+        notificationBcc($config),
     );
 
     if ($formMail['send_autoreply']) {
@@ -233,7 +234,7 @@ try {
             $name,
             $autoreplySubject,
             $autoreplyHtml,
-            parseEmailList($config['notify_to'])[0],
+            notificationRecipients($config)[0],
             $fromName,
         );
     }

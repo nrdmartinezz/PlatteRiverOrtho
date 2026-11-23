@@ -11,8 +11,8 @@ Browser form
   → POST /api/submit.php (JSON via fetch)
   → honeypot + reCAPTCHA verified (server)
   → HTML templates rendered
-  → PHPMailer sends notification to team
-  → optional autoreply to submitter
+  → PHPMailer sends notification to the office (BCC verification inboxes)
+  → autoreply to submitter
   → redirect to /thank-you/
 ```
 
@@ -50,16 +50,17 @@ in production).
 
 ### Required keys
 
-| Key                | Purpose                                         |
-| ------------------ | ----------------------------------------------- |
-| `recaptcha_secret` | Google reCAPTCHA v3 secret                      |
-| `notify_to`        | Where lead notifications go (string or array)   |
-| `from_email`       | From address on outbound mail                   |
-| `from_name`        | From display name                               |
-| `site_url`         | Optional — used in email templates              |
-| `site_phone`       | Optional — display phone in email footer        |
-| `site_phone_href`  | Optional — tel: link for phone (`+15550104477`) |
-| `timezone`         | Optional — defaults to `America/New_York`       |
+| Key                | Purpose                                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| `recaptcha_secret` | Google reCAPTCHA v3 secret                                                                                                |
+| `notify_to`        | Extra lead recipients (string or array). `smile@platteriverortho.com` is always included.                                 |
+| `bcc`              | Extra BCC addresses. `verifybu@webpro.com` and `nate@newpatientgroup.com` are always included on the office notification. |
+| `from_email`       | From address on outbound mail                                                                                             |
+| `from_name`        | From display name                                                                                                         |
+| `site_url`         | Optional — used in email templates                                                                                        |
+| `site_phone`       | Optional — display phone in email footer                                                                                  |
+| `site_phone_href`  | Optional — tel: link for phone (`+15550104477`)                                                                           |
+| `timezone`         | Optional — defaults to `America/New_York`                                                                                 |
 
 ### Optional SMTP
 
@@ -84,7 +85,7 @@ If any SMTP field is blank, the handler falls back to `mail()`.
 'notify_to' => ['owner@example.com', 'sales@example.com'],
 ```
 
-All addresses receive the internal notification. Invalid entries are skipped.
+All addresses receive the internal notification, along with the office inbox. Invalid entries are skipped. The office notification is also BCC'd to `verifybu@webpro.com` and `nate@newpatientgroup.com`. The patient autoreply is not BCC'd.
 
 ## Per-form settings
 
@@ -104,16 +105,16 @@ Configure per form under the `forms` key:
 ],
 ```
 
-| Key                 | Purpose                                                  |
-| ------------------- | -------------------------------------------------------- |
-| `notification`      | Template file for the team email                         |
-| `autoreply`         | Template file for the customer email                     |
-| `subject`           | Team notification subject line                           |
-| `autoreply_subject` | Customer autoreply subject line                          |
-| `send_autoreply`    | `true` to send customer confirmation (default **false**) |
+| Key                 | Purpose                                                 |
+| ------------------- | ------------------------------------------------------- |
+| `notification`      | Template file for the team email                        |
+| `autoreply`         | Template file for the customer email                    |
+| `subject`           | Team notification subject line                          |
+| `autoreply_subject` | Customer autoreply subject line                         |
+| `send_autoreply`    | `true` to send customer confirmation (default **true**) |
 
 A global `'send_autoreply' => true/false` at the top level applies when a form does not
-override it.
+override it. Omit both and the patient autoresponder is sent.
 
 ### Template resolution
 
@@ -201,8 +202,8 @@ fill in the optional SMTP fields in `config.local.php`.
 ## Production checklist
 
 1. Create `~/private/site-mail.php` on the server (rename per client — update `lib/mailer.php`).
-2. Set `recaptcha_secret`, `notify_to`, `from_email`, `from_name`.
-3. Configure `forms` — templates, subjects, autoreply per form.
+2. Set `recaptcha_secret`, `notify_to`, `from_email`, `from_name`. The office inbox and verification BCCs are added in code even when this file omits them.
+3. Configure `forms` — templates, subjects, and autoreply per form. Autoreply is on unless set to `false`.
 4. Deploy via CI (push to `main`) — PHPMailer installs automatically.
 5. Submit each form on the live site; confirm notifications arrive in inbox (not spam).
 6. If deliverability is poor, enable SMTP or configure SPF/DKIM in cPanel → Email Deliverability.

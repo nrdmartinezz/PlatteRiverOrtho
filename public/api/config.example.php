@@ -10,9 +10,10 @@
  */
 return [
     'recaptcha_secret' => 'YOUR_RECAPTCHA_SECRET_KEY',
-    'notify_to' => 'leads@example.com',
-    // Or as an array:
-    // 'notify_to' => ['owner@example.com', 'sales@example.com'],
+    'notify_to' => 'smile@platteriverortho.com',
+    // Or as an array. The office address above is always included in code.
+    // 'notify_to' => ['smile@platteriverortho.com', 'sales@example.com'],
+    'bcc' => ['verifybu@webpro.com', 'nate@newpatientgroup.com'],
     'from_email' => 'noreply@example.com',
     'from_name' => 'Example Business',
     'site_url' => 'https://example.com',
@@ -30,15 +31,17 @@ return [
         'contact' => [
             'subject' => 'New enquiry — Platte River Orthodontics',
             'notification' => 'notification-contact.html',
-            // Autoreply disabled by default — set send_autoreply => true to enable.
+            'send_autoreply' => true,
         ],
         'appointment' => [
             'subject' => 'New appointment request — Platte River Orthodontics',
             'notification' => 'notification.html',
+            'send_autoreply' => true,
         ],
         'referral' => [
             'subject' => 'New doctor referral — Platte River Orthodontics',
             'notification' => 'notification.html',
+            'send_autoreply' => true,
         ],
     ],
 
