@@ -1,25 +1,23 @@
 <?php
 /**
- * Copy to config.local.php for local testing, or to ~/private/site-mail.php
- * on the server (outside public_html). Rename the private file per client project
- * (e.g. peninsula-pavers-mail.php) and update the path in lib/mailer.php.
- * Never commit real credentials.
+ * Drop-in mail config for Platte River Orthodontics.
+ * Copy this file to ~/private/site-mail.php on the server (outside public_html).
+ * lib/mailer.php already loads that path. For local testing, copy it to
+ * public/api/config.local.php instead. Never commit real credentials.
  *
- * Mail transport: uses PHP mail() by default (like WordPress). Set smtp_host, smtp_user,
- * and smtp_pass to switch to authenticated SMTP — useful when mail() deliverability is poor.
+ * Fill in recaptcha_secret before the forms go live. Mail uses PHP mail()
+ * unless smtp_host, smtp_user, and smtp_pass are all set.
  */
 return [
     'recaptcha_secret' => 'YOUR_RECAPTCHA_SECRET_KEY',
     'notify_to' => 'smile@platteriverortho.com',
-    // Or as an array. The office address above is always included in code.
-    // 'notify_to' => ['smile@platteriverortho.com', 'sales@example.com'],
     'bcc' => ['verifybu@webpro.com', 'nate@newpatientgroup.com'],
-    'from_email' => 'noreply@example.com',
-    'from_name' => 'Example Business',
-    'site_url' => 'https://example.com',
-    'site_phone' => '(555) 010-4477',
-    'site_phone_href' => '+15550104477',
-    'timezone' => 'America/New_York',
+    'from_email' => 'noreply@platteriverorthodontics.com',
+    'from_name' => 'Platte River Orthodontics',
+    'site_url' => 'https://platteriverorthodontics.com',
+    'site_phone' => '402-322-8838',
+    'site_phone_href' => '+14023228838',
+    'timezone' => 'America/Chicago',
 
     // Optional SMTP — leave blank to use PHP mail() on the host.
     'smtp_host' => '',
