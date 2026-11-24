@@ -28,17 +28,18 @@ the same page.
 2. Issue the SSL certificate (AutoSSL) **before** the first deploy — `.htaccess`
    force-redirects to HTTPS and will loop against a missing certificate.
 3. Create an FTP account scoped to the document root.
-4. Add repository secrets in GitHub → Settings → Secrets → Actions. Production
-   reads these only when **Deploy** is run by hand:
+4. Create a GitHub Environment named `production`. A push to `main` runs
+   **Deploy** and reads these from that environment:
 
    | Secret           | Value                                    |
    | ---------------- | ---------------------------------------- |
-   | `FTP_SERVER`     | `ftp.example.com`                        |
-   | `FTP_USERNAME`   | The scoped FTP account                   |
-   | `FTP_PASSWORD`   | Its password                             |
+   | `FTP_HOST`       | `ftp.example.com`                        |
+   | `FTP_USER`       | The scoped FTP account                   |
+   | `FTP_PW`         | Its password                             |
    | `FTP_SERVER_DIR` | `public_html/` (trailing slash required) |
 
-5. Create a GitHub Environment named `staging` for the automatic deploy:
+5. Create a GitHub Environment named `staging`. A push to `staging` runs
+   **Deploy staging**:
 
    | Name       | Kind               | Value                         |
    | ---------- | ------------------ | ----------------------------- |
@@ -55,14 +56,14 @@ the same page.
 
 ## Deploying
 
-A push to `main` runs `.github/workflows/deploy-staging.yml`: install → `verify`
-→ `build` → FTP upload of `dist/` to staging. The `verify` gate means a type
-error or malformed frontmatter fails in CI instead of shipping. The FTP account
-is jailed to the staging document root, so the upload target is `./`.
+A push to `main` runs `.github/workflows/deploy.yml`: install → `verify`
+→ `build` → FTP upload of `dist/` to production. The `verify` gate means a type
+error or malformed frontmatter fails in CI instead of shipping.
 
-Production does not deploy on push. Run **Deploy** (`.github/workflows/deploy.yml`)
-from the Actions tab when staging is ready to ship. Pick the `main` ref in that
-dialog.
+A push to `staging` runs `.github/workflows/deploy-staging.yml` and uploads to
+staging. The FTP account is jailed to the staging document root, so the upload
+target is `./`. A manual run of that workflow only proceeds when the selected
+ref is `staging`.
 
 Manual fallback: `npm run build` and upload the contents of `dist/`.
 
