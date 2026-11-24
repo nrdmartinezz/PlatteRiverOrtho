@@ -389,6 +389,10 @@ export const navigation: NavigationConfig = {
           href: '/plattsmouth-nebraska-orthodontist-platte-river-orthodontics/',
         },
         {
+          label: 'Raymond, NE',
+          href: '/raymond-nebraska-orthodontist-platte-river-orthodontics/',
+        },
+        {
           label: 'Springfield, NE',
           href: '/springfield-nebraska-orthodontist-platte-river-orthodontics/',
         },

@@ -111,23 +111,12 @@ const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=
         )
       }
 
-      <div
-        class="map-facade border-line-base bg-surface-base relative h-52 w-full overflow-hidden rounded-2xl border shadow-md"
-        data-src={embedSrc}
-        data-title="Office location map"
-      >
-        <div
-          class="text-ink-base pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 p-6 text-center"
-          aria-hidden="true"
-        >
-          <Icon name="lucide:map-pin" class="text-brand-600 size-8" />
-          <span class="font-medium">Office map</span>
-        </div>
-      </div>
+      <iframe
+        src={embedSrc}
+        title="Office location map"
+        referrerpolicy="no-referrer-when-downgrade"
+        loading="eager"
+        class="border-line-base h-52 w-full rounded-2xl border shadow-md"></iframe>
     </div>
   </Container>
 </Section>
-
-<script>
-  import '../../scripts/lazy-maps';
-</script>

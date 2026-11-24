@@ -186,7 +186,7 @@ export const practicePages: MarketingPageData[] = [
         image: 'orthodontist',
         body: [
           'Dr. Chad “SnaggleTooth” Carter leads the practice with a heart for service and years of experience, from physics research and military service to board-certified orthodontics.',
-          'His wife and partner, Amy, is the Smile Coach and keeps the practice centered on family. Boone and Huck, their bird dogs, are the Chief Furry Officer and Head of the Party Planning Committee.',
+          'His wife and partner, Amy, is the Smile Coach and keeps the practice centered on family. Boone, their bird dog, is Chief Furry Officer, and Huck is Head of the Party Planning Committee.',
         ],
       },
       {
@@ -205,6 +205,11 @@ export const practicePages: MarketingPageData[] = [
         { name: 'Denice', role: 'Smile Stylist', photo: 'teamDenice' },
         { name: 'Rebecca', role: 'Director of First Impressions', photo: 'teamRebecca' },
         { name: 'Sam', role: 'Smile Stylist', photo: 'teamSam' },
+        {
+          name: 'Boone & Huck',
+          role: 'Chief Furry Officer and Head of the Party Planning Committee',
+          photo: 'teamDogs',
+        },
       ],
     },
     benefits: {
@@ -230,7 +235,7 @@ export const practicePages: MarketingPageData[] = [
         {
           icon: 'lucide:smartphone',
           title: 'Grin remote monitoring',
-          body: 'Share progress from home between visits when a trip to the office is not needed.',
+          body: 'Share progress from home between visits when a trip to the office is not needed. More personalized care, on a schedule that works for you.',
         },
       ],
     },
@@ -246,11 +251,6 @@ export const practicePages: MarketingPageData[] = [
           'Dr. Carter offers both KLOwen custom braces and Invisalign clear aligners. The complimentary consultation is where he explains which one fits your bite, your routine, and what each asks of you day to day.',
       },
       {
-        question: 'Can I have a virtual consultation?',
-        answer:
-          'Yes. You can start with a virtual consult, then come in for an iTero scan and records when you are ready to move forward. Call 402-322-8838 or request a consultation online.',
-      },
-      {
         question: 'What will treatment cost, and do you accept insurance?',
         answer:
           'Your complimentary consultation includes a clear cost breakdown. We work with most major insurance plans and offer flexible payment and financing options.',
@@ -258,7 +258,7 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'What should I expect at the first consultation?',
         answer:
-          'It is a complimentary, educational visit. Bring your insurance card and your questions. Dr. Carter can use an iTero scan, explain the findings in plain language, and outline the options. You do not have to start treatment that day.',
+          'It is a complimentary, educational visit. Bring your questions. Dr. Carter will use an iTero digital scan with appropriate imaging, explain the findings in plain language, and outline the options. You do not have to start treatment that day. We understand this is a big investment, and we deliver exceptional value through the level of customization and convenience.',
       },
     ],
   }),
@@ -279,6 +279,7 @@ export const practicePages: MarketingPageData[] = [
         eyebrow: 'iTero',
         title: 'No more goopy impressions',
         image: 'smileSimulator',
+        imageHref: 'https://www.invisalign.com/results/smileview',
         body: 'The iTero scanner replaces traditional impressions with a comfortable digital model of your teeth and bite. Dr. Carter can study that model in ways plaster never allowed, and the treatment simulator can show a realistic preview of your result.',
       },
       {
@@ -287,7 +288,7 @@ export const practicePages: MarketingPageData[] = [
         reverse: true,
         background: 'muted',
         image: 'drCarter',
-        body: 'Grin lets Dr. Carter check progress between visits using clinical-quality photos from your phone. It is especially helpful if you travel, live a little farther out, or simply want fewer trips to the office without giving up close supervision.',
+        body: 'Grin lets Dr. Carter check progress between visits using clinical-quality photos from your phone. It is more personalized care on your schedule, and it is especially helpful if you travel, live a little farther out, or want fewer trips without giving up close supervision.',
       },
     ],
     benefits: {
@@ -325,7 +326,7 @@ export const practicePages: MarketingPageData[] = [
       {
         question: 'Does Grin monitoring replace office visits?',
         answer:
-          'Grin lets Dr. Carter check progress between visits with photos from your phone. It is useful if you travel or want fewer trips. You still come in when an in-person check is needed.',
+          'Grin lets Dr. Carter check progress between visits with photos from your phone. It is more personalized care, delivered on your schedule. That lets us space out in-person appointments so there are fewer times missing work, school, or activities. You still come in when an in-person check is needed.',
       },
       {
         question: 'Will the smile simulator show my exact final smile?',
@@ -388,7 +389,7 @@ export const practicePages: MarketingPageData[] = [
         {
           icon: 'lucide:dog',
           title: 'A family office',
-          body: 'Boone and Huck, the office dogs, are part of a warm visit for kids and nervous patients.',
+          body: 'Boone is Chief Furry Officer and Huck is Head of the Party Planning Committee. Both office dogs are part of a warm visit for kids and nervous patients.',
         },
         {
           icon: 'lucide:scan',
@@ -398,7 +399,7 @@ export const practicePages: MarketingPageData[] = [
         {
           icon: 'lucide:message-circle',
           title: 'Straight answers',
-          body: 'We would rather explain a myth than rush you into a start date.',
+          body: 'Dr. Carter is known for plain speak. This covers everything from the right timing to airway health to complex interdisciplinary needs. There is no pressure or rush to begin that day.',
         },
       ],
     },
@@ -534,9 +535,9 @@ export const practicePages: MarketingPageData[] = [
           'The clinic is open Monday–Thursday, 8:00 am–5:00 pm. Friday, Saturday, and Sunday are closed. Calls are answered Monday–Friday, 7am–7pm.',
       },
       {
-        question: 'Can I ask about an in-office or virtual consultation?',
+        question: 'Can I schedule an in-office consultation?',
         answer:
-          'Yes. You can start with a virtual consult or come to the Gretna office. Records and an iTero scan happen in the office when you are ready to move forward. Call or request a time online.',
+          'Yes. Come to the Gretna office for the complimentary visit. Records and an iTero scan happen in the office. Call or request a time online.',
       },
       {
         question: 'Do I need a referral, and do you accept insurance?',

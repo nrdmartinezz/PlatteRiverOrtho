@@ -1,0 +1,3 @@
+# Spam keyword phrases
+# One phrase per line. Lines starting with # are ignored.
+# Example: search engine optimization

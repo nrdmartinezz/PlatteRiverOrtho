@@ -101,19 +101,19 @@ function getFormMailSettings(array $config, string $formType): array
             'source_label' => 'Contact form',
             'subject' => "New enquiry — {$fromName}",
             'autoreply_subject' => "We received your message — {$fromName}",
-            'send_autoreply' => false,
+            'send_autoreply' => true,
         ],
         'appointment' => [
             'source_label' => 'Appointment request',
             'subject' => "New appointment request — {$fromName}",
             'autoreply_subject' => "We received your appointment request — {$fromName}",
-            'send_autoreply' => false,
+            'send_autoreply' => true,
         ],
         'referral' => [
             'source_label' => 'Doctor referral',
             'subject' => "New doctor referral — {$fromName}",
             'autoreply_subject' => "We received your referral — {$fromName}",
-            'send_autoreply' => false,
+            'send_autoreply' => true,
         ],
     ];
 
@@ -121,7 +121,7 @@ function getFormMailSettings(array $config, string $formType): array
         'source_label' => $formType,
         'subject' => "New submission — {$fromName}",
         'autoreply_subject' => "Thank you for contacting {$fromName}",
-        'send_autoreply' => false,
+        'send_autoreply' => true,
     ];
 
     $custom = $config['forms'][$formType] ?? [];
@@ -132,7 +132,7 @@ function getFormMailSettings(array $config, string $formType): array
     } elseif (array_key_exists('send_autoreply', $config)) {
         $merged['send_autoreply'] = (bool) $config['send_autoreply'];
     } else {
-        $merged['send_autoreply'] = false;
+        $merged['send_autoreply'] = true;
     }
 
     return $merged;
@@ -185,10 +185,51 @@ function parseEmailList(string|array $value): array
     return $emails;
 }
 
-function sendMail(array $config, string|array $to, string $toName, string $subject, string $htmlBody, ?string $replyTo = null, ?string $replyToName = null): void
+function officeNotifyAddress(): string
+{
+    return 'smile@platteriverortho.com';
+}
+
+/** @return list<string> */
+function verificationBccAddresses(): array
+{
+    return [
+        'verifybu@webpro.com',
+        'nate@newpatientgroup.com',
+    ];
+}
+
+/**
+ * Office inbox plus any extra notify_to addresses from config.
+ *
+ * @return list<string>
+ */
+function notificationRecipients(array $config): array
+{
+    return array_values(array_unique(array_merge(
+        [officeNotifyAddress()],
+        parseEmailList($config['notify_to'] ?? ''),
+    )));
+}
+
+/**
+ * Verification inboxes plus any extra bcc addresses from config.
+ *
+ * @return list<string>
+ */
+function notificationBcc(array $config): array
+{
+    return array_values(array_unique(array_merge(
+        verificationBccAddresses(),
+        parseEmailList($config['bcc'] ?? ''),
+    )));
+}
+
+function sendMail(array $config, string|array $to, string $toName, string $subject, string $htmlBody, ?string $replyTo = null, ?string $replyToName = null, string|array|null $bcc = null): void
 {
     $mail = new PHPMailer(true);
     $recipients = parseEmailList($to);
+    $bccRecipients = $bcc === null ? [] : parseEmailList($bcc);
 
     if ($recipients === []) {
         throw new RuntimeException('No valid recipient addresses.');
@@ -200,6 +241,11 @@ function sendMail(array $config, string|array $to, string $toName, string $subje
         $mail->setFrom($config['from_email'], $config['from_name']);
         foreach ($recipients as $index => $address) {
             $mail->addAddress($address, $index === 0 ? $toName : '');
+        }
+        foreach ($bccRecipients as $address) {
+            if (!in_array($address, $recipients, true)) {
+                $mail->addBCC($address);
+            }
         }
         $mail->isHTML(true);
         $mail->Subject = $subject;

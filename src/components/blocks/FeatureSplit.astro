@@ -20,6 +20,9 @@ interface Props extends Omit<BlockProps, 'body'> {
   reverse?: boolean;
   callout?: { title: string; body?: string; items?: string[] };
   badge?: { value: string; label: string };
+  /** Wraps the image and adds a text link. External links open in a new tab. */
+  imageHref?: string;
+  imageLinkLabel?: string;
 }
 
 const {
@@ -39,9 +42,12 @@ const {
   reverse = false,
   callout,
   badge,
+  imageHref,
+  imageLinkLabel = 'See your smile simulation',
 } = Astro.props;
 
 const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
+const externalImageLink = imageHref?.startsWith('http') ?? false;
 ---
 
 <Section background={background} spacing={spacing} id={id}>
@@ -49,14 +55,44 @@ const paragraphs = body ? (Array.isArray(body) ? body : [body]) : [];
     <div class:list={['relative w-full md:w-5/12', reverse ? 'md:order-2' : 'md:order-1']}>
       {
         image ? (
-          <Image
-            src={image}
-            alt={imageAlt}
-            widths={[480, 768, 1024]}
-            sizes="(max-width: 768px) 100vw, 40vw"
-            loading="lazy"
-            class="w-full rounded-2xl object-cover"
-          />
+          <div class="flex flex-col gap-3">
+            {imageHref ? (
+              <a
+                href={imageHref}
+                target={externalImageLink ? '_blank' : undefined}
+                rel={externalImageLink ? 'noopener noreferrer' : undefined}
+                class="block no-underline"
+              >
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  widths={[480, 768, 1024]}
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  loading="lazy"
+                  class="w-full rounded-2xl object-cover"
+                />
+              </a>
+            ) : (
+              <Image
+                src={image}
+                alt={imageAlt}
+                widths={[480, 768, 1024]}
+                sizes="(max-width: 768px) 100vw, 40vw"
+                loading="lazy"
+                class="w-full rounded-2xl object-cover"
+              />
+            )}
+            {imageHref && (
+              <a
+                href={imageHref}
+                target={externalImageLink ? '_blank' : undefined}
+                rel={externalImageLink ? 'noopener noreferrer' : undefined}
+                class="text-ink-brand text-sm font-semibold"
+              >
+                {imageLinkLabel}
+              </a>
+            )}
+          </div>
         ) : (
           <div class="bg-surface-muted aspect-4/5 w-full rounded-2xl" aria-hidden="true" />
         )
